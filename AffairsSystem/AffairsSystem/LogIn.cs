@@ -20,13 +20,18 @@ namespace AffairsSystem
             InitializeComponent();
            
         }
-
-        
-
-
-       
         private void LogIn_Load(object sender, EventArgs e)
         {
+
+        }
+
+        // CLICK ON LOG IN
+        private void btnLogIn_Click(object sender, EventArgs e)
+        {
+            string spNr = textBoxspNr.Text;
+            SqlDataReader da = controller.SearchSalesPerson(spNr);
+            Utility.CheckSalesPerson(da);
+           
 
         }
 

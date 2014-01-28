@@ -19,7 +19,12 @@ namespace AffairsSystem
             dal = new DAL();
         }
 
-
+        // SEARCH SALES PERSON ON spNr
+        public SqlDataReader SearchSalesPerson(string spNr)
+        {
+            dr = dal.SearchSalesPerson(spNr);
+            return dr;
+        }
 
 
 

@@ -35,10 +35,10 @@ namespace AffairsSystem
         // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED READER!
         public SqlDataReader ExecuteGetSqlReader(string sqlQuery)
         {
+            con.Close();
             con.Open();
             cmd = new SqlCommand(sqlQuery, con);
             dr = cmd.ExecuteReader();
-            con.Close();
             return dr;
             // måste på nåt sätt använda con.Close() här.....
             
@@ -48,13 +48,19 @@ namespace AffairsSystem
 
 
 
-        //SUB-SQL-METODER:
+        // SUB-SQL-METODER:
         
 
-        //GET ALL PRODUCTS (NR, NAME, OUTPRICE)
+        // GET ALL PRODUCTS (NR, NAME, OUTPRICE)
         public SqlDataAdapter GetAllProducts()
         {
             return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product");
+        }
+
+        // SEARCH SALES PERSON ON spNr
+        public SqlDataReader SearchSalesPerson(string spNr)
+        {
+            return ExecuteGetSqlReader("select * from salesperson where spNr = '" + spNr + "'");
         }
 
 
