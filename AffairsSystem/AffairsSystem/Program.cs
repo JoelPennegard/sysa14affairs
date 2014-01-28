@@ -8,7 +8,7 @@ namespace AffairsSystem
 {
     static class Program
     {
-        /// Ändring 17:15
+        /// Ändring 17:26
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
