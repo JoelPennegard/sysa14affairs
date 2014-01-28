@@ -10,29 +10,48 @@ namespace AffairsSystem
     class DAL
     {
         SqlConnection con = new SqlConnection("Data Source=LUDVIGSBÄRBARA;Initial Catalog=affAIRs;Integrated Security=True");
-
+        SqlCommand cmd;
+        SqlDataAdapter da;
+        SqlDataReader dr;
 
         //EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI REGISTRERAR DATA!
         public void ExecuteSetSqlQuery(string sqlQuery)
         {
-            SqlCommand cmd = new SqlCommand(sqlQuery, con);
+            cmd = new SqlCommand(sqlQuery, con);
             con.Open();
             cmd.ExecuteNonQuery();
             con.Close();
         }
 
-
-        // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR GREJER MED SQLDATAADAPTER!
+        // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED ADAPTER!
         public SqlDataAdapter ExecuteGetSqlAdapter(string sqlQuery)
         {
-            SqlCommand cmd = new SqlCommand();
-            cmd.Connection = con;
+            cmd = new SqlCommand();
             cmd.CommandText = sqlQuery;
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da = new SqlDataAdapter(cmd);
             return da;
         }
 
-        //GET ALL PRODUCTS
+        // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED READER!
+        public SqlDataReader ExecuteGetSqlReader(string sqlQuery)
+        {
+            con.Open();
+            cmd = new SqlCommand(sqlQuery, con);
+            dr = cmd.ExecuteReader();
+            con.Close();
+            return dr;
+            // måste på nåt sätt använda con.Close() här....
+            
+        }
+
+
+
+
+
+        //SUB-SQL-METODER:
+        
+
+        //GET ALL PRODUCTS (NR, NAME, OUTPRICE)
         public SqlDataAdapter GetAllProducts()
         {
             return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product");
