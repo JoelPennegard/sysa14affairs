@@ -22,12 +22,6 @@ namespace AffairsSystem
         }
 
        
-
-
-    
-
-
-
         private void LogIn_Load(object sender, EventArgs e)
         {
 

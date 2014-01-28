@@ -20,11 +20,6 @@ namespace AffairsSystem
         }
 
 
-        public SqlDataAdapter GetAllProducts()
-        {
-            da = dal.GetAllProducts();
-            return da;
-        }
 
 
 

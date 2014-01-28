@@ -8,5 +8,7 @@ namespace AffairsSystem
 {
     class Utility
     {
+
+
     }
 }

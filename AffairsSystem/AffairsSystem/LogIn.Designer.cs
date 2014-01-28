@@ -31,8 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxspNr = new System.Windows.Forms.TextBox();
             this.btnLogIn = new System.Windows.Forms.Button();
-            this.dataGridProducts = new System.Windows.Forms.DataGridView();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -60,20 +58,11 @@
             this.btnLogIn.Text = "Log in";
             this.btnLogIn.UseVisualStyleBackColor = true;
             // 
-            // dataGridProducts
-            // 
-            this.dataGridProducts.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProducts.Location = new System.Drawing.Point(323, 67);
-            this.dataGridProducts.Name = "dataGridProducts";
-            this.dataGridProducts.Size = new System.Drawing.Size(417, 312);
-            this.dataGridProducts.TabIndex = 3;
-            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(782, 446);
-            this.Controls.Add(this.dataGridProducts);
+            this.ClientSize = new System.Drawing.Size(345, 308);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.textBoxspNr);
             this.Controls.Add(this.label1);
@@ -82,7 +71,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log in";
             this.Load += new System.EventHandler(this.LogIn_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducts)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -93,6 +81,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxspNr;
         private System.Windows.Forms.Button btnLogIn;
-        private System.Windows.Forms.DataGridView dataGridProducts;
     }
 }

@@ -40,7 +40,7 @@ namespace AffairsSystem
             dr = cmd.ExecuteReader();
             con.Close();
             return dr;
-            // måste på nåt sätt använda con.Close() här....
+            // måste på nåt sätt använda con.Close() här.....
             
         }
 
