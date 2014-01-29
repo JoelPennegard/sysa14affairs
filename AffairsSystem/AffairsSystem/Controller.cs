@@ -26,33 +26,64 @@ namespace AffairsSystem
             return dr;
         }
 
-        // SET PRODUCT
+        // CREATE NEW PRODUCT
         public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount)
         {
             dal.SetProduct(productName, productInPrice, productOutPrice, amount);
         }
 
-        // SET SALES PERSON
+        //CREATE NEW SALES PERSON
 
         public void SetSalesPerson(string spNr, string firstName, string lastName, string sPhone)
         {
             dal.SetSalesPerson(spNr, firstName, lastName, sPhone);
         }
 
-        // SET SALE
+        // CREATE NEW SALE
 
-        public void SetSales(int spNr, double totalPrice)
+        public void SetSale(string spNr, double totalPrice)
         {
-            dal.SetSales(spNr, totalPrice);
+            dal.SetSale(spNr, totalPrice);
         }
 
-        // SET SALE LINE
+        //CREATE NEW SALESLINE
 
         public void SetSalesLine(int productNr, int salesNr, int amount)
         {
             dal.SetSalesLine(productNr, salesNr, amount);
         }
 
+        // SEARCH PRODUCT ALL ATTRIBUTES
+        public SqlDataAdapter SearchProductAllAttributes(int productNr, string productName, double productInPrice, double productOutPrice, int amount)
+        {
+            da = dal.SearchProductAllAttributes(productNr, productName, productInPrice, productOutPrice, amount);
+            return da;
+        }
 
+        // SEARCH PRODUCT IN TILL (NOT PRODUCTINPRICE)
+        public SqlDataAdapter SearchProductTill(int productNr, string productName, double productOutPrice, int amount)
+        {
+            da = dal.SearchProductTill(productNr, productName, productOutPrice, amount);
+            return da;
+        }
+        //SEARCH SALES PERSON ON ALL ATTRIBUTES
+        public SqlDataAdapter SearchSalesPersonAllAttributes(string spNr, string firstName, string lastName, string sPhone)
+        {
+            da = dal.SearchSalesPersonAllAttributes(spNr, firstName, lastName, sPhone);
+            return da;
+        }
+        // GET ALL PRODUCTS (NR, NAME, OUTPRICE)
+        public SqlDataAdapter GetAllProducts()
+        {
+            da = dal.GetAllProducts();
+            return da;
+        }
+        //GET SALES (SALESPERSON)
+        public SqlDataAdapter GetSalesPersonSales(string spNr)
+        {
+            da = dal.GetSalesPersonSales(spNr);
+            return da;
+        }
+        
     }
 }
