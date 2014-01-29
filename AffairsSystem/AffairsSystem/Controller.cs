@@ -26,13 +26,13 @@ namespace AffairsSystem
             return dr;
         }
 
-        // CREATE NEW PRODUCT
+        // CREATE NEW PRODUCT (ADMIN)
         public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount)
         {
             dal.SetProduct(productName, productInPrice, productOutPrice, amount);
         }
 
-        //CREATE NEW SALES PERSON
+        //CREATE NEW SALES PERSON (ADMIN)
 
         public void SetSalesPerson(string spNr, string firstName, string lastName, string sPhone)
         {
@@ -84,6 +84,22 @@ namespace AffairsSystem
             da = dal.GetSalesPersonSales(spNr);
             return da;
         }
+        //UPDATE SALES PERSON (ADMIN)
+        public void UpdateSalesPerson(string firstName, string lastName, string sPhone, string spNr)
+        {
+            dal.UpdateSalesPerson(firstName, lastName, sPhone, spNr);
+        }
+        //UPDATE PRODUCT (ADMIN)
+        public void UpdateProduct(int productNr, string productName, int productInPrice, int productOutPrice, int amount)
+        {
+            dal.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount);
+        }
+        // UPDATE PRODUCT AMOUNT (ADMIN)
+        public void UpdateProductAmount(int amount, string productNr)
+        {
+            dal.UpdateProductAmount(amount, productNr);
+        }
+
         
     }
 }
