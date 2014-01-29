@@ -9,7 +9,7 @@ namespace AffairsSystem
 {
     class DAL
     {
-        SqlConnection con = new SqlConnection("Data Source=LUDVIGSBÄRBARA;Initial Catalog=affAIRs;Integrated Security=True");
+        SqlConnection con = new SqlConnection("Data Source=ROBINS;Initial Catalog=affAIRs2.0;Integrated Security=True");
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader dr;
@@ -44,7 +44,7 @@ namespace AffairsSystem
             
         }
 
-
+       
 
 
 
