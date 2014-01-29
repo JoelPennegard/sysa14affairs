@@ -84,7 +84,7 @@ namespace AffairsSystem
             da = dal.GetSalesPersonSales(spNr);
             return da;
         }
-        //UPDATE SALES PERSON (ADMIN)
+        //UPDATE SALES PERSON (ADMIN))
         public void UpdateSalesPerson(string firstName, string lastName, string sPhone, string spNr)
         {
             dal.UpdateSalesPerson(firstName, lastName, sPhone, spNr);
