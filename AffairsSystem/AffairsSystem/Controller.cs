@@ -13,18 +13,27 @@ namespace AffairsSystem
         DAL dal;
         SqlDataAdapter da;
         SqlDataReader dr;
-
+        
         public Controller()
         {
             dal = new DAL();
         }
 
         // SEARCH SALES PERSON ON spNr
+        
+        /// <summary>
+        /// This method returns a dataReader containing the information of the 
+        /// salesperson with the specified id-number
+        /// </summary>
+        /// <param name="spNr"> The specified employees id-number </param>
+        /// <returns> a sqlDataReader containing the employee's information </returns>
+        
         public SqlDataReader SearchSalesPerson(string spNr)
         {
             dr = dal.SearchSalesPerson(spNr);
             return dr;
         }
+
 
         // CREATE NEW PRODUCT (ADMIN)
         public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount)
