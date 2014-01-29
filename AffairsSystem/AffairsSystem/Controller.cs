@@ -89,7 +89,7 @@ namespace AffairsSystem
         {
             dal.UpdateSalesPerson(firstName, lastName, sPhone, spNr);
         }
-        //UPDATE PRODUCT (ADMIN)
+        //UPDATE PRODUCT (ADMIN))
         public void UpdateProduct(int productNr, string productName, int productInPrice, int productOutPrice, int amount)
         {
             dal.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount);
