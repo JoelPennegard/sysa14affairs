@@ -89,16 +89,33 @@ namespace AffairsSystem
             return ExecuteGetSqlAdapter("select * from product where productNr like '%" + productNr + "%' or productName like '%" + productName +
                 "%' or productInPrice like '%" + productInPrice + "%' or productOutPrice like '%" + productOutPrice + "%' or amount like '%" + amount + "%'");
         }
-        
 
+        // UPDATE PRODUCT AMOUNT (ADMIN)
+        public void UpdateProductAmount(int amount, string productNr)
+        {
+            ExecuteSetSqlQuery("update product set amount = amount + '" + amount + "' where productNr = '" + productNr + "'");
+        }
 
+        //UPDATE PRODUCT (ADMIN)
+        public void UpdateProduct (int productNr, string productName, int productInPrice, int productOutPrice, int amount)
+        {
+            ExecuteSetSqlQuery("update product set productName = '" + productName + ", productInPrice = " + productInPrice + 
+                ", ProductOutPrice = " + productOutPrice + " where productNr ='" + productNr + "'");
+        }            
 
-        //CREATE NEW SALES PERSON
+        //UPDATE SALES PERSON (ADMIN)
+        public void UpdateSalesPerson(string firstName, string lastName, string sPhone, string spNr)
+        {
+            ExecuteSetSqlQuery("update salesperson set firstName = '" + firstName +", lastName = '" + lastName + 
+                ", sPhone = '" + sPhone + "' where spNr = '" + spNr + "'");
+        }
+
+        //CREATE NEW SALES PERSON (ADMIN)
         public void SetSalesPerson(string spNr, string firstName, string lastName, string sPhone){
             ExecuteSetSqlQuery("insert into salesperson values('" + spNr + "','" + firstName + "','" + lastName + "','" + sPhone +"')");
         }
 
-        // CREATE NEW PRODUCT
+        // CREATE NEW PRODUCT (ADMIN)
         public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount)
         {
             ExecuteSetSqlQuery("insert into product values('" + productName + "'," + productInPrice + "," + productOutPrice + "," + amount + ")");
@@ -115,23 +132,6 @@ namespace AffairsSystem
         {
             ExecuteSetSqlQuery("insert into salesline values (" + productNr + "," + salesNumber + "," + amount + ")");
         }
-
-      
-
-
-
-        
-
-
-
-
-
-
-
-
-
-
-
 
     }
 }
