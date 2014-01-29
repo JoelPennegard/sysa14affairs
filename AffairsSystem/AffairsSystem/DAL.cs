@@ -70,9 +70,9 @@ namespace AffairsSystem
         }
 
         // SEARCH SALES PERSON ON ALL ATTRIBUTES
-        public SqlDataAdapter SearchSalesPersonAllAttributes(string sPnr, string firstName, string lastName, string sPhone)
+        public SqlDataAdapter SearchSalesPersonAllAttributes(string spNr, string firstName, string lastName, string sPhone)
         {
-            return ExecuteGetSqlAdapter("select * from salesperson where sPnr like '%" + sPnr + "%' or firstName like '%" + firstName + 
+            return ExecuteGetSqlAdapter("select * from salesperson where spNr like '%" + spNr + "%' or firstName like '%" + firstName + 
                 "%' or lastName like '%" + lastName + "%' or sPhone like '%" + sPhone + "%'");
         }
         
@@ -94,8 +94,8 @@ namespace AffairsSystem
 
 
         //CREATE NEW SALES PERSON
-        public void SetSalesPerson(string sPnr, string firstName, string lastName, string sPhone){
-            ExecuteSetSqlQuery("insert into salesperson values('" + sPnr + "','" + firstName + "','" + lastName + "','" + sPhone +"')");
+        public void SetSalesPerson(string spNr, string firstName, string lastName, string sPhone){
+            ExecuteSetSqlQuery("insert into salesperson values('" + spNr + "','" + firstName + "','" + lastName + "','" + sPhone +"')");
         }
 
         // CREATE NEW PRODUCT
@@ -105,9 +105,9 @@ namespace AffairsSystem
         }
 
         // CREATE NEW SALE
-        public void SetSale(string sPnr, double totalPrice)
+        public void SetSale(string spNr, double totalPrice)
         {
-            ExecuteSetSqlQuery("insert into product values (getdate(), '" + sPnr + "'," + totalPrice + ")");
+            ExecuteSetSqlQuery("insert into product values (getdate(), '" + spNr + "'," + totalPrice + ")");
         }
 
         //CREATE NEW SALESLINE
