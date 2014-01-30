@@ -30,6 +30,7 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageSale = new System.Windows.Forms.TabPage();
+            this.lblLoggedInAs = new System.Windows.Forms.Label();
             this.buttonClearAll = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
@@ -114,7 +115,7 @@
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.lblLoggedInAs = new System.Windows.Forms.Label();
+            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -186,6 +187,15 @@
             this.tabPageSale.Text = "Sale menu";
             this.tabPageSale.UseVisualStyleBackColor = true;
             this.tabPageSale.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // lblLoggedInAs
+            // 
+            this.lblLoggedInAs.AutoSize = true;
+            this.lblLoggedInAs.Location = new System.Drawing.Point(8, 22);
+            this.lblLoggedInAs.Name = "lblLoggedInAs";
+            this.lblLoggedInAs.Size = new System.Drawing.Size(35, 13);
+            this.lblLoggedInAs.TabIndex = 45;
+            this.lblLoggedInAs.Text = "label1";
             // 
             // buttonClearAll
             // 
@@ -1037,6 +1047,7 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.logoutToolStripMenuItem,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -1045,7 +1056,7 @@
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             // 
             // menuStrip1
@@ -1060,14 +1071,11 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // lblLoggedInAs
+            // logoutToolStripMenuItem
             // 
-            this.lblLoggedInAs.AutoSize = true;
-            this.lblLoggedInAs.Location = new System.Drawing.Point(8, 22);
-            this.lblLoggedInAs.Name = "lblLoggedInAs";
-            this.lblLoggedInAs.Size = new System.Drawing.Size(35, 13);
-            this.lblLoggedInAs.TabIndex = 45;
-            this.lblLoggedInAs.Text = "label1";
+            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logoutToolStripMenuItem.Text = "Logout";
             // 
             // Form1
             // 
@@ -1192,6 +1200,7 @@
         private System.Windows.Forms.Button buttonEaClearAll;
         private System.Windows.Forms.Button buttonPaClearAll;
         private System.Windows.Forms.Label lblLoggedInAs;
+        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
 
 
     }
