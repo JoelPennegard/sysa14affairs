@@ -10,9 +10,7 @@ namespace AffairsSystem
 {
     class DAL
     {
-
         SqlConnection con;
-
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader dr;
@@ -80,12 +78,11 @@ namespace AffairsSystem
             cmd = new SqlCommand(sqlQuery, con);
             con.Open();
             dr = cmd.ExecuteReader();
-            con.Close();
             return dr;
                         
         }
 
-       
+
 
 
 
