@@ -29,8 +29,18 @@ namespace AffairsSystem
           
             
 
+
            // if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
            //else { tabControl.Enabled = false; lblLoggedInAs.Text = "Logged in as: " + spNr; }
+
+            if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
+            else
+            {
+                tabControl.Controls.Remove(tabPageEmployee);
+                tabControl.Controls.Remove(tabPageProduct);
+                tabControl.Controls.Remove(tabPageStatistics);
+                lblLoggedInAs.Text = "Logged in as: " + spNr; }
+
             
         }
         private string SpNR{
@@ -109,6 +119,18 @@ namespace AffairsSystem
             dataGridViewPa.DataSource = data;
         }
 
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LogIn l = new LogIn();
+            l.Show();
+            this.Dispose();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
+        }
 
     }
 }
