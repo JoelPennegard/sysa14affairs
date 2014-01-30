@@ -52,7 +52,7 @@ namespace AffairsSystem
 
         }
         
-        //EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI REGISTRERAR DATA!
+        //METHOD TO USE FOR QUERIES THAT REGISTERS DATA!
         public void ExecuteSetSqlQuery(string sqlQuery)
         {
             cmd = new SqlCommand(sqlQuery, con);
@@ -61,7 +61,7 @@ namespace AffairsSystem
             con.Close();
         }
 
-        // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED ADAPTER!
+        //METHOD TO USE FOR QUERIES THAT EXTRACTS DATA WITH ADAPTER!
         public SqlDataAdapter ExecuteGetSqlAdapter(string sqlQuery)
         {
             cmd = new SqlCommand(sqlQuery, con);
@@ -71,7 +71,7 @@ namespace AffairsSystem
             return da;            
         }
 
-        // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED READER!
+        //METHOD TO USE FOR QUERIES THAT EXTRACTS DATA WITH READER!
         public SqlDataReader ExecuteGetSqlReader(string sqlQuery)
         {
             con.Close();            
@@ -86,7 +86,7 @@ namespace AffairsSystem
 
 
 
-        // SUB-SQL-METODER:
+        // SUB-SQL-METHODS:
         
 
         // GET ALL PRODUCTS (NR, NAME, OUTPRICE)
@@ -172,6 +172,27 @@ namespace AffairsSystem
             ExecuteSetSqlQuery("insert into salesline values (" + productNr + "," + salesNumber + "," + amount + ")");
         }
 
+        //SELECT SALESPERSON WITH HIGHEST/LOWEST SALES
+
+        public SqlDataAdapter GetHighestSales()
+        {
+            return ExecuteGetSqlAdapter("select a.spNr, firstname, lastname, count(*) as [Amount of sales] from salesperson a join sales b " + 
+                "on a.spNr = b.spNr group by a.spNr, firstname, lastname order by count(*) desc");
+        }
+
+        // SELECT TOP 1 SALESPERSON WITH THE HIGHEST SALE
+        public SqlDataAdapter GetTopOneSalesPerson()
+        {
+            return ExecuteGetSqlAdapter("select top 1 firstname, lastname, salesNr, max(totalprice) as [Total Price]from salesperson a join sales b" +
+                "on a.spNr = b.spNr group by firstname, lastname, totalprice, salesNr order by totalprice desc");
+        }
+
+        //SELECT MOST SOLD PRUDUCT AND THE PROFIT OF THIS PRODUCT
+        public SqlDataAdapter GetTopProductSale()
+        {
+            return ExecuteGetSqlAdapter("select a.productNr, productName, sum(a.amount) as [Total Sales], (sum(a.amount * productOutPrice) - sum(a.amount * productInPrice)) as [Difference]" +
+                "from salesline a join product p on a.productNr = p.productNr group by a.productNr, productName");
+        }
 
     }
 }

@@ -108,7 +108,26 @@ namespace AffairsSystem
         {
             dal.UpdateProductAmount(amount, productNr);
         }
+        //SELECT SALESPERSON WITH HIGHEST/LOWEST SALES
+        public SqlDataAdapter GetHighestSales()
+        {
+            da = dal.GetHighestSales();
+            return da;
+        }
+        //SELECT TOP 1 SALESPERSON WITH THE HIGHEST SALE
+        public SqlDataAdapter GetTopOneSalesPerson()
+        {
+            da = dal.GetTopOneSalesPerson();
+            return da;
+        }
+        //SELECT MOST SOLD PRUDUCT AND THE PROFIT OF THIS PRODUCT
+        public SqlDataAdapter GetTopProductSale()
+        {
+            da = dal.GetTopProductSale();
+                return da;
+        }
 
+        
         
     }
 }
