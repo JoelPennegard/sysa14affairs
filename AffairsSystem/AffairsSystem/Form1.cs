@@ -13,21 +13,24 @@ namespace AffairsSystem
     public partial class Form1 : Form
     {
         private string spNr = "";
+        private Controller controller;
 
-        public Form1()
+        
+        public Form1(string spNr, Controller controller, Boolean Admin)
         {
             InitializeComponent();
-        }
-        public Form1(string spNr)
-        {
-            InitializeComponent();
+            this.controller = controller;
             this.spNr = spNr;
-            lblLoggedInAs.Text = "Logged in as: " + spNr;
+            
+
+            if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
+            else { tabControl.Enabled = false; lblLoggedInAs.Text = "Logged in as: " + spNr; }
             
         }
-        private string spNR{
+        private string SpNR{
             get { return spNr; }
-            set { spNR = value;}
+            set { this.spNr = value;}
+
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
