@@ -63,11 +63,12 @@ namespace AffairsSystem
 
         // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED ADAPTER!
         public SqlDataAdapter ExecuteGetSqlAdapter(string sqlQuery)
-        {
+        { 
+            con.Close(); 
             cmd = new SqlCommand(sqlQuery, con);
             con.Open();
             da = new SqlDataAdapter(cmd); 
-            con.Close();           
+                      
             return da;
             
                        
