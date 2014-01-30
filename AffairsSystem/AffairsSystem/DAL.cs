@@ -47,7 +47,7 @@ namespace AffairsSystem
             }
             else { }
 
-            MessageBox.Show("Konstruktorn i DAL hälsar att detta är din connectionstring: \n \n " + connectionString + " \n \n det är bara att klicka OK så kommer du vidare");
+            //MessageBox.Show("Konstruktorn i DAL hälsar att detta är din connectionstring: \n \n " + connectionString + " \n \n det är bara att klicka OK så kommer du vidare");
             con = new SqlConnection(connectionString);
 
         }
@@ -63,12 +63,15 @@ namespace AffairsSystem
 
         //METHOD TO USE FOR QUERIES THAT EXTRACTS DATA WITH ADAPTER!
         public SqlDataAdapter ExecuteGetSqlAdapter(string sqlQuery)
-        {
+        { 
+            con.Close(); 
             cmd = new SqlCommand(sqlQuery, con);
             con.Open();
-            da = new SqlDataAdapter(cmd);
-            con.Close();
-            return da;            
+            da = new SqlDataAdapter(cmd); 
+                      
+            return da;
+            
+                       
         }
 
         //METHOD TO USE FOR QUERIES THAT EXTRACTS DATA WITH READER!

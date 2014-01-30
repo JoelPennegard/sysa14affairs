@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 namespace AffairsSystem
 {
     
-    class Controller
+    public class Controller
     {
         DAL dal;
         SqlDataAdapter da;
