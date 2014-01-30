@@ -30,8 +30,15 @@ namespace AffairsSystem
         {
             string spNr = textBoxspNr.Text;
             SqlDataReader da = controller.SearchSalesPerson(spNr);
-            Utility.CheckSalesPerson(da);
-           
+            string spNr2 = Utility.CheckSalesPerson(da);
+
+            if (spNr.Equals(spNr2))
+            {
+                Form Form1 = new Form();
+                Form1.Show();
+                this.Hide();
+            }
+            
 
         }
 
