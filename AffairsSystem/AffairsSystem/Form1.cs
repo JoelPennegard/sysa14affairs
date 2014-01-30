@@ -22,6 +22,9 @@ namespace AffairsSystem
             InitializeComponent();
             this.controller = controller;
             this.spNr = spNr;
+            FillProductTable();
+            FillProductTableAdmin();
+
             
           
             
@@ -80,6 +83,13 @@ namespace AffairsSystem
         {
 
         }
+
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            FillProductTable();
+        }
+
         //FILL PRODUCT TABLE
         private void FillProductTable()
         {
@@ -87,11 +97,16 @@ namespace AffairsSystem
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewProductList.DataSource = data;
+           
         }
 
-        private void button3_Click_1(object sender, EventArgs e)
+        //FILL PRODUCT TABLE ADMIN
+        private void FillProductTableAdmin()
         {
-            FillProductTable();
+            SqlDataAdapter da = controller.GetAllProducts();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewPa.DataSource = data;
         }
 
 
