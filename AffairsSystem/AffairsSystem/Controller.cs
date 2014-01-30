@@ -70,9 +70,9 @@ namespace AffairsSystem
         }
 
         // SEARCH PRODUCT IN TILL (NOT PRODUCTINPRICE)
-        public SqlDataAdapter SearchProductTill(int productNr, string productName, double productOutPrice, int amount)
+        public SqlDataAdapter SearchProductTill(string productNr, string productName, string productOutPrice)
         {
-            da = dal.SearchProductTill(productNr, productName, productOutPrice, amount);
+            da = dal.SearchProductTill(productNr, productName, productOutPrice);
             return da;
         }
         //SEARCH SALES PERSON ON ALL ATTRIBUTES

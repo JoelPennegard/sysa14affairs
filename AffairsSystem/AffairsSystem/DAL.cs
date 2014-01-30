@@ -119,10 +119,11 @@ namespace AffairsSystem
         }
         
         // SEARCH PRODUCT IN TILL (NOT PRODUCTINPRICE)
-        public SqlDataAdapter SearchProductTill(int productNr, string productName, double productOutPrice, int amount)
+        public SqlDataAdapter SearchProductTill(string productNr, string productName, string productOutPrice)
         {
-            return ExecuteGetSqlAdapter("select * from product where productNr like '%" + productNr + "%' or productName like '%" + productName + 
-                "%' or productOutPrice like '%" + productOutPrice + "%' or amount like '%" + amount + "%'");
+            return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product where productNr like '%" + 
+                productNr + "%' or productName like '%" + productName + 
+                "%' or productOutPrice like '%" + productOutPrice + "%'");
         }
       
         // SEARCH PRODUCT ALL ATTRIBUTES

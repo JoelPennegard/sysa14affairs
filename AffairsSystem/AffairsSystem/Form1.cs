@@ -132,5 +132,29 @@ namespace AffairsSystem
             Application.Exit();
         }
 
+        private void textBoxSearchProduct_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void buttonSearchProduct_Click(object sender, EventArgs e)
+        {
+            string productNr = textBoxSearchProduct.Text;
+            string productName = textBoxSearchProduct.Text;
+            string productOutPrice = textBoxSearchProduct.Text;
+            
+                SqlDataAdapter da = controller.SearchProductTill(productNr, productName, productOutPrice);
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewProductList.DataSource = data;
+            
+          
+        }
+
     }
 }
