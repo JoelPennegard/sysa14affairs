@@ -24,7 +24,12 @@ namespace AffairsSystem
             
 
             if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
-            else { tabControl.Enabled = false; lblLoggedInAs.Text = "Logged in as: " + spNr; }
+            else
+            {
+                tabControl.Controls.Remove(tabPageEmployee);
+                tabControl.Controls.Remove(tabPageProduct);
+                tabControl.Controls.Remove(tabPageStatistics);
+                lblLoggedInAs.Text = "Logged in as: " + spNr; }
             
         }
         private string SpNR{
@@ -76,6 +81,19 @@ namespace AffairsSystem
         private void Form1_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            LogIn l = new LogIn();
+            l.Show();
+            this.Dispose();
+        }
+
+        private void exitToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Application.Exit();
         }
     }
 }
