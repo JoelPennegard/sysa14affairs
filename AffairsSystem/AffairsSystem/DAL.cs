@@ -47,7 +47,7 @@ namespace AffairsSystem
             }
             else { }
 
-            MessageBox.Show("Konstruktorn i DAL hälsar att detta är din connectionstring: \n \n " + connectionString + " \n \n det är bara att klicka OK så kommer du vidare");
+            //MessageBox.Show("Konstruktorn i DAL hälsar att detta är din connectionstring: \n \n " + connectionString + " \n \n det är bara att klicka OK så kommer du vidare");
             con = new SqlConnection(connectionString);
 
         }
