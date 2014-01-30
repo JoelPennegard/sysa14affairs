@@ -21,7 +21,7 @@ namespace AffairsSystem
             InitializeComponent();
             this.controller = controller;
             this.spNr = spNr;
-            MessageBox.Show("admin: " + Admin);
+            
             
 
             if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
@@ -76,6 +76,17 @@ namespace AffairsSystem
 
         private void Form1_Load(object sender, EventArgs e)
         {
+
+        }
+
+        private void Logout_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void Exit_Click(object sender, EventArgs e)
+        {
+                 
 
         }
     }

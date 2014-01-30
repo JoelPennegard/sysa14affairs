@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace AffairsSystem
 {
@@ -11,13 +12,17 @@ namespace AffairsSystem
     {
         public static Boolean Check(SqlDataReader dr)
         {
-            string adminstring = "";
             
+            String adminString = "";
             while (dr.Read())
             {
-                adminstring = dr.GetString(4); 
+               
+                adminString = dr.GetString(4);
+                
+                                
+                
             }
-            if(adminstring.Equals("1"))
+            if (adminString.Equals("1"))
             {
                 return true;
             }
@@ -25,7 +30,6 @@ namespace AffairsSystem
             {
                 return false;
             }
-            
-        }
+       }
     }
 }

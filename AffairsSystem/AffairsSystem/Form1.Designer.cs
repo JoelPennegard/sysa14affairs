@@ -113,9 +113,9 @@
             this.buttonTopCombos = new System.Windows.Forms.Button();
             this.buttonTopSellers = new System.Windows.Forms.Button();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.Logout = new System.Windows.Forms.ToolStripMenuItem();
+            this.Exit = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -1047,17 +1047,25 @@
             // fileToolStripMenuItem
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.logoutToolStripMenuItem,
-            this.exitToolStripMenuItem});
+            this.Logout,
+            this.Exit});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
             this.fileToolStripMenuItem.Text = "File";
             // 
-            // exitToolStripMenuItem
+            // Logout
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.Logout.Name = "Logout";
+            this.Logout.Size = new System.Drawing.Size(152, 22);
+            this.Logout.Text = "Logout";
+            this.Logout.Click += new System.EventHandler(this.Logout_Click);
+            // 
+            // Exit
+            // 
+            this.Exit.Name = "Exit";
+            this.Exit.Size = new System.Drawing.Size(152, 22);
+            this.Exit.Text = "Exit";
+            this.Exit.Click += new System.EventHandler(this.Exit_Click);
             // 
             // menuStrip1
             // 
@@ -1071,12 +1079,6 @@
             this.menuStrip1.Text = "menuStrip1";
             this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.logoutToolStripMenuItem.Text = "Logout";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1087,6 +1089,7 @@
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl.ResumeLayout(false);
@@ -1118,7 +1121,7 @@
         private System.Windows.Forms.TabPage tabPageEmployee;
         private System.Windows.Forms.TabPage tabPageProduct;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Exit;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.TabPage tabPageStatistics;
         private System.Windows.Forms.DataGridView dataGridViewProductList;
@@ -1200,7 +1203,7 @@
         private System.Windows.Forms.Button buttonEaClearAll;
         private System.Windows.Forms.Button buttonPaClearAll;
         private System.Windows.Forms.Label lblLoggedInAs;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem Logout;
 
 
     }
