@@ -43,7 +43,6 @@ namespace AffairsSystem
             }
             else
             {
-                MessageBox.Show("du är reggad mannen, välkommen in i systemet!");
                 return clear;
             }
         }

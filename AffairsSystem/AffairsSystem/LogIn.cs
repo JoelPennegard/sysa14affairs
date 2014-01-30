@@ -34,7 +34,7 @@ namespace AffairsSystem
 
             if (spNr.Equals(spNr2))
             {
-                Form Form1 = new Form();
+                Form1 Form1 = new Form1();
                 Form1.Show();
                 this.Hide();
             }
