@@ -31,10 +31,11 @@ namespace AffairsSystem
             string spNr = textBoxspNr.Text;
             SqlDataReader da = controller.SearchSalesPerson(spNr);
             string spNr2 = Utility.CheckSalesPerson(da);
+            Boolean Admin = UtilityAdminCheck.Check(da);
 
             if (spNr.Equals(spNr2))
             {
-                Form1 Form1 = new Form1(spNr);
+                Form1 Form1 = new Form1(spNr, controller, Admin);
                 Form1.Show();
                 this.Hide();
             }
