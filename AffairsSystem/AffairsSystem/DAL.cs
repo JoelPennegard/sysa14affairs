@@ -10,7 +10,11 @@ namespace AffairsSystem
 {
     class DAL
     {
+<<<<<<< HEAD
         SqlConnection con;
+=======
+        SqlConnection con = new SqlConnection("Data Source=LUDVIGSBÄRBARA;Initial Catalog=affAIRs;Integrated Security=True");
+>>>>>>> 0ea00ed06497e52d15864b40af24180e2e9fdebc
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader dr;
@@ -166,11 +170,13 @@ namespace AffairsSystem
             ExecuteSetSqlQuery("insert into product values (getdate(), '" + spNr + "'," + totalPrice + ")");
         }
 
+
         //CREATE NEW SALESLINE
         public void SetSalesLine(int productNr, int salesNumber, int amount)
         {
             ExecuteSetSqlQuery("insert into salesline values (" + productNr + "," + salesNumber + "," + amount + ")");
         }
+
 
     }
 }

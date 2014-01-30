@@ -9,14 +9,6 @@ namespace AffairsSystem
     static class Program
     {
 
-        /// Ändring 17:26
-
-        //Nu ändrade Ludde
-        /// Ändring 17:15
-
-        /// <summary>
-        /// The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {

@@ -16,7 +16,7 @@ namespace AffairsSystem
         {
             if (string.IsNullOrEmpty(input))
             {
-                MessageBox.Show("Du har inte skrivit in något.");
+                MessageBox.Show("Please fill out all fields.", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return string.Empty;
             }
             else
@@ -29,20 +29,22 @@ namespace AffairsSystem
         public static string CheckSalesPerson(SqlDataReader dr)
         {
             Boolean noExist = true;
+            String clear = null;
             while (dr.Read())
             {
-                dr.ToString();
+                clear = dr.GetString(0);
                 noExist = false;
+                
             }
             if (noExist)
             {
-                MessageBox.Show("Not in the register.");
+                MessageBox.Show("Not in the register.", "Unregistered Sales Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
             }
             else
             {
                 MessageBox.Show("du är reggad mannen, välkommen in i systemet!");
-                return null;
+                return clear;
             }
         }
 
