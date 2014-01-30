@@ -11,19 +11,21 @@ namespace AffairsSystem
     {
         public static Boolean Check(SqlDataReader dr)
         {
-            Boolean Admin = false;
+            string adminstring = "";
+            
             while (dr.Read())
-            {                
-                Admin = dr.GetBoolean(4);                               
+            {
+                adminstring = dr.GetString(4); 
             }
-            if (Admin)
+            if(adminstring.Equals("1"))
             {
                 return true;
             }
             else
             {
                 return false;
-            }                       
+            }
+            
         }
     }
 }
