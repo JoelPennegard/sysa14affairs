@@ -39,9 +39,9 @@ namespace AffairsSystem
             {
                 connectionString = "Data Source=LUDVIGSBÄRBARA;Initial Catalog=affAIRsystem;Integrated Security=True";
             }
-            else if (computerName.Equals("MARTINSDATORNAMN"))
+            else if (computerName.Equals("MALEXANDER"))
             {
-                connectionString = "";
+                connectionString = "Data Source=MALEXANDER;Initial Catalog=Affairs;Integrated Security=True";
             }
             else if (computerName.Equals("ROBINSDATORNNAMN"))
             {
@@ -76,7 +76,7 @@ namespace AffairsSystem
         // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED READER!
         public SqlDataReader ExecuteGetSqlReader(string sqlQuery)
         {
-                        
+            con.Close();            
             cmd = new SqlCommand(sqlQuery, con);
             con.Open();
             dr = cmd.ExecuteReader();
