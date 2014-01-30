@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace AffairsSystem
 {
@@ -22,9 +23,11 @@ namespace AffairsSystem
             this.controller = controller;
             this.spNr = spNr;
             
+          
+            
 
-            if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
-            else { tabControl.Enabled = false; lblLoggedInAs.Text = "Logged in as: " + spNr; }
+           // if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
+           //else { tabControl.Enabled = false; lblLoggedInAs.Text = "Logged in as: " + spNr; }
             
         }
         private string SpNR{
@@ -77,5 +80,20 @@ namespace AffairsSystem
         {
 
         }
+        //FILL PRODUCT TABLE
+        private void FillProductTable()
+        {
+            SqlDataAdapter da = controller.GetAllProducts();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewProductList.DataSource = data;
+        }
+
+        private void button3_Click_1(object sender, EventArgs e)
+        {
+            FillProductTable();
+        }
+
+
     }
 }

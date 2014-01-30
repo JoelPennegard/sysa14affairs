@@ -66,9 +66,11 @@ namespace AffairsSystem
         {
             cmd = new SqlCommand(sqlQuery, con);
             con.Open();
-            da = new SqlDataAdapter(cmd);
-            con.Close();
-            return da;            
+            da = new SqlDataAdapter(cmd); 
+            con.Close();           
+            return da;
+            
+                       
         }
 
         // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED READER!
