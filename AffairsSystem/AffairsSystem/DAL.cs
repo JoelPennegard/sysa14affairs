@@ -27,22 +27,23 @@ namespace AffairsSystem
         // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED ADAPTER!
         public SqlDataAdapter ExecuteGetSqlAdapter(string sqlQuery)
         {
-            cmd = new SqlCommand();
-            cmd.CommandText = sqlQuery;
+            cmd = new SqlCommand(sqlQuery, con);
+            con.Open();
             da = new SqlDataAdapter(cmd);
-            return da;
+            con.Close();
+            return da;            
         }
 
         // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED READER!
         public SqlDataReader ExecuteGetSqlReader(string sqlQuery)
         {
-            con.Close();
-            con.Open();
+                        
             cmd = new SqlCommand(sqlQuery, con);
+            con.Open();
             dr = cmd.ExecuteReader();
+            con.Close();
             return dr;
-            // måste på nåt sätt använda con.Close() här.....
-            
+                        
         }
 
        
