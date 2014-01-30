@@ -4,16 +4,56 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
+using System.Windows.Forms;
 
 namespace AffairsSystem
 {
     class DAL
     {
-        SqlConnection con = new SqlConnection("Data Source=MAX-DATOR;Initial Catalog=affAIRsystem;Integrated Security=True");
+
+        SqlConnection con;
+
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader dr;
 
+        
+        /// <summary>
+        /// A constructor that checks the name of the current computer and changes the connection-string 
+        /// accordingly 
+        /// </summary>
+        public DAL()
+        {
+            string computerName = SystemInformation.ComputerName;
+            string connectionString = "";
+
+            if(computerName.Equals("JOEL-DATOR"))
+            {
+                connectionString =  "Data Source=JOEL-DATOR;Initial Catalog=affAIRsystem;Integrated Security=True";
+            }
+            else if(computerName.Equals("MAX-DATOR"))
+            {
+                connectionString =  "Data Source=MAX-DATOR;Initial Catalog=affAIRsystem;Integrated Security=True";
+            }
+            else if (computerName.Equals("LUDVIGSBÄRBARA"))
+            {
+                connectionString = "Data Source=LUDVIGSBÄRBARA;Initial Catalog=affAIRsystem;Integrated Security=True";
+            }
+            else if (computerName.Equals("MARTINSDATORNAMN"))
+            {
+                connectionString = "";
+            }
+            else if (computerName.Equals("ROBINSDATORNNAMN"))
+            {
+                connectionString = "";
+            }
+            else { }
+
+            MessageBox.Show("Konstruktorn i DAL hälsar att detta är din connectionstring: \n \n " + connectionString + " \n \n det är bara att klicka OK så kommer du vidare");
+            con = new SqlConnection(connectionString);
+
+        }
+        
         //EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI REGISTRERAR DATA!
         public void ExecuteSetSqlQuery(string sqlQuery)
         {
@@ -26,25 +66,26 @@ namespace AffairsSystem
         // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED ADAPTER!
         public SqlDataAdapter ExecuteGetSqlAdapter(string sqlQuery)
         {
-            cmd = new SqlCommand();
-            cmd.CommandText = sqlQuery;
+            cmd = new SqlCommand(sqlQuery, con);
+            con.Open();
             da = new SqlDataAdapter(cmd);
-            return da;
+            con.Close();
+            return da;            
         }
 
         // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED READER!
         public SqlDataReader ExecuteGetSqlReader(string sqlQuery)
         {
-            con.Close();
-            con.Open();
+                        
             cmd = new SqlCommand(sqlQuery, con);
+            con.Open();
             dr = cmd.ExecuteReader();
+            con.Close();
             return dr;
-            // måste på nåt sätt använda con.Close() här.....
-            
+                        
         }
 
-
+       
 
 
 
@@ -127,11 +168,13 @@ namespace AffairsSystem
             ExecuteSetSqlQuery("insert into product values (getdate(), '" + spNr + "'," + totalPrice + ")");
         }
 
+
         //CREATE NEW SALESLINE
         public void SetSalesLine(int productNr, int salesNumber, int amount)
         {
             ExecuteSetSqlQuery("insert into salesline values (" + productNr + "," + salesNumber + "," + amount + ")");
         }
+
 
     }
 }
