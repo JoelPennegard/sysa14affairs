@@ -34,7 +34,6 @@ namespace AffairsSystem
             {
                 clear = dr.GetString(0);
                 noExist = false;
-                
             }
             if (noExist)
             {
@@ -43,7 +42,6 @@ namespace AffairsSystem
             }
             else
             {
-                MessageBox.Show("du är reggad mannen, välkommen in i systemet!");
                 return clear;
             }
         }
