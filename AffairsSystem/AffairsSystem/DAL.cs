@@ -10,11 +10,8 @@ namespace AffairsSystem
 {
     class DAL
     {
-<<<<<<< HEAD
+
         SqlConnection con;
-=======
-        SqlConnection con = new SqlConnection("Data Source=LUDVIGSBÄRBARA;Initial Catalog=affAIRs;Integrated Security=True");
->>>>>>> 0ea00ed06497e52d15864b40af24180e2e9fdebc
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader dr;
@@ -39,11 +36,11 @@ namespace AffairsSystem
             }
             else if (computerName.Equals("LUDVIGSBÄRBARA"))
             {
-                connectionString = "Data Source=LUDVIGSBÄRBARA;Initial Catalog=affAIRsystem;Integrated Security=True";
+                connectionString = "Data Source=LUDVIGSBÄRBARA;Initial Catalog=affAIRs;Integrated Security=True";
             }
-            else if (computerName.Equals("MARTINSDATORNAMN"))
+            else if (computerName.Equals("MALEXANDER"))
             {
-                connectionString = "";
+                connectionString = "Data Source=MALEXANDER;Initial Catalog=affAIRs;Integrated Security=True";
             }
             else if (computerName.Equals("ROBINSDATORNNAMN"))
             {
@@ -78,11 +75,10 @@ namespace AffairsSystem
         // EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI HÄMTAR DATA MED READER!
         public SqlDataReader ExecuteGetSqlReader(string sqlQuery)
         {
-                        
+            con.Close();       
             cmd = new SqlCommand(sqlQuery, con);
             con.Open();
             dr = cmd.ExecuteReader();
-            con.Close();
             return dr;
                         
         }
