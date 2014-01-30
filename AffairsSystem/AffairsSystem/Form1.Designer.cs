@@ -30,6 +30,9 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageSale = new System.Windows.Forms.TabPage();
+            this.buttonClearAll = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.labelSearchProduct = new System.Windows.Forms.Label();
             this.buttonSearchProduct = new System.Windows.Forms.Button();
             this.textBoxSearchProduct = new System.Windows.Forms.TextBox();
@@ -59,31 +62,32 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewProductList = new System.Windows.Forms.DataGridView();
             this.tabPageEmployee = new System.Windows.Forms.TabPage();
-            this.tabPageProduct = new System.Windows.Forms.TabPage();
-            this.tabPageStatistics = new System.Windows.Forms.TabPage();
-            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.labelSearchSP = new System.Windows.Forms.Label();
-            this.buttonSearchSP = new System.Windows.Forms.Button();
-            this.textBoxSearchSP = new System.Windows.Forms.TextBox();
-            this.dataGridViewSP = new System.Windows.Forms.DataGridView();
-            this.buttonEaNew = new System.Windows.Forms.Button();
-            this.buttonEaUpdate = new System.Windows.Forms.Button();
-            this.buttonEaDelete = new System.Windows.Forms.Button();
-            this.textBoxEaSpNr = new System.Windows.Forms.TextBox();
-            this.textBoxEaFName = new System.Windows.Forms.TextBox();
-            this.textBoxEaPhoneNr = new System.Windows.Forms.TextBox();
-            this.textBoxEaLName = new System.Windows.Forms.TextBox();
-            this.labelEaSpNr = new System.Windows.Forms.Label();
-            this.labelEaFName = new System.Windows.Forms.Label();
-            this.labelEaLName = new System.Windows.Forms.Label();
-            this.labelEaPhoneNr = new System.Windows.Forms.Label();
-            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.buttonEaClearAll = new System.Windows.Forms.Button();
             this.labelSearchDeletedSP = new System.Windows.Forms.Label();
             this.buttonSearchDeletedSP = new System.Windows.Forms.Button();
             this.textBoxSearchDeletedSP = new System.Windows.Forms.TextBox();
             this.dataGridViewDeletedSP = new System.Windows.Forms.DataGridView();
+            this.splitter1 = new System.Windows.Forms.Splitter();
+            this.labelEaPhoneNr = new System.Windows.Forms.Label();
+            this.labelEaLName = new System.Windows.Forms.Label();
+            this.labelEaFName = new System.Windows.Forms.Label();
+            this.labelEaSpNr = new System.Windows.Forms.Label();
+            this.textBoxEaLName = new System.Windows.Forms.TextBox();
+            this.textBoxEaPhoneNr = new System.Windows.Forms.TextBox();
+            this.textBoxEaFName = new System.Windows.Forms.TextBox();
+            this.textBoxEaSpNr = new System.Windows.Forms.TextBox();
+            this.buttonEaDelete = new System.Windows.Forms.Button();
+            this.buttonEaUpdate = new System.Windows.Forms.Button();
+            this.buttonEaNew = new System.Windows.Forms.Button();
+            this.labelSearchSP = new System.Windows.Forms.Label();
+            this.buttonSearchSP = new System.Windows.Forms.Button();
+            this.textBoxSearchSP = new System.Windows.Forms.TextBox();
+            this.dataGridViewSP = new System.Windows.Forms.DataGridView();
+            this.tabPageProduct = new System.Windows.Forms.TabPage();
+            this.buttonPaClearAll = new System.Windows.Forms.Button();
+            this.dataGridViewDeletedPa = new System.Windows.Forms.DataGridView();
+            this.labelPaAmount = new System.Windows.Forms.Label();
+            this.textBoxPaAmount = new System.Windows.Forms.TextBox();
             this.labelSearchDeletedPa = new System.Windows.Forms.Label();
             this.buttonSearchDeletedPa = new System.Windows.Forms.Button();
             this.textBoxSearchDeletedPa = new System.Windows.Forms.TextBox();
@@ -102,31 +106,28 @@
             this.buttonSearchPa = new System.Windows.Forms.Button();
             this.textBoxSearchPa = new System.Windows.Forms.TextBox();
             this.dataGridViewPa = new System.Windows.Forms.DataGridView();
-            this.labelPaAmount = new System.Windows.Forms.Label();
-            this.textBoxPaAmount = new System.Windows.Forms.TextBox();
-            this.dataGridViewDeletedPa = new System.Windows.Forms.DataGridView();
-            this.buttonTopSellers = new System.Windows.Forms.Button();
-            this.buttonTopCombos = new System.Windows.Forms.Button();
-            this.buttonTopProduct = new System.Windows.Forms.Button();
+            this.tabPageStatistics = new System.Windows.Forms.TabPage();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.buttonClearAll = new System.Windows.Forms.Button();
-            this.buttonEaClearAll = new System.Windows.Forms.Button();
-            this.buttonPaClearAll = new System.Windows.Forms.Button();
+            this.buttonTopProduct = new System.Windows.Forms.Button();
+            this.buttonTopCombos = new System.Windows.Forms.Button();
+            this.buttonTopSellers = new System.Windows.Forms.Button();
+            this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.lblLoggedInAs = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductList)).BeginInit();
             this.tabPageEmployee.SuspendLayout();
-            this.tabPageProduct.SuspendLayout();
-            this.tabPageStatistics.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedSP)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSP)).BeginInit();
+            this.tabPageProduct.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedPa)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).BeginInit();
+            this.tabPageStatistics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -136,7 +137,7 @@
             this.tabControl.Controls.Add(this.tabPageProduct);
             this.tabControl.Controls.Add(this.tabPageStatistics);
             this.tabControl.Location = new System.Drawing.Point(0, 25);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1142, 501);
@@ -144,6 +145,7 @@
             // 
             // tabPageSale
             // 
+            this.tabPageSale.Controls.Add(this.lblLoggedInAs);
             this.tabPageSale.Controls.Add(this.buttonClearAll);
             this.tabPageSale.Controls.Add(this.button3);
             this.tabPageSale.Controls.Add(this.button2);
@@ -176,14 +178,44 @@
             this.tabPageSale.Controls.Add(this.button1);
             this.tabPageSale.Controls.Add(this.dataGridViewProductList);
             this.tabPageSale.Location = new System.Drawing.Point(4, 22);
-            this.tabPageSale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageSale.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageSale.Name = "tabPageSale";
-            this.tabPageSale.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageSale.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageSale.Size = new System.Drawing.Size(1134, 475);
             this.tabPageSale.TabIndex = 0;
             this.tabPageSale.Text = "Sale menu";
             this.tabPageSale.UseVisualStyleBackColor = true;
             this.tabPageSale.Click += new System.EventHandler(this.tabPage1_Click);
+            // 
+            // buttonClearAll
+            // 
+            this.buttonClearAll.Location = new System.Drawing.Point(750, 422);
+            this.buttonClearAll.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonClearAll.Name = "buttonClearAll";
+            this.buttonClearAll.Size = new System.Drawing.Size(104, 42);
+            this.buttonClearAll.TabIndex = 44;
+            this.buttonClearAll.Text = "Clear all fields";
+            this.buttonClearAll.UseVisualStyleBackColor = true;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(219, 54);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(69, 42);
+            this.button3.TabIndex = 43;
+            this.button3.Text = "Get all";
+            this.button3.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(6, 422);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(104, 42);
+            this.button2.TabIndex = 42;
+            this.button2.Text = "My history";
+            this.button2.UseVisualStyleBackColor = true;
             // 
             // labelSearchProduct
             // 
@@ -198,7 +230,7 @@
             // buttonSearchProduct
             // 
             this.buttonSearchProduct.Location = new System.Drawing.Point(150, 54);
-            this.buttonSearchProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSearchProduct.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchProduct.Name = "buttonSearchProduct";
             this.buttonSearchProduct.Size = new System.Drawing.Size(64, 42);
             this.buttonSearchProduct.TabIndex = 40;
@@ -208,7 +240,7 @@
             // textBoxSearchProduct
             // 
             this.textBoxSearchProduct.Location = new System.Drawing.Point(6, 54);
-            this.textBoxSearchProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSearchProduct.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchProduct.Multiline = true;
             this.textBoxSearchProduct.Name = "textBoxSearchProduct";
             this.textBoxSearchProduct.Size = new System.Drawing.Size(140, 43);
@@ -217,7 +249,7 @@
             // textBoxNumPad
             // 
             this.textBoxNumPad.Location = new System.Drawing.Point(648, 195);
-            this.textBoxNumPad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNumPad.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNumPad.Multiline = true;
             this.textBoxNumPad.Name = "textBoxNumPad";
             this.textBoxNumPad.Size = new System.Drawing.Size(206, 43);
@@ -226,7 +258,7 @@
             // buttonDELETE
             // 
             this.buttonDELETE.Location = new System.Drawing.Point(774, 240);
-            this.buttonDELETE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDELETE.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDELETE.Name = "buttonDELETE";
             this.buttonDELETE.Size = new System.Drawing.Size(80, 41);
             this.buttonDELETE.TabIndex = 37;
@@ -236,7 +268,7 @@
             // buttonENTER
             // 
             this.buttonENTER.Location = new System.Drawing.Point(774, 286);
-            this.buttonENTER.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonENTER.Margin = new System.Windows.Forms.Padding(2);
             this.buttonENTER.Name = "buttonENTER";
             this.buttonENTER.Size = new System.Drawing.Size(80, 132);
             this.buttonENTER.TabIndex = 36;
@@ -246,7 +278,7 @@
             // buttonNPDECIMAL
             // 
             this.buttonNPDECIMAL.Location = new System.Drawing.Point(732, 377);
-            this.buttonNPDECIMAL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNPDECIMAL.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNPDECIMAL.Name = "buttonNPDECIMAL";
             this.buttonNPDECIMAL.Size = new System.Drawing.Size(38, 41);
             this.buttonNPDECIMAL.TabIndex = 35;
@@ -256,7 +288,7 @@
             // buttonNP0
             // 
             this.buttonNP0.Location = new System.Drawing.Point(648, 377);
-            this.buttonNP0.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP0.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP0.Name = "buttonNP0";
             this.buttonNP0.Size = new System.Drawing.Size(80, 41);
             this.buttonNP0.TabIndex = 34;
@@ -266,7 +298,7 @@
             // buttonNP9
             // 
             this.buttonNP9.Location = new System.Drawing.Point(732, 240);
-            this.buttonNP9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP9.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP9.Name = "buttonNP9";
             this.buttonNP9.Size = new System.Drawing.Size(38, 41);
             this.buttonNP9.TabIndex = 33;
@@ -276,7 +308,7 @@
             // buttonNP8
             // 
             this.buttonNP8.Location = new System.Drawing.Point(690, 240);
-            this.buttonNP8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP8.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP8.Name = "buttonNP8";
             this.buttonNP8.Size = new System.Drawing.Size(38, 41);
             this.buttonNP8.TabIndex = 32;
@@ -286,7 +318,7 @@
             // buttonNP7
             // 
             this.buttonNP7.Location = new System.Drawing.Point(648, 240);
-            this.buttonNP7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP7.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP7.Name = "buttonNP7";
             this.buttonNP7.Size = new System.Drawing.Size(38, 41);
             this.buttonNP7.TabIndex = 31;
@@ -296,7 +328,7 @@
             // buttonNP6
             // 
             this.buttonNP6.Location = new System.Drawing.Point(732, 286);
-            this.buttonNP6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP6.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP6.Name = "buttonNP6";
             this.buttonNP6.Size = new System.Drawing.Size(38, 41);
             this.buttonNP6.TabIndex = 30;
@@ -306,7 +338,7 @@
             // buttonNP5
             // 
             this.buttonNP5.Location = new System.Drawing.Point(690, 286);
-            this.buttonNP5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP5.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP5.Name = "buttonNP5";
             this.buttonNP5.Size = new System.Drawing.Size(38, 41);
             this.buttonNP5.TabIndex = 29;
@@ -316,7 +348,7 @@
             // buttonNP4
             // 
             this.buttonNP4.Location = new System.Drawing.Point(648, 286);
-            this.buttonNP4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP4.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP4.Name = "buttonNP4";
             this.buttonNP4.Size = new System.Drawing.Size(38, 41);
             this.buttonNP4.TabIndex = 28;
@@ -326,7 +358,7 @@
             // buttonNP2
             // 
             this.buttonNP2.Location = new System.Drawing.Point(690, 332);
-            this.buttonNP2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP2.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP2.Name = "buttonNP2";
             this.buttonNP2.Size = new System.Drawing.Size(38, 41);
             this.buttonNP2.TabIndex = 27;
@@ -336,7 +368,7 @@
             // buttonNP3
             // 
             this.buttonNP3.Location = new System.Drawing.Point(732, 332);
-            this.buttonNP3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP3.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP3.Name = "buttonNP3";
             this.buttonNP3.Size = new System.Drawing.Size(38, 41);
             this.buttonNP3.TabIndex = 26;
@@ -346,7 +378,7 @@
             // buttonNP1
             // 
             this.buttonNP1.Location = new System.Drawing.Point(648, 332);
-            this.buttonNP1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP1.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP1.Name = "buttonNP1";
             this.buttonNP1.Size = new System.Drawing.Size(38, 41);
             this.buttonNP1.TabIndex = 25;
@@ -356,7 +388,7 @@
             // buttonNOK
             // 
             this.buttonNOK.Location = new System.Drawing.Point(786, 148);
-            this.buttonNOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNOK.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNOK.Name = "buttonNOK";
             this.buttonNOK.Size = new System.Drawing.Size(68, 42);
             this.buttonNOK.TabIndex = 13;
@@ -366,7 +398,7 @@
             // buttonUSD
             // 
             this.buttonUSD.Location = new System.Drawing.Point(786, 101);
-            this.buttonUSD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonUSD.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUSD.Name = "buttonUSD";
             this.buttonUSD.Size = new System.Drawing.Size(68, 42);
             this.buttonUSD.TabIndex = 12;
@@ -376,7 +408,7 @@
             // buttonGBP
             // 
             this.buttonGBP.Location = new System.Drawing.Point(716, 148);
-            this.buttonGBP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGBP.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGBP.Name = "buttonGBP";
             this.buttonGBP.Size = new System.Drawing.Size(65, 42);
             this.buttonGBP.TabIndex = 11;
@@ -386,7 +418,7 @@
             // buttonEURO
             // 
             this.buttonEURO.Location = new System.Drawing.Point(717, 101);
-            this.buttonEURO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEURO.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEURO.Name = "buttonEURO";
             this.buttonEURO.Size = new System.Drawing.Size(65, 42);
             this.buttonEURO.TabIndex = 10;
@@ -396,7 +428,7 @@
             // buttonDKK
             // 
             this.buttonDKK.Location = new System.Drawing.Point(648, 148);
-            this.buttonDKK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDKK.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDKK.Name = "buttonDKK";
             this.buttonDKK.Size = new System.Drawing.Size(64, 42);
             this.buttonDKK.TabIndex = 9;
@@ -406,7 +438,7 @@
             // buttonSEK
             // 
             this.buttonSEK.Location = new System.Drawing.Point(647, 101);
-            this.buttonSEK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSEK.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSEK.Name = "buttonSEK";
             this.buttonSEK.Size = new System.Drawing.Size(64, 42);
             this.buttonSEK.TabIndex = 8;
@@ -417,7 +449,7 @@
             // 
             this.dataGridViewSaleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSaleList.Location = new System.Drawing.Point(362, 101);
-            this.dataGridViewSaleList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewSaleList.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSaleList.Name = "dataGridViewSaleList";
             this.dataGridViewSaleList.RowTemplate.Height = 24;
             this.dataGridViewSaleList.Size = new System.Drawing.Size(281, 317);
@@ -426,7 +458,7 @@
             // richTextBox1
             // 
             this.richTextBox1.Location = new System.Drawing.Point(292, 238);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBox1.Name = "richTextBox1";
             this.richTextBox1.Size = new System.Drawing.Size(65, 43);
             this.richTextBox1.TabIndex = 6;
@@ -435,7 +467,7 @@
             // button
             // 
             this.button.Location = new System.Drawing.Point(292, 284);
-            this.button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button.Margin = new System.Windows.Forms.Padding(2);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(64, 42);
             this.button.TabIndex = 5;
@@ -445,7 +477,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(292, 191);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(64, 42);
             this.button1.TabIndex = 4;
@@ -456,7 +488,7 @@
             // 
             this.dataGridViewProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductList.Location = new System.Drawing.Point(6, 101);
-            this.dataGridViewProductList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewProductList.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewProductList.Name = "dataGridViewProductList";
             this.dataGridViewProductList.RowTemplate.Height = 24;
             this.dataGridViewProductList.Size = new System.Drawing.Size(281, 317);
@@ -486,90 +518,178 @@
             this.tabPageEmployee.Controls.Add(this.textBoxSearchSP);
             this.tabPageEmployee.Controls.Add(this.dataGridViewSP);
             this.tabPageEmployee.Location = new System.Drawing.Point(4, 22);
-            this.tabPageEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageEmployee.Name = "tabPageEmployee";
-            this.tabPageEmployee.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageEmployee.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageEmployee.Size = new System.Drawing.Size(1134, 475);
             this.tabPageEmployee.TabIndex = 1;
             this.tabPageEmployee.Text = "Employee administration";
             this.tabPageEmployee.UseVisualStyleBackColor = true;
             this.tabPageEmployee.Click += new System.EventHandler(this.tabPage2_Click);
             // 
-            // tabPageProduct
+            // buttonEaClearAll
             // 
-            this.tabPageProduct.Controls.Add(this.buttonPaClearAll);
-            this.tabPageProduct.Controls.Add(this.dataGridViewDeletedPa);
-            this.tabPageProduct.Controls.Add(this.labelPaAmount);
-            this.tabPageProduct.Controls.Add(this.textBoxPaAmount);
-            this.tabPageProduct.Controls.Add(this.labelSearchDeletedPa);
-            this.tabPageProduct.Controls.Add(this.buttonSearchDeletedPa);
-            this.tabPageProduct.Controls.Add(this.textBoxSearchDeletedPa);
-            this.tabPageProduct.Controls.Add(this.labelPaOutPrice);
-            this.tabPageProduct.Controls.Add(this.labelPaInPrice);
-            this.tabPageProduct.Controls.Add(this.labelPaName);
-            this.tabPageProduct.Controls.Add(this.labelPaPrNr);
-            this.tabPageProduct.Controls.Add(this.textBoxPaInPrice);
-            this.tabPageProduct.Controls.Add(this.textBoxaOutPrice);
-            this.tabPageProduct.Controls.Add(this.textBoxPaName);
-            this.tabPageProduct.Controls.Add(this.textBoxPaPrNr);
-            this.tabPageProduct.Controls.Add(this.buttonPaDelete);
-            this.tabPageProduct.Controls.Add(this.buttonPaUpdate);
-            this.tabPageProduct.Controls.Add(this.buttonPaNew);
-            this.tabPageProduct.Controls.Add(this.labelSearchPa);
-            this.tabPageProduct.Controls.Add(this.buttonSearchPa);
-            this.tabPageProduct.Controls.Add(this.textBoxSearchPa);
-            this.tabPageProduct.Controls.Add(this.dataGridViewPa);
-            this.tabPageProduct.Location = new System.Drawing.Point(4, 22);
-            this.tabPageProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPageProduct.Name = "tabPageProduct";
-            this.tabPageProduct.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPageProduct.Size = new System.Drawing.Size(1134, 475);
-            this.tabPageProduct.TabIndex = 2;
-            this.tabPageProduct.Text = "Product administration";
-            this.tabPageProduct.UseVisualStyleBackColor = true;
+            this.buttonEaClearAll.Location = new System.Drawing.Point(577, 425);
+            this.buttonEaClearAll.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEaClearAll.Name = "buttonEaClearAll";
+            this.buttonEaClearAll.Size = new System.Drawing.Size(104, 42);
+            this.buttonEaClearAll.TabIndex = 90;
+            this.buttonEaClearAll.Text = "Clear all fields";
+            this.buttonEaClearAll.UseVisualStyleBackColor = true;
             // 
-            // tabPageStatistics
+            // labelSearchDeletedSP
             // 
-            this.tabPageStatistics.BackColor = System.Drawing.Color.LightGray;
-            this.tabPageStatistics.Controls.Add(this.dataGridView1);
-            this.tabPageStatistics.Controls.Add(this.buttonTopProduct);
-            this.tabPageStatistics.Controls.Add(this.buttonTopCombos);
-            this.tabPageStatistics.Controls.Add(this.buttonTopSellers);
-            this.tabPageStatistics.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.tabPageStatistics.Location = new System.Drawing.Point(4, 22);
-            this.tabPageStatistics.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPageStatistics.Name = "tabPageStatistics";
-            this.tabPageStatistics.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.tabPageStatistics.Size = new System.Drawing.Size(1134, 475);
-            this.tabPageStatistics.TabIndex = 3;
-            this.tabPageStatistics.Text = "Statistics";
-            this.tabPageStatistics.Click += new System.EventHandler(this.tabPageStatistics_Click);
+            this.labelSearchDeletedSP.AutoSize = true;
+            this.labelSearchDeletedSP.Location = new System.Drawing.Point(401, 38);
+            this.labelSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelSearchDeletedSP.Name = "labelSearchDeletedSP";
+            this.labelSearchDeletedSP.Size = new System.Drawing.Size(215, 13);
+            this.labelSearchDeletedSP.TabIndex = 89;
+            this.labelSearchDeletedSP.Text = "Search on DELETED sales person attribute:";
             // 
-            // fileToolStripMenuItem
+            // buttonSearchDeletedSP
             // 
-            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.exitToolStripMenuItem});
-            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
-            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
-            this.fileToolStripMenuItem.Text = "File";
+            this.buttonSearchDeletedSP.Location = new System.Drawing.Point(618, 57);
+            this.buttonSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonSearchDeletedSP.Name = "buttonSearchDeletedSP";
+            this.buttonSearchDeletedSP.Size = new System.Drawing.Size(64, 42);
+            this.buttonSearchDeletedSP.TabIndex = 88;
+            this.buttonSearchDeletedSP.Text = "Search";
+            this.buttonSearchDeletedSP.UseVisualStyleBackColor = true;
             // 
-            // exitToolStripMenuItem
+            // textBoxSearchDeletedSP
             // 
-            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
-            this.exitToolStripMenuItem.Text = "Exit";
+            this.textBoxSearchDeletedSP.Location = new System.Drawing.Point(400, 57);
+            this.textBoxSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxSearchDeletedSP.Multiline = true;
+            this.textBoxSearchDeletedSP.Name = "textBoxSearchDeletedSP";
+            this.textBoxSearchDeletedSP.Size = new System.Drawing.Size(214, 43);
+            this.textBoxSearchDeletedSP.TabIndex = 87;
             // 
-            // menuStrip1
+            // dataGridViewDeletedSP
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.fileToolStripMenuItem});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
-            this.menuStrip1.Size = new System.Drawing.Size(874, 24);
-            this.menuStrip1.TabIndex = 1;
-            this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            this.dataGridViewDeletedSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDeletedSP.Location = new System.Drawing.Point(400, 104);
+            this.dataGridViewDeletedSP.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewDeletedSP.Name = "dataGridViewDeletedSP";
+            this.dataGridViewDeletedSP.RowTemplate.Height = 24;
+            this.dataGridViewDeletedSP.Size = new System.Drawing.Size(281, 317);
+            this.dataGridViewDeletedSP.TabIndex = 86;
+            // 
+            // splitter1
+            // 
+            this.splitter1.Location = new System.Drawing.Point(2, 2);
+            this.splitter1.Name = "splitter1";
+            this.splitter1.Size = new System.Drawing.Size(3, 471);
+            this.splitter1.TabIndex = 85;
+            this.splitter1.TabStop = false;
+            // 
+            // labelEaPhoneNr
+            // 
+            this.labelEaPhoneNr.AutoSize = true;
+            this.labelEaPhoneNr.Location = new System.Drawing.Point(302, 252);
+            this.labelEaPhoneNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEaPhoneNr.Name = "labelEaPhoneNr";
+            this.labelEaPhoneNr.Size = new System.Drawing.Size(79, 13);
+            this.labelEaPhoneNr.TabIndex = 67;
+            this.labelEaPhoneNr.Text = "Phone number:";
+            // 
+            // labelEaLName
+            // 
+            this.labelEaLName.AutoSize = true;
+            this.labelEaLName.Location = new System.Drawing.Point(300, 214);
+            this.labelEaLName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEaLName.Name = "labelEaLName";
+            this.labelEaLName.Size = new System.Drawing.Size(59, 13);
+            this.labelEaLName.TabIndex = 66;
+            this.labelEaLName.Text = "Last name:";
+            // 
+            // labelEaFName
+            // 
+            this.labelEaFName.AutoSize = true;
+            this.labelEaFName.Location = new System.Drawing.Point(300, 176);
+            this.labelEaFName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEaFName.Name = "labelEaFName";
+            this.labelEaFName.Size = new System.Drawing.Size(58, 13);
+            this.labelEaFName.TabIndex = 65;
+            this.labelEaFName.Text = "First name:";
+            // 
+            // labelEaSpNr
+            // 
+            this.labelEaSpNr.AutoSize = true;
+            this.labelEaSpNr.Location = new System.Drawing.Point(301, 138);
+            this.labelEaSpNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEaSpNr.Name = "labelEaSpNr";
+            this.labelEaSpNr.Size = new System.Drawing.Size(89, 13);
+            this.labelEaSpNr.TabIndex = 64;
+            this.labelEaSpNr.Text = "Personal number:";
+            // 
+            // textBoxEaLName
+            // 
+            this.textBoxEaLName.Location = new System.Drawing.Point(305, 229);
+            this.textBoxEaLName.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEaLName.Multiline = true;
+            this.textBoxEaLName.Name = "textBoxEaLName";
+            this.textBoxEaLName.Size = new System.Drawing.Size(75, 21);
+            this.textBoxEaLName.TabIndex = 57;
+            // 
+            // textBoxEaPhoneNr
+            // 
+            this.textBoxEaPhoneNr.Location = new System.Drawing.Point(305, 267);
+            this.textBoxEaPhoneNr.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEaPhoneNr.Multiline = true;
+            this.textBoxEaPhoneNr.Name = "textBoxEaPhoneNr";
+            this.textBoxEaPhoneNr.Size = new System.Drawing.Size(75, 21);
+            this.textBoxEaPhoneNr.TabIndex = 56;
+            // 
+            // textBoxEaFName
+            // 
+            this.textBoxEaFName.Location = new System.Drawing.Point(305, 191);
+            this.textBoxEaFName.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEaFName.Multiline = true;
+            this.textBoxEaFName.Name = "textBoxEaFName";
+            this.textBoxEaFName.Size = new System.Drawing.Size(75, 21);
+            this.textBoxEaFName.TabIndex = 55;
+            // 
+            // textBoxEaSpNr
+            // 
+            this.textBoxEaSpNr.Location = new System.Drawing.Point(305, 153);
+            this.textBoxEaSpNr.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEaSpNr.Multiline = true;
+            this.textBoxEaSpNr.Name = "textBoxEaSpNr";
+            this.textBoxEaSpNr.Size = new System.Drawing.Size(75, 21);
+            this.textBoxEaSpNr.TabIndex = 54;
+            // 
+            // buttonEaDelete
+            // 
+            this.buttonEaDelete.Location = new System.Drawing.Point(305, 348);
+            this.buttonEaDelete.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEaDelete.Name = "buttonEaDelete";
+            this.buttonEaDelete.Size = new System.Drawing.Size(75, 24);
+            this.buttonEaDelete.TabIndex = 53;
+            this.buttonEaDelete.Text = "Delete";
+            this.buttonEaDelete.UseVisualStyleBackColor = true;
+            // 
+            // buttonEaUpdate
+            // 
+            this.buttonEaUpdate.Location = new System.Drawing.Point(304, 320);
+            this.buttonEaUpdate.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEaUpdate.Name = "buttonEaUpdate";
+            this.buttonEaUpdate.Size = new System.Drawing.Size(76, 24);
+            this.buttonEaUpdate.TabIndex = 52;
+            this.buttonEaUpdate.Text = "Update";
+            this.buttonEaUpdate.UseVisualStyleBackColor = true;
+            this.buttonEaUpdate.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // buttonEaNew
+            // 
+            this.buttonEaNew.Location = new System.Drawing.Point(304, 292);
+            this.buttonEaNew.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonEaNew.Name = "buttonEaNew";
+            this.buttonEaNew.Size = new System.Drawing.Size(76, 24);
+            this.buttonEaNew.TabIndex = 51;
+            this.buttonEaNew.Text = "New";
+            this.buttonEaNew.UseVisualStyleBackColor = true;
             // 
             // labelSearchSP
             // 
@@ -611,159 +731,77 @@
             this.dataGridViewSP.Size = new System.Drawing.Size(281, 317);
             this.dataGridViewSP.TabIndex = 42;
             // 
-            // buttonEaNew
+            // tabPageProduct
             // 
-            this.buttonEaNew.Location = new System.Drawing.Point(304, 292);
-            this.buttonEaNew.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonEaNew.Name = "buttonEaNew";
-            this.buttonEaNew.Size = new System.Drawing.Size(76, 24);
-            this.buttonEaNew.TabIndex = 51;
-            this.buttonEaNew.Text = "New";
-            this.buttonEaNew.UseVisualStyleBackColor = true;
+            this.tabPageProduct.Controls.Add(this.buttonPaClearAll);
+            this.tabPageProduct.Controls.Add(this.dataGridViewDeletedPa);
+            this.tabPageProduct.Controls.Add(this.labelPaAmount);
+            this.tabPageProduct.Controls.Add(this.textBoxPaAmount);
+            this.tabPageProduct.Controls.Add(this.labelSearchDeletedPa);
+            this.tabPageProduct.Controls.Add(this.buttonSearchDeletedPa);
+            this.tabPageProduct.Controls.Add(this.textBoxSearchDeletedPa);
+            this.tabPageProduct.Controls.Add(this.labelPaOutPrice);
+            this.tabPageProduct.Controls.Add(this.labelPaInPrice);
+            this.tabPageProduct.Controls.Add(this.labelPaName);
+            this.tabPageProduct.Controls.Add(this.labelPaPrNr);
+            this.tabPageProduct.Controls.Add(this.textBoxPaInPrice);
+            this.tabPageProduct.Controls.Add(this.textBoxaOutPrice);
+            this.tabPageProduct.Controls.Add(this.textBoxPaName);
+            this.tabPageProduct.Controls.Add(this.textBoxPaPrNr);
+            this.tabPageProduct.Controls.Add(this.buttonPaDelete);
+            this.tabPageProduct.Controls.Add(this.buttonPaUpdate);
+            this.tabPageProduct.Controls.Add(this.buttonPaNew);
+            this.tabPageProduct.Controls.Add(this.labelSearchPa);
+            this.tabPageProduct.Controls.Add(this.buttonSearchPa);
+            this.tabPageProduct.Controls.Add(this.textBoxSearchPa);
+            this.tabPageProduct.Controls.Add(this.dataGridViewPa);
+            this.tabPageProduct.Location = new System.Drawing.Point(4, 22);
+            this.tabPageProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPageProduct.Name = "tabPageProduct";
+            this.tabPageProduct.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPageProduct.Size = new System.Drawing.Size(1134, 475);
+            this.tabPageProduct.TabIndex = 2;
+            this.tabPageProduct.Text = "Product administration";
+            this.tabPageProduct.UseVisualStyleBackColor = true;
             // 
-            // buttonEaUpdate
+            // buttonPaClearAll
             // 
-            this.buttonEaUpdate.Location = new System.Drawing.Point(304, 320);
-            this.buttonEaUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonEaUpdate.Name = "buttonEaUpdate";
-            this.buttonEaUpdate.Size = new System.Drawing.Size(76, 24);
-            this.buttonEaUpdate.TabIndex = 52;
-            this.buttonEaUpdate.Text = "Update";
-            this.buttonEaUpdate.UseVisualStyleBackColor = true;
-            this.buttonEaUpdate.Click += new System.EventHandler(this.button3_Click);
+            this.buttonPaClearAll.Location = new System.Drawing.Point(579, 424);
+            this.buttonPaClearAll.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonPaClearAll.Name = "buttonPaClearAll";
+            this.buttonPaClearAll.Size = new System.Drawing.Size(104, 42);
+            this.buttonPaClearAll.TabIndex = 112;
+            this.buttonPaClearAll.Text = "Clear all fields";
+            this.buttonPaClearAll.UseVisualStyleBackColor = true;
             // 
-            // buttonEaDelete
+            // dataGridViewDeletedPa
             // 
-            this.buttonEaDelete.Location = new System.Drawing.Point(305, 348);
-            this.buttonEaDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonEaDelete.Name = "buttonEaDelete";
-            this.buttonEaDelete.Size = new System.Drawing.Size(75, 24);
-            this.buttonEaDelete.TabIndex = 53;
-            this.buttonEaDelete.Text = "Delete";
-            this.buttonEaDelete.UseVisualStyleBackColor = true;
+            this.dataGridViewDeletedPa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewDeletedPa.Location = new System.Drawing.Point(401, 103);
+            this.dataGridViewDeletedPa.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewDeletedPa.Name = "dataGridViewDeletedPa";
+            this.dataGridViewDeletedPa.RowTemplate.Height = 24;
+            this.dataGridViewDeletedPa.Size = new System.Drawing.Size(281, 317);
+            this.dataGridViewDeletedPa.TabIndex = 111;
             // 
-            // textBoxEaSpNr
+            // labelPaAmount
             // 
-            this.textBoxEaSpNr.Location = new System.Drawing.Point(305, 153);
-            this.textBoxEaSpNr.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaSpNr.Multiline = true;
-            this.textBoxEaSpNr.Name = "textBoxEaSpNr";
-            this.textBoxEaSpNr.Size = new System.Drawing.Size(75, 21);
-            this.textBoxEaSpNr.TabIndex = 54;
+            this.labelPaAmount.AutoSize = true;
+            this.labelPaAmount.Location = new System.Drawing.Point(303, 273);
+            this.labelPaAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelPaAmount.Name = "labelPaAmount";
+            this.labelPaAmount.Size = new System.Drawing.Size(46, 13);
+            this.labelPaAmount.TabIndex = 110;
+            this.labelPaAmount.Text = "Amount:";
             // 
-            // textBoxEaFName
+            // textBoxPaAmount
             // 
-            this.textBoxEaFName.Location = new System.Drawing.Point(305, 191);
-            this.textBoxEaFName.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaFName.Multiline = true;
-            this.textBoxEaFName.Name = "textBoxEaFName";
-            this.textBoxEaFName.Size = new System.Drawing.Size(75, 21);
-            this.textBoxEaFName.TabIndex = 55;
-            // 
-            // textBoxEaPhoneNr
-            // 
-            this.textBoxEaPhoneNr.Location = new System.Drawing.Point(305, 267);
-            this.textBoxEaPhoneNr.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaPhoneNr.Multiline = true;
-            this.textBoxEaPhoneNr.Name = "textBoxEaPhoneNr";
-            this.textBoxEaPhoneNr.Size = new System.Drawing.Size(75, 21);
-            this.textBoxEaPhoneNr.TabIndex = 56;
-            // 
-            // textBoxEaLName
-            // 
-            this.textBoxEaLName.Location = new System.Drawing.Point(305, 229);
-            this.textBoxEaLName.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaLName.Multiline = true;
-            this.textBoxEaLName.Name = "textBoxEaLName";
-            this.textBoxEaLName.Size = new System.Drawing.Size(75, 21);
-            this.textBoxEaLName.TabIndex = 57;
-            // 
-            // labelEaSpNr
-            // 
-            this.labelEaSpNr.AutoSize = true;
-            this.labelEaSpNr.Location = new System.Drawing.Point(301, 138);
-            this.labelEaSpNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelEaSpNr.Name = "labelEaSpNr";
-            this.labelEaSpNr.Size = new System.Drawing.Size(89, 13);
-            this.labelEaSpNr.TabIndex = 64;
-            this.labelEaSpNr.Text = "Personal number:";
-            // 
-            // labelEaFName
-            // 
-            this.labelEaFName.AutoSize = true;
-            this.labelEaFName.Location = new System.Drawing.Point(300, 176);
-            this.labelEaFName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelEaFName.Name = "labelEaFName";
-            this.labelEaFName.Size = new System.Drawing.Size(58, 13);
-            this.labelEaFName.TabIndex = 65;
-            this.labelEaFName.Text = "First name:";
-            // 
-            // labelEaLName
-            // 
-            this.labelEaLName.AutoSize = true;
-            this.labelEaLName.Location = new System.Drawing.Point(300, 214);
-            this.labelEaLName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelEaLName.Name = "labelEaLName";
-            this.labelEaLName.Size = new System.Drawing.Size(59, 13);
-            this.labelEaLName.TabIndex = 66;
-            this.labelEaLName.Text = "Last name:";
-            // 
-            // labelEaPhoneNr
-            // 
-            this.labelEaPhoneNr.AutoSize = true;
-            this.labelEaPhoneNr.Location = new System.Drawing.Point(302, 252);
-            this.labelEaPhoneNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelEaPhoneNr.Name = "labelEaPhoneNr";
-            this.labelEaPhoneNr.Size = new System.Drawing.Size(79, 13);
-            this.labelEaPhoneNr.TabIndex = 67;
-            this.labelEaPhoneNr.Text = "Phone number:";
-            // 
-            // splitter1
-            // 
-            this.splitter1.Location = new System.Drawing.Point(2, 2);
-            this.splitter1.Name = "splitter1";
-            this.splitter1.Size = new System.Drawing.Size(3, 471);
-            this.splitter1.TabIndex = 85;
-            this.splitter1.TabStop = false;
-            // 
-            // labelSearchDeletedSP
-            // 
-            this.labelSearchDeletedSP.AutoSize = true;
-            this.labelSearchDeletedSP.Location = new System.Drawing.Point(401, 38);
-            this.labelSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelSearchDeletedSP.Name = "labelSearchDeletedSP";
-            this.labelSearchDeletedSP.Size = new System.Drawing.Size(215, 13);
-            this.labelSearchDeletedSP.TabIndex = 89;
-            this.labelSearchDeletedSP.Text = "Search on DELETED sales person attribute:";
-            // 
-            // buttonSearchDeletedSP
-            // 
-            this.buttonSearchDeletedSP.Location = new System.Drawing.Point(618, 57);
-            this.buttonSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSearchDeletedSP.Name = "buttonSearchDeletedSP";
-            this.buttonSearchDeletedSP.Size = new System.Drawing.Size(64, 42);
-            this.buttonSearchDeletedSP.TabIndex = 88;
-            this.buttonSearchDeletedSP.Text = "Search";
-            this.buttonSearchDeletedSP.UseVisualStyleBackColor = true;
-            // 
-            // textBoxSearchDeletedSP
-            // 
-            this.textBoxSearchDeletedSP.Location = new System.Drawing.Point(400, 57);
-            this.textBoxSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSearchDeletedSP.Multiline = true;
-            this.textBoxSearchDeletedSP.Name = "textBoxSearchDeletedSP";
-            this.textBoxSearchDeletedSP.Size = new System.Drawing.Size(214, 43);
-            this.textBoxSearchDeletedSP.TabIndex = 87;
-            // 
-            // dataGridViewDeletedSP
-            // 
-            this.dataGridViewDeletedSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDeletedSP.Location = new System.Drawing.Point(400, 104);
-            this.dataGridViewDeletedSP.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewDeletedSP.Name = "dataGridViewDeletedSP";
-            this.dataGridViewDeletedSP.RowTemplate.Height = 24;
-            this.dataGridViewDeletedSP.Size = new System.Drawing.Size(281, 317);
-            this.dataGridViewDeletedSP.TabIndex = 86;
+            this.textBoxPaAmount.Location = new System.Drawing.Point(306, 288);
+            this.textBoxPaAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPaAmount.Multiline = true;
+            this.textBoxPaAmount.Name = "textBoxPaAmount";
+            this.textBoxPaAmount.Size = new System.Drawing.Size(75, 21);
+            this.textBoxPaAmount.TabIndex = 109;
             // 
             // labelSearchDeletedPa
             // 
@@ -939,64 +977,22 @@
             this.dataGridViewPa.Size = new System.Drawing.Size(281, 317);
             this.dataGridViewPa.TabIndex = 90;
             // 
-            // labelPaAmount
+            // tabPageStatistics
             // 
-            this.labelPaAmount.AutoSize = true;
-            this.labelPaAmount.Location = new System.Drawing.Point(303, 273);
-            this.labelPaAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPaAmount.Name = "labelPaAmount";
-            this.labelPaAmount.Size = new System.Drawing.Size(46, 13);
-            this.labelPaAmount.TabIndex = 110;
-            this.labelPaAmount.Text = "Amount:";
-            // 
-            // textBoxPaAmount
-            // 
-            this.textBoxPaAmount.Location = new System.Drawing.Point(306, 288);
-            this.textBoxPaAmount.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPaAmount.Multiline = true;
-            this.textBoxPaAmount.Name = "textBoxPaAmount";
-            this.textBoxPaAmount.Size = new System.Drawing.Size(75, 21);
-            this.textBoxPaAmount.TabIndex = 109;
-            // 
-            // dataGridViewDeletedPa
-            // 
-            this.dataGridViewDeletedPa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDeletedPa.Location = new System.Drawing.Point(401, 103);
-            this.dataGridViewDeletedPa.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridViewDeletedPa.Name = "dataGridViewDeletedPa";
-            this.dataGridViewDeletedPa.RowTemplate.Height = 24;
-            this.dataGridViewDeletedPa.Size = new System.Drawing.Size(281, 317);
-            this.dataGridViewDeletedPa.TabIndex = 111;
-            // 
-            // buttonTopSellers
-            // 
-            this.buttonTopSellers.Location = new System.Drawing.Point(7, 43);
-            this.buttonTopSellers.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonTopSellers.Name = "buttonTopSellers";
-            this.buttonTopSellers.Size = new System.Drawing.Size(82, 36);
-            this.buttonTopSellers.TabIndex = 113;
-            this.buttonTopSellers.Text = "Top Sellers";
-            this.buttonTopSellers.UseVisualStyleBackColor = true;
-            // 
-            // buttonTopCombos
-            // 
-            this.buttonTopCombos.Location = new System.Drawing.Point(210, 43);
-            this.buttonTopCombos.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonTopCombos.Name = "buttonTopCombos";
-            this.buttonTopCombos.Size = new System.Drawing.Size(80, 36);
-            this.buttonTopCombos.TabIndex = 114;
-            this.buttonTopCombos.Text = "Top Combos";
-            this.buttonTopCombos.UseVisualStyleBackColor = true;
-            // 
-            // buttonTopProduct
-            // 
-            this.buttonTopProduct.Location = new System.Drawing.Point(108, 43);
-            this.buttonTopProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonTopProduct.Name = "buttonTopProduct";
-            this.buttonTopProduct.Size = new System.Drawing.Size(80, 36);
-            this.buttonTopProduct.TabIndex = 115;
-            this.buttonTopProduct.Text = "Top Products";
-            this.buttonTopProduct.UseVisualStyleBackColor = true;
+            this.tabPageStatistics.BackColor = System.Drawing.Color.LightGray;
+            this.tabPageStatistics.Controls.Add(this.dataGridView1);
+            this.tabPageStatistics.Controls.Add(this.buttonTopProduct);
+            this.tabPageStatistics.Controls.Add(this.buttonTopCombos);
+            this.tabPageStatistics.Controls.Add(this.buttonTopSellers);
+            this.tabPageStatistics.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.tabPageStatistics.Location = new System.Drawing.Point(4, 22);
+            this.tabPageStatistics.Margin = new System.Windows.Forms.Padding(2);
+            this.tabPageStatistics.Name = "tabPageStatistics";
+            this.tabPageStatistics.Padding = new System.Windows.Forms.Padding(2);
+            this.tabPageStatistics.Size = new System.Drawing.Size(1134, 475);
+            this.tabPageStatistics.TabIndex = 3;
+            this.tabPageStatistics.Text = "Statistics";
+            this.tabPageStatistics.Click += new System.EventHandler(this.tabPageStatistics_Click);
             // 
             // dataGridView1
             // 
@@ -1008,55 +1004,70 @@
             this.dataGridView1.Size = new System.Drawing.Size(281, 317);
             this.dataGridView1.TabIndex = 116;
             // 
-            // button2
+            // buttonTopProduct
             // 
-            this.button2.Location = new System.Drawing.Point(6, 422);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 42);
-            this.button2.TabIndex = 42;
-            this.button2.Text = "My history";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonTopProduct.Location = new System.Drawing.Point(108, 43);
+            this.buttonTopProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonTopProduct.Name = "buttonTopProduct";
+            this.buttonTopProduct.Size = new System.Drawing.Size(80, 36);
+            this.buttonTopProduct.TabIndex = 115;
+            this.buttonTopProduct.Text = "Top Products";
+            this.buttonTopProduct.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonTopCombos
             // 
-            this.button3.Location = new System.Drawing.Point(219, 54);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(69, 42);
-            this.button3.TabIndex = 43;
-            this.button3.Text = "Get all";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonTopCombos.Location = new System.Drawing.Point(210, 43);
+            this.buttonTopCombos.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonTopCombos.Name = "buttonTopCombos";
+            this.buttonTopCombos.Size = new System.Drawing.Size(80, 36);
+            this.buttonTopCombos.TabIndex = 114;
+            this.buttonTopCombos.Text = "Top Combos";
+            this.buttonTopCombos.UseVisualStyleBackColor = true;
             // 
-            // buttonClearAll
+            // buttonTopSellers
             // 
-            this.buttonClearAll.Location = new System.Drawing.Point(750, 422);
-            this.buttonClearAll.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonClearAll.Name = "buttonClearAll";
-            this.buttonClearAll.Size = new System.Drawing.Size(104, 42);
-            this.buttonClearAll.TabIndex = 44;
-            this.buttonClearAll.Text = "Clear all fields";
-            this.buttonClearAll.UseVisualStyleBackColor = true;
+            this.buttonTopSellers.Location = new System.Drawing.Point(7, 43);
+            this.buttonTopSellers.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonTopSellers.Name = "buttonTopSellers";
+            this.buttonTopSellers.Size = new System.Drawing.Size(82, 36);
+            this.buttonTopSellers.TabIndex = 113;
+            this.buttonTopSellers.Text = "Top Sellers";
+            this.buttonTopSellers.UseVisualStyleBackColor = true;
             // 
-            // buttonEaClearAll
+            // fileToolStripMenuItem
             // 
-            this.buttonEaClearAll.Location = new System.Drawing.Point(577, 425);
-            this.buttonEaClearAll.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonEaClearAll.Name = "buttonEaClearAll";
-            this.buttonEaClearAll.Size = new System.Drawing.Size(104, 42);
-            this.buttonEaClearAll.TabIndex = 90;
-            this.buttonEaClearAll.Text = "Clear all fields";
-            this.buttonEaClearAll.UseVisualStyleBackColor = true;
+            this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
+            this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
+            this.fileToolStripMenuItem.Text = "File";
             // 
-            // buttonPaClearAll
+            // exitToolStripMenuItem
             // 
-            this.buttonPaClearAll.Location = new System.Drawing.Point(579, 424);
-            this.buttonPaClearAll.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonPaClearAll.Name = "buttonPaClearAll";
-            this.buttonPaClearAll.Size = new System.Drawing.Size(104, 42);
-            this.buttonPaClearAll.TabIndex = 112;
-            this.buttonPaClearAll.Text = "Clear all fields";
-            this.buttonPaClearAll.UseVisualStyleBackColor = true;
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(92, 22);
+            this.exitToolStripMenuItem.Text = "Exit";
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fileToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Padding = new System.Windows.Forms.Padding(4, 2, 0, 2);
+            this.menuStrip1.Size = new System.Drawing.Size(874, 24);
+            this.menuStrip1.TabIndex = 1;
+            this.menuStrip1.Text = "menuStrip1";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            // 
+            // lblLoggedInAs
+            // 
+            this.lblLoggedInAs.AutoSize = true;
+            this.lblLoggedInAs.Location = new System.Drawing.Point(8, 22);
+            this.lblLoggedInAs.Name = "lblLoggedInAs";
+            this.lblLoggedInAs.Size = new System.Drawing.Size(35, 13);
+            this.lblLoggedInAs.TabIndex = 45;
+            this.lblLoggedInAs.Text = "label1";
             // 
             // Form1
             // 
@@ -1066,7 +1077,7 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -1077,16 +1088,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductList)).EndInit();
             this.tabPageEmployee.ResumeLayout(false);
             this.tabPageEmployee.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedSP)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSP)).EndInit();
             this.tabPageProduct.ResumeLayout(false);
             this.tabPageProduct.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedPa)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).EndInit();
             this.tabPageStatistics.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedSP)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedPa)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1180,6 +1191,7 @@
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button buttonEaClearAll;
         private System.Windows.Forms.Button buttonPaClearAll;
+        private System.Windows.Forms.Label lblLoggedInAs;
 
 
     }

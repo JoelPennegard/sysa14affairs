@@ -12,9 +12,22 @@ namespace AffairsSystem
 {
     public partial class Form1 : Form
     {
+        private string spNr = "";
+
         public Form1()
         {
             InitializeComponent();
+        }
+        public Form1(string spNr)
+        {
+            InitializeComponent();
+            this.spNr = spNr;
+            lblLoggedInAs.Text = "Logged in as: " + spNr;
+            
+        }
+        private string spNR{
+            get { return spNr; }
+            set { spNR = value;}
         }
 
         private void tabPage2_Click(object sender, EventArgs e)
