@@ -137,7 +137,7 @@ namespace AffairsSystem
         
         public SqlDataAdapter GetSalesPersonSales(string spNr)
         {
-            return ExecuteGetSqlAdapter("select * from sales where spNr = '" + spNr + "' order by salesDate desc");
+            return ExecuteGetSqlAdapter("select salesNr, salesDate, totalPrice from sales where spNr = '" + spNr + "' order by salesDate desc");
         }
 
         /// <summary>
