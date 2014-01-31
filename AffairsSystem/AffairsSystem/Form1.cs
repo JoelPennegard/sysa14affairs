@@ -152,7 +152,7 @@ namespace AffairsSystem
 
                 if (!Utility.CheckOnlyNumbers(amountString))
                 {
-                    MessageBox.Show("Antal anges med siffror \n detta borde nog visas på något annat sätt");
+                    MessageBox.Show("Amount must be integer", "Check amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
