@@ -206,7 +206,7 @@ namespace AffairsSystem
            // totalPrice = double.Parse(textBoxNumPad.Text);
            // controller.SetSale(spNr, totalPrice);
 
-           // controller.SetSalesLine()
+           // controller.SetSalesLine();
         }
     
         

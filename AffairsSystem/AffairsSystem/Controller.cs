@@ -75,12 +75,7 @@ namespace AffairsSystem
             da = dal.SearchProductTill(search);
             return da;
         }
-        //SEARCH SALES PERSON ON ALL ATTRIBUTES
-        public SqlDataAdapter SearchSalesPersonAllAttributes(string spNr, string firstName, string lastName, string sPhone)
-        {
-            da = dal.SearchSalesPersonAllAttributes(spNr, firstName, lastName, sPhone);
-            return da;
-        }
+      
         // GET ALL PRODUCTS (NR, NAME, OUTPRICE)
         public SqlDataAdapter GetAllProducts()
         {
