@@ -459,7 +459,9 @@
             this.dataGridViewSaleList.Location = new System.Drawing.Point(512, 124);
             this.dataGridViewSaleList.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSaleList.Name = "dataGridViewSaleList";
+            this.dataGridViewSaleList.ReadOnly = true;
             this.dataGridViewSaleList.RowTemplate.Height = 24;
+            this.dataGridViewSaleList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSaleList.Size = new System.Drawing.Size(384, 317);
             this.dataGridViewSaleList.TabIndex = 7;
             // 
@@ -499,7 +501,9 @@
             this.dataGridViewProductList.Location = new System.Drawing.Point(12, 124);
             this.dataGridViewProductList.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewProductList.Name = "dataGridViewProductList";
+            this.dataGridViewProductList.ReadOnly = true;
             this.dataGridViewProductList.RowTemplate.Height = 24;
+            this.dataGridViewProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProductList.Size = new System.Drawing.Size(384, 317);
             this.dataGridViewProductList.TabIndex = 2;
             // 
@@ -581,7 +585,9 @@
             this.dataGridViewDeletedSP.Location = new System.Drawing.Point(400, 104);
             this.dataGridViewDeletedSP.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDeletedSP.Name = "dataGridViewDeletedSP";
+            this.dataGridViewDeletedSP.ReadOnly = true;
             this.dataGridViewDeletedSP.RowTemplate.Height = 24;
+            this.dataGridViewDeletedSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDeletedSP.Size = new System.Drawing.Size(281, 317);
             this.dataGridViewDeletedSP.TabIndex = 86;
             // 
@@ -736,7 +742,9 @@
             this.dataGridViewSP.Location = new System.Drawing.Point(6, 104);
             this.dataGridViewSP.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSP.Name = "dataGridViewSP";
+            this.dataGridViewSP.ReadOnly = true;
             this.dataGridViewSP.RowTemplate.Height = 24;
+            this.dataGridViewSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSP.Size = new System.Drawing.Size(281, 317);
             this.dataGridViewSP.TabIndex = 42;
             // 
@@ -789,7 +797,9 @@
             this.dataGridViewDeletedPa.Location = new System.Drawing.Point(678, 103);
             this.dataGridViewDeletedPa.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDeletedPa.Name = "dataGridViewDeletedPa";
+            this.dataGridViewDeletedPa.ReadOnly = true;
             this.dataGridViewDeletedPa.RowTemplate.Height = 24;
+            this.dataGridViewDeletedPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDeletedPa.Size = new System.Drawing.Size(281, 317);
             this.dataGridViewDeletedPa.TabIndex = 111;
             // 
@@ -985,6 +995,7 @@
             this.dataGridViewPa.Location = new System.Drawing.Point(7, 103);
             this.dataGridViewPa.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPa.Name = "dataGridViewPa";
+            this.dataGridViewPa.ReadOnly = true;
             this.dataGridViewPa.RowTemplate.Height = 24;
             this.dataGridViewPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPa.Size = new System.Drawing.Size(387, 317);
@@ -1014,7 +1025,9 @@
             this.dataGridView1.Location = new System.Drawing.Point(7, 95);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView1.Size = new System.Drawing.Size(281, 317);
             this.dataGridView1.TabIndex = 116;
             // 
