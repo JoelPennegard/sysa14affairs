@@ -49,6 +49,7 @@
             this.textBoxspNr.Size = new System.Drawing.Size(100, 20);
             this.textBoxspNr.TabIndex = 1;
             this.textBoxspNr.UseSystemPasswordChar = true;
+            this.textBoxspNr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxspNr_KeyPress);
             // 
             // btnLogIn
             // 
