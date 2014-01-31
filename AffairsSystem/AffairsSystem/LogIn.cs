@@ -31,7 +31,7 @@ namespace AffairsSystem
         {
             string spNr = textBoxspNr.Text;
             SqlDataReader da = controller.SearchSalesPerson(spNr);
-            string spNr2 = Utility.CheckAdmin(da);
+            string spNr2 = Utility.CheckSalesPerson(da);
             SqlDataReader da2 = controller.SearchSalesPerson(spNr);
             Boolean admin = Utility.CheckAdmin(da2);
             
