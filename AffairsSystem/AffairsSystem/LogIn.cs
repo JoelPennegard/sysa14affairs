@@ -24,6 +24,7 @@ namespace AffairsSystem
         {
 
         }
+       
 
         // CLICK ON LOG IN
         private void btnLogIn_Click(object sender, EventArgs e)
@@ -43,6 +44,15 @@ namespace AffairsSystem
             }
 
         }
+
+        private void textBoxspNr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                btnLogIn.PerformClick();
+            }
+        }
+        
 
             
         }
