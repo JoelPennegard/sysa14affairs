@@ -99,7 +99,8 @@ namespace AffairsSystem
         {
             return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product");
         }
-
+        // GET PRODUCT ON PRODUCTNR
+        
         // GET ALL PRODUCTS (NR, NAME, OUTPRICE, INPRICE)
         public SqlDataAdapter GetAllProductsWithInPrice()
         {
@@ -126,18 +127,18 @@ namespace AffairsSystem
         }
         
         // SEARCH PRODUCT IN TILL (NOT PRODUCTINPRICE)
-        public SqlDataAdapter SearchProductTill(string productNr, string productName, string productOutPrice)
+        public SqlDataAdapter SearchProductTill(string search)
         {
             return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product where productNr like '%" + 
-                productNr + "%' or productName like '%" + productName + 
-                "%' or productOutPrice like '%" + productOutPrice + "%'");
+                search + "%' or productName like '%" + search + 
+                "%' or productOutPrice like '%" + search + "%'");
         }
       
         // SEARCH PRODUCT ALL ATTRIBUTES
-        public SqlDataAdapter SearchProductAllAttributes(int productNr, string productName, double productInPrice, double productOutPrice, int amount)
+        public SqlDataAdapter SearchProductAllAttributes(string search)
         {
-            return ExecuteGetSqlAdapter("select * from product where productNr like '%" + productNr + "%' or productName like '%" + productName +
-                "%' or productInPrice like '%" + productInPrice + "%' or productOutPrice like '%" + productOutPrice + "%' or amount like '%" + amount + "%'");
+            return ExecuteGetSqlAdapter("select * from product where productNr like '%" + search + "%' or productName like '%" + search +
+                "%' or productInPrice like '%" + search + "%' or productOutPrice like '%" + search + "%' or amount like '%" + search + "%'");
         }
 
         // UPDATE PRODUCT AMOUNT (ADMIN)

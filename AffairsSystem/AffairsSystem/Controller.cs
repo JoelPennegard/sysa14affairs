@@ -63,16 +63,16 @@ namespace AffairsSystem
         }
 
         // SEARCH PRODUCT ALL ATTRIBUTES
-        public SqlDataAdapter SearchProductAllAttributes(int productNr, string productName, double productInPrice, double productOutPrice, int amount)
+        public SqlDataAdapter SearchProductAllAttributes(string search)
         {
-            da = dal.SearchProductAllAttributes(productNr, productName, productInPrice, productOutPrice, amount);
+            da = dal.SearchProductAllAttributes(search);
             return da;
         }
 
         // SEARCH PRODUCT IN TILL (NOT PRODUCTINPRICE)
-        public SqlDataAdapter SearchProductTill(string productNr, string productName, string productOutPrice)
+        public SqlDataAdapter SearchProductTill(string search)
         {
-            da = dal.SearchProductTill(productNr, productName, productOutPrice);
+            da = dal.SearchProductTill(search);
             return da;
         }
         //SEARCH SALES PERSON ON ALL ATTRIBUTES

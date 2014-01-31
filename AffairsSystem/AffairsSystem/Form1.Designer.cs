@@ -57,7 +57,7 @@
             this.buttonDKK = new System.Windows.Forms.Button();
             this.buttonSEK = new System.Windows.Forms.Button();
             this.dataGridViewSaleList = new System.Windows.Forms.DataGridView();
-            this.richTextBox1 = new System.Windows.Forms.RichTextBox();
+            this.richTextBoxAmount = new System.Windows.Forms.RichTextBox();
             this.button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewProductList = new System.Windows.Forms.DataGridView();
@@ -117,6 +117,10 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.ProductNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -175,7 +179,7 @@
             this.tabPageSale.Controls.Add(this.buttonDKK);
             this.tabPageSale.Controls.Add(this.buttonSEK);
             this.tabPageSale.Controls.Add(this.dataGridViewSaleList);
-            this.tabPageSale.Controls.Add(this.richTextBox1);
+            this.tabPageSale.Controls.Add(this.richTextBoxAmount);
             this.tabPageSale.Controls.Add(this.button);
             this.tabPageSale.Controls.Add(this.button1);
             this.tabPageSale.Controls.Add(this.dataGridViewProductList);
@@ -456,21 +460,27 @@
             // dataGridViewSaleList
             // 
             this.dataGridViewSaleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewSaleList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ProductNr,
+            this.ProductName,
+            this.Price,
+            this.Amount});
             this.dataGridViewSaleList.Location = new System.Drawing.Point(512, 124);
             this.dataGridViewSaleList.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSaleList.Name = "dataGridViewSaleList";
             this.dataGridViewSaleList.RowTemplate.Height = 24;
+            this.dataGridViewSaleList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSaleList.Size = new System.Drawing.Size(384, 317);
             this.dataGridViewSaleList.TabIndex = 7;
             // 
-            // richTextBox1
+            // richTextBoxAmount
             // 
-            this.richTextBox1.Location = new System.Drawing.Point(422, 251);
-            this.richTextBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(65, 34);
-            this.richTextBox1.TabIndex = 6;
-            this.richTextBox1.Text = "";
+            this.richTextBoxAmount.Location = new System.Drawing.Point(422, 251);
+            this.richTextBoxAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.richTextBoxAmount.Name = "richTextBoxAmount";
+            this.richTextBoxAmount.Size = new System.Drawing.Size(65, 34);
+            this.richTextBoxAmount.TabIndex = 6;
+            this.richTextBoxAmount.Text = "";
             // 
             // button
             // 
@@ -481,6 +491,7 @@
             this.button.TabIndex = 5;
             this.button.Text = "<<<";
             this.button.UseVisualStyleBackColor = true;
+            this.button.Click += new System.EventHandler(this.button_Click);
             // 
             // button1
             // 
@@ -500,6 +511,7 @@
             this.dataGridViewProductList.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewProductList.Name = "dataGridViewProductList";
             this.dataGridViewProductList.RowTemplate.Height = 24;
+            this.dataGridViewProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProductList.Size = new System.Drawing.Size(384, 317);
             this.dataGridViewProductList.TabIndex = 2;
             // 
@@ -1101,6 +1113,30 @@
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
             // 
+            // ProductNr
+            // 
+            this.ProductNr.HeaderText = "Product Nr";
+            this.ProductNr.Name = "ProductNr";
+            this.ProductNr.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            this.ProductName.HeaderText = "Product Name";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1150,7 +1186,7 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.TabPage tabPageStatistics;
         private System.Windows.Forms.DataGridView dataGridViewProductList;
-        private System.Windows.Forms.RichTextBox richTextBox1;
+        private System.Windows.Forms.RichTextBox richTextBoxAmount;
         private System.Windows.Forms.Button button;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxNumPad;
@@ -1230,6 +1266,10 @@
         private System.Windows.Forms.Label lblLoggedInAs;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductNr;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Price;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
 
 
     }
