@@ -100,9 +100,9 @@ namespace AffairsSystem
             return da;
         }
         //UPDATE SALES PERSON (ADMIN))
-        public void UpdateSalesPerson(string firstName, string lastName, string sPhone, string spNr)
+        public void UpdateSalesPerson(string spNr, string firstName, string lastName, string sPhone)
         {
-            dal.UpdateSalesPerson(firstName, lastName, sPhone, spNr);
+            dal.UpdateSalesPerson(spNr, firstName, lastName, sPhone);
         }
         //UPDATE PRODUCT (ADMIN))
         public void UpdateProduct(int productNr, string productName, double productInPrice, double productOutPrice, int amount)
