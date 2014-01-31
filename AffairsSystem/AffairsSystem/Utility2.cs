@@ -8,9 +8,9 @@ using System.Windows.Forms;
 
 namespace AffairsSystem
 {
-    public static class UtilityAdminCheck
+    public static partial class Utility
     {
-        public static Boolean Check(SqlDataReader dr)
+        public static Boolean CheckAdmin(SqlDataReader dr)
         {
             
             String adminString = "";
@@ -31,5 +31,16 @@ namespace AffairsSystem
                 return false;
             }
        }
+        public static string getSalesPersonName(SqlDataReader dr)
+        {
+            string name = "";
+            while (dr.Read())
+            {
+                name = dr.GetString(1) + " " + dr.GetString(2);
+            }
+            return name;
+            
+            
+        }
     }
 }

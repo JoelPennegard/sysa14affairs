@@ -29,10 +29,15 @@ namespace AffairsSystem
         {
             string computerName = SystemInformation.ComputerName;
             string connectionString = "";
+            
 
             if(computerName.Equals("JOEL-DATOR"))
             {
                 connectionString =  "Data Source=JOEL-DATOR;Initial Catalog=affAIRsystem;Integrated Security=True";
+            }
+            if (computerName.Equals("JOEL-POEL"))
+            {
+                connectionString = "Data Source=JOEL-POEL;Initial Catalog=affAIRsystem;Integrated Security=True";
             }
             else if(computerName.Equals("MAX-DATOR"))
             {
