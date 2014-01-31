@@ -18,7 +18,7 @@ namespace AffairsSystem
         private Controller controller;
 
         
-        public Form1(string spNr, Controller controller, Boolean Admin)
+        public Form1(string spNr, string name, Controller controller, Boolean Admin)
         {
             InitializeComponent();
             this.controller = controller;
@@ -30,13 +30,18 @@ namespace AffairsSystem
            // if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
            //else { tabControl.Enabled = false; lblLoggedInAs.Text = "Logged in as: " + spNr; }
 
-            if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
+            if (Admin) 
+            {
+                tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as : " + name + " (Admin)"; 
+            }
             else
             {
                 tabControl.Controls.Remove(tabPageEmployee);
                 tabControl.Controls.Remove(tabPageProduct);
                 tabControl.Controls.Remove(tabPageStatistics);
-                lblLoggedInAs.Text = "Logged in as: " + spNr; }
+                lblLoggedInAs.Text = "Logged in as: " + name; 
+            }
+            this.spNr = spNr;
 
             
         }

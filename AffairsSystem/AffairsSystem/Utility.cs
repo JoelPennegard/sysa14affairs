@@ -8,7 +8,7 @@ using System.Data.SqlClient;
 
 namespace AffairsSystem
 {
-    public static class Utility
+    public static partial class Utility
     {
 
         // FIRST LETTER TO UPPER CASE
