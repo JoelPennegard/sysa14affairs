@@ -63,24 +63,19 @@ namespace AffairsSystem
         }
 
         // SEARCH PRODUCT ALL ATTRIBUTES
-        public SqlDataAdapter SearchProductAllAttributes(int productNr, string productName, double productInPrice, double productOutPrice, int amount)
+        public SqlDataAdapter SearchProductAllAttributes(string search)
         {
-            da = dal.SearchProductAllAttributes(productNr, productName, productInPrice, productOutPrice, amount);
+            da = dal.SearchProductAllAttributes(search);
             return da;
         }
 
         // SEARCH PRODUCT IN TILL (NOT PRODUCTINPRICE)
-        public SqlDataAdapter SearchProductTill(string productNr, string productName, string productOutPrice)
+        public SqlDataAdapter SearchProductTill(string search)
         {
-            da = dal.SearchProductTill(productNr, productName, productOutPrice);
+            da = dal.SearchProductTill(search);
             return da;
         }
-        //SEARCH SALES PERSON ON ALL ATTRIBUTES
-        public SqlDataAdapter SearchSalesPersonAllAttributes(string spNr, string firstName, string lastName, string sPhone)
-        {
-            da = dal.SearchSalesPersonAllAttributes(spNr, firstName, lastName, sPhone);
-            return da;
-        }
+      
         // GET ALL PRODUCTS (NR, NAME, OUTPRICE)
         public SqlDataAdapter GetAllProducts()
         {
@@ -100,9 +95,9 @@ namespace AffairsSystem
             return da;
         }
         //UPDATE SALES PERSON (ADMIN))
-        public void UpdateSalesPerson(string firstName, string lastName, string sPhone, string spNr)
+        public void UpdateSalesPerson(string spNr, string firstName, string lastName, string sPhone)
         {
-            dal.UpdateSalesPerson(firstName, lastName, sPhone, spNr);
+            dal.UpdateSalesPerson(spNr, firstName, lastName, sPhone);
         }
         //UPDATE PRODUCT (ADMIN))
         public void UpdateProduct(int productNr, string productName, double productInPrice, double productOutPrice, int amount)

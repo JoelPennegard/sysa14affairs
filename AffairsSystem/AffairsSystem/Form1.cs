@@ -14,6 +14,7 @@ namespace AffairsSystem
     public partial class Form1 : Form
     {
         private string spNr = "";
+        private double totalPrice = 0;
         private Controller controller;
 
         
@@ -135,16 +136,27 @@ namespace AffairsSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int productNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
+            string productName = dataGridViewProductList.SelectedRows[0].Cells[1].Value.ToString();
+            double productOutPrice = double.Parse(dataGridViewProductList.SelectedRows[0].Cells[2].Value.ToString());
+            int amount = int.Parse(richTextBoxAmount.Text);
+           
+           
+            string[] row = new string[] { productNr.ToString(), productName, productOutPrice.ToString(), amount.ToString() };
+            dataGridViewSaleList.Rows.Add(row);
+
+            double SinglePrice = amount * productOutPrice;
+            totalPrice = totalPrice + SinglePrice;
+            textBoxNumPad.Text = totalPrice.ToString();
 
         }
 
         private void buttonSearchProduct_Click(object sender, EventArgs e)
         {
-            string productNr = textBoxSearchProduct.Text;
-            string productName = textBoxSearchProduct.Text;
-            string productOutPrice = textBoxSearchProduct.Text;
+            string search = textBoxSearchProduct.Text;
             
-                SqlDataAdapter da = controller.SearchProductTill(productNr, productName, productOutPrice);
+            
+                SqlDataAdapter da = controller.SearchProductTill(search);
                 DataTable data = new DataTable();
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
@@ -181,6 +193,20 @@ namespace AffairsSystem
             controller.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount);
             
             
+        }
+
+        private void button_Click(object sender, EventArgs e)
+        {
+            
+ 
+        }
+
+        private void buttonENTER_Click(object sender, EventArgs e)
+        {
+           // totalPrice = double.Parse(textBoxNumPad.Text);
+           // controller.SetSale(spNr, totalPrice);
+
+           // controller.SetSalesLine();
         }
     
         
