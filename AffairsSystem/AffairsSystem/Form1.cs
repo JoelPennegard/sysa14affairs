@@ -202,7 +202,10 @@ namespace AffairsSystem
 
         private void button_Click(object sender, EventArgs e)
         {
-            
+            if (dataGridViewSaleList.SelectedRows.Count == 1)
+            {
+                dataGridViewSaleList.SelectedRows[0].Dispose();
+            }
  
         }
 
@@ -212,6 +215,15 @@ namespace AffairsSystem
            // controller.SetSale(spNr, totalPrice);
 
            // controller.SetSalesLine();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewProductList.DataSource = data;
         }
     
         
