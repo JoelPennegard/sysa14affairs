@@ -286,6 +286,7 @@
             this.buttonENTER.TabIndex = 36;
             this.buttonENTER.Text = "ENTER";
             this.buttonENTER.UseVisualStyleBackColor = true;
+            this.buttonENTER.Click += new System.EventHandler(this.buttonENTER_Click);
             // 
             // buttonNPDECIMAL
             // 

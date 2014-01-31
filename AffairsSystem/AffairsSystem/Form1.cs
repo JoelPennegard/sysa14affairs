@@ -14,6 +14,7 @@ namespace AffairsSystem
     public partial class Form1 : Form
     {
         private string spNr = "";
+        private double totalPrice = 0;
         private Controller controller;
 
         
@@ -144,6 +145,10 @@ namespace AffairsSystem
             string[] row = new string[] { productNr.ToString(), productName, productOutPrice.ToString(), amount.ToString() };
             dataGridViewSaleList.Rows.Add(row);
 
+            double SinglePrice = amount * productOutPrice;
+            totalPrice = totalPrice + SinglePrice;
+            textBoxNumPad.Text = totalPrice.ToString();
+
         }
 
         private void buttonSearchProduct_Click(object sender, EventArgs e)
@@ -194,6 +199,14 @@ namespace AffairsSystem
         {
             
  
+        }
+
+        private void buttonENTER_Click(object sender, EventArgs e)
+        {
+           // totalPrice = double.Parse(textBoxNumPad.Text);
+           // controller.SetSale(spNr, totalPrice);
+
+           // controller.SetSalesLine()
         }
     
         
