@@ -35,7 +35,7 @@ namespace AffairsSystem
             SqlDataReader da2 = controller.SearchSalesPerson(spNr);
             Boolean admin = Utility.CheckAdmin(da2);
             SqlDataReader da3 = controller.SearchSalesPerson(spNr);
-            String name = Utility.getSalesPersonName(da3);
+            String name = Utility.GetSalesPersonName(da3);
             
 
             if (spNr.Equals(spNr2))

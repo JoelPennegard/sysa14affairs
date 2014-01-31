@@ -31,7 +31,17 @@ namespace AffairsSystem
                 return false;
             }
        }
-        public static string getSalesPersonName(SqlDataReader dr)
+        public static Boolean CheckOnlyNumbers(string text)
+        {
+
+            foreach (char c in text)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+            return true;
+        }
+        public static string GetSalesPersonName(SqlDataReader dr)
         {
             string name = "";
             while (dr.Read())
@@ -42,5 +52,6 @@ namespace AffairsSystem
             
             
         }
+        
     }
 }

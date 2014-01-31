@@ -144,15 +144,34 @@ namespace AffairsSystem
             int productNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
             string productName = dataGridViewProductList.SelectedRows[0].Cells[1].Value.ToString();
             double productOutPrice = double.Parse(dataGridViewProductList.SelectedRows[0].Cells[2].Value.ToString());
-            int amount = int.Parse(richTextBoxAmount.Text);
-           
-           
-            string[] row = new string[] { productNr.ToString(), productName, productOutPrice.ToString(), amount.ToString() };
-            dataGridViewSaleList.Rows.Add(row);
+            
+            string amountString = richTextBoxAmount.Text;
+            int amountInt = 1;
 
-            double SinglePrice = amount * productOutPrice;
-            totalPrice = totalPrice + SinglePrice;
-            textBoxNumPad.Text = totalPrice.ToString();
+            
+
+                if (!Utility.CheckOnlyNumbers(amountString))
+                {
+                    MessageBox.Show("Antal anges med siffror \n detta borde nog visas på något annat sätt");
+                }
+                else
+                {
+                    if (amountString.Length < 1)
+                    {
+
+                        amountInt = 1;
+                        amountString = "1";
+                    }
+                    amountInt = int.Parse(amountString);
+                    
+                    string[] row = new string[] { productNr.ToString(), productName, productOutPrice.ToString(), amountInt.ToString() };
+                    dataGridViewSaleList.Rows.Add(row);
+
+                    double SinglePrice = amountInt * productOutPrice;
+                    totalPrice = totalPrice + SinglePrice;
+                    textBoxNumPad.Text = totalPrice.ToString();
+                }
+            
 
         }
 
