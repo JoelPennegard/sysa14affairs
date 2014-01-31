@@ -24,6 +24,35 @@ namespace AffairsSystem
                 return char.ToUpper(input[0]) + input.Substring(1);
             }
         }
+        public static int CheckInt(int input)
+        {
+            if (input == null)
+            {
+                MessageBox.Show("Please fill out all fields.", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return input;
+            }
+            else
+            {
+                return input;
+            }
+        }
+        public static double CheckDouble(double input)
+        {
+            if (input == null)
+            {
+                MessageBox.Show("Please fill out all fields.", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return input;
+            }
+            else if (input < 1)
+            {
+                MessageBox.Show("Price cannot be so low!.", "Check price", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return input;
+            }
+            else
+            {
+                return input;
+            }
+        }
 
         // CHECK IF SALES PERSON EXIST IN DATBASE
         public static string CheckSalesPerson(SqlDataReader dr)

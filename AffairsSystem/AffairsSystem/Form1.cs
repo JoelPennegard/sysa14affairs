@@ -25,10 +25,6 @@ namespace AffairsSystem
             FillProductTable();
             FillProductTableAdmin();
 
-            
-          
-            
-
 
            // if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
            //else { tabControl.Enabled = false; lblLoggedInAs.Text = "Logged in as: " + spNr; }
@@ -113,7 +109,7 @@ namespace AffairsSystem
         //FILL PRODUCT TABLE ADMIN
         private void FillProductTableAdmin()
         {
-            SqlDataAdapter da = controller.GetAllProducts();
+            SqlDataAdapter da = controller.GetAllProductsWithInPrice();
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewPa.DataSource = data;
@@ -155,6 +151,39 @@ namespace AffairsSystem
             
           
         }
+
+        private void dataGridViewPa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (dataGridViewPa.SelectedRows.Count == 1)
+            {
+                textBoxPaPrNr.Enabled = false;
+                textBoxPaPrNr.Text = dataGridViewPa.SelectedRows[0].Cells[0].Value.ToString();
+                textBoxPaName.Text = dataGridViewPa.SelectedRows[0].Cells[1].Value.ToString();
+                textBoxPaInPrice.Text = dataGridViewPa.SelectedRows[0].Cells[2].Value.ToString();
+                textBoxPaOutPrice.Text = dataGridViewPa.SelectedRows[0].Cells[3].Value.ToString();
+                textBoxPaAmount.Text = dataGridViewPa.SelectedRows[0].Cells[4].Value.ToString();
+            }
+            else
+            {
+                textBoxPaPrNr.Enabled = true;
+            }
+        }
+
+        private void buttonPaUpdate_Click(object sender, EventArgs e)
+        {
+            
+            int productNr = int.Parse(textBoxPaPrNr.Text);
+            string productName = Utility.FirstCharToUpper(textBoxPaName.Text);
+            double productInPrice = Utility.CheckDouble(double.Parse(textBoxPaInPrice.Text));
+            double productOutPrice = Utility.CheckDouble(double.Parse(textBoxPaOutPrice.Text));
+            int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
+
+            controller.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount);
+            
+            
+        }
+    
+        
 
     }
 }

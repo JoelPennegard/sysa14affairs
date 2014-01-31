@@ -56,6 +56,7 @@ namespace AffairsSystem
         //EN HUVUDMETOD VI KAN ANVÄNDA TILL QUERIES DÄR VI REGISTRERAR DATA!
         public void ExecuteSetSqlQuery(string sqlQuery)
         {
+            con.Close();
             cmd = new SqlCommand(sqlQuery, con);
             con.Open();
             cmd.ExecuteNonQuery();
@@ -99,6 +100,12 @@ namespace AffairsSystem
             return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product");
         }
 
+        // GET ALL PRODUCTS (NR, NAME, OUTPRICE, INPRICE)
+        public SqlDataAdapter GetAllProductsWithInPrice()
+        {
+            return ExecuteGetSqlAdapter("select * from product");
+        }
+
         //GET SALES (SALESPERSON)
         public SqlDataAdapter GetSalesPersonSales(string spNr)
         {
@@ -136,14 +143,14 @@ namespace AffairsSystem
         // UPDATE PRODUCT AMOUNT (ADMIN)
         public void UpdateProductAmount(int amount, string productNr)
         {
-            ExecuteSetSqlQuery("update product set amount = amount + '" + amount + "' where productNr = '" + productNr + "'");
+            ExecuteSetSqlQuery("update product set amount = amount + '" + amount + "' where productNr = " + productNr);
         }
 
         //UPDATE PRODUCT (ADMIN)
-        public void UpdateProduct (int productNr, string productName, int productInPrice, int productOutPrice, int amount)
+        public void UpdateProduct (int productNr, string productName, double productInPrice, double productOutPrice, int amount)
         {
-            ExecuteSetSqlQuery("update product set productName = '" + productName + ", productInPrice = " + productInPrice + 
-                ", ProductOutPrice = " + productOutPrice + " where productNr ='" + productNr + "'");
+            ExecuteSetSqlQuery("update product set productName = '" + productName + "', productInPrice = " + productInPrice + 
+                ", ProductOutPrice = " + productOutPrice + ", amount = " + amount + " where productNr = " + productNr);
         }            
 
         //UPDATE SALES PERSON (ADMIN)
@@ -167,7 +174,7 @@ namespace AffairsSystem
         // CREATE NEW SALE
         public void SetSale(string spNr, double totalPrice)
         {
-            ExecuteSetSqlQuery("insert into product values (getdate(), '" + spNr + "'," + totalPrice + ")");
+            ExecuteSetSqlQuery("insert into product values getdate(), '" + spNr + "'," + totalPrice + ")");
         }
 
 

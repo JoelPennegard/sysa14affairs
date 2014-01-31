@@ -87,6 +87,12 @@ namespace AffairsSystem
             da = dal.GetAllProducts();
             return da;
         }
+        // GET ALL PRODUCTS (NR, NAME, OUTPRICE, INPRICE)
+        public SqlDataAdapter GetAllProductsWithInPrice()
+        {
+            da = dal.GetAllProductsWithInPrice();
+            return da;
+        }
         //GET SALES (SALESPERSON)
         public SqlDataAdapter GetSalesPersonSales(string spNr)
         {
@@ -99,7 +105,7 @@ namespace AffairsSystem
             dal.UpdateSalesPerson(firstName, lastName, sPhone, spNr);
         }
         //UPDATE PRODUCT (ADMIN))
-        public void UpdateProduct(int productNr, string productName, int productInPrice, int productOutPrice, int amount)
+        public void UpdateProduct(int productNr, string productName, double productInPrice, double productOutPrice, int amount)
         {
             dal.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount);
         }
