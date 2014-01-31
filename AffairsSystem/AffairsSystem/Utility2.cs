@@ -31,5 +31,16 @@ namespace AffairsSystem
                 return false;
             }
        }
+        public static string getSalesPersonName(SqlDataReader dr)
+        {
+            string name = "";
+            while (dr.Read())
+            {
+                name = dr.GetString(1) + " " + dr.GetString(2);
+            }
+            return name;
+            
+            
+        }
     }
 }
