@@ -197,7 +197,10 @@ namespace AffairsSystem
 
         private void button_Click(object sender, EventArgs e)
         {
-            
+            if (dataGridViewSaleList.SelectedRows.Count == 1)
+            {
+                dataGridViewSaleList.SelectedRows[0].Dispose();
+            }
  
         }
 
