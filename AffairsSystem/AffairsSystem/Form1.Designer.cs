@@ -57,6 +57,10 @@
             this.buttonDKK = new System.Windows.Forms.Button();
             this.buttonSEK = new System.Windows.Forms.Button();
             this.dataGridViewSaleList = new System.Windows.Forms.DataGridView();
+            this.ProductNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.richTextBoxAmount = new System.Windows.Forms.RichTextBox();
             this.button = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
@@ -117,10 +121,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.ProductNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -223,6 +223,7 @@
             this.button2.TabIndex = 42;
             this.button2.Text = "My history";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // labelSearchProduct
             // 
@@ -473,6 +474,30 @@
             this.dataGridViewSaleList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSaleList.Size = new System.Drawing.Size(384, 317);
             this.dataGridViewSaleList.TabIndex = 7;
+            // 
+            // ProductNr
+            // 
+            this.ProductNr.HeaderText = "Product Nr";
+            this.ProductNr.Name = "ProductNr";
+            this.ProductNr.ReadOnly = true;
+            // 
+            // ProductName
+            // 
+            this.ProductName.HeaderText = "Product Name";
+            this.ProductName.Name = "ProductName";
+            this.ProductName.ReadOnly = true;
+            // 
+            // Price
+            // 
+            this.Price.HeaderText = "Price";
+            this.Price.Name = "Price";
+            this.Price.ReadOnly = true;
+            // 
+            // Amount
+            // 
+            this.Amount.HeaderText = "Amount";
+            this.Amount.Name = "Amount";
+            this.Amount.ReadOnly = true;
             // 
             // richTextBoxAmount
             // 
@@ -1113,30 +1138,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
-            // 
-            // ProductNr
-            // 
-            this.ProductNr.HeaderText = "Product Nr";
-            this.ProductNr.Name = "ProductNr";
-            this.ProductNr.ReadOnly = true;
-            // 
-            // ProductName
-            // 
-            this.ProductName.HeaderText = "Product Name";
-            this.ProductName.Name = "ProductName";
-            this.ProductName.ReadOnly = true;
-            // 
-            // Price
-            // 
-            this.Price.HeaderText = "Price";
-            this.Price.Name = "Price";
-            this.Price.ReadOnly = true;
-            // 
-            // Amount
-            // 
-            this.Amount.HeaderText = "Amount";
-            this.Amount.Name = "Amount";
-            this.Amount.ReadOnly = true;
             // 
             // Form1
             // 

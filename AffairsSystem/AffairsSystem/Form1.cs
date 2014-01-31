@@ -216,6 +216,15 @@ namespace AffairsSystem
 
            // controller.SetSalesLine();
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+            SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewProductList.DataSource = data;
+        }
     
         
 
