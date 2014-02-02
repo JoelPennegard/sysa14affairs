@@ -36,9 +36,9 @@ namespace AffairsSystem
 
 
         // CREATE NEW PRODUCT (ADMIN)
-        public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount)
+        public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
         {
-            dal.SetProduct(productName, productInPrice, productOutPrice, amount);
+            dal.SetProduct(productName, productInPrice, productOutPrice, amount, isForSale);
         }
 
         //CREATE NEW SALES PERSON (ADMIN)
@@ -63,9 +63,15 @@ namespace AffairsSystem
         }
 
         // SEARCH PRODUCT ALL ATTRIBUTES
-        public SqlDataAdapter SearchProductAllAttributes(string search)
+        public SqlDataAdapter SearchProductAllAttributesForSale(string search)
         {
-            da = dal.SearchProductAllAttributes(search);
+            da = dal.SearchProductAllAttributesForSale(search);
+            return da;
+        }
+        //SEARCH PRODUCT ALL ATTRIBUTES (NOT FOR SALE)
+        public SqlDataAdapter SearchProductAllAttributesNotForSale(string search)
+        {
+            da = dal.SearchProductAllAttributesNotForSale(search);
             return da;
         }
 
@@ -77,15 +83,21 @@ namespace AffairsSystem
         }
       
         // GET ALL PRODUCTS (NR, NAME, OUTPRICE)
-        public SqlDataAdapter GetAllProducts()
+        public SqlDataAdapter GetAllProductsToSaleList()
         {
-            da = dal.GetAllProducts();
+            da = dal.GetAllProductsToSaleList();
+            return da;
+        }
+        // GET ALL PRODUCTS NOT FOR SALE
+        public SqlDataAdapter GetAllProductsNotForSale()
+        {
+            da = dal.GetAllProductsNotForSale();
             return da;
         }
         // GET ALL PRODUCTS (NR, NAME, OUTPRICE, INPRICE)
-        public SqlDataAdapter GetAllProductsWithInPrice()
+        public SqlDataAdapter GetAllProductsForSale()
         {
-            da = dal.GetAllProductsWithInPrice();
+            da = dal.GetAllProductsForSale();
             return da;
         }
         //GET SALES (SALESPERSON)
@@ -106,9 +118,9 @@ namespace AffairsSystem
             dal.UpdateSalesPerson(spNr, firstName, lastName, sPhone);
         }
         //UPDATE PRODUCT (ADMIN))
-        public void UpdateProduct(int productNr, string productName, double productInPrice, double productOutPrice, int amount)
+        public void UpdateProduct(int productNr, string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
         {
-            dal.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount);
+            dal.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount, isForSale);
         }
         // UPDATE PRODUCT AMOUNT (ADMIN)
         public void UpdateProductAmount(int amount, int productNr, string minusOrPlus)

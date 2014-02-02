@@ -114,9 +114,9 @@ namespace AffairsSystem
         /// Gets a list containing the number, name and listed price of all products in the Product table
         /// </summary>
         /// <returns>a sqlDataAdapter containing a table of products</returns>
-        public SqlDataAdapter GetAllProducts()
+        public SqlDataAdapter GetAllProductsToSaleList()
         {
-            return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product");
+            return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product where isForSale = 1");
         }
 
         /// <summary>
@@ -124,9 +124,14 @@ namespace AffairsSystem
         /// </summary>
         /// <returns>a sqlDataAdapter containing a table of products</returns>
  
-        public SqlDataAdapter GetAllProductsWithInPrice()
+        public SqlDataAdapter GetAllProductsForSale()
         {
-            return ExecuteGetSqlAdapter("select * from product");
+            return ExecuteGetSqlAdapter("select * from product where isForSale = 1");
+        }
+
+        public SqlDataAdapter GetAllProductsNotForSale()
+        {
+            return ExecuteGetSqlAdapter("select * from product where isForSale = 0");
         }
 
         /// <summary>
@@ -154,16 +159,23 @@ namespace AffairsSystem
         // SEARCH PRODUCT IN TILL (NOT PRODUCTINPRICE)
         public SqlDataAdapter SearchProductTill(string search)
         {
-            return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product where productNr like '%" + 
+            return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product where isForSale = 1 and (productNr like '%" + 
                 search + "%' or productName like '%" + search + 
-                "%' or productOutPrice like '%" + search + "%'");
+                "%' or productOutPrice like '%" + search + "%')");
         }
       
-        // SEARCH PRODUCT ALL ATTRIBUTES
-        public SqlDataAdapter SearchProductAllAttributes(string search)
+        // SEARCH PRODUCT ALL ATTRIBUTES (ON SALE)
+        public SqlDataAdapter SearchProductAllAttributesForSale(string search)
         {
-            return ExecuteGetSqlAdapter("select * from product where productNr like '%" + search + "%' or productName like '%" + search +
-                "%' or productInPrice like '%" + search + "%' or productOutPrice like '%" + search + "%' or amount like '%" + search + "%'");
+            return ExecuteGetSqlAdapter("select * from product where isForSale = 1 and (productNr like '%" + search + "%' or productName like '%" + search +
+                "%' or productInPrice like '%" + search + "%' or productOutPrice like '%" + search + "%' or amount like '%" + search + "%')");
+        }
+
+        //SEARCH PRODUCT ALL ATTRIBUTES (NOT FOR SALE)
+        public SqlDataAdapter SearchProductAllAttributesNotForSale(string search)
+        {
+            return ExecuteGetSqlAdapter("select * from product where isForSale = 0 and (productNr like '%" + search + "%' or productName like '%" + search +
+                "%' or productInPrice like '%" + search + "%' or productOutPrice like '%" + search + "%' or amount like '%" + search + "%')");
         }
       
         /// <summary>
@@ -185,10 +197,10 @@ namespace AffairsSystem
         /// <param name="productOutPrice">the price that is listed in the store</param>
         /// <param name="amount">the amount of said product thats available</param>
         
-        public void UpdateProduct (int productNr, string productName, double productInPrice, double productOutPrice, int amount)
+        public void UpdateProduct (int productNr, string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
         {
             ExecuteSetSqlQuery("update product set productName = '" + productName + "', productInPrice = " + productInPrice + 
-                ", ProductOutPrice = " + productOutPrice + ", amount = " + amount + " where productNr = " + productNr);
+                ", ProductOutPrice = " + productOutPrice + ", amount = " + amount + ", isForSale = " + isForSale + " where productNr = " + productNr);
         }            
 
         /// <summary>
@@ -225,9 +237,9 @@ namespace AffairsSystem
         /// <param name="productOutPrice">the price that is listed in the store</param>
         /// <param name="amount">the amount of said product thats available</param>
  
-        public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount)
+        public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
         {
-            ExecuteSetSqlQuery("insert into product values('" + productName + "'," + productInPrice + "," + productOutPrice + "," + amount + ")");
+            ExecuteSetSqlQuery("insert into product values('" + productName + "'," + productInPrice + "," + productOutPrice + "," + amount + ", " + isForSale + ")");
         }
 
         

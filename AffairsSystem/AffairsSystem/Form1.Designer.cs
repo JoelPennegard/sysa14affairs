@@ -88,6 +88,7 @@
             this.textBoxSearchSP = new System.Windows.Forms.TextBox();
             this.dataGridViewSP = new System.Windows.Forms.DataGridView();
             this.tabPageProduct = new System.Windows.Forms.TabPage();
+            this.checkBoxForSale = new System.Windows.Forms.CheckBox();
             this.buttonPaClearAll = new System.Windows.Forms.Button();
             this.dataGridViewDeletedPa = new System.Windows.Forms.DataGridView();
             this.labelPaAmount = new System.Windows.Forms.Label();
@@ -120,6 +121,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonGetAllPa = new System.Windows.Forms.Button();
+            this.buttonGetAllDeletedPa = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -481,27 +484,34 @@
             // 
             // ProductNr
             // 
+            this.ProductNr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ProductNr.HeaderText = "Product Nr";
             this.ProductNr.Name = "ProductNr";
             this.ProductNr.ReadOnly = true;
+            this.ProductNr.Width = 83;
             // 
             // ProductName
             // 
+            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductName.HeaderText = "Product Name";
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
             // 
             // Price
             // 
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Price.HeaderText = "Price";
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
+            this.Price.Width = 56;
             // 
             // Amount
             // 
+            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Amount.HeaderText = "Amount";
             this.Amount.Name = "Amount";
             this.Amount.ReadOnly = true;
+            this.Amount.Width = 68;
             // 
             // richTextBoxAmount
             // 
@@ -798,6 +808,9 @@
             // 
             // tabPageProduct
             // 
+            this.tabPageProduct.Controls.Add(this.buttonGetAllDeletedPa);
+            this.tabPageProduct.Controls.Add(this.buttonGetAllPa);
+            this.tabPageProduct.Controls.Add(this.checkBoxForSale);
             this.tabPageProduct.Controls.Add(this.buttonPaClearAll);
             this.tabPageProduct.Controls.Add(this.dataGridViewDeletedPa);
             this.tabPageProduct.Controls.Add(this.labelPaAmount);
@@ -828,12 +841,22 @@
             this.tabPageProduct.Text = "Product administration";
             this.tabPageProduct.UseVisualStyleBackColor = true;
             // 
+            // checkBoxForSale
+            // 
+            this.checkBoxForSale.AutoSize = true;
+            this.checkBoxForSale.Location = new System.Drawing.Point(487, 310);
+            this.checkBoxForSale.Name = "checkBoxForSale";
+            this.checkBoxForSale.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxForSale.TabIndex = 113;
+            this.checkBoxForSale.Text = "Is For Sale";
+            this.checkBoxForSale.UseVisualStyleBackColor = true;
+            // 
             // buttonPaClearAll
             // 
-            this.buttonPaClearAll.Location = new System.Drawing.Point(542, 332);
+            this.buttonPaClearAll.Location = new System.Drawing.Point(524, 401);
             this.buttonPaClearAll.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPaClearAll.Name = "buttonPaClearAll";
-            this.buttonPaClearAll.Size = new System.Drawing.Size(104, 42);
+            this.buttonPaClearAll.Size = new System.Drawing.Size(76, 42);
             this.buttonPaClearAll.TabIndex = 112;
             this.buttonPaClearAll.Text = "Clear all fields";
             this.buttonPaClearAll.UseVisualStyleBackColor = true;
@@ -843,20 +866,21 @@
             // 
             this.dataGridViewDeletedPa.AllowUserToAddRows = false;
             this.dataGridViewDeletedPa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDeletedPa.Location = new System.Drawing.Point(678, 103);
+            this.dataGridViewDeletedPa.Location = new System.Drawing.Point(669, 103);
             this.dataGridViewDeletedPa.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDeletedPa.Name = "dataGridViewDeletedPa";
             this.dataGridViewDeletedPa.ReadOnly = true;
             this.dataGridViewDeletedPa.RowHeadersVisible = false;
             this.dataGridViewDeletedPa.RowTemplate.Height = 24;
             this.dataGridViewDeletedPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDeletedPa.Size = new System.Drawing.Size(281, 317);
+            this.dataGridViewDeletedPa.Size = new System.Drawing.Size(458, 317);
             this.dataGridViewDeletedPa.TabIndex = 111;
+            this.dataGridViewDeletedPa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedPa_CellContentClick);
             // 
             // labelPaAmount
             // 
             this.labelPaAmount.AutoSize = true;
-            this.labelPaAmount.Location = new System.Drawing.Point(420, 273);
+            this.labelPaAmount.Location = new System.Drawing.Point(486, 269);
             this.labelPaAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPaAmount.Name = "labelPaAmount";
             this.labelPaAmount.Size = new System.Drawing.Size(46, 13);
@@ -865,7 +889,7 @@
             // 
             // textBoxPaAmount
             // 
-            this.textBoxPaAmount.Location = new System.Drawing.Point(423, 288);
+            this.textBoxPaAmount.Location = new System.Drawing.Point(489, 284);
             this.textBoxPaAmount.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaAmount.Multiline = true;
             this.textBoxPaAmount.Name = "textBoxPaAmount";
@@ -884,27 +908,29 @@
             // 
             // buttonSearchDeletedPa
             // 
-            this.buttonSearchDeletedPa.Location = new System.Drawing.Point(896, 56);
+            this.buttonSearchDeletedPa.Location = new System.Drawing.Point(995, 56);
             this.buttonSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchDeletedPa.Name = "buttonSearchDeletedPa";
             this.buttonSearchDeletedPa.Size = new System.Drawing.Size(64, 42);
             this.buttonSearchDeletedPa.TabIndex = 107;
             this.buttonSearchDeletedPa.Text = "Search";
             this.buttonSearchDeletedPa.UseVisualStyleBackColor = true;
+            this.buttonSearchDeletedPa.Click += new System.EventHandler(this.buttonSearchDeletedPa_Click);
             // 
             // textBoxSearchDeletedPa
             // 
-            this.textBoxSearchDeletedPa.Location = new System.Drawing.Point(678, 56);
+            this.textBoxSearchDeletedPa.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearchDeletedPa.Location = new System.Drawing.Point(669, 56);
             this.textBoxSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSearchDeletedPa.Multiline = true;
             this.textBoxSearchDeletedPa.Name = "textBoxSearchDeletedPa";
-            this.textBoxSearchDeletedPa.Size = new System.Drawing.Size(214, 43);
+            this.textBoxSearchDeletedPa.Size = new System.Drawing.Size(322, 44);
             this.textBoxSearchDeletedPa.TabIndex = 106;
+            this.textBoxSearchDeletedPa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchDeletedPa_KeyPress);
             // 
             // labelPaOutPrice
             // 
             this.labelPaOutPrice.AutoSize = true;
-            this.labelPaOutPrice.Location = new System.Drawing.Point(420, 235);
+            this.labelPaOutPrice.Location = new System.Drawing.Point(486, 231);
             this.labelPaOutPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPaOutPrice.Name = "labelPaOutPrice";
             this.labelPaOutPrice.Size = new System.Drawing.Size(54, 13);
@@ -914,7 +940,7 @@
             // labelPaInPrice
             // 
             this.labelPaInPrice.AutoSize = true;
-            this.labelPaInPrice.Location = new System.Drawing.Point(418, 197);
+            this.labelPaInPrice.Location = new System.Drawing.Point(484, 193);
             this.labelPaInPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPaInPrice.Name = "labelPaInPrice";
             this.labelPaInPrice.Size = new System.Drawing.Size(45, 13);
@@ -924,7 +950,7 @@
             // labelPaName
             // 
             this.labelPaName.AutoSize = true;
-            this.labelPaName.Location = new System.Drawing.Point(418, 159);
+            this.labelPaName.Location = new System.Drawing.Point(484, 155);
             this.labelPaName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPaName.Name = "labelPaName";
             this.labelPaName.Size = new System.Drawing.Size(38, 13);
@@ -934,7 +960,7 @@
             // labelPaPrNr
             // 
             this.labelPaPrNr.AutoSize = true;
-            this.labelPaPrNr.Location = new System.Drawing.Point(419, 121);
+            this.labelPaPrNr.Location = new System.Drawing.Point(485, 117);
             this.labelPaPrNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPaPrNr.Name = "labelPaPrNr";
             this.labelPaPrNr.Size = new System.Drawing.Size(47, 13);
@@ -943,7 +969,7 @@
             // 
             // textBoxPaInPrice
             // 
-            this.textBoxPaInPrice.Location = new System.Drawing.Point(423, 212);
+            this.textBoxPaInPrice.Location = new System.Drawing.Point(489, 208);
             this.textBoxPaInPrice.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaInPrice.Multiline = true;
             this.textBoxPaInPrice.Name = "textBoxPaInPrice";
@@ -952,7 +978,7 @@
             // 
             // textBoxPaOutPrice
             // 
-            this.textBoxPaOutPrice.Location = new System.Drawing.Point(423, 250);
+            this.textBoxPaOutPrice.Location = new System.Drawing.Point(489, 246);
             this.textBoxPaOutPrice.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaOutPrice.Multiline = true;
             this.textBoxPaOutPrice.Name = "textBoxPaOutPrice";
@@ -961,7 +987,7 @@
             // 
             // textBoxPaName
             // 
-            this.textBoxPaName.Location = new System.Drawing.Point(423, 174);
+            this.textBoxPaName.Location = new System.Drawing.Point(489, 170);
             this.textBoxPaName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaName.Multiline = true;
             this.textBoxPaName.Name = "textBoxPaName";
@@ -971,7 +997,7 @@
             // textBoxPaPrNr
             // 
             this.textBoxPaPrNr.Enabled = false;
-            this.textBoxPaPrNr.Location = new System.Drawing.Point(423, 136);
+            this.textBoxPaPrNr.Location = new System.Drawing.Point(489, 132);
             this.textBoxPaPrNr.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaPrNr.Multiline = true;
             this.textBoxPaPrNr.Name = "textBoxPaPrNr";
@@ -980,7 +1006,7 @@
             // 
             // buttonPaUpdate
             // 
-            this.buttonPaUpdate.Location = new System.Drawing.Point(423, 341);
+            this.buttonPaUpdate.Location = new System.Drawing.Point(524, 373);
             this.buttonPaUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPaUpdate.Name = "buttonPaUpdate";
             this.buttonPaUpdate.Size = new System.Drawing.Size(76, 24);
@@ -991,7 +1017,7 @@
             // 
             // buttonPaNew
             // 
-            this.buttonPaNew.Location = new System.Drawing.Point(422, 313);
+            this.buttonPaNew.Location = new System.Drawing.Point(524, 345);
             this.buttonPaNew.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPaNew.Name = "buttonPaNew";
             this.buttonPaNew.Size = new System.Drawing.Size(76, 24);
@@ -1012,7 +1038,7 @@
             // 
             // buttonSearchPa
             // 
-            this.buttonSearchPa.Location = new System.Drawing.Point(330, 56);
+            this.buttonSearchPa.Location = new System.Drawing.Point(333, 56);
             this.buttonSearchPa.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchPa.Name = "buttonSearchPa";
             this.buttonSearchPa.Size = new System.Drawing.Size(64, 42);
@@ -1023,12 +1049,13 @@
             // 
             // textBoxSearchPa
             // 
+            this.textBoxSearchPa.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchPa.Location = new System.Drawing.Point(7, 56);
             this.textBoxSearchPa.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSearchPa.Multiline = true;
             this.textBoxSearchPa.Name = "textBoxSearchPa";
-            this.textBoxSearchPa.Size = new System.Drawing.Size(319, 43);
+            this.textBoxSearchPa.Size = new System.Drawing.Size(322, 44);
             this.textBoxSearchPa.TabIndex = 91;
+            this.textBoxSearchPa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchPa_KeyPress);
             // 
             // dataGridViewPa
             // 
@@ -1043,7 +1070,7 @@
             this.dataGridViewPa.RowHeadersVisible = false;
             this.dataGridViewPa.RowTemplate.Height = 24;
             this.dataGridViewPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPa.Size = new System.Drawing.Size(387, 317);
+            this.dataGridViewPa.Size = new System.Drawing.Size(458, 317);
             this.dataGridViewPa.TabIndex = 90;
             this.dataGridViewPa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPa_CellContentClick);
             // 
@@ -1164,6 +1191,28 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
+            // 
+            // buttonGetAllPa
+            // 
+            this.buttonGetAllPa.Location = new System.Drawing.Point(401, 56);
+            this.buttonGetAllPa.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGetAllPa.Name = "buttonGetAllPa";
+            this.buttonGetAllPa.Size = new System.Drawing.Size(64, 42);
+            this.buttonGetAllPa.TabIndex = 114;
+            this.buttonGetAllPa.Text = "Get All";
+            this.buttonGetAllPa.UseVisualStyleBackColor = true;
+            this.buttonGetAllPa.Click += new System.EventHandler(this.buttonGetAllPa_Click);
+            // 
+            // buttonGetAllDeletedPa
+            // 
+            this.buttonGetAllDeletedPa.Location = new System.Drawing.Point(1063, 56);
+            this.buttonGetAllDeletedPa.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGetAllDeletedPa.Name = "buttonGetAllDeletedPa";
+            this.buttonGetAllDeletedPa.Size = new System.Drawing.Size(64, 42);
+            this.buttonGetAllDeletedPa.TabIndex = 115;
+            this.buttonGetAllDeletedPa.Text = "Get All";
+            this.buttonGetAllDeletedPa.UseVisualStyleBackColor = true;
+            this.buttonGetAllDeletedPa.Click += new System.EventHandler(this.buttonGetAllDeletedPa_Click);
             // 
             // Form1
             // 
@@ -1297,6 +1346,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.CheckBox checkBoxForSale;
+        private System.Windows.Forms.Button buttonGetAllDeletedPa;
+        private System.Windows.Forms.Button buttonGetAllPa;
 
 
     }

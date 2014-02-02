@@ -107,14 +107,14 @@ namespace AffairsSystem
             }
             else if (productAmount < amountInt)
             {
-                MessageBox.Show("There are only " + productAmount + " items left of this product\n"+
+                MessageBox.Show("There are only " + productAmount + " items left of this product\n" +
                     "so you can't make this sale", "Order more", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return amount;
             }
             else if (productAmount > amountInt)
             {
                 amount = productAmount - amountInt;
-               
+
                 if (amount < 11)
                 {
                     MessageBox.Show("It is now only " + amount + " left of this product, please order more", "Order more", MessageBoxButtons.OK, MessageBoxIcon.Warning);
@@ -132,6 +132,20 @@ namespace AffairsSystem
 
 
 
+        }
+        public static int ConvertBoolToInt(bool input)
+        {
+            int output = 0;
+            if (input)
+            {
+                output = 1;
+                return output;
+            }
+            else
+            {
+                output = 0;
+                return output;
+            }
         }
     }
         

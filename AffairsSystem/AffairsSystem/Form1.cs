@@ -24,7 +24,7 @@ namespace AffairsSystem
             this.controller = controller;
             this.spNr = spNr;
             FillProductTable();
-            FillProductTableAdmin();
+            
 
 
            // if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
@@ -33,6 +33,8 @@ namespace AffairsSystem
             if (Admin) 
             {
                 tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as : " + name + " (Admin)"; 
+                FillProductTableAdmin();
+                FillProductTableNotForSaleAdmin();
             }
             else
             {
@@ -108,24 +110,7 @@ namespace AffairsSystem
             FillProductTable();
         }
 
-        //FILL PRODUCT TABLE
-        private void FillProductTable()
-        {
-            SqlDataAdapter da = controller.GetAllProducts();
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewProductList.DataSource = data;
-           
-        }
-
-        //FILL PRODUCT TABLE ADMIN
-        private void FillProductTableAdmin()
-        {
-            SqlDataAdapter da = controller.GetAllProductsWithInPrice();
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewPa.DataSource = data;
-        }
+        
 
         private void logoutToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -208,31 +193,34 @@ namespace AffairsSystem
 
         private void dataGridViewPa_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            
+                
                 textBoxPaPrNr.Text = dataGridViewPa.SelectedRows[0].Cells[0].Value.ToString();
                 textBoxPaName.Text = dataGridViewPa.SelectedRows[0].Cells[1].Value.ToString();
                 textBoxPaInPrice.Text = dataGridViewPa.SelectedRows[0].Cells[2].Value.ToString();
                 textBoxPaOutPrice.Text = dataGridViewPa.SelectedRows[0].Cells[3].Value.ToString();
                 textBoxPaAmount.Text = dataGridViewPa.SelectedRows[0].Cells[4].Value.ToString();
+                checkBoxForSale.Checked = (bool)dataGridViewPa.SelectedRows[0].Cells[5].Value;
             
          
         }
 
         private void buttonPaUpdate_Click(object sender, EventArgs e)
         {
-            
+            int isForSale = Utility.ConvertBoolToInt(checkBoxForSale.Checked);
+            MessageBox.Show("boolean: " + isForSale);
             int productNr = int.Parse(textBoxPaPrNr.Text);
             string productName = Utility.FirstCharToUpper(textBoxPaName.Text);
             double productInPrice = Utility.CheckDouble(double.Parse(textBoxPaInPrice.Text));
             double productOutPrice = Utility.CheckDouble(double.Parse(textBoxPaOutPrice.Text));
             int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
 
-            controller.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount);
+            controller.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount, isForSale);
             MessageBox.Show("Product nr: " + productNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
             ClearAllInPa();
             FillProductTable();
             FillProductTableAdmin();
+            FillProductTableNotForSaleAdmin();
         }
 
         private void button_Click(object sender, EventArgs e)
@@ -293,33 +281,20 @@ namespace AffairsSystem
         }
 
 
-        // CLEAR ALL IN PRODUCT ADMIN
-        private void ClearAllInPa()
-        {
-            textBoxPaPrNr.Text = "";
-            textBoxPaAmount.Text = "";
-            textBoxPaInPrice.Text = "";
-            textBoxPaName.Text = "";
-            textBoxPaOutPrice.Text = "";
-        }
-
-        //Detta gör så att programmet STÄNGS när man trycker på X
-        protected override void OnFormClosing(FormClosingEventArgs e)
-        {
-                Environment.Exit(0);
-        }
+        
 
         private void buttonPaNew_Click(object sender, EventArgs e)
         {
-            
+            int isForSale = Utility.ConvertBoolToInt(checkBoxForSale.Checked);
             int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
             double productInPrice = Utility.CheckDouble(double.Parse(textBoxPaInPrice.Text));
             string productName = Utility.FirstCharToUpper(textBoxPaName.Text);
             double productOutPrice = Utility.CheckDouble(double.Parse(textBoxPaOutPrice.Text));
 
-            controller.SetProduct(productName, productInPrice, productOutPrice, amount);
+            controller.SetProduct(productName, productInPrice, productOutPrice, amount, isForSale);
 
             FillProductTableAdmin();
+            FillProductTableNotForSaleAdmin();
             FillProductTable();
             ClearAllInPa();
         }
@@ -332,10 +307,11 @@ namespace AffairsSystem
         private void buttonSearchPa_Click(object sender, EventArgs e)
         {
             string search = textBoxSearchPa.Text;
-            SqlDataAdapter da = controller.SearchProductAllAttributes(search);
+            SqlDataAdapter da = controller.SearchProductAllAttributesForSale(search);
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewPa.DataSource = data;
+            textBoxSearchPa.Text = "";
 
         }
 
@@ -386,6 +362,97 @@ namespace AffairsSystem
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewStatistics.DataSource = data;
+        }
+        //FILL PRODUCT TABLE
+        private void FillProductTable()
+        {
+            SqlDataAdapter da = controller.GetAllProductsToSaleList();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewProductList.DataSource = data;
+
+        }
+
+        //FILL PRODUCTS FOR SALE TABLE ADMIN
+        private void FillProductTableAdmin()
+        {
+            SqlDataAdapter da = controller.GetAllProductsForSale();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewPa.DataSource = data;
+        }
+        //FILL PRODUCTS NOT FOR SALE TABLE ADMIN
+        private void FillProductTableNotForSaleAdmin()
+        {
+            SqlDataAdapter da = controller.GetAllProductsNotForSale();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewDeletedPa.DataSource = data;
+        }
+
+        // CLEAR ALL IN PRODUCT ADMIN
+        private void ClearAllInPa()
+        {
+            textBoxPaPrNr.Text = "";
+            textBoxPaAmount.Text = "";
+            textBoxPaInPrice.Text = "";
+            textBoxPaName.Text = "";
+            textBoxPaOutPrice.Text = "";
+            checkBoxForSale.Checked = false;
+        }
+
+        //Detta gör så att programmet STÄNGS när man trycker på X
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+            Environment.Exit(0);
+        }
+
+        private void dataGridViewDeletedPa_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxPaPrNr.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[0].Value.ToString();
+            textBoxPaName.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[1].Value.ToString();
+            textBoxPaInPrice.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[2].Value.ToString();
+            textBoxPaOutPrice.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[3].Value.ToString();
+            textBoxPaAmount.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[4].Value.ToString();
+            checkBoxForSale.Checked = (bool)dataGridViewDeletedPa.SelectedRows[0].Cells[5].Value;
+        }
+
+        private void buttonSearchDeletedPa_Click(object sender, EventArgs e)
+        {
+            string search = textBoxSearchDeletedPa.Text;
+            SqlDataAdapter da = controller.SearchProductAllAttributesNotForSale(search);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewDeletedPa.DataSource = data;
+            textBoxSearchDeletedPa.Text = "";
+        }
+
+        private void textBoxSearchPa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                buttonSearchPa.PerformClick();
+            }
+        }
+
+        private void textBoxSearchDeletedPa_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                buttonSearchDeletedPa.PerformClick();
+            }
+        }
+
+        private void buttonGetAllPa_Click(object sender, EventArgs e)
+        {
+            FillProductTableAdmin();
+            textBoxSearchPa.Text = "";
+        }
+
+        private void buttonGetAllDeletedPa_Click(object sender, EventArgs e)
+        {
+            FillProductTableNotForSaleAdmin();
+            textBoxSearchDeletedPa.Text = "";
         }
     }
 }
