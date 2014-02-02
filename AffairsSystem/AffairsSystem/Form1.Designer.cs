@@ -103,7 +103,6 @@
             this.textBoxPaOutPrice = new System.Windows.Forms.TextBox();
             this.textBoxPaName = new System.Windows.Forms.TextBox();
             this.textBoxPaPrNr = new System.Windows.Forms.TextBox();
-            this.buttonPaDelete = new System.Windows.Forms.Button();
             this.buttonPaUpdate = new System.Windows.Forms.Button();
             this.buttonPaNew = new System.Windows.Forms.Button();
             this.labelSearchPa = new System.Windows.Forms.Label();
@@ -461,6 +460,8 @@
             // 
             // dataGridViewSaleList
             // 
+            this.dataGridViewSaleList.AllowUserToAddRows = false;
+            this.dataGridViewSaleList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSaleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSaleList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductNr,
@@ -469,7 +470,10 @@
             this.Amount});
             this.dataGridViewSaleList.Location = new System.Drawing.Point(512, 124);
             this.dataGridViewSaleList.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSaleList.MultiSelect = false;
             this.dataGridViewSaleList.Name = "dataGridViewSaleList";
+            this.dataGridViewSaleList.ReadOnly = true;
+            this.dataGridViewSaleList.RowHeadersVisible = false;
             this.dataGridViewSaleList.RowTemplate.Height = 24;
             this.dataGridViewSaleList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSaleList.Size = new System.Drawing.Size(384, 317);
@@ -532,10 +536,15 @@
             // 
             // dataGridViewProductList
             // 
+            this.dataGridViewProductList.AllowUserToAddRows = false;
+            this.dataGridViewProductList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductList.Location = new System.Drawing.Point(12, 124);
             this.dataGridViewProductList.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewProductList.MultiSelect = false;
             this.dataGridViewProductList.Name = "dataGridViewProductList";
+            this.dataGridViewProductList.ReadOnly = true;
+            this.dataGridViewProductList.RowHeadersVisible = false;
             this.dataGridViewProductList.RowTemplate.Height = 24;
             this.dataGridViewProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProductList.Size = new System.Drawing.Size(384, 317);
@@ -615,11 +624,15 @@
             // 
             // dataGridViewDeletedSP
             // 
+            this.dataGridViewDeletedSP.AllowUserToAddRows = false;
             this.dataGridViewDeletedSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDeletedSP.Location = new System.Drawing.Point(400, 104);
             this.dataGridViewDeletedSP.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDeletedSP.Name = "dataGridViewDeletedSP";
+            this.dataGridViewDeletedSP.ReadOnly = true;
+            this.dataGridViewDeletedSP.RowHeadersVisible = false;
             this.dataGridViewDeletedSP.RowTemplate.Height = 24;
+            this.dataGridViewDeletedSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDeletedSP.Size = new System.Drawing.Size(281, 317);
             this.dataGridViewDeletedSP.TabIndex = 86;
             // 
@@ -770,11 +783,15 @@
             // 
             // dataGridViewSP
             // 
+            this.dataGridViewSP.AllowUserToAddRows = false;
             this.dataGridViewSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSP.Location = new System.Drawing.Point(6, 104);
             this.dataGridViewSP.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSP.Name = "dataGridViewSP";
+            this.dataGridViewSP.ReadOnly = true;
+            this.dataGridViewSP.RowHeadersVisible = false;
             this.dataGridViewSP.RowTemplate.Height = 24;
+            this.dataGridViewSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSP.Size = new System.Drawing.Size(281, 317);
             this.dataGridViewSP.TabIndex = 42;
             // 
@@ -795,7 +812,6 @@
             this.tabPageProduct.Controls.Add(this.textBoxPaOutPrice);
             this.tabPageProduct.Controls.Add(this.textBoxPaName);
             this.tabPageProduct.Controls.Add(this.textBoxPaPrNr);
-            this.tabPageProduct.Controls.Add(this.buttonPaDelete);
             this.tabPageProduct.Controls.Add(this.buttonPaUpdate);
             this.tabPageProduct.Controls.Add(this.buttonPaNew);
             this.tabPageProduct.Controls.Add(this.labelSearchPa);
@@ -813,21 +829,26 @@
             // 
             // buttonPaClearAll
             // 
-            this.buttonPaClearAll.Location = new System.Drawing.Point(856, 424);
+            this.buttonPaClearAll.Location = new System.Drawing.Point(542, 332);
             this.buttonPaClearAll.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPaClearAll.Name = "buttonPaClearAll";
             this.buttonPaClearAll.Size = new System.Drawing.Size(104, 42);
             this.buttonPaClearAll.TabIndex = 112;
             this.buttonPaClearAll.Text = "Clear all fields";
             this.buttonPaClearAll.UseVisualStyleBackColor = true;
+            this.buttonPaClearAll.Click += new System.EventHandler(this.buttonPaClearAll_Click);
             // 
             // dataGridViewDeletedPa
             // 
+            this.dataGridViewDeletedPa.AllowUserToAddRows = false;
             this.dataGridViewDeletedPa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDeletedPa.Location = new System.Drawing.Point(678, 103);
             this.dataGridViewDeletedPa.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDeletedPa.Name = "dataGridViewDeletedPa";
+            this.dataGridViewDeletedPa.ReadOnly = true;
+            this.dataGridViewDeletedPa.RowHeadersVisible = false;
             this.dataGridViewDeletedPa.RowTemplate.Height = 24;
+            this.dataGridViewDeletedPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDeletedPa.Size = new System.Drawing.Size(281, 317);
             this.dataGridViewDeletedPa.TabIndex = 111;
             // 
@@ -948,22 +969,13 @@
             // 
             // textBoxPaPrNr
             // 
+            this.textBoxPaPrNr.Enabled = false;
             this.textBoxPaPrNr.Location = new System.Drawing.Point(423, 136);
             this.textBoxPaPrNr.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaPrNr.Multiline = true;
             this.textBoxPaPrNr.Name = "textBoxPaPrNr";
             this.textBoxPaPrNr.Size = new System.Drawing.Size(151, 21);
             this.textBoxPaPrNr.TabIndex = 97;
-            // 
-            // buttonPaDelete
-            // 
-            this.buttonPaDelete.Location = new System.Drawing.Point(423, 369);
-            this.buttonPaDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonPaDelete.Name = "buttonPaDelete";
-            this.buttonPaDelete.Size = new System.Drawing.Size(75, 24);
-            this.buttonPaDelete.TabIndex = 96;
-            this.buttonPaDelete.Text = "Delete";
-            this.buttonPaDelete.UseVisualStyleBackColor = true;
             // 
             // buttonPaUpdate
             // 
@@ -985,6 +997,7 @@
             this.buttonPaNew.TabIndex = 94;
             this.buttonPaNew.Text = "New";
             this.buttonPaNew.UseVisualStyleBackColor = true;
+            this.buttonPaNew.Click += new System.EventHandler(this.buttonPaNew_Click);
             // 
             // labelSearchPa
             // 
@@ -1005,6 +1018,7 @@
             this.buttonSearchPa.TabIndex = 92;
             this.buttonSearchPa.Text = "Search";
             this.buttonSearchPa.UseVisualStyleBackColor = true;
+            this.buttonSearchPa.Click += new System.EventHandler(this.buttonSearchPa_Click);
             // 
             // textBoxSearchPa
             // 
@@ -1017,12 +1031,15 @@
             // 
             // dataGridViewPa
             // 
+            this.dataGridViewPa.AllowUserToAddRows = false;
             this.dataGridViewPa.AllowUserToResizeColumns = false;
             this.dataGridViewPa.AllowUserToResizeRows = false;
             this.dataGridViewPa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPa.Location = new System.Drawing.Point(7, 103);
             this.dataGridViewPa.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPa.Name = "dataGridViewPa";
+            this.dataGridViewPa.ReadOnly = true;
+            this.dataGridViewPa.RowHeadersVisible = false;
             this.dataGridViewPa.RowTemplate.Height = 24;
             this.dataGridViewPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPa.Size = new System.Drawing.Size(387, 317);
@@ -1048,12 +1065,16 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(7, 95);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(281, 317);
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(467, 317);
             this.dataGridView1.TabIndex = 116;
             // 
             // buttonTopProduct
@@ -1151,7 +1172,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "AffAIRS system";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageSale.ResumeLayout(false);
@@ -1248,7 +1269,6 @@
         private System.Windows.Forms.TextBox textBoxPaOutPrice;
         private System.Windows.Forms.TextBox textBoxPaName;
         private System.Windows.Forms.TextBox textBoxPaPrNr;
-        private System.Windows.Forms.Button buttonPaDelete;
         private System.Windows.Forms.Button buttonPaUpdate;
         private System.Windows.Forms.Button buttonPaNew;
         private System.Windows.Forms.Label labelSearchPa;

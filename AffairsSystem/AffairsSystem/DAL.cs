@@ -176,16 +176,7 @@ namespace AffairsSystem
             return ExecuteGetSqlAdapter("select * from product where productNr like '%" + productNr + "%' or productName like '%" + productName +
                 "%' or productInPrice like '%" + productInPrice + "%' or productOutPrice like '%" + productOutPrice + "%' or amount like '%" + amount + "%'");
         }
-        /// <summary>
-        /// Updates the available amount of a product in the Product table
-        /// </summary>
-        /// <param name="amount">the change in amount of said product thats available</param>
-        /// <param name="productNr"> the identifying number of the product </param>
-        
-        public void UpdateProductAmount(int amount, string productNr)
-        {
-            ExecuteSetSqlQuery("update product set amount = amount + '" + amount + "' where productNr = " + productNr);
-        }
+       
         /// <summary>
         /// Updates the information of a product in the Product table
         /// </summary>
@@ -248,7 +239,7 @@ namespace AffairsSystem
  
         public void SetSale(string spNr, double totalPrice)
         {
-            ExecuteSetSqlQuery("insert into product values getdate(), '" + spNr + "'," + totalPrice + ")");
+            ExecuteSetSqlQuery("insert into sales values (getdate(), '" + spNr + "'," + totalPrice + ")");
         }
 
 
@@ -277,6 +268,11 @@ namespace AffairsSystem
                 "on a.spNr = b.spNr group by a.spNr, firstname, lastname order by count(*) desc");
         }
 
+        public SqlDataReader getLatestSale()
+        {
+            return ExecuteGetSqlReader("select top 1 salesNr from Sales order by salesDate desc");
+        }
+
         /// <summary>
         /// Selects the salesperson with the highest amount of sales
         /// </summary>
@@ -297,6 +293,16 @@ namespace AffairsSystem
         {
             return ExecuteGetSqlAdapter("select a.productNr, productName, sum(a.amount) as [Total Sales], (sum(a.amount * productOutPrice) - sum(a.amount * productInPrice)) as [Difference]" +
                 "from salesline a join product p on a.productNr = p.productNr group by a.productNr, productName");
+        }
+        //GET PRODuCT AMOUNT
+        public SqlDataReader getProductAmount(int productNr)
+        {
+            return ExecuteGetSqlReader("select amount from product where productNr = " + productNr);
+        }
+        //UPDATE PRODUCT AMOUNT
+        public void UpdateProductAmount(int amount, int productNr, string minusOrPlus)
+        {
+            ExecuteSetSqlQuery("update product set amount = (amount  " + minusOrPlus + amount +") where productNr = " + productNr);
         }
 
     }

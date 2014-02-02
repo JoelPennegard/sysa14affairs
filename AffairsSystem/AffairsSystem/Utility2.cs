@@ -12,17 +12,12 @@ namespace AffairsSystem
     {
         public static Boolean CheckAdmin(SqlDataReader dr)
         {
-            
-            String adminString = "";
+            bool isAdmin = true;
             while (dr.Read())
             {
-               
-                adminString = dr.GetString(4);
-                
-                                
-                
+                isAdmin = dr.GetBoolean(4);                
             }
-            if (adminString.Equals("1"))
+            if (isAdmin)
             {
                 return true;
             }

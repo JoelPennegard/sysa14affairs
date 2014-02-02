@@ -43,6 +43,12 @@ namespace AffairsSystem
             }
             this.spNr = spNr;
 
+            // GÖR SÅ ATT KOMMA BLIR PUNKT ISTÄLLET! (viktigt för att det ska gå att lägga in i sql) /LUDDE
+            System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
+            customCulture.NumberFormat.NumberDecimalSeparator = ".";
+            System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
+            // 
+            textBoxNumPad.Text = totalPrice.ToString();
             
         }
         private string SpNR{
@@ -144,11 +150,9 @@ namespace AffairsSystem
             int productNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
             string productName = dataGridViewProductList.SelectedRows[0].Cells[1].Value.ToString();
             double productOutPrice = double.Parse(dataGridViewProductList.SelectedRows[0].Cells[2].Value.ToString());
-            
             string amountString = richTextBoxAmount.Text;
             int amountInt = 1;
-
-            
+            string minusOrPlus = "-";         
 
                 if (!Utility.CheckOnlyNumbers(amountString))
                 {
@@ -163,13 +167,26 @@ namespace AffairsSystem
                         amountString = "1";
                     }
                     amountInt = int.Parse(amountString);
+                    int productAmount = Utility.GetProductAmount(controller.getProductAmount(productNr));
+                    int productAmountLeft = Utility.CheckProductAmount(productAmount, amountInt);
                     
-                    string[] row = new string[] { productNr.ToString(), productName, productOutPrice.ToString(), amountInt.ToString() };
-                    dataGridViewSaleList.Rows.Add(row);
 
-                    double SinglePrice = amountInt * productOutPrice;
-                    totalPrice = totalPrice + SinglePrice;
-                    textBoxNumPad.Text = totalPrice.ToString();
+                    if (productAmountLeft > 0)
+                    {
+
+                        string[] row = new string[] { productNr.ToString(), productName, productOutPrice.ToString(), amountInt.ToString() };
+                        dataGridViewSaleList.Rows.Add(row);
+
+                        double SinglePrice = amountInt * productOutPrice;
+                        totalPrice = totalPrice + SinglePrice;
+                        textBoxNumPad.Text = totalPrice.ToString();
+                        controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
+                        FillProductTableAdmin();
+                    }
+                    else
+                    {
+                        FillProductTableAdmin();
+                    }
                 }
             
 
@@ -190,19 +207,14 @@ namespace AffairsSystem
 
         private void dataGridViewPa_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (dataGridViewPa.SelectedRows.Count == 1)
-            {
-                textBoxPaPrNr.Enabled = false;
+            
                 textBoxPaPrNr.Text = dataGridViewPa.SelectedRows[0].Cells[0].Value.ToString();
                 textBoxPaName.Text = dataGridViewPa.SelectedRows[0].Cells[1].Value.ToString();
                 textBoxPaInPrice.Text = dataGridViewPa.SelectedRows[0].Cells[2].Value.ToString();
                 textBoxPaOutPrice.Text = dataGridViewPa.SelectedRows[0].Cells[3].Value.ToString();
                 textBoxPaAmount.Text = dataGridViewPa.SelectedRows[0].Cells[4].Value.ToString();
-            }
-            else
-            {
-                textBoxPaPrNr.Enabled = true;
-            }
+            
+         
         }
 
         private void buttonPaUpdate_Click(object sender, EventArgs e)
@@ -215,25 +227,50 @@ namespace AffairsSystem
             int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
 
             controller.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount);
-            
-            
+            MessageBox.Show("Product nr: " + productNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            ClearAllInPa();
+            FillProductTable();
+            FillProductTableAdmin();
         }
 
         private void button_Click(object sender, EventArgs e)
         {
-            if (dataGridViewSaleList.SelectedRows.Count == 1)
+            int amount = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[3].Value.ToString());
+            int productNr = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[0].Value.ToString());
+            string minusOrPlus = "+";
+            if (this.dataGridViewSaleList.SelectedRows.Count > 0)
             {
-                dataGridViewSaleList.SelectedRows[0].Dispose();
+
+                controller.UpdateProductAmount(amount, productNr, minusOrPlus);
+                dataGridViewSaleList.Rows.RemoveAt(this.dataGridViewSaleList.SelectedRows[0].Index);
+                FillProductTableAdmin();
             }
- 
         }
 
         private void buttonENTER_Click(object sender, EventArgs e)
         {
-           // totalPrice = double.Parse(textBoxNumPad.Text);
-           // controller.SetSale(spNr, totalPrice);
+            if (dataGridViewSaleList.Rows.Count < 1)
+            {
+                MessageBox.Show("A sale must contain at least one item.", "Empty sale", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            else
+            {
+                totalPrice = double.Parse(textBoxNumPad.Text);
+                controller.SetSale(spNr, totalPrice);
+                int salesNr = Utility.CheckLatestSale(controller.GetLatestSale());
 
-           // controller.SetSalesLine();
+                foreach (DataGridViewRow row in dataGridViewSaleList.Rows)
+                {
+                    int productNr = int.Parse(row.Cells[0].Value.ToString());
+                    int amount = int.Parse(row.Cells[3].Value.ToString());
+                    controller.SetSalesLine(productNr, salesNr, amount);
+                }
+                MessageBox.Show("Sale nr: " + salesNr + " was added.", "Sale completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                dataGridViewSaleList.Rows.Clear();
+                totalPrice = 0;
+                textBoxNumPad.Text = totalPrice.ToString();
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -244,8 +281,52 @@ namespace AffairsSystem
             da.Fill(data);
             dataGridViewProductList.DataSource = data;
         }
-    
-        
 
+
+        // CLEAR ALL IN PRODUCT ADMIN
+        private void ClearAllInPa()
+        {
+            textBoxPaPrNr.Text = "";
+            textBoxPaAmount.Text = "";
+            textBoxPaInPrice.Text = "";
+            textBoxPaName.Text = "";
+            textBoxPaOutPrice.Text = "";
+        }
+
+        //Detta gör så att programmet STÄNGS när man trycker på X
+        protected override void OnFormClosing(FormClosingEventArgs e)
+        {
+                Environment.Exit(0);
+        }
+
+        private void buttonPaNew_Click(object sender, EventArgs e)
+        {
+            
+            int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
+            double productInPrice = Utility.CheckDouble(double.Parse(textBoxPaInPrice.Text));
+            string productName = Utility.FirstCharToUpper(textBoxPaName.Text);
+            double productOutPrice = Utility.CheckDouble(double.Parse(textBoxPaOutPrice.Text));
+
+            controller.SetProduct(productName, productInPrice, productOutPrice, amount);
+
+            FillProductTableAdmin();
+            FillProductTable();
+            ClearAllInPa();
+        }
+
+        private void buttonPaClearAll_Click(object sender, EventArgs e)
+        {
+            ClearAllInPa();
+        }
+
+        private void buttonSearchPa_Click(object sender, EventArgs e)
+        {
+            string search = textBoxSearchPa.Text;
+            SqlDataAdapter da = controller.SearchProductAllAttributes(search);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewPa.DataSource = data;
+
+        }
     }
 }

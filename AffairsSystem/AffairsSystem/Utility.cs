@@ -76,10 +76,65 @@ namespace AffairsSystem
                 return clear;
             }
         }
+        // CHECK LATEST SALE
+        public static int CheckLatestSale(SqlDataReader dr)
+        {
+            int result = 0;
+            while (dr.Read())
+            {
+                result = dr.GetInt32(0);
+            }
+            return result;
+        }
+        //GET PRODUCT AMOUNT
+        public static int GetProductAmount(SqlDataReader dr)
+        {
+            int result = 0;
+            while (dr.Read())
+            {
+                result = dr.GetInt32(0);
+            }
+            return result;
+        }
+        //CHECK PRODUCT AMOUNT
+        public static int CheckProductAmount(int productAmount, int amountInt)
+        {
+            int amount = 0;
+            if (productAmount == 0)
+            {
+                MessageBox.Show("There is no left of this product.", "Order more", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return amount;
+            }
+            else if (productAmount < amountInt)
+            {
+                MessageBox.Show("There are only " + productAmount + " items left of this product\n"+
+                    "so you can't make this sale", "Order more", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return amount;
+            }
+            else if (productAmount > amountInt)
+            {
+                amount = productAmount - amountInt;
+               
+                if (amount < 11)
+                {
+                    MessageBox.Show("It is now only " + amount + " left of this product, please order more", "Order more", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return amount;
+                }
+                return amount;
+            }
+            else
+            {
+                MessageBox.Show("That was the last one! ORDER MORE!", "Order more", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                amount = 1;
+                return amount;
+            }
 
-      
 
+
+
+        }
+    }
         
 
-    }
+    
 }

@@ -94,6 +94,12 @@ namespace AffairsSystem
             da = dal.GetSalesPersonSales(spNr);
             return da;
         }
+        // GET LATEST SALE
+        public SqlDataReader GetLatestSale()
+        {
+            dr = dal.getLatestSale();
+            return dr;
+        }
         //UPDATE SALES PERSON (ADMIN))
         public void UpdateSalesPerson(string spNr, string firstName, string lastName, string sPhone)
         {
@@ -105,10 +111,17 @@ namespace AffairsSystem
             dal.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount);
         }
         // UPDATE PRODUCT AMOUNT (ADMIN)
-        public void UpdateProductAmount(int amount, string productNr)
+        public void UpdateProductAmount(int amount, int productNr, string minusOrPlus)
         {
-            dal.UpdateProductAmount(amount, productNr);
+            dal.UpdateProductAmount(amount, productNr, minusOrPlus);
         }
+        //GET PRODuCT AMOUNT
+        public SqlDataReader getProductAmount(int productNr)
+        {
+            dr = dal.getProductAmount(productNr);
+            return dr;
+        }
+        
 
         
     }
