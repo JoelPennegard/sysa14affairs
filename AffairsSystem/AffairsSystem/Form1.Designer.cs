@@ -201,6 +201,7 @@
             this.buttonClearAll.TabIndex = 44;
             this.buttonClearAll.Text = "Clear all fields";
             this.buttonClearAll.UseVisualStyleBackColor = true;
+            this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
             // 
             // button3
             // 
@@ -250,20 +251,19 @@
             this.textBoxSearchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchProduct.Location = new System.Drawing.Point(12, 77);
             this.textBoxSearchProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSearchProduct.Multiline = true;
             this.textBoxSearchProduct.Name = "textBoxSearchProduct";
-            this.textBoxSearchProduct.Size = new System.Drawing.Size(243, 43);
+            this.textBoxSearchProduct.Size = new System.Drawing.Size(243, 44);
             this.textBoxSearchProduct.TabIndex = 39;
             this.textBoxSearchProduct.TextChanged += new System.EventHandler(this.textBoxSearchProduct_TextChanged);
+            this.textBoxSearchProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchProduct_KeyPress);
             // 
             // textBoxNumPad
             // 
             this.textBoxNumPad.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNumPad.Location = new System.Drawing.Point(901, 218);
             this.textBoxNumPad.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNumPad.Multiline = true;
             this.textBoxNumPad.Name = "textBoxNumPad";
-            this.textBoxNumPad.Size = new System.Drawing.Size(206, 43);
+            this.textBoxNumPad.Size = new System.Drawing.Size(206, 44);
             this.textBoxNumPad.TabIndex = 38;
             this.textBoxNumPad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -505,6 +505,7 @@
             // 
             // richTextBoxAmount
             // 
+            this.richTextBoxAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxAmount.Location = new System.Drawing.Point(422, 251);
             this.richTextBoxAmount.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxAmount.Name = "richTextBoxAmount";

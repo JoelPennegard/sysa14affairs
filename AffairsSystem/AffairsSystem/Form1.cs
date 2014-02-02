@@ -191,16 +191,17 @@ namespace AffairsSystem
             
 
         }
+        
 
         private void buttonSearchProduct_Click(object sender, EventArgs e)
         {
             string search = textBoxSearchProduct.Text;
-            
-            
                 SqlDataAdapter da = controller.SearchProductTill(search);
                 DataTable data = new DataTable();
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
+                textBoxSearchProduct.Text = "";
+                
             
           
         }
@@ -238,13 +239,22 @@ namespace AffairsSystem
         {
             int amount = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[3].Value.ToString());
             int productNr = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[0].Value.ToString());
+            double productOutPrice = double.Parse(dataGridViewSaleList.SelectedRows[0].Cells[2].Value.ToString());
+            double SinglePrice = amount * productOutPrice;
             string minusOrPlus = "+";
             if (this.dataGridViewSaleList.SelectedRows.Count > 0)
             {
-
+                
+                totalPrice = totalPrice - SinglePrice;
                 controller.UpdateProductAmount(amount, productNr, minusOrPlus);
                 dataGridViewSaleList.Rows.RemoveAt(this.dataGridViewSaleList.SelectedRows[0].Index);
                 FillProductTableAdmin();
+                textBoxNumPad.Text = totalPrice.ToString();
+                if (this.dataGridViewSaleList.Rows.Count == 0)
+                {
+                    totalPrice = 0;
+                    textBoxNumPad.Text = totalPrice.ToString();
+                }
             }
         }
 
@@ -327,6 +337,30 @@ namespace AffairsSystem
             da.Fill(data);
             dataGridViewPa.DataSource = data;
 
+        }
+
+        private void buttonClearAll_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in dataGridViewSaleList.Rows)
+            {
+                int productNr = int.Parse(row.Cells[0].Value.ToString());
+                int amount = int.Parse(row.Cells[3].Value.ToString());
+                string minusOrPlus = "+";
+                controller.UpdateProductAmount(amount, productNr, minusOrPlus);
+            }
+            FillProductTableAdmin();
+            totalPrice = 0;
+            textBoxNumPad.Text = totalPrice.ToString();
+            dataGridViewSaleList.Rows.Clear();
+            richTextBoxAmount.Text = "";
+        }
+
+        private void textBoxSearchProduct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                buttonSearchProduct.PerformClick();
+            }
         }
     }
 }
