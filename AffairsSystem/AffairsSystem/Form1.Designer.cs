@@ -88,6 +88,8 @@
             this.textBoxSearchSP = new System.Windows.Forms.TextBox();
             this.dataGridViewSP = new System.Windows.Forms.DataGridView();
             this.tabPageProduct = new System.Windows.Forms.TabPage();
+            this.buttonGetAllDeletedPa = new System.Windows.Forms.Button();
+            this.buttonGetAllPa = new System.Windows.Forms.Button();
             this.checkBoxForSale = new System.Windows.Forms.CheckBox();
             this.buttonPaClearAll = new System.Windows.Forms.Button();
             this.dataGridViewDeletedPa = new System.Windows.Forms.DataGridView();
@@ -121,8 +123,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonGetAllPa = new System.Windows.Forms.Button();
-            this.buttonGetAllDeletedPa = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -841,6 +841,28 @@
             this.tabPageProduct.Text = "Product administration";
             this.tabPageProduct.UseVisualStyleBackColor = true;
             // 
+            // buttonGetAllDeletedPa
+            // 
+            this.buttonGetAllDeletedPa.Location = new System.Drawing.Point(1063, 56);
+            this.buttonGetAllDeletedPa.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGetAllDeletedPa.Name = "buttonGetAllDeletedPa";
+            this.buttonGetAllDeletedPa.Size = new System.Drawing.Size(64, 42);
+            this.buttonGetAllDeletedPa.TabIndex = 115;
+            this.buttonGetAllDeletedPa.Text = "Get All";
+            this.buttonGetAllDeletedPa.UseVisualStyleBackColor = true;
+            this.buttonGetAllDeletedPa.Click += new System.EventHandler(this.buttonGetAllDeletedPa_Click);
+            // 
+            // buttonGetAllPa
+            // 
+            this.buttonGetAllPa.Location = new System.Drawing.Point(401, 56);
+            this.buttonGetAllPa.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGetAllPa.Name = "buttonGetAllPa";
+            this.buttonGetAllPa.Size = new System.Drawing.Size(64, 42);
+            this.buttonGetAllPa.TabIndex = 114;
+            this.buttonGetAllPa.Text = "Get All";
+            this.buttonGetAllPa.UseVisualStyleBackColor = true;
+            this.buttonGetAllPa.Click += new System.EventHandler(this.buttonGetAllPa_Click);
+            // 
             // checkBoxForSale
             // 
             this.checkBoxForSale.AutoSize = true;
@@ -875,6 +897,7 @@
             this.dataGridViewDeletedPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDeletedPa.Size = new System.Drawing.Size(458, 317);
             this.dataGridViewDeletedPa.TabIndex = 111;
+            this.dataGridViewDeletedPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedPa_CellClick);
             this.dataGridViewDeletedPa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedPa_CellContentClick);
             // 
             // labelPaAmount
@@ -1072,6 +1095,7 @@
             this.dataGridViewPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPa.Size = new System.Drawing.Size(458, 317);
             this.dataGridViewPa.TabIndex = 90;
+            this.dataGridViewPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPa_CellClick);
             this.dataGridViewPa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPa_CellContentClick);
             // 
             // tabPageStatistics
@@ -1191,28 +1215,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
-            // 
-            // buttonGetAllPa
-            // 
-            this.buttonGetAllPa.Location = new System.Drawing.Point(401, 56);
-            this.buttonGetAllPa.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonGetAllPa.Name = "buttonGetAllPa";
-            this.buttonGetAllPa.Size = new System.Drawing.Size(64, 42);
-            this.buttonGetAllPa.TabIndex = 114;
-            this.buttonGetAllPa.Text = "Get All";
-            this.buttonGetAllPa.UseVisualStyleBackColor = true;
-            this.buttonGetAllPa.Click += new System.EventHandler(this.buttonGetAllPa_Click);
-            // 
-            // buttonGetAllDeletedPa
-            // 
-            this.buttonGetAllDeletedPa.Location = new System.Drawing.Point(1063, 56);
-            this.buttonGetAllDeletedPa.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonGetAllDeletedPa.Name = "buttonGetAllDeletedPa";
-            this.buttonGetAllDeletedPa.Size = new System.Drawing.Size(64, 42);
-            this.buttonGetAllDeletedPa.TabIndex = 115;
-            this.buttonGetAllDeletedPa.Text = "Get All";
-            this.buttonGetAllDeletedPa.UseVisualStyleBackColor = true;
-            this.buttonGetAllDeletedPa.Click += new System.EventHandler(this.buttonGetAllDeletedPa_Click);
             // 
             // Form1
             // 
