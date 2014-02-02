@@ -362,5 +362,30 @@ namespace AffairsSystem
                 buttonSearchProduct.PerformClick();
             }
         }
+
+        private void buttonTopSellers_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter da = controller.GetHighestSales();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewStatistics.DataSource = data;
+
+        }
+
+        private void buttonTopProduct_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter da = controller.GetTopProductSale();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewStatistics.DataSource = data;
+        }
+
+        private void buttonTopCombos_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter da = controller.GetTopOneSalesPerson();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewStatistics.DataSource = data;
+        }
     }
 }

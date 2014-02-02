@@ -121,7 +121,24 @@ namespace AffairsSystem
             dr = dal.getProductAmount(productNr);
             return dr;
         }
-        
+        //GET HIGHEST SALES
+        public SqlDataAdapter GetHighestSales()
+        {
+            da = dal.GetHighestSales();
+            return da;
+        }
+        //GET TOP SALESPERSON
+        public SqlDataAdapter GetTopOneSalesPerson()
+        {
+            da = dal.GetTopOneSalesPerson();
+            return da;
+        }
+        //GET TOP PRODUCT THAT IS SOLD THE MOST
+        public SqlDataAdapter GetTopProductSale()
+        {
+            da = dal.GetTopProductSale();
+            return da;
+        }
 
         
     }

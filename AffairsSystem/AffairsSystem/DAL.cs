@@ -280,7 +280,7 @@ namespace AffairsSystem
  
         public SqlDataAdapter GetTopOneSalesPerson()
         {
-            return ExecuteGetSqlAdapter("select top 1 firstname, lastname, salesNr, max(totalprice) as [Total Price]from salesperson a join sales b" +
+            return ExecuteGetSqlAdapter("select top 1 firstname, lastname, salesNr, max(totalprice) as [Total Price] from salesperson a join sales b " +
                 "on a.spNr = b.spNr group by firstname, lastname, totalprice, salesNr order by totalprice desc");
         }
 
@@ -292,7 +292,7 @@ namespace AffairsSystem
         public SqlDataAdapter GetTopProductSale()
         {
             return ExecuteGetSqlAdapter("select a.productNr, productName, sum(a.amount) as [Total Sales], (sum(a.amount * productOutPrice) - sum(a.amount * productInPrice)) as [Difference]" +
-                "from salesline a join product p on a.productNr = p.productNr group by a.productNr, productName");
+                "from salesline a join product p on a.productNr = p.productNr group by a.productNr, productName order by sum(a.amount) desc");
         }
         //GET PRODuCT AMOUNT
         public SqlDataReader getProductAmount(int productNr)

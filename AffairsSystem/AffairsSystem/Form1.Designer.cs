@@ -110,7 +110,7 @@
             this.textBoxSearchPa = new System.Windows.Forms.TextBox();
             this.dataGridViewPa = new System.Windows.Forms.DataGridView();
             this.tabPageStatistics = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewStatistics = new System.Windows.Forms.DataGridView();
             this.buttonTopProduct = new System.Windows.Forms.Button();
             this.buttonTopCombos = new System.Windows.Forms.Button();
             this.buttonTopSellers = new System.Windows.Forms.Button();
@@ -131,7 +131,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedPa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).BeginInit();
             this.tabPageStatistics.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistics)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -1050,7 +1050,7 @@
             // tabPageStatistics
             // 
             this.tabPageStatistics.BackColor = System.Drawing.Color.LightGray;
-            this.tabPageStatistics.Controls.Add(this.dataGridView1);
+            this.tabPageStatistics.Controls.Add(this.dataGridViewStatistics);
             this.tabPageStatistics.Controls.Add(this.buttonTopProduct);
             this.tabPageStatistics.Controls.Add(this.buttonTopCombos);
             this.tabPageStatistics.Controls.Add(this.buttonTopSellers);
@@ -1064,19 +1064,20 @@
             this.tabPageStatistics.Text = "Statistics";
             this.tabPageStatistics.Click += new System.EventHandler(this.tabPageStatistics_Click);
             // 
-            // dataGridView1
+            // dataGridViewStatistics
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 95);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.ReadOnly = true;
-            this.dataGridView1.RowHeadersVisible = false;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(467, 317);
-            this.dataGridView1.TabIndex = 116;
+            this.dataGridViewStatistics.AllowUserToAddRows = false;
+            this.dataGridViewStatistics.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStatistics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStatistics.Location = new System.Drawing.Point(7, 95);
+            this.dataGridViewStatistics.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewStatistics.Name = "dataGridViewStatistics";
+            this.dataGridViewStatistics.ReadOnly = true;
+            this.dataGridViewStatistics.RowHeadersVisible = false;
+            this.dataGridViewStatistics.RowTemplate.Height = 24;
+            this.dataGridViewStatistics.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewStatistics.Size = new System.Drawing.Size(467, 317);
+            this.dataGridViewStatistics.TabIndex = 116;
             // 
             // buttonTopProduct
             // 
@@ -1087,6 +1088,7 @@
             this.buttonTopProduct.TabIndex = 115;
             this.buttonTopProduct.Text = "Top Products";
             this.buttonTopProduct.UseVisualStyleBackColor = true;
+            this.buttonTopProduct.Click += new System.EventHandler(this.buttonTopProduct_Click);
             // 
             // buttonTopCombos
             // 
@@ -1095,8 +1097,9 @@
             this.buttonTopCombos.Name = "buttonTopCombos";
             this.buttonTopCombos.Size = new System.Drawing.Size(80, 36);
             this.buttonTopCombos.TabIndex = 114;
-            this.buttonTopCombos.Text = "Top Combos";
+            this.buttonTopCombos.Text = "Highest Sale";
             this.buttonTopCombos.UseVisualStyleBackColor = true;
+            this.buttonTopCombos.Click += new System.EventHandler(this.buttonTopCombos_Click);
             // 
             // buttonTopSellers
             // 
@@ -1107,6 +1110,7 @@
             this.buttonTopSellers.TabIndex = 113;
             this.buttonTopSellers.Text = "Top Sellers";
             this.buttonTopSellers.UseVisualStyleBackColor = true;
+            this.buttonTopSellers.Click += new System.EventHandler(this.buttonTopSellers_Click);
             // 
             // lblLoggedInAs
             // 
@@ -1189,7 +1193,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedPa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).EndInit();
             this.tabPageStatistics.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistics)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1277,7 +1281,7 @@
         private System.Windows.Forms.TextBox textBoxSearchPa;
         private System.Windows.Forms.DataGridView dataGridViewPa;
         private System.Windows.Forms.DataGridView dataGridViewDeletedPa;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewStatistics;
         private System.Windows.Forms.Button buttonTopProduct;
         private System.Windows.Forms.Button buttonTopCombos;
         private System.Windows.Forms.Button buttonTopSellers;
