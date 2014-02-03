@@ -84,7 +84,6 @@
             this.textBoxEaPhoneNr = new System.Windows.Forms.TextBox();
             this.textBoxEaFName = new System.Windows.Forms.TextBox();
             this.textBoxEaSpNr = new System.Windows.Forms.TextBox();
-            this.buttonEaDelete = new System.Windows.Forms.Button();
             this.buttonEaUpdate = new System.Windows.Forms.Button();
             this.buttonEaNew = new System.Windows.Forms.Button();
             this.labelSearchSP = new System.Windows.Forms.Label();
@@ -128,6 +127,9 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.checkBoxEmployee = new System.Windows.Forms.CheckBox();
+            this.checkBoxEmployeeAdmin = new System.Windows.Forms.CheckBox();
+            this.buttonGetAllNotWorkingSalesPersons = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -151,7 +153,7 @@
             this.tabControl.Controls.Add(this.tabPageProduct);
             this.tabControl.Controls.Add(this.tabPageStatistics);
             this.tabControl.Location = new System.Drawing.Point(0, 25);
-            this.tabControl.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabControl.Margin = new System.Windows.Forms.Padding(2);
             this.tabControl.Name = "tabControl";
             this.tabControl.SelectedIndex = 0;
             this.tabControl.Size = new System.Drawing.Size(1142, 543);
@@ -194,9 +196,9 @@
             this.tabPageSale.Controls.Add(this.button1);
             this.tabPageSale.Controls.Add(this.dataGridViewProductList);
             this.tabPageSale.Location = new System.Drawing.Point(4, 22);
-            this.tabPageSale.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageSale.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageSale.Name = "tabPageSale";
-            this.tabPageSale.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageSale.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageSale.Size = new System.Drawing.Size(1134, 517);
             this.tabPageSale.TabIndex = 0;
             this.tabPageSale.Text = "Sale menu";
@@ -216,7 +218,7 @@
             // 
             this.textBoxNumPad2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNumPad2.Location = new System.Drawing.Point(901, 215);
-            this.textBoxNumPad2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNumPad2.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNumPad2.Name = "textBoxNumPad2";
             this.textBoxNumPad2.Size = new System.Drawing.Size(206, 44);
             this.textBoxNumPad2.TabIndex = 45;
@@ -226,7 +228,7 @@
             // 
             this.textBoxCurrencyUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
             this.textBoxCurrencyUnit.Location = new System.Drawing.Point(1040, 166);
-            this.textBoxCurrencyUnit.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxCurrencyUnit.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCurrencyUnit.Multiline = true;
             this.textBoxCurrencyUnit.Name = "textBoxCurrencyUnit";
             this.textBoxCurrencyUnit.Size = new System.Drawing.Size(68, 44);
@@ -235,7 +237,7 @@
             // buttonClearAll
             // 
             this.buttonClearAll.Location = new System.Drawing.Point(1003, 445);
-            this.buttonClearAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonClearAll.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClearAll.Name = "buttonClearAll";
             this.buttonClearAll.Size = new System.Drawing.Size(104, 42);
             this.buttonClearAll.TabIndex = 44;
@@ -246,7 +248,7 @@
             // button3
             // 
             this.button3.Location = new System.Drawing.Point(328, 77);
-            this.button3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button3.Margin = new System.Windows.Forms.Padding(2);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(69, 42);
             this.button3.TabIndex = 43;
@@ -257,7 +259,7 @@
             // button2
             // 
             this.button2.Location = new System.Drawing.Point(12, 445);
-            this.button2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(104, 42);
             this.button2.TabIndex = 42;
@@ -278,7 +280,7 @@
             // buttonSearchProduct
             // 
             this.buttonSearchProduct.Location = new System.Drawing.Point(259, 77);
-            this.buttonSearchProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSearchProduct.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchProduct.Name = "buttonSearchProduct";
             this.buttonSearchProduct.Size = new System.Drawing.Size(64, 42);
             this.buttonSearchProduct.TabIndex = 40;
@@ -290,7 +292,7 @@
             // 
             this.textBoxSearchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchProduct.Location = new System.Drawing.Point(12, 77);
-            this.textBoxSearchProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSearchProduct.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchProduct.Name = "textBoxSearchProduct";
             this.textBoxSearchProduct.Size = new System.Drawing.Size(243, 44);
             this.textBoxSearchProduct.TabIndex = 39;
@@ -300,7 +302,7 @@
             // 
             this.textBoxNumPad.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNumPad.Location = new System.Drawing.Point(901, 166);
-            this.textBoxNumPad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxNumPad.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNumPad.Name = "textBoxNumPad";
             this.textBoxNumPad.Size = new System.Drawing.Size(135, 44);
             this.textBoxNumPad.TabIndex = 38;
@@ -309,7 +311,7 @@
             // buttonDELETE
             // 
             this.buttonDELETE.Location = new System.Drawing.Point(1027, 263);
-            this.buttonDELETE.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDELETE.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDELETE.Name = "buttonDELETE";
             this.buttonDELETE.Size = new System.Drawing.Size(80, 41);
             this.buttonDELETE.TabIndex = 37;
@@ -320,7 +322,7 @@
             // buttonENTER
             // 
             this.buttonENTER.Location = new System.Drawing.Point(1027, 309);
-            this.buttonENTER.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonENTER.Margin = new System.Windows.Forms.Padding(2);
             this.buttonENTER.Name = "buttonENTER";
             this.buttonENTER.Size = new System.Drawing.Size(80, 132);
             this.buttonENTER.TabIndex = 36;
@@ -331,7 +333,7 @@
             // buttonNPDECIMAL
             // 
             this.buttonNPDECIMAL.Location = new System.Drawing.Point(985, 400);
-            this.buttonNPDECIMAL.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNPDECIMAL.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNPDECIMAL.Name = "buttonNPDECIMAL";
             this.buttonNPDECIMAL.Size = new System.Drawing.Size(38, 41);
             this.buttonNPDECIMAL.TabIndex = 35;
@@ -342,7 +344,7 @@
             // buttonNP0
             // 
             this.buttonNP0.Location = new System.Drawing.Point(901, 400);
-            this.buttonNP0.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP0.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP0.Name = "buttonNP0";
             this.buttonNP0.Size = new System.Drawing.Size(80, 41);
             this.buttonNP0.TabIndex = 34;
@@ -353,7 +355,7 @@
             // buttonNP9
             // 
             this.buttonNP9.Location = new System.Drawing.Point(985, 263);
-            this.buttonNP9.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP9.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP9.Name = "buttonNP9";
             this.buttonNP9.Size = new System.Drawing.Size(38, 41);
             this.buttonNP9.TabIndex = 33;
@@ -364,7 +366,7 @@
             // buttonNP8
             // 
             this.buttonNP8.Location = new System.Drawing.Point(943, 263);
-            this.buttonNP8.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP8.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP8.Name = "buttonNP8";
             this.buttonNP8.Size = new System.Drawing.Size(38, 41);
             this.buttonNP8.TabIndex = 32;
@@ -375,7 +377,7 @@
             // buttonNP7
             // 
             this.buttonNP7.Location = new System.Drawing.Point(901, 263);
-            this.buttonNP7.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP7.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP7.Name = "buttonNP7";
             this.buttonNP7.Size = new System.Drawing.Size(38, 41);
             this.buttonNP7.TabIndex = 31;
@@ -386,7 +388,7 @@
             // buttonNP6
             // 
             this.buttonNP6.Location = new System.Drawing.Point(985, 309);
-            this.buttonNP6.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP6.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP6.Name = "buttonNP6";
             this.buttonNP6.Size = new System.Drawing.Size(38, 41);
             this.buttonNP6.TabIndex = 30;
@@ -397,7 +399,7 @@
             // buttonNP5
             // 
             this.buttonNP5.Location = new System.Drawing.Point(943, 309);
-            this.buttonNP5.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP5.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP5.Name = "buttonNP5";
             this.buttonNP5.Size = new System.Drawing.Size(38, 41);
             this.buttonNP5.TabIndex = 29;
@@ -408,7 +410,7 @@
             // buttonNP4
             // 
             this.buttonNP4.Location = new System.Drawing.Point(901, 309);
-            this.buttonNP4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP4.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP4.Name = "buttonNP4";
             this.buttonNP4.Size = new System.Drawing.Size(38, 41);
             this.buttonNP4.TabIndex = 28;
@@ -419,7 +421,7 @@
             // buttonNP2
             // 
             this.buttonNP2.Location = new System.Drawing.Point(943, 355);
-            this.buttonNP2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP2.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP2.Name = "buttonNP2";
             this.buttonNP2.Size = new System.Drawing.Size(38, 41);
             this.buttonNP2.TabIndex = 27;
@@ -430,7 +432,7 @@
             // buttonNP3
             // 
             this.buttonNP3.Location = new System.Drawing.Point(985, 355);
-            this.buttonNP3.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP3.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP3.Name = "buttonNP3";
             this.buttonNP3.Size = new System.Drawing.Size(38, 41);
             this.buttonNP3.TabIndex = 26;
@@ -441,7 +443,7 @@
             // buttonNP1
             // 
             this.buttonNP1.Location = new System.Drawing.Point(901, 355);
-            this.buttonNP1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNP1.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNP1.Name = "buttonNP1";
             this.buttonNP1.Size = new System.Drawing.Size(38, 41);
             this.buttonNP1.TabIndex = 25;
@@ -452,7 +454,7 @@
             // buttonNOK
             // 
             this.buttonNOK.Location = new System.Drawing.Point(1039, 119);
-            this.buttonNOK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonNOK.Margin = new System.Windows.Forms.Padding(2);
             this.buttonNOK.Name = "buttonNOK";
             this.buttonNOK.Size = new System.Drawing.Size(68, 42);
             this.buttonNOK.TabIndex = 13;
@@ -463,7 +465,7 @@
             // buttonUSD
             // 
             this.buttonUSD.Location = new System.Drawing.Point(1039, 72);
-            this.buttonUSD.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonUSD.Margin = new System.Windows.Forms.Padding(2);
             this.buttonUSD.Name = "buttonUSD";
             this.buttonUSD.Size = new System.Drawing.Size(68, 42);
             this.buttonUSD.TabIndex = 12;
@@ -474,7 +476,7 @@
             // buttonGBP
             // 
             this.buttonGBP.Location = new System.Drawing.Point(969, 119);
-            this.buttonGBP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGBP.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGBP.Name = "buttonGBP";
             this.buttonGBP.Size = new System.Drawing.Size(65, 42);
             this.buttonGBP.TabIndex = 11;
@@ -485,7 +487,7 @@
             // buttonEURO
             // 
             this.buttonEURO.Location = new System.Drawing.Point(970, 72);
-            this.buttonEURO.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEURO.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEURO.Name = "buttonEURO";
             this.buttonEURO.Size = new System.Drawing.Size(65, 42);
             this.buttonEURO.TabIndex = 10;
@@ -496,7 +498,7 @@
             // buttonDKK
             // 
             this.buttonDKK.Location = new System.Drawing.Point(901, 119);
-            this.buttonDKK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonDKK.Margin = new System.Windows.Forms.Padding(2);
             this.buttonDKK.Name = "buttonDKK";
             this.buttonDKK.Size = new System.Drawing.Size(64, 42);
             this.buttonDKK.TabIndex = 9;
@@ -507,7 +509,7 @@
             // buttonSEK
             // 
             this.buttonSEK.Location = new System.Drawing.Point(900, 72);
-            this.buttonSEK.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSEK.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSEK.Name = "buttonSEK";
             this.buttonSEK.Size = new System.Drawing.Size(64, 42);
             this.buttonSEK.TabIndex = 8;
@@ -526,7 +528,7 @@
             this.Price,
             this.Amount});
             this.dataGridViewSaleList.Location = new System.Drawing.Point(512, 124);
-            this.dataGridViewSaleList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewSaleList.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSaleList.MultiSelect = false;
             this.dataGridViewSaleList.Name = "dataGridViewSaleList";
             this.dataGridViewSaleList.ReadOnly = true;
@@ -571,7 +573,7 @@
             // 
             this.richTextBoxAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxAmount.Location = new System.Drawing.Point(422, 251);
-            this.richTextBoxAmount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.richTextBoxAmount.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxAmount.Name = "richTextBoxAmount";
             this.richTextBoxAmount.Size = new System.Drawing.Size(65, 34);
             this.richTextBoxAmount.TabIndex = 6;
@@ -580,7 +582,7 @@
             // button
             // 
             this.button.Location = new System.Drawing.Point(422, 297);
-            this.button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button.Margin = new System.Windows.Forms.Padding(2);
             this.button.Name = "button";
             this.button.Size = new System.Drawing.Size(64, 33);
             this.button.TabIndex = 5;
@@ -591,7 +593,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(422, 204);
-            this.button1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(64, 33);
             this.button1.TabIndex = 4;
@@ -605,7 +607,7 @@
             this.dataGridViewProductList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductList.Location = new System.Drawing.Point(12, 124);
-            this.dataGridViewProductList.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewProductList.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewProductList.MultiSelect = false;
             this.dataGridViewProductList.Name = "dataGridViewProductList";
             this.dataGridViewProductList.ReadOnly = true;
@@ -617,6 +619,9 @@
             // 
             // tabPageEmployee
             // 
+            this.tabPageEmployee.Controls.Add(this.buttonGetAllNotWorkingSalesPersons);
+            this.tabPageEmployee.Controls.Add(this.checkBoxEmployeeAdmin);
+            this.tabPageEmployee.Controls.Add(this.checkBoxEmployee);
             this.tabPageEmployee.Controls.Add(this.buttonGetAllWorkingSalesPersons);
             this.tabPageEmployee.Controls.Add(this.buttonEaClearAll);
             this.tabPageEmployee.Controls.Add(this.labelSearchDeletedSP);
@@ -632,7 +637,6 @@
             this.tabPageEmployee.Controls.Add(this.textBoxEaPhoneNr);
             this.tabPageEmployee.Controls.Add(this.textBoxEaFName);
             this.tabPageEmployee.Controls.Add(this.textBoxEaSpNr);
-            this.tabPageEmployee.Controls.Add(this.buttonEaDelete);
             this.tabPageEmployee.Controls.Add(this.buttonEaUpdate);
             this.tabPageEmployee.Controls.Add(this.buttonEaNew);
             this.tabPageEmployee.Controls.Add(this.labelSearchSP);
@@ -640,9 +644,9 @@
             this.tabPageEmployee.Controls.Add(this.textBoxSearchSP);
             this.tabPageEmployee.Controls.Add(this.dataGridViewSP);
             this.tabPageEmployee.Location = new System.Drawing.Point(4, 22);
-            this.tabPageEmployee.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageEmployee.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageEmployee.Name = "tabPageEmployee";
-            this.tabPageEmployee.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageEmployee.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageEmployee.Size = new System.Drawing.Size(1134, 517);
             this.tabPageEmployee.TabIndex = 1;
             this.tabPageEmployee.Text = "Employee administration";
@@ -650,10 +654,10 @@
             // 
             // buttonGetAllWorkingSalesPersons
             // 
-            this.buttonGetAllWorkingSalesPersons.Location = new System.Drawing.Point(224, 426);
-            this.buttonGetAllWorkingSalesPersons.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGetAllWorkingSalesPersons.Location = new System.Drawing.Point(366, 56);
+            this.buttonGetAllWorkingSalesPersons.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGetAllWorkingSalesPersons.Name = "buttonGetAllWorkingSalesPersons";
-            this.buttonGetAllWorkingSalesPersons.Size = new System.Drawing.Size(56, 34);
+            this.buttonGetAllWorkingSalesPersons.Size = new System.Drawing.Size(64, 44);
             this.buttonGetAllWorkingSalesPersons.TabIndex = 91;
             this.buttonGetAllWorkingSalesPersons.Text = "Get All";
             this.buttonGetAllWorkingSalesPersons.UseVisualStyleBackColor = true;
@@ -661,18 +665,19 @@
             // 
             // buttonEaClearAll
             // 
-            this.buttonEaClearAll.Location = new System.Drawing.Point(577, 425);
-            this.buttonEaClearAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEaClearAll.Location = new System.Drawing.Point(498, 430);
+            this.buttonEaClearAll.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEaClearAll.Name = "buttonEaClearAll";
             this.buttonEaClearAll.Size = new System.Drawing.Size(104, 42);
             this.buttonEaClearAll.TabIndex = 90;
             this.buttonEaClearAll.Text = "Clear all fields";
             this.buttonEaClearAll.UseVisualStyleBackColor = true;
+            this.buttonEaClearAll.Click += new System.EventHandler(this.buttonEaClearAll_Click);
             // 
             // labelSearchDeletedSP
             // 
             this.labelSearchDeletedSP.AutoSize = true;
-            this.labelSearchDeletedSP.Location = new System.Drawing.Point(401, 38);
+            this.labelSearchDeletedSP.Location = new System.Drawing.Point(825, 38);
             this.labelSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSearchDeletedSP.Name = "labelSearchDeletedSP";
             this.labelSearchDeletedSP.Size = new System.Drawing.Size(215, 13);
@@ -681,10 +686,10 @@
             // 
             // buttonSearchDeletedSP
             // 
-            this.buttonSearchDeletedSP.Location = new System.Drawing.Point(618, 57);
-            this.buttonSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSearchDeletedSP.Location = new System.Drawing.Point(976, 57);
+            this.buttonSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchDeletedSP.Name = "buttonSearchDeletedSP";
-            this.buttonSearchDeletedSP.Size = new System.Drawing.Size(64, 42);
+            this.buttonSearchDeletedSP.Size = new System.Drawing.Size(64, 44);
             this.buttonSearchDeletedSP.TabIndex = 88;
             this.buttonSearchDeletedSP.Text = "Search";
             this.buttonSearchDeletedSP.UseVisualStyleBackColor = true;
@@ -692,26 +697,30 @@
             // 
             // textBoxSearchDeletedSP
             // 
-            this.textBoxSearchDeletedSP.Location = new System.Drawing.Point(400, 57);
-            this.textBoxSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBoxSearchDeletedSP.Multiline = true;
+            this.textBoxSearchDeletedSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearchDeletedSP.Location = new System.Drawing.Point(667, 57);
+            this.textBoxSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchDeletedSP.Name = "textBoxSearchDeletedSP";
-            this.textBoxSearchDeletedSP.Size = new System.Drawing.Size(214, 43);
+            this.textBoxSearchDeletedSP.Size = new System.Drawing.Size(305, 44);
             this.textBoxSearchDeletedSP.TabIndex = 87;
+            this.textBoxSearchDeletedSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchDeletedSP_KeyPress);
             // 
             // dataGridViewDeletedSP
             // 
             this.dataGridViewDeletedSP.AllowUserToAddRows = false;
+            this.dataGridViewDeletedSP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewDeletedSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDeletedSP.Location = new System.Drawing.Point(400, 104);
-            this.dataGridViewDeletedSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewDeletedSP.Location = new System.Drawing.Point(667, 104);
+            this.dataGridViewDeletedSP.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewDeletedSP.MultiSelect = false;
             this.dataGridViewDeletedSP.Name = "dataGridViewDeletedSP";
             this.dataGridViewDeletedSP.ReadOnly = true;
             this.dataGridViewDeletedSP.RowHeadersVisible = false;
             this.dataGridViewDeletedSP.RowTemplate.Height = 24;
             this.dataGridViewDeletedSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewDeletedSP.Size = new System.Drawing.Size(281, 317);
+            this.dataGridViewDeletedSP.Size = new System.Drawing.Size(438, 317);
             this.dataGridViewDeletedSP.TabIndex = 86;
+            this.dataGridViewDeletedSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedSP_CellClick);
             // 
             // splitter1
             // 
@@ -724,7 +733,7 @@
             // labelEaPhoneNr
             // 
             this.labelEaPhoneNr.AutoSize = true;
-            this.labelEaPhoneNr.Location = new System.Drawing.Point(302, 252);
+            this.labelEaPhoneNr.Location = new System.Drawing.Point(485, 245);
             this.labelEaPhoneNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEaPhoneNr.Name = "labelEaPhoneNr";
             this.labelEaPhoneNr.Size = new System.Drawing.Size(79, 13);
@@ -734,7 +743,7 @@
             // labelEaLName
             // 
             this.labelEaLName.AutoSize = true;
-            this.labelEaLName.Location = new System.Drawing.Point(300, 214);
+            this.labelEaLName.Location = new System.Drawing.Point(483, 207);
             this.labelEaLName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEaLName.Name = "labelEaLName";
             this.labelEaLName.Size = new System.Drawing.Size(59, 13);
@@ -744,7 +753,7 @@
             // labelEaFName
             // 
             this.labelEaFName.AutoSize = true;
-            this.labelEaFName.Location = new System.Drawing.Point(300, 176);
+            this.labelEaFName.Location = new System.Drawing.Point(483, 169);
             this.labelEaFName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEaFName.Name = "labelEaFName";
             this.labelEaFName.Size = new System.Drawing.Size(58, 13);
@@ -754,7 +763,7 @@
             // labelEaSpNr
             // 
             this.labelEaSpNr.AutoSize = true;
-            this.labelEaSpNr.Location = new System.Drawing.Point(301, 138);
+            this.labelEaSpNr.Location = new System.Drawing.Point(484, 131);
             this.labelEaSpNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelEaSpNr.Name = "labelEaSpNr";
             this.labelEaSpNr.Size = new System.Drawing.Size(89, 13);
@@ -763,69 +772,61 @@
             // 
             // textBoxEaLName
             // 
-            this.textBoxEaLName.Location = new System.Drawing.Point(305, 229);
-            this.textBoxEaLName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEaLName.Location = new System.Drawing.Point(488, 222);
+            this.textBoxEaLName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEaLName.Multiline = true;
             this.textBoxEaLName.Name = "textBoxEaLName";
-            this.textBoxEaLName.Size = new System.Drawing.Size(75, 21);
+            this.textBoxEaLName.Size = new System.Drawing.Size(123, 21);
             this.textBoxEaLName.TabIndex = 57;
             // 
             // textBoxEaPhoneNr
             // 
-            this.textBoxEaPhoneNr.Location = new System.Drawing.Point(305, 267);
-            this.textBoxEaPhoneNr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEaPhoneNr.Location = new System.Drawing.Point(488, 260);
+            this.textBoxEaPhoneNr.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEaPhoneNr.Multiline = true;
             this.textBoxEaPhoneNr.Name = "textBoxEaPhoneNr";
-            this.textBoxEaPhoneNr.Size = new System.Drawing.Size(75, 21);
+            this.textBoxEaPhoneNr.Size = new System.Drawing.Size(123, 21);
             this.textBoxEaPhoneNr.TabIndex = 56;
             // 
             // textBoxEaFName
             // 
-            this.textBoxEaFName.Location = new System.Drawing.Point(305, 191);
-            this.textBoxEaFName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEaFName.Location = new System.Drawing.Point(488, 184);
+            this.textBoxEaFName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEaFName.Multiline = true;
             this.textBoxEaFName.Name = "textBoxEaFName";
-            this.textBoxEaFName.Size = new System.Drawing.Size(75, 21);
+            this.textBoxEaFName.Size = new System.Drawing.Size(123, 21);
             this.textBoxEaFName.TabIndex = 55;
             // 
             // textBoxEaSpNr
             // 
-            this.textBoxEaSpNr.Location = new System.Drawing.Point(305, 153);
-            this.textBoxEaSpNr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxEaSpNr.Location = new System.Drawing.Point(488, 146);
+            this.textBoxEaSpNr.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxEaSpNr.Multiline = true;
             this.textBoxEaSpNr.Name = "textBoxEaSpNr";
-            this.textBoxEaSpNr.Size = new System.Drawing.Size(75, 21);
+            this.textBoxEaSpNr.Size = new System.Drawing.Size(123, 21);
             this.textBoxEaSpNr.TabIndex = 54;
-            // 
-            // buttonEaDelete
-            // 
-            this.buttonEaDelete.Location = new System.Drawing.Point(305, 348);
-            this.buttonEaDelete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.buttonEaDelete.Name = "buttonEaDelete";
-            this.buttonEaDelete.Size = new System.Drawing.Size(75, 24);
-            this.buttonEaDelete.TabIndex = 53;
-            this.buttonEaDelete.Text = "Delete";
-            this.buttonEaDelete.UseVisualStyleBackColor = true;
             // 
             // buttonEaUpdate
             // 
-            this.buttonEaUpdate.Location = new System.Drawing.Point(304, 320);
-            this.buttonEaUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEaUpdate.Location = new System.Drawing.Point(510, 388);
+            this.buttonEaUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEaUpdate.Name = "buttonEaUpdate";
             this.buttonEaUpdate.Size = new System.Drawing.Size(76, 24);
             this.buttonEaUpdate.TabIndex = 52;
             this.buttonEaUpdate.Text = "Update";
             this.buttonEaUpdate.UseVisualStyleBackColor = true;
+            this.buttonEaUpdate.Click += new System.EventHandler(this.buttonEaUpdate_Click);
             // 
             // buttonEaNew
             // 
-            this.buttonEaNew.Location = new System.Drawing.Point(304, 292);
-            this.buttonEaNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonEaNew.Location = new System.Drawing.Point(510, 360);
+            this.buttonEaNew.Margin = new System.Windows.Forms.Padding(2);
             this.buttonEaNew.Name = "buttonEaNew";
             this.buttonEaNew.Size = new System.Drawing.Size(76, 24);
             this.buttonEaNew.TabIndex = 51;
             this.buttonEaNew.Text = "New";
             this.buttonEaNew.UseVisualStyleBackColor = true;
+            this.buttonEaNew.Click += new System.EventHandler(this.buttonEaNew_Click);
             // 
             // labelSearchSP
             // 
@@ -839,10 +840,10 @@
             // 
             // buttonSearchSP
             // 
-            this.buttonSearchSP.Location = new System.Drawing.Point(224, 57);
-            this.buttonSearchSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSearchSP.Location = new System.Drawing.Point(298, 56);
+            this.buttonSearchSP.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchSP.Name = "buttonSearchSP";
-            this.buttonSearchSP.Size = new System.Drawing.Size(64, 42);
+            this.buttonSearchSP.Size = new System.Drawing.Size(64, 44);
             this.buttonSearchSP.TabIndex = 49;
             this.buttonSearchSP.Text = "Search";
             this.buttonSearchSP.UseVisualStyleBackColor = true;
@@ -850,26 +851,30 @@
             // 
             // textBoxSearchSP
             // 
-            this.textBoxSearchSP.Location = new System.Drawing.Point(6, 57);
-            this.textBoxSearchSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.textBoxSearchSP.Multiline = true;
+            this.textBoxSearchSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearchSP.Location = new System.Drawing.Point(4, 57);
+            this.textBoxSearchSP.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchSP.Name = "textBoxSearchSP";
-            this.textBoxSearchSP.Size = new System.Drawing.Size(214, 43);
+            this.textBoxSearchSP.Size = new System.Drawing.Size(290, 44);
             this.textBoxSearchSP.TabIndex = 48;
+            this.textBoxSearchSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchSP_KeyPress);
             // 
             // dataGridViewSP
             // 
             this.dataGridViewSP.AllowUserToAddRows = false;
+            this.dataGridViewSP.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSP.Location = new System.Drawing.Point(6, 104);
-            this.dataGridViewSP.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewSP.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSP.MultiSelect = false;
             this.dataGridViewSP.Name = "dataGridViewSP";
             this.dataGridViewSP.ReadOnly = true;
             this.dataGridViewSP.RowHeadersVisible = false;
             this.dataGridViewSP.RowTemplate.Height = 24;
             this.dataGridViewSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSP.Size = new System.Drawing.Size(281, 317);
+            this.dataGridViewSP.Size = new System.Drawing.Size(424, 317);
             this.dataGridViewSP.TabIndex = 42;
+            this.dataGridViewSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSP_CellClick);
             // 
             // tabPageProduct
             // 
@@ -899,9 +904,9 @@
             this.tabPageProduct.Controls.Add(this.textBoxSearchPa);
             this.tabPageProduct.Controls.Add(this.dataGridViewPa);
             this.tabPageProduct.Location = new System.Drawing.Point(4, 22);
-            this.tabPageProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageProduct.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageProduct.Name = "tabPageProduct";
-            this.tabPageProduct.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageProduct.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageProduct.Size = new System.Drawing.Size(1134, 517);
             this.tabPageProduct.TabIndex = 2;
             this.tabPageProduct.Text = "Product administration";
@@ -920,7 +925,7 @@
             // buttonGetAllDeletedPa
             // 
             this.buttonGetAllDeletedPa.Location = new System.Drawing.Point(1063, 56);
-            this.buttonGetAllDeletedPa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGetAllDeletedPa.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGetAllDeletedPa.Name = "buttonGetAllDeletedPa";
             this.buttonGetAllDeletedPa.Size = new System.Drawing.Size(64, 42);
             this.buttonGetAllDeletedPa.TabIndex = 115;
@@ -931,7 +936,7 @@
             // buttonGetAllPa
             // 
             this.buttonGetAllPa.Location = new System.Drawing.Point(401, 56);
-            this.buttonGetAllPa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonGetAllPa.Margin = new System.Windows.Forms.Padding(2);
             this.buttonGetAllPa.Name = "buttonGetAllPa";
             this.buttonGetAllPa.Size = new System.Drawing.Size(64, 42);
             this.buttonGetAllPa.TabIndex = 114;
@@ -952,7 +957,7 @@
             // buttonPaClearAll
             // 
             this.buttonPaClearAll.Location = new System.Drawing.Point(524, 401);
-            this.buttonPaClearAll.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPaClearAll.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPaClearAll.Name = "buttonPaClearAll";
             this.buttonPaClearAll.Size = new System.Drawing.Size(76, 42);
             this.buttonPaClearAll.TabIndex = 112;
@@ -965,7 +970,7 @@
             this.dataGridViewDeletedPa.AllowUserToAddRows = false;
             this.dataGridViewDeletedPa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDeletedPa.Location = new System.Drawing.Point(669, 103);
-            this.dataGridViewDeletedPa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewDeletedPa.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDeletedPa.Name = "dataGridViewDeletedPa";
             this.dataGridViewDeletedPa.ReadOnly = true;
             this.dataGridViewDeletedPa.RowHeadersVisible = false;
@@ -988,7 +993,7 @@
             // textBoxPaAmount
             // 
             this.textBoxPaAmount.Location = new System.Drawing.Point(489, 284);
-            this.textBoxPaAmount.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPaAmount.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaAmount.Multiline = true;
             this.textBoxPaAmount.Name = "textBoxPaAmount";
             this.textBoxPaAmount.Size = new System.Drawing.Size(151, 21);
@@ -1007,7 +1012,7 @@
             // buttonSearchDeletedPa
             // 
             this.buttonSearchDeletedPa.Location = new System.Drawing.Point(995, 56);
-            this.buttonSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchDeletedPa.Name = "buttonSearchDeletedPa";
             this.buttonSearchDeletedPa.Size = new System.Drawing.Size(64, 42);
             this.buttonSearchDeletedPa.TabIndex = 107;
@@ -1019,7 +1024,7 @@
             // 
             this.textBoxSearchDeletedPa.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchDeletedPa.Location = new System.Drawing.Point(669, 56);
-            this.textBoxSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchDeletedPa.Name = "textBoxSearchDeletedPa";
             this.textBoxSearchDeletedPa.Size = new System.Drawing.Size(322, 44);
             this.textBoxSearchDeletedPa.TabIndex = 106;
@@ -1068,7 +1073,7 @@
             // textBoxPaInPrice
             // 
             this.textBoxPaInPrice.Location = new System.Drawing.Point(489, 208);
-            this.textBoxPaInPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPaInPrice.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaInPrice.Multiline = true;
             this.textBoxPaInPrice.Name = "textBoxPaInPrice";
             this.textBoxPaInPrice.Size = new System.Drawing.Size(151, 21);
@@ -1077,7 +1082,7 @@
             // textBoxPaOutPrice
             // 
             this.textBoxPaOutPrice.Location = new System.Drawing.Point(489, 246);
-            this.textBoxPaOutPrice.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPaOutPrice.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaOutPrice.Multiline = true;
             this.textBoxPaOutPrice.Name = "textBoxPaOutPrice";
             this.textBoxPaOutPrice.Size = new System.Drawing.Size(151, 21);
@@ -1086,7 +1091,7 @@
             // textBoxPaName
             // 
             this.textBoxPaName.Location = new System.Drawing.Point(489, 170);
-            this.textBoxPaName.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPaName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaName.Multiline = true;
             this.textBoxPaName.Name = "textBoxPaName";
             this.textBoxPaName.Size = new System.Drawing.Size(151, 21);
@@ -1096,7 +1101,7 @@
             // 
             this.textBoxPaPrNr.Enabled = false;
             this.textBoxPaPrNr.Location = new System.Drawing.Point(489, 132);
-            this.textBoxPaPrNr.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxPaPrNr.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaPrNr.Multiline = true;
             this.textBoxPaPrNr.Name = "textBoxPaPrNr";
             this.textBoxPaPrNr.Size = new System.Drawing.Size(151, 21);
@@ -1105,7 +1110,7 @@
             // buttonPaUpdate
             // 
             this.buttonPaUpdate.Location = new System.Drawing.Point(524, 373);
-            this.buttonPaUpdate.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPaUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPaUpdate.Name = "buttonPaUpdate";
             this.buttonPaUpdate.Size = new System.Drawing.Size(76, 24);
             this.buttonPaUpdate.TabIndex = 95;
@@ -1116,7 +1121,7 @@
             // buttonPaNew
             // 
             this.buttonPaNew.Location = new System.Drawing.Point(524, 345);
-            this.buttonPaNew.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonPaNew.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPaNew.Name = "buttonPaNew";
             this.buttonPaNew.Size = new System.Drawing.Size(76, 24);
             this.buttonPaNew.TabIndex = 94;
@@ -1137,7 +1142,7 @@
             // buttonSearchPa
             // 
             this.buttonSearchPa.Location = new System.Drawing.Point(333, 56);
-            this.buttonSearchPa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonSearchPa.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchPa.Name = "buttonSearchPa";
             this.buttonSearchPa.Size = new System.Drawing.Size(64, 42);
             this.buttonSearchPa.TabIndex = 92;
@@ -1149,7 +1154,7 @@
             // 
             this.textBoxSearchPa.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchPa.Location = new System.Drawing.Point(7, 56);
-            this.textBoxSearchPa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxSearchPa.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchPa.Name = "textBoxSearchPa";
             this.textBoxSearchPa.Size = new System.Drawing.Size(322, 44);
             this.textBoxSearchPa.TabIndex = 91;
@@ -1162,7 +1167,7 @@
             this.dataGridViewPa.AllowUserToResizeRows = false;
             this.dataGridViewPa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPa.Location = new System.Drawing.Point(7, 103);
-            this.dataGridViewPa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewPa.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPa.Name = "dataGridViewPa";
             this.dataGridViewPa.ReadOnly = true;
             this.dataGridViewPa.RowHeadersVisible = false;
@@ -1181,9 +1186,9 @@
             this.tabPageStatistics.Controls.Add(this.buttonTopSellers);
             this.tabPageStatistics.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tabPageStatistics.Location = new System.Drawing.Point(4, 22);
-            this.tabPageStatistics.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageStatistics.Margin = new System.Windows.Forms.Padding(2);
             this.tabPageStatistics.Name = "tabPageStatistics";
-            this.tabPageStatistics.Padding = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.tabPageStatistics.Padding = new System.Windows.Forms.Padding(2);
             this.tabPageStatistics.Size = new System.Drawing.Size(1134, 517);
             this.tabPageStatistics.TabIndex = 3;
             this.tabPageStatistics.Text = "Statistics";
@@ -1194,7 +1199,7 @@
             this.dataGridViewStatistics.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewStatistics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewStatistics.Location = new System.Drawing.Point(7, 95);
-            this.dataGridViewStatistics.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewStatistics.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewStatistics.Name = "dataGridViewStatistics";
             this.dataGridViewStatistics.ReadOnly = true;
             this.dataGridViewStatistics.RowHeadersVisible = false;
@@ -1206,7 +1211,7 @@
             // buttonTopProduct
             // 
             this.buttonTopProduct.Location = new System.Drawing.Point(108, 43);
-            this.buttonTopProduct.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTopProduct.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTopProduct.Name = "buttonTopProduct";
             this.buttonTopProduct.Size = new System.Drawing.Size(80, 36);
             this.buttonTopProduct.TabIndex = 115;
@@ -1217,7 +1222,7 @@
             // buttonTopCombos
             // 
             this.buttonTopCombos.Location = new System.Drawing.Point(210, 43);
-            this.buttonTopCombos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTopCombos.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTopCombos.Name = "buttonTopCombos";
             this.buttonTopCombos.Size = new System.Drawing.Size(80, 36);
             this.buttonTopCombos.TabIndex = 114;
@@ -1228,7 +1233,7 @@
             // buttonTopSellers
             // 
             this.buttonTopSellers.Location = new System.Drawing.Point(7, 43);
-            this.buttonTopSellers.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonTopSellers.Margin = new System.Windows.Forms.Padding(2);
             this.buttonTopSellers.Name = "buttonTopSellers";
             this.buttonTopSellers.Size = new System.Drawing.Size(82, 36);
             this.buttonTopSellers.TabIndex = 113;
@@ -1283,10 +1288,41 @@
             // 
             this.panel1.Controls.Add(this.lblLoggedInAs);
             this.panel1.Location = new System.Drawing.Point(4, 568);
-            this.panel1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.panel1.Margin = new System.Windows.Forms.Padding(2);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
+            // 
+            // checkBoxEmployee
+            // 
+            this.checkBoxEmployee.AutoSize = true;
+            this.checkBoxEmployee.Location = new System.Drawing.Point(486, 319);
+            this.checkBoxEmployee.Name = "checkBoxEmployee";
+            this.checkBoxEmployee.Size = new System.Drawing.Size(67, 17);
+            this.checkBoxEmployee.TabIndex = 92;
+            this.checkBoxEmployee.Text = "Is Active";
+            this.checkBoxEmployee.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxEmployeeAdmin
+            // 
+            this.checkBoxEmployeeAdmin.AutoSize = true;
+            this.checkBoxEmployeeAdmin.Location = new System.Drawing.Point(486, 296);
+            this.checkBoxEmployeeAdmin.Name = "checkBoxEmployeeAdmin";
+            this.checkBoxEmployeeAdmin.Size = new System.Drawing.Size(61, 17);
+            this.checkBoxEmployeeAdmin.TabIndex = 93;
+            this.checkBoxEmployeeAdmin.Text = "ADMIN";
+            this.checkBoxEmployeeAdmin.UseVisualStyleBackColor = true;
+            // 
+            // buttonGetAllNotWorkingSalesPersons
+            // 
+            this.buttonGetAllNotWorkingSalesPersons.Location = new System.Drawing.Point(1044, 57);
+            this.buttonGetAllNotWorkingSalesPersons.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGetAllNotWorkingSalesPersons.Name = "buttonGetAllNotWorkingSalesPersons";
+            this.buttonGetAllNotWorkingSalesPersons.Size = new System.Drawing.Size(64, 44);
+            this.buttonGetAllNotWorkingSalesPersons.TabIndex = 94;
+            this.buttonGetAllNotWorkingSalesPersons.Text = "Get All";
+            this.buttonGetAllNotWorkingSalesPersons.UseVisualStyleBackColor = true;
+            this.buttonGetAllNotWorkingSalesPersons.Click += new System.EventHandler(this.buttonGetAllNotWorkingSalesPersons_Click);
             // 
             // Form1
             // 
@@ -1297,7 +1333,7 @@
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AffAIRS system";
@@ -1374,7 +1410,6 @@
         private System.Windows.Forms.TextBox textBoxEaPhoneNr;
         private System.Windows.Forms.TextBox textBoxEaFName;
         private System.Windows.Forms.TextBox textBoxEaSpNr;
-        private System.Windows.Forms.Button buttonEaDelete;
         private System.Windows.Forms.Label labelSearchDeletedSP;
         private System.Windows.Forms.Button buttonSearchDeletedSP;
         private System.Windows.Forms.TextBox textBoxSearchDeletedSP;
@@ -1428,6 +1463,9 @@
         private System.Windows.Forms.Label labelErrorSaleSearch;
         private System.Windows.Forms.Label labelErrorProductSearch;
         private System.Windows.Forms.Button buttonGetAllWorkingSalesPersons;
+        private System.Windows.Forms.CheckBox checkBoxEmployee;
+        private System.Windows.Forms.CheckBox checkBoxEmployeeAdmin;
+        private System.Windows.Forms.Button buttonGetAllNotWorkingSalesPersons;
 
 
     }

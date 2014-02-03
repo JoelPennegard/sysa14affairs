@@ -10,7 +10,7 @@ namespace AffairsSystem
 {
     public static partial class Utility
     {
-        public static Boolean CheckAdmin(SqlDataReader dr)
+        public static bool CheckAdmin(SqlDataReader dr)
         {
             bool isAdmin = true;
             while (dr.Read())
@@ -26,7 +26,7 @@ namespace AffairsSystem
                 return false;
             }
        }
-        public static Boolean CheckOnlyNumbers(string text)
+        public static bool CheckOnlyNumbers(string text)
         {
 
             foreach (char c in text)
@@ -46,7 +46,7 @@ namespace AffairsSystem
             return name;
                     
         }
-        public static Boolean checkIfSearchContainsForbiddenChars(string searchString)
+        public static bool checkIfSearchContainsForbiddenChars(string searchString)
         {
             string s = "'";
             if (searchString.Contains(s))
