@@ -470,7 +470,7 @@ namespace AffairsSystem
         private void buttonEURO_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "€";
-        }
+        }    
 
         private void buttonUSD_Click(object sender, EventArgs e)
         {
