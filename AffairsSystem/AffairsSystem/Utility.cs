@@ -59,14 +59,21 @@ namespace AffairsSystem
         // CHECK IF SALES PERSON EXIST IN DATBASE
         public static string CheckSalesPerson(SqlDataReader dr)
         {
-            Boolean noExist = true;
-            String clear = null;
+            bool noExist = true;
+            bool isActive = true;
+            string clear = null;
             while (dr.Read())
             {
                 clear = dr.GetString(0);
+                isActive = dr.GetBoolean(5);
                 noExist = false;
             }
-            if (noExist)
+            if (!isActive)
+            {
+                MessageBox.Show("Sorry, you are fired!", "LOL", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return null;
+            }
+            else if (noExist)
             {
                 MessageBox.Show("Not in the register.", "Unregistered Sales Person", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return null;
