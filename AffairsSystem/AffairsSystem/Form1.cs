@@ -8,6 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Net.WebClient;
 
 namespace AffairsSystem
 {
@@ -385,9 +386,7 @@ namespace AffairsSystem
         {
             Environment.Exit(0);
         }
-
-        
-
+              
         private void buttonSearchDeletedPa_Click(object sender, EventArgs e)
         {
             string search = textBoxSearchDeletedPa.Text;
