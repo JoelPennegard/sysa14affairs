@@ -105,6 +105,7 @@ namespace AffairsSystem
             string productName = dataGridViewProductList.SelectedRows[0].Cells[1].Value.ToString();
             double productOutPrice = double.Parse(dataGridViewProductList.SelectedRows[0].Cells[2].Value.ToString());
             string amountString = richTextBoxAmount.Text;
+            richTextBoxAmount.Text = "";
             int amountInt = 1;
             string minusOrPlus = "-";         
 
