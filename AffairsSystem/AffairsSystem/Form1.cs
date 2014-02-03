@@ -108,7 +108,8 @@ namespace AffairsSystem
             string amountString = richTextBoxAmount.Text;
             richTextBoxAmount.Text = "";
             int amountInt = 1;
-            string minusOrPlus = "-";         
+            string minusOrPlus = "-";
+            bool exists = false;
 
                 if (!Utility.CheckOnlyNumbers(amountString))
                 {
@@ -130,14 +131,35 @@ namespace AffairsSystem
                     if (productAmountLeft > 0)
                     {
 
-                        string[] row = new string[] { productNr.ToString(), productName, productOutPrice.ToString(), amountInt.ToString() };
-                        dataGridViewSaleList.Rows.Add(row);
+                        int rowCount = dataGridViewSaleList.RowCount;
+                                                                      
 
-                        double SinglePrice = amountInt * productOutPrice;
-                        totalPrice = totalPrice + SinglePrice;
-                        textBoxNumPad.Text = totalPrice.ToString();
-                        controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
-                        FillProductTableAdmin();
+                        for (int i = 0; i < rowCount; i++)
+                        {
+                            int tmpProductNr = int.Parse(dataGridViewSaleList.Rows[i].Cells[0].Value.ToString());
+                            if (productNr==tmpProductNr) 
+                            {
+                                int tmpAmount = int.Parse(dataGridViewSaleList.Rows[i].Cells[3].Value.ToString());
+                                amountInt += tmpAmount;
+                                amountString = amountInt.ToString();
+                                dataGridViewSaleList.Rows[i].Cells[3].Value = amountString;
+                                exists = true;
+                                FillProductTableAdmin();
+
+                            }
+                            
+                        }
+                        if (!exists)
+                        {
+                            string[] row = new string[] { productNr.ToString(), productName, productOutPrice.ToString(), amountInt.ToString() };
+                            dataGridViewSaleList.Rows.Add(row);
+
+                            double SinglePrice = amountInt * productOutPrice;
+                            totalPrice = totalPrice + SinglePrice;
+                            textBoxNumPad.Text = totalPrice.ToString();
+                            controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
+                            FillProductTableAdmin();
+                        }
                     }
                     else
                     {
