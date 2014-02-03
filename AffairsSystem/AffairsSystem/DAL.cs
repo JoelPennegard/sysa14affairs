@@ -303,8 +303,8 @@ namespace AffairsSystem
 
         public SqlDataAdapter GetHighestSales()
         {
-            return ExecuteGetSqlAdapter("select a.spNr, firstname, lastname, count(*) as [Amount of sales] from salesperson a join sales b " +
-                "on a.spNr = b.spNr group by a.spNr, firstname, lastname order by count(*) desc");
+            return ExecuteGetSqlAdapter("select a.spNr, firstname, lastname, count(*) as [Amount of sales], sum(totalPrice) as [Sold for Total] " + 
+                "from salesperson a join sales b  on a.spNr = b.spNr  group by a.spNr, firstname, lastname order by count(*) desc");
         }
 
         public SqlDataReader getLatestSale()
