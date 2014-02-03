@@ -973,6 +973,7 @@
             this.dataGridViewDeletedPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDeletedPa.Size = new System.Drawing.Size(458, 317);
             this.dataGridViewDeletedPa.TabIndex = 111;
+            this.dataGridViewDeletedPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedPa_CellClick_1);
             // 
             // labelPaAmount
             // 

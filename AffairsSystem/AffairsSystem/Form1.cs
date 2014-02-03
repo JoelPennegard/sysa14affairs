@@ -166,7 +166,6 @@ namespace AffairsSystem
         private void buttonPaUpdate_Click(object sender, EventArgs e)
         {
             int isForSale = Utility.ConvertBoolToInt(checkBoxForSale.Checked);
-            MessageBox.Show("boolean: " + isForSale);
             int productNr = int.Parse(textBoxPaPrNr.Text);
             string productName = Utility.FirstCharToUpper(textBoxPaName.Text);
             double productInPrice = Utility.CheckDouble(double.Parse(textBoxPaInPrice.Text));
@@ -436,15 +435,7 @@ namespace AffairsSystem
             checkBoxForSale.Checked = (bool)dataGridViewPa.SelectedRows[0].Cells[5].Value;
         }
 
-        private void dataGridViewDeletedPa_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            textBoxPaPrNr.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[0].Value.ToString();
-            textBoxPaName.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[1].Value.ToString();
-            textBoxPaInPrice.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[2].Value.ToString();
-            textBoxPaOutPrice.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[3].Value.ToString();
-            textBoxPaAmount.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[4].Value.ToString();
-            checkBoxForSale.Checked = (bool)dataGridViewDeletedPa.SelectedRows[0].Cells[5].Value;
-        }
+       
 
         private void buttonSEK_Click(object sender, EventArgs e)
         {
@@ -583,6 +574,16 @@ namespace AffairsSystem
             da.Fill(data);
             dataGridViewDeletedSP.DataSource = data;
             textBoxSearchDeletedSP.Text = "";
+        }
+
+        private void dataGridViewDeletedPa_CellClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxPaPrNr.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[0].Value.ToString();
+            textBoxPaName.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[1].Value.ToString();
+            textBoxPaInPrice.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[2].Value.ToString();
+            textBoxPaOutPrice.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[3].Value.ToString();
+            textBoxPaAmount.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[4].Value.ToString();
+            checkBoxForSale.Checked = (bool)dataGridViewDeletedPa.SelectedRows[0].Cells[5].Value;
         }
 
 
