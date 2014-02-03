@@ -579,7 +579,10 @@ namespace AffairsSystem
 
         private void buttonGetAllWorkingSalesPersons_Click(object sender, EventArgs e)
         {
-            controller.GetAllWorkingSalesPersons();
+            SqlDataAdapter da = controller.GetAllWorkingSalesPersons();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewSP.DataSource = data;
         }
 
         private void buttonSearchSP_Click(object sender, EventArgs e)
@@ -589,7 +592,7 @@ namespace AffairsSystem
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewSP.DataSource = data;
-            textBoxSearchSP.Text = "";        
+            ClearAllEmployeeAdmin();   
         }
 
         private void buttonSearchDeletedSP_Click(object sender, EventArgs e)
@@ -600,6 +603,7 @@ namespace AffairsSystem
             da.Fill(data);
             dataGridViewDeletedSP.DataSource = data;
             textBoxSearchDeletedSP.Text = "";
+            ClearAllEmployeeAdmin();
         }
 
         private void dataGridViewDeletedPa_CellClick_1(object sender, DataGridViewCellEventArgs e)
@@ -612,6 +616,107 @@ namespace AffairsSystem
             checkBoxForSale.Checked = (bool)dataGridViewDeletedPa.SelectedRows[0].Cells[5].Value;
         }
 
+        private void dataGridViewSP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxEaSpNr.Enabled = false;
+            string spNr = dataGridViewSP.SelectedRows[0].Cells[0].Value.ToString();
+            textBoxEaSpNr.Text = spNr.ToString();
+            textBoxEaFName.Text = dataGridViewSP.SelectedRows[0].Cells[1].Value.ToString();
+            textBoxEaLName.Text = dataGridViewSP.SelectedRows[0].Cells[2].Value.ToString();
+            textBoxEaPhoneNr.Text = dataGridViewSP.SelectedRows[0].Cells[3].Value.ToString();
+            checkBoxEmployee.Checked = Utility.GetIsActive(controller.GetIsActive(spNr));
+            checkBoxEmployeeAdmin.Checked = Utility.CheckAdmin(controller.SearchSalesPerson(spNr));
+        }
+
+        private void dataGridViewDeletedSP_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            textBoxEaSpNr.Enabled = false;
+            string spNr = dataGridViewDeletedSP.SelectedRows[0].Cells[0].Value.ToString();
+            textBoxEaSpNr.Text = spNr.ToString();
+            textBoxEaFName.Text = dataGridViewDeletedSP.SelectedRows[0].Cells[1].Value.ToString();
+            textBoxEaLName.Text = dataGridViewDeletedSP.SelectedRows[0].Cells[2].Value.ToString();
+            textBoxEaPhoneNr.Text = dataGridViewDeletedSP.SelectedRows[0].Cells[3].Value.ToString();
+            checkBoxEmployee.Checked = Utility.GetIsActive(controller.GetIsActive(spNr));
+            checkBoxEmployeeAdmin.Checked = Utility.CheckAdmin(controller.SearchSalesPerson(spNr));
+        }
+
+        private void buttonEaClearAll_Click(object sender, EventArgs e)
+        {
+            ClearAllEmployeeAdmin();
+        }
+
+        //CLEAR ALL EMPLOYEE ADMIN
+        private void ClearAllEmployeeAdmin(){
+            textBoxEaSpNr.Enabled = true;
+            textBoxEaSpNr.Text = "";
+            textBoxEaFName.Text = "";
+            textBoxEaLName.Text = "";
+            textBoxEaPhoneNr.Text = "";
+            textBoxSearchSP.Text = "";
+            textBoxSearchDeletedSP.Text = "";
+            checkBoxEmployee.Checked = false;
+            checkBoxEmployeeAdmin.Checked = false;
+        }
+
+        private void buttonEaUpdate_Click(object sender, EventArgs e)
+        {
+            int isAdmin = Utility.ConvertBoolToInt(checkBoxEmployeeAdmin.Checked);
+            int isActive = Utility.ConvertBoolToInt(checkBoxEmployee.Checked);
+            string spNr = Utility.FirstCharToUpper(textBoxEaSpNr.Text);
+            string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
+            string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
+            string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
+
+            controller.UpdateSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
+            MessageBox.Show("Person: " + spNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            FillNotWorkingSalesPersonTable();
+            FillWorkingSalesPersonTable();
+            ClearAllEmployeeAdmin();
+           
+        }
+
+        private void buttonEaNew_Click(object sender, EventArgs e)
+        {
+            int isAdmin = Utility.ConvertBoolToInt(checkBoxEmployeeAdmin.Checked);
+            int isActive = Utility.ConvertBoolToInt(checkBoxEmployee.Checked);
+            string spNr = Utility.FirstCharToUpper(textBoxEaSpNr.Text);
+            string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
+            string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
+            string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
+
+            controller.SetSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
+            MessageBox.Show("Person: " + spNr + " was added.", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+            FillNotWorkingSalesPersonTable();
+            FillWorkingSalesPersonTable();
+            ClearAllEmployeeAdmin();
+        }
+
+        private void textBoxSearchSP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                buttonSearchSP.PerformClick();
+                
+            }
+        }
+
+        private void textBoxSearchDeletedSP_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == (char)13)
+            {
+                buttonSearchDeletedPa.PerformClick();
+            }
+        }
+
+        private void buttonGetAllNotWorkingSalesPersons_Click(object sender, EventArgs e)
+        {
+            SqlDataAdapter da = controller.GetAllNotWorkingSalesPersons();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewDeletedSP.DataSource = data;
+        }
 
 
     }
