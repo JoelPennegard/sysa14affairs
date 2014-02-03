@@ -61,45 +61,13 @@ namespace AffairsSystem
 
         }
 
-        private void tabPage2_Click(object sender, EventArgs e)
-        {
+        
 
-        }
+        
 
-        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
-        {
+        
 
-        }
-
-        private void tabPage1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click_1(object sender, EventArgs e)
-        {
-
-        }
-
-        private void button3_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void tabPageStatistics_Click(object sender, EventArgs e)
-        {
-
-        }
+        
 
         private void Form1_Load(object sender, EventArgs e)
         {
@@ -107,7 +75,7 @@ namespace AffairsSystem
         }
 
 
-        private void button3_Click_1(object sender, EventArgs e)
+        private void buttonGetAllProducts_Click(object sender, EventArgs e)
         {
             FillProductTable();
         }
@@ -127,10 +95,7 @@ namespace AffairsSystem
             Application.Exit();
         }
 
-        private void textBoxSearchProduct_TextChanged(object sender, EventArgs e)
-        {
-            
-        }
+        
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -200,10 +165,6 @@ namespace AffairsSystem
           
         }
 
-        private void dataGridViewPa_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {         
-         
-        }
 
         private void buttonPaUpdate_Click(object sender, EventArgs e)
         {
@@ -418,10 +379,7 @@ namespace AffairsSystem
             Environment.Exit(0);
         }
 
-        private void dataGridViewDeletedPa_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-        }
+        
 
         private void buttonSearchDeletedPa_Click(object sender, EventArgs e)
         {

@@ -200,7 +200,7 @@
             this.tabPageSale.TabIndex = 0;
             this.tabPageSale.Text = "Sale menu";
             this.tabPageSale.UseVisualStyleBackColor = true;
-            this.tabPageSale.Click += new System.EventHandler(this.tabPage1_Click);
+            
             // 
             // textBoxNumPad2
             // 
@@ -242,7 +242,7 @@
             this.button3.TabIndex = 43;
             this.button3.Text = "Get all";
             this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click_1);
+            this.button3.Click += new System.EventHandler(this.buttonGetAllProducts_Click);
             // 
             // button2
             // 
@@ -284,7 +284,6 @@
             this.textBoxSearchProduct.Name = "textBoxSearchProduct";
             this.textBoxSearchProduct.Size = new System.Drawing.Size(243, 44);
             this.textBoxSearchProduct.TabIndex = 39;
-            this.textBoxSearchProduct.TextChanged += new System.EventHandler(this.textBoxSearchProduct_TextChanged);
             this.textBoxSearchProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchProduct_KeyPress);
             // 
             // textBoxNumPad
@@ -637,7 +636,7 @@
             this.tabPageEmployee.TabIndex = 1;
             this.tabPageEmployee.Text = "Employee administration";
             this.tabPageEmployee.UseVisualStyleBackColor = true;
-            this.tabPageEmployee.Click += new System.EventHandler(this.tabPage2_Click);
+            
             // 
             // buttonEaClearAll
             // 
@@ -795,7 +794,7 @@
             this.buttonEaUpdate.TabIndex = 52;
             this.buttonEaUpdate.Text = "Update";
             this.buttonEaUpdate.UseVisualStyleBackColor = true;
-            this.buttonEaUpdate.Click += new System.EventHandler(this.button3_Click);
+            
             // 
             // buttonEaNew
             // 
@@ -816,7 +815,7 @@
             this.labelSearchSP.Size = new System.Drawing.Size(162, 13);
             this.labelSearchSP.TabIndex = 50;
             this.labelSearchSP.Text = "Search on sales person attribute:";
-            this.labelSearchSP.Click += new System.EventHandler(this.label1_Click_1);
+            
             // 
             // buttonSearchSP
             // 
@@ -943,8 +942,8 @@
             this.dataGridViewDeletedPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDeletedPa.Size = new System.Drawing.Size(458, 317);
             this.dataGridViewDeletedPa.TabIndex = 111;
-            this.dataGridViewDeletedPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedPa_CellClick);
-            this.dataGridViewDeletedPa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedPa_CellContentClick);
+            
+            
             // 
             // labelPaAmount
             // 
@@ -1142,7 +1141,7 @@
             this.dataGridViewPa.Size = new System.Drawing.Size(458, 317);
             this.dataGridViewPa.TabIndex = 90;
             this.dataGridViewPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPa_CellClick);
-            this.dataGridViewPa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPa_CellContentClick);
+            
             // 
             // tabPageStatistics
             // 
@@ -1159,7 +1158,7 @@
             this.tabPageStatistics.Size = new System.Drawing.Size(1134, 517);
             this.tabPageStatistics.TabIndex = 3;
             this.tabPageStatistics.Text = "Statistics";
-            this.tabPageStatistics.Click += new System.EventHandler(this.tabPageStatistics_Click);
+            
             // 
             // dataGridViewStatistics
             // 
@@ -1251,7 +1250,7 @@
             this.menuStrip1.Size = new System.Drawing.Size(1141, 24);
             this.menuStrip1.TabIndex = 1;
             this.menuStrip1.Text = "menuStrip1";
-            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
+            
             // 
             // panel1
             // 
