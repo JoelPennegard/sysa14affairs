@@ -27,7 +27,7 @@ namespace AffairsSystem
         //CHECK INT
         public static int CheckInt(int input)
         {
-            if (input == null)
+            if (input.ToString().Length < 1)
             {
                 MessageBox.Show("Please fill out all fields.", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return input;
@@ -40,7 +40,7 @@ namespace AffairsSystem
         //CHECK DOUBLE
         public static double CheckDouble(double input)
         {
-            if (input == null)
+            if (input.ToString().Length<1)
             {
                 MessageBox.Show("Please fill out all fields.", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return input;
