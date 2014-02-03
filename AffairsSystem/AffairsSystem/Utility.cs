@@ -147,6 +147,33 @@ namespace AffairsSystem
                 return output;
             }
         }
+        public static string TrimLastCharacter(string input)
+        {
+            if (String.IsNullOrEmpty(input))
+            {
+                return input;
+            }
+            else
+            {
+                input = input.Remove(input.Length - 1);
+                return input;
+            }
+        }
+        public static string CalculateNumpad(string input, string payedAmount)
+        {
+            
+            
+            
+            if (payedAmount.Contains(".")&&input.Contains("."))                
+            {
+                return payedAmount;
+            }
+            else
+            {
+                payedAmount = payedAmount + input;
+                return payedAmount;
+            }
+        }
     }
         
 
