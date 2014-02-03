@@ -141,11 +141,15 @@ namespace AffairsSystem
                             if (productNr==tmpProductNr) 
                             {
                                 int tmpAmount = int.Parse(dataGridViewSaleList.Rows[i].Cells[3].Value.ToString());
+                                double SinglePrice = amountInt * productOutPrice;
+                                
                                 amountInt += tmpAmount;
+                                totalPrice += SinglePrice;
+                                
                                 amountString = amountInt.ToString();
                                 dataGridViewSaleList.Rows[i].Cells[3].Value = amountString;
                                 exists = true;
-                                FillProductTableAdmin();
+                                
 
                             }
                             
@@ -157,10 +161,10 @@ namespace AffairsSystem
 
                             double SinglePrice = amountInt * productOutPrice;
                             totalPrice = totalPrice + SinglePrice;
-                            textBoxNumPad.Text = totalPrice.ToString();
                             controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
                             FillProductTableAdmin();
                         }
+                        textBoxNumPad.Text = totalPrice.ToString();
                     }
                     else
                     {
