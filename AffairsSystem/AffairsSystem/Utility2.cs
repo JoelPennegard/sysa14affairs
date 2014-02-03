@@ -44,9 +44,22 @@ namespace AffairsSystem
                 name = dr.GetString(1) + " " + dr.GetString(2);
             }
             return name;
-            
-            
+                    
         }
+        public static Boolean checkIfSearchContainsForbiddenChars(string searchString)
+        {
+            string s = "'";
+            if (searchString.Contains(s))
+            {
+                return true;
+            }
+            else 
+            {
+                return false; 
+            }
+
+        }
+
         
     }
 }

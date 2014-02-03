@@ -125,6 +125,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelErrorSaleSearch = new System.Windows.Forms.Label();
+            this.labelErrorProductSearch = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -156,6 +158,7 @@
             // 
             // tabPageSale
             // 
+            this.tabPageSale.Controls.Add(this.labelErrorSaleSearch);
             this.tabPageSale.Controls.Add(this.textBoxNumPad2);
             this.tabPageSale.Controls.Add(this.textBoxCurrencyUnit);
             this.tabPageSale.Controls.Add(this.buttonClearAll);
@@ -850,6 +853,7 @@
             // 
             // tabPageProduct
             // 
+            this.tabPageProduct.Controls.Add(this.labelErrorProductSearch);
             this.tabPageProduct.Controls.Add(this.buttonGetAllDeletedPa);
             this.tabPageProduct.Controls.Add(this.buttonGetAllPa);
             this.tabPageProduct.Controls.Add(this.checkBoxForSale);
@@ -1258,6 +1262,26 @@
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
             // 
+            // labelErrorSaleSearch
+            // 
+            this.labelErrorSaleSearch.AutoSize = true;
+            this.labelErrorSaleSearch.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorSaleSearch.Location = new System.Drawing.Point(158, 58);
+            this.labelErrorSaleSearch.Name = "labelErrorSaleSearch";
+            this.labelErrorSaleSearch.Size = new System.Drawing.Size(97, 13);
+            this.labelErrorSaleSearch.TabIndex = 46;
+            this.labelErrorSaleSearch.Text = "Felmedelanden här";
+            // 
+            // labelErrorProductSearch
+            // 
+            this.labelErrorProductSearch.AutoSize = true;
+            this.labelErrorProductSearch.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorProductSearch.Location = new System.Drawing.Point(138, 37);
+            this.labelErrorProductSearch.Name = "labelErrorProductSearch";
+            this.labelErrorProductSearch.Size = new System.Drawing.Size(88, 13);
+            this.labelErrorProductSearch.TabIndex = 116;
+            this.labelErrorProductSearch.Text = "felmedelande här";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1395,6 +1419,8 @@
         private System.Windows.Forms.Button buttonGetAllPa;
         private System.Windows.Forms.TextBox textBoxCurrencyUnit;
         private System.Windows.Forms.TextBox textBoxNumPad2;
+        private System.Windows.Forms.Label labelErrorSaleSearch;
+        private System.Windows.Forms.Label labelErrorProductSearch;
 
 
     }

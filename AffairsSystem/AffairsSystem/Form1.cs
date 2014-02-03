@@ -183,12 +183,19 @@ namespace AffairsSystem
         private void buttonSearchProduct_Click(object sender, EventArgs e)
         {
             string search = textBoxSearchProduct.Text;
+            labelErrorSaleSearch.Text = "";
+            if (Utility.checkIfSearchContainsForbiddenChars(search))
+            {
+                labelErrorSaleSearch.Text = "[ ' ] is now allowed in the search";
+            }
+            else
+            {
                 SqlDataAdapter da = controller.SearchProductTill(search);
                 DataTable data = new DataTable();
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
                 textBoxSearchProduct.Text = "";
-                
+            }   
             
           
         }
@@ -300,12 +307,20 @@ namespace AffairsSystem
 
         private void buttonSearchPa_Click(object sender, EventArgs e)
         {
+            labelErrorProductSearch.Text = "";
             string search = textBoxSearchPa.Text;
-            SqlDataAdapter da = controller.SearchProductAllAttributesForSale(search);
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewPa.DataSource = data;
-            textBoxSearchPa.Text = "";
+            if (Utility.checkIfSearchContainsForbiddenChars(search))
+            {
+                labelErrorProductSearch.Text = " [ ' ] is not allowed in the searchfield";
+            }
+            else
+            {
+                SqlDataAdapter da = controller.SearchProductAllAttributesForSale(search);
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewPa.DataSource = data;
+                textBoxSearchPa.Text = "";
+            }
 
         }
 
@@ -578,6 +593,11 @@ namespace AffairsSystem
             textBoxNumPad2.Text = payedAmount = Utility.TrimLastCharacter(payedAmount);
             
            
+        }
+
+        private void buttonSearchSP_Click(object sender, EventArgs e)
+        {
+
         }
 
 
