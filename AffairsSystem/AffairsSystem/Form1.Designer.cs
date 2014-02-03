@@ -88,6 +88,9 @@
             this.textBoxSearchSP = new System.Windows.Forms.TextBox();
             this.dataGridViewSP = new System.Windows.Forms.DataGridView();
             this.tabPageProduct = new System.Windows.Forms.TabPage();
+            this.buttonGetAllDeletedPa = new System.Windows.Forms.Button();
+            this.buttonGetAllPa = new System.Windows.Forms.Button();
+            this.checkBoxForSale = new System.Windows.Forms.CheckBox();
             this.buttonPaClearAll = new System.Windows.Forms.Button();
             this.dataGridViewDeletedPa = new System.Windows.Forms.DataGridView();
             this.labelPaAmount = new System.Windows.Forms.Label();
@@ -103,7 +106,6 @@
             this.textBoxPaOutPrice = new System.Windows.Forms.TextBox();
             this.textBoxPaName = new System.Windows.Forms.TextBox();
             this.textBoxPaPrNr = new System.Windows.Forms.TextBox();
-            this.buttonPaDelete = new System.Windows.Forms.Button();
             this.buttonPaUpdate = new System.Windows.Forms.Button();
             this.buttonPaNew = new System.Windows.Forms.Button();
             this.labelSearchPa = new System.Windows.Forms.Label();
@@ -111,7 +113,7 @@
             this.textBoxSearchPa = new System.Windows.Forms.TextBox();
             this.dataGridViewPa = new System.Windows.Forms.DataGridView();
             this.tabPageStatistics = new System.Windows.Forms.TabPage();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewStatistics = new System.Windows.Forms.DataGridView();
             this.buttonTopProduct = new System.Windows.Forms.Button();
             this.buttonTopCombos = new System.Windows.Forms.Button();
             this.buttonTopSellers = new System.Windows.Forms.Button();
@@ -132,7 +134,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedPa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).BeginInit();
             this.tabPageStatistics.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistics)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -202,6 +204,7 @@
             this.buttonClearAll.TabIndex = 44;
             this.buttonClearAll.Text = "Clear all fields";
             this.buttonClearAll.UseVisualStyleBackColor = true;
+            this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
             // 
             // button3
             // 
@@ -251,20 +254,19 @@
             this.textBoxSearchProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchProduct.Location = new System.Drawing.Point(12, 77);
             this.textBoxSearchProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSearchProduct.Multiline = true;
             this.textBoxSearchProduct.Name = "textBoxSearchProduct";
-            this.textBoxSearchProduct.Size = new System.Drawing.Size(243, 43);
+            this.textBoxSearchProduct.Size = new System.Drawing.Size(243, 44);
             this.textBoxSearchProduct.TabIndex = 39;
             this.textBoxSearchProduct.TextChanged += new System.EventHandler(this.textBoxSearchProduct_TextChanged);
+            this.textBoxSearchProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchProduct_KeyPress);
             // 
             // textBoxNumPad
             // 
             this.textBoxNumPad.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxNumPad.Location = new System.Drawing.Point(901, 218);
             this.textBoxNumPad.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNumPad.Multiline = true;
             this.textBoxNumPad.Name = "textBoxNumPad";
-            this.textBoxNumPad.Size = new System.Drawing.Size(206, 43);
+            this.textBoxNumPad.Size = new System.Drawing.Size(206, 44);
             this.textBoxNumPad.TabIndex = 38;
             this.textBoxNumPad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -461,6 +463,8 @@
             // 
             // dataGridViewSaleList
             // 
+            this.dataGridViewSaleList.AllowUserToAddRows = false;
+            this.dataGridViewSaleList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewSaleList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSaleList.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ProductNr,
@@ -469,7 +473,10 @@
             this.Amount});
             this.dataGridViewSaleList.Location = new System.Drawing.Point(512, 124);
             this.dataGridViewSaleList.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewSaleList.MultiSelect = false;
             this.dataGridViewSaleList.Name = "dataGridViewSaleList";
+            this.dataGridViewSaleList.ReadOnly = true;
+            this.dataGridViewSaleList.RowHeadersVisible = false;
             this.dataGridViewSaleList.RowTemplate.Height = 24;
             this.dataGridViewSaleList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSaleList.Size = new System.Drawing.Size(384, 317);
@@ -477,30 +484,38 @@
             // 
             // ProductNr
             // 
+            this.ProductNr.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.None;
             this.ProductNr.HeaderText = "Product Nr";
             this.ProductNr.Name = "ProductNr";
             this.ProductNr.ReadOnly = true;
+            this.ProductNr.Width = 83;
             // 
             // ProductName
             // 
+            this.ProductName.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.ProductName.HeaderText = "Product Name";
             this.ProductName.Name = "ProductName";
             this.ProductName.ReadOnly = true;
             // 
             // Price
             // 
+            this.Price.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Price.HeaderText = "Price";
             this.Price.Name = "Price";
             this.Price.ReadOnly = true;
+            this.Price.Width = 56;
             // 
             // Amount
             // 
+            this.Amount.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.DisplayedCells;
             this.Amount.HeaderText = "Amount";
             this.Amount.Name = "Amount";
             this.Amount.ReadOnly = true;
+            this.Amount.Width = 68;
             // 
             // richTextBoxAmount
             // 
+            this.richTextBoxAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.richTextBoxAmount.Location = new System.Drawing.Point(422, 251);
             this.richTextBoxAmount.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxAmount.Name = "richTextBoxAmount";
@@ -532,10 +547,15 @@
             // 
             // dataGridViewProductList
             // 
+            this.dataGridViewProductList.AllowUserToAddRows = false;
+            this.dataGridViewProductList.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dataGridViewProductList.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewProductList.Location = new System.Drawing.Point(12, 124);
             this.dataGridViewProductList.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewProductList.MultiSelect = false;
             this.dataGridViewProductList.Name = "dataGridViewProductList";
+            this.dataGridViewProductList.ReadOnly = true;
+            this.dataGridViewProductList.RowHeadersVisible = false;
             this.dataGridViewProductList.RowTemplate.Height = 24;
             this.dataGridViewProductList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewProductList.Size = new System.Drawing.Size(384, 317);
@@ -615,11 +635,15 @@
             // 
             // dataGridViewDeletedSP
             // 
+            this.dataGridViewDeletedSP.AllowUserToAddRows = false;
             this.dataGridViewDeletedSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewDeletedSP.Location = new System.Drawing.Point(400, 104);
             this.dataGridViewDeletedSP.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDeletedSP.Name = "dataGridViewDeletedSP";
+            this.dataGridViewDeletedSP.ReadOnly = true;
+            this.dataGridViewDeletedSP.RowHeadersVisible = false;
             this.dataGridViewDeletedSP.RowTemplate.Height = 24;
+            this.dataGridViewDeletedSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDeletedSP.Size = new System.Drawing.Size(281, 317);
             this.dataGridViewDeletedSP.TabIndex = 86;
             // 
@@ -770,16 +794,23 @@
             // 
             // dataGridViewSP
             // 
+            this.dataGridViewSP.AllowUserToAddRows = false;
             this.dataGridViewSP.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewSP.Location = new System.Drawing.Point(6, 104);
             this.dataGridViewSP.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSP.Name = "dataGridViewSP";
+            this.dataGridViewSP.ReadOnly = true;
+            this.dataGridViewSP.RowHeadersVisible = false;
             this.dataGridViewSP.RowTemplate.Height = 24;
+            this.dataGridViewSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSP.Size = new System.Drawing.Size(281, 317);
             this.dataGridViewSP.TabIndex = 42;
             // 
             // tabPageProduct
             // 
+            this.tabPageProduct.Controls.Add(this.buttonGetAllDeletedPa);
+            this.tabPageProduct.Controls.Add(this.buttonGetAllPa);
+            this.tabPageProduct.Controls.Add(this.checkBoxForSale);
             this.tabPageProduct.Controls.Add(this.buttonPaClearAll);
             this.tabPageProduct.Controls.Add(this.dataGridViewDeletedPa);
             this.tabPageProduct.Controls.Add(this.labelPaAmount);
@@ -795,7 +826,6 @@
             this.tabPageProduct.Controls.Add(this.textBoxPaOutPrice);
             this.tabPageProduct.Controls.Add(this.textBoxPaName);
             this.tabPageProduct.Controls.Add(this.textBoxPaPrNr);
-            this.tabPageProduct.Controls.Add(this.buttonPaDelete);
             this.tabPageProduct.Controls.Add(this.buttonPaUpdate);
             this.tabPageProduct.Controls.Add(this.buttonPaNew);
             this.tabPageProduct.Controls.Add(this.labelSearchPa);
@@ -811,30 +841,69 @@
             this.tabPageProduct.Text = "Product administration";
             this.tabPageProduct.UseVisualStyleBackColor = true;
             // 
+            // buttonGetAllDeletedPa
+            // 
+            this.buttonGetAllDeletedPa.Location = new System.Drawing.Point(1063, 56);
+            this.buttonGetAllDeletedPa.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGetAllDeletedPa.Name = "buttonGetAllDeletedPa";
+            this.buttonGetAllDeletedPa.Size = new System.Drawing.Size(64, 42);
+            this.buttonGetAllDeletedPa.TabIndex = 115;
+            this.buttonGetAllDeletedPa.Text = "Get All";
+            this.buttonGetAllDeletedPa.UseVisualStyleBackColor = true;
+            this.buttonGetAllDeletedPa.Click += new System.EventHandler(this.buttonGetAllDeletedPa_Click);
+            // 
+            // buttonGetAllPa
+            // 
+            this.buttonGetAllPa.Location = new System.Drawing.Point(401, 56);
+            this.buttonGetAllPa.Margin = new System.Windows.Forms.Padding(2);
+            this.buttonGetAllPa.Name = "buttonGetAllPa";
+            this.buttonGetAllPa.Size = new System.Drawing.Size(64, 42);
+            this.buttonGetAllPa.TabIndex = 114;
+            this.buttonGetAllPa.Text = "Get All";
+            this.buttonGetAllPa.UseVisualStyleBackColor = true;
+            this.buttonGetAllPa.Click += new System.EventHandler(this.buttonGetAllPa_Click);
+            // 
+            // checkBoxForSale
+            // 
+            this.checkBoxForSale.AutoSize = true;
+            this.checkBoxForSale.Location = new System.Drawing.Point(487, 310);
+            this.checkBoxForSale.Name = "checkBoxForSale";
+            this.checkBoxForSale.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxForSale.TabIndex = 113;
+            this.checkBoxForSale.Text = "Is For Sale";
+            this.checkBoxForSale.UseVisualStyleBackColor = true;
+            // 
             // buttonPaClearAll
             // 
-            this.buttonPaClearAll.Location = new System.Drawing.Point(856, 424);
+            this.buttonPaClearAll.Location = new System.Drawing.Point(524, 401);
             this.buttonPaClearAll.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPaClearAll.Name = "buttonPaClearAll";
-            this.buttonPaClearAll.Size = new System.Drawing.Size(104, 42);
+            this.buttonPaClearAll.Size = new System.Drawing.Size(76, 42);
             this.buttonPaClearAll.TabIndex = 112;
             this.buttonPaClearAll.Text = "Clear all fields";
             this.buttonPaClearAll.UseVisualStyleBackColor = true;
+            this.buttonPaClearAll.Click += new System.EventHandler(this.buttonPaClearAll_Click);
             // 
             // dataGridViewDeletedPa
             // 
+            this.dataGridViewDeletedPa.AllowUserToAddRows = false;
             this.dataGridViewDeletedPa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewDeletedPa.Location = new System.Drawing.Point(678, 103);
+            this.dataGridViewDeletedPa.Location = new System.Drawing.Point(669, 103);
             this.dataGridViewDeletedPa.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewDeletedPa.Name = "dataGridViewDeletedPa";
+            this.dataGridViewDeletedPa.ReadOnly = true;
+            this.dataGridViewDeletedPa.RowHeadersVisible = false;
             this.dataGridViewDeletedPa.RowTemplate.Height = 24;
-            this.dataGridViewDeletedPa.Size = new System.Drawing.Size(281, 317);
+            this.dataGridViewDeletedPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewDeletedPa.Size = new System.Drawing.Size(458, 317);
             this.dataGridViewDeletedPa.TabIndex = 111;
+            this.dataGridViewDeletedPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedPa_CellClick);
+            this.dataGridViewDeletedPa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedPa_CellContentClick);
             // 
             // labelPaAmount
             // 
             this.labelPaAmount.AutoSize = true;
-            this.labelPaAmount.Location = new System.Drawing.Point(420, 273);
+            this.labelPaAmount.Location = new System.Drawing.Point(486, 269);
             this.labelPaAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPaAmount.Name = "labelPaAmount";
             this.labelPaAmount.Size = new System.Drawing.Size(46, 13);
@@ -843,7 +912,7 @@
             // 
             // textBoxPaAmount
             // 
-            this.textBoxPaAmount.Location = new System.Drawing.Point(423, 288);
+            this.textBoxPaAmount.Location = new System.Drawing.Point(489, 284);
             this.textBoxPaAmount.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaAmount.Multiline = true;
             this.textBoxPaAmount.Name = "textBoxPaAmount";
@@ -862,27 +931,29 @@
             // 
             // buttonSearchDeletedPa
             // 
-            this.buttonSearchDeletedPa.Location = new System.Drawing.Point(896, 56);
+            this.buttonSearchDeletedPa.Location = new System.Drawing.Point(995, 56);
             this.buttonSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchDeletedPa.Name = "buttonSearchDeletedPa";
             this.buttonSearchDeletedPa.Size = new System.Drawing.Size(64, 42);
             this.buttonSearchDeletedPa.TabIndex = 107;
             this.buttonSearchDeletedPa.Text = "Search";
             this.buttonSearchDeletedPa.UseVisualStyleBackColor = true;
+            this.buttonSearchDeletedPa.Click += new System.EventHandler(this.buttonSearchDeletedPa_Click);
             // 
             // textBoxSearchDeletedPa
             // 
-            this.textBoxSearchDeletedPa.Location = new System.Drawing.Point(678, 56);
+            this.textBoxSearchDeletedPa.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxSearchDeletedPa.Location = new System.Drawing.Point(669, 56);
             this.textBoxSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSearchDeletedPa.Multiline = true;
             this.textBoxSearchDeletedPa.Name = "textBoxSearchDeletedPa";
-            this.textBoxSearchDeletedPa.Size = new System.Drawing.Size(214, 43);
+            this.textBoxSearchDeletedPa.Size = new System.Drawing.Size(322, 44);
             this.textBoxSearchDeletedPa.TabIndex = 106;
+            this.textBoxSearchDeletedPa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchDeletedPa_KeyPress);
             // 
             // labelPaOutPrice
             // 
             this.labelPaOutPrice.AutoSize = true;
-            this.labelPaOutPrice.Location = new System.Drawing.Point(420, 235);
+            this.labelPaOutPrice.Location = new System.Drawing.Point(486, 231);
             this.labelPaOutPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPaOutPrice.Name = "labelPaOutPrice";
             this.labelPaOutPrice.Size = new System.Drawing.Size(54, 13);
@@ -892,7 +963,7 @@
             // labelPaInPrice
             // 
             this.labelPaInPrice.AutoSize = true;
-            this.labelPaInPrice.Location = new System.Drawing.Point(418, 197);
+            this.labelPaInPrice.Location = new System.Drawing.Point(484, 193);
             this.labelPaInPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPaInPrice.Name = "labelPaInPrice";
             this.labelPaInPrice.Size = new System.Drawing.Size(45, 13);
@@ -902,7 +973,7 @@
             // labelPaName
             // 
             this.labelPaName.AutoSize = true;
-            this.labelPaName.Location = new System.Drawing.Point(418, 159);
+            this.labelPaName.Location = new System.Drawing.Point(484, 155);
             this.labelPaName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPaName.Name = "labelPaName";
             this.labelPaName.Size = new System.Drawing.Size(38, 13);
@@ -912,7 +983,7 @@
             // labelPaPrNr
             // 
             this.labelPaPrNr.AutoSize = true;
-            this.labelPaPrNr.Location = new System.Drawing.Point(419, 121);
+            this.labelPaPrNr.Location = new System.Drawing.Point(485, 117);
             this.labelPaPrNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelPaPrNr.Name = "labelPaPrNr";
             this.labelPaPrNr.Size = new System.Drawing.Size(47, 13);
@@ -921,7 +992,7 @@
             // 
             // textBoxPaInPrice
             // 
-            this.textBoxPaInPrice.Location = new System.Drawing.Point(423, 212);
+            this.textBoxPaInPrice.Location = new System.Drawing.Point(489, 208);
             this.textBoxPaInPrice.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaInPrice.Multiline = true;
             this.textBoxPaInPrice.Name = "textBoxPaInPrice";
@@ -930,7 +1001,7 @@
             // 
             // textBoxPaOutPrice
             // 
-            this.textBoxPaOutPrice.Location = new System.Drawing.Point(423, 250);
+            this.textBoxPaOutPrice.Location = new System.Drawing.Point(489, 246);
             this.textBoxPaOutPrice.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaOutPrice.Multiline = true;
             this.textBoxPaOutPrice.Name = "textBoxPaOutPrice";
@@ -939,7 +1010,7 @@
             // 
             // textBoxPaName
             // 
-            this.textBoxPaName.Location = new System.Drawing.Point(423, 174);
+            this.textBoxPaName.Location = new System.Drawing.Point(489, 170);
             this.textBoxPaName.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaName.Multiline = true;
             this.textBoxPaName.Name = "textBoxPaName";
@@ -948,26 +1019,17 @@
             // 
             // textBoxPaPrNr
             // 
-            this.textBoxPaPrNr.Location = new System.Drawing.Point(423, 136);
+            this.textBoxPaPrNr.Enabled = false;
+            this.textBoxPaPrNr.Location = new System.Drawing.Point(489, 132);
             this.textBoxPaPrNr.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxPaPrNr.Multiline = true;
             this.textBoxPaPrNr.Name = "textBoxPaPrNr";
             this.textBoxPaPrNr.Size = new System.Drawing.Size(151, 21);
             this.textBoxPaPrNr.TabIndex = 97;
             // 
-            // buttonPaDelete
-            // 
-            this.buttonPaDelete.Location = new System.Drawing.Point(423, 369);
-            this.buttonPaDelete.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonPaDelete.Name = "buttonPaDelete";
-            this.buttonPaDelete.Size = new System.Drawing.Size(75, 24);
-            this.buttonPaDelete.TabIndex = 96;
-            this.buttonPaDelete.Text = "Delete";
-            this.buttonPaDelete.UseVisualStyleBackColor = true;
-            // 
             // buttonPaUpdate
             // 
-            this.buttonPaUpdate.Location = new System.Drawing.Point(423, 341);
+            this.buttonPaUpdate.Location = new System.Drawing.Point(524, 373);
             this.buttonPaUpdate.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPaUpdate.Name = "buttonPaUpdate";
             this.buttonPaUpdate.Size = new System.Drawing.Size(76, 24);
@@ -978,13 +1040,14 @@
             // 
             // buttonPaNew
             // 
-            this.buttonPaNew.Location = new System.Drawing.Point(422, 313);
+            this.buttonPaNew.Location = new System.Drawing.Point(524, 345);
             this.buttonPaNew.Margin = new System.Windows.Forms.Padding(2);
             this.buttonPaNew.Name = "buttonPaNew";
             this.buttonPaNew.Size = new System.Drawing.Size(76, 24);
             this.buttonPaNew.TabIndex = 94;
             this.buttonPaNew.Text = "New";
             this.buttonPaNew.UseVisualStyleBackColor = true;
+            this.buttonPaNew.Click += new System.EventHandler(this.buttonPaNew_Click);
             // 
             // labelSearchPa
             // 
@@ -998,41 +1061,47 @@
             // 
             // buttonSearchPa
             // 
-            this.buttonSearchPa.Location = new System.Drawing.Point(330, 56);
+            this.buttonSearchPa.Location = new System.Drawing.Point(333, 56);
             this.buttonSearchPa.Margin = new System.Windows.Forms.Padding(2);
             this.buttonSearchPa.Name = "buttonSearchPa";
             this.buttonSearchPa.Size = new System.Drawing.Size(64, 42);
             this.buttonSearchPa.TabIndex = 92;
             this.buttonSearchPa.Text = "Search";
             this.buttonSearchPa.UseVisualStyleBackColor = true;
+            this.buttonSearchPa.Click += new System.EventHandler(this.buttonSearchPa_Click);
             // 
             // textBoxSearchPa
             // 
+            this.textBoxSearchPa.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBoxSearchPa.Location = new System.Drawing.Point(7, 56);
             this.textBoxSearchPa.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSearchPa.Multiline = true;
             this.textBoxSearchPa.Name = "textBoxSearchPa";
-            this.textBoxSearchPa.Size = new System.Drawing.Size(319, 43);
+            this.textBoxSearchPa.Size = new System.Drawing.Size(322, 44);
             this.textBoxSearchPa.TabIndex = 91;
+            this.textBoxSearchPa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchPa_KeyPress);
             // 
             // dataGridViewPa
             // 
+            this.dataGridViewPa.AllowUserToAddRows = false;
             this.dataGridViewPa.AllowUserToResizeColumns = false;
             this.dataGridViewPa.AllowUserToResizeRows = false;
             this.dataGridViewPa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewPa.Location = new System.Drawing.Point(7, 103);
             this.dataGridViewPa.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewPa.Name = "dataGridViewPa";
+            this.dataGridViewPa.ReadOnly = true;
+            this.dataGridViewPa.RowHeadersVisible = false;
             this.dataGridViewPa.RowTemplate.Height = 24;
             this.dataGridViewPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewPa.Size = new System.Drawing.Size(387, 317);
+            this.dataGridViewPa.Size = new System.Drawing.Size(458, 317);
             this.dataGridViewPa.TabIndex = 90;
+            this.dataGridViewPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPa_CellClick);
             this.dataGridViewPa.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPa_CellContentClick);
             // 
             // tabPageStatistics
             // 
             this.tabPageStatistics.BackColor = System.Drawing.Color.LightGray;
-            this.tabPageStatistics.Controls.Add(this.dataGridView1);
+            this.tabPageStatistics.Controls.Add(this.dataGridViewStatistics);
             this.tabPageStatistics.Controls.Add(this.buttonTopProduct);
             this.tabPageStatistics.Controls.Add(this.buttonTopCombos);
             this.tabPageStatistics.Controls.Add(this.buttonTopSellers);
@@ -1046,15 +1115,20 @@
             this.tabPageStatistics.Text = "Statistics";
             this.tabPageStatistics.Click += new System.EventHandler(this.tabPageStatistics_Click);
             // 
-            // dataGridView1
+            // dataGridViewStatistics
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(7, 95);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(281, 317);
-            this.dataGridView1.TabIndex = 116;
+            this.dataGridViewStatistics.AllowUserToAddRows = false;
+            this.dataGridViewStatistics.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewStatistics.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewStatistics.Location = new System.Drawing.Point(7, 95);
+            this.dataGridViewStatistics.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewStatistics.Name = "dataGridViewStatistics";
+            this.dataGridViewStatistics.ReadOnly = true;
+            this.dataGridViewStatistics.RowHeadersVisible = false;
+            this.dataGridViewStatistics.RowTemplate.Height = 24;
+            this.dataGridViewStatistics.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewStatistics.Size = new System.Drawing.Size(467, 317);
+            this.dataGridViewStatistics.TabIndex = 116;
             // 
             // buttonTopProduct
             // 
@@ -1065,6 +1139,7 @@
             this.buttonTopProduct.TabIndex = 115;
             this.buttonTopProduct.Text = "Top Products";
             this.buttonTopProduct.UseVisualStyleBackColor = true;
+            this.buttonTopProduct.Click += new System.EventHandler(this.buttonTopProduct_Click);
             // 
             // buttonTopCombos
             // 
@@ -1073,8 +1148,9 @@
             this.buttonTopCombos.Name = "buttonTopCombos";
             this.buttonTopCombos.Size = new System.Drawing.Size(80, 36);
             this.buttonTopCombos.TabIndex = 114;
-            this.buttonTopCombos.Text = "Top Combos";
+            this.buttonTopCombos.Text = "Highest Sale";
             this.buttonTopCombos.UseVisualStyleBackColor = true;
+            this.buttonTopCombos.Click += new System.EventHandler(this.buttonTopCombos_Click);
             // 
             // buttonTopSellers
             // 
@@ -1085,6 +1161,7 @@
             this.buttonTopSellers.TabIndex = 113;
             this.buttonTopSellers.Text = "Top Sellers";
             this.buttonTopSellers.UseVisualStyleBackColor = true;
+            this.buttonTopSellers.Click += new System.EventHandler(this.buttonTopSellers_Click);
             // 
             // lblLoggedInAs
             // 
@@ -1151,7 +1228,7 @@
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "AffAIRS system";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.tabControl.ResumeLayout(false);
             this.tabPageSale.ResumeLayout(false);
@@ -1167,7 +1244,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedPa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).EndInit();
             this.tabPageStatistics.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistics)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
@@ -1248,7 +1325,6 @@
         private System.Windows.Forms.TextBox textBoxPaOutPrice;
         private System.Windows.Forms.TextBox textBoxPaName;
         private System.Windows.Forms.TextBox textBoxPaPrNr;
-        private System.Windows.Forms.Button buttonPaDelete;
         private System.Windows.Forms.Button buttonPaUpdate;
         private System.Windows.Forms.Button buttonPaNew;
         private System.Windows.Forms.Label labelSearchPa;
@@ -1256,7 +1332,7 @@
         private System.Windows.Forms.TextBox textBoxSearchPa;
         private System.Windows.Forms.DataGridView dataGridViewPa;
         private System.Windows.Forms.DataGridView dataGridViewDeletedPa;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridViewStatistics;
         private System.Windows.Forms.Button buttonTopProduct;
         private System.Windows.Forms.Button buttonTopCombos;
         private System.Windows.Forms.Button buttonTopSellers;
@@ -1272,6 +1348,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ProductName;
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
+        private System.Windows.Forms.CheckBox checkBoxForSale;
+        private System.Windows.Forms.Button buttonGetAllDeletedPa;
+        private System.Windows.Forms.Button buttonGetAllPa;
 
 
     }

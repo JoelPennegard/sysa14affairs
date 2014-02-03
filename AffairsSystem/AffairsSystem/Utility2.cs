@@ -12,17 +12,12 @@ namespace AffairsSystem
     {
         public static Boolean CheckAdmin(SqlDataReader dr)
         {
-            
-            String adminString = "";
+            bool isAdmin = true;
             while (dr.Read())
             {
-               
-                adminString = dr.GetString(4);
-                
-                                
-                
+                isAdmin = dr.GetBoolean(4);                
             }
-            if (adminString.Equals("1"))
+            if (isAdmin)
             {
                 return true;
             }
@@ -31,7 +26,17 @@ namespace AffairsSystem
                 return false;
             }
        }
-        public static string getSalesPersonName(SqlDataReader dr)
+        public static Boolean CheckOnlyNumbers(string text)
+        {
+
+            foreach (char c in text)
+            {
+                if (c < '0' || c > '9')
+                    return false;
+            }
+            return true;
+        }
+        public static string GetSalesPersonName(SqlDataReader dr)
         {
             string name = "";
             while (dr.Read())
@@ -42,5 +47,6 @@ namespace AffairsSystem
             
             
         }
+        
     }
 }

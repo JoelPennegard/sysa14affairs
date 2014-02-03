@@ -114,9 +114,9 @@ namespace AffairsSystem
         /// Gets a list containing the number, name and listed price of all products in the Product table
         /// </summary>
         /// <returns>a sqlDataAdapter containing a table of products</returns>
-        public SqlDataAdapter GetAllProducts()
+        public SqlDataAdapter GetAllProductsToSaleList()
         {
-            return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product");
+            return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product where isForSale = 1");
         }
 
         /// <summary>
@@ -124,9 +124,14 @@ namespace AffairsSystem
         /// </summary>
         /// <returns>a sqlDataAdapter containing a table of products</returns>
  
-        public SqlDataAdapter GetAllProductsWithInPrice()
+        public SqlDataAdapter GetAllProductsForSale()
         {
-            return ExecuteGetSqlAdapter("select * from product");
+            return ExecuteGetSqlAdapter("select * from product where isForSale = 1");
+        }
+
+        public SqlDataAdapter GetAllProductsNotForSale()
+        {
+            return ExecuteGetSqlAdapter("select * from product where isForSale = 0");
         }
 
         /// <summary>
@@ -154,16 +159,23 @@ namespace AffairsSystem
         // SEARCH PRODUCT IN TILL (NOT PRODUCTINPRICE)
         public SqlDataAdapter SearchProductTill(string search)
         {
-            return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product where productNr like '%" + 
+            return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product where isForSale = 1 and (productNr like '%" + 
                 search + "%' or productName like '%" + search + 
-                "%' or productOutPrice like '%" + search + "%'");
+                "%' or productOutPrice like '%" + search + "%')");
         }
       
-        // SEARCH PRODUCT ALL ATTRIBUTES
-        public SqlDataAdapter SearchProductAllAttributes(string search)
+        // SEARCH PRODUCT ALL ATTRIBUTES (ON SALE)
+        public SqlDataAdapter SearchProductAllAttributesForSale(string search)
         {
-            return ExecuteGetSqlAdapter("select * from product where productNr like '%" + search + "%' or productName like '%" + search +
-                "%' or productInPrice like '%" + search + "%' or productOutPrice like '%" + search + "%' or amount like '%" + search + "%'");
+            return ExecuteGetSqlAdapter("select * from product where isForSale = 1 and (productNr like '%" + search + "%' or productName like '%" + search +
+                "%' or productInPrice like '%" + search + "%' or productOutPrice like '%" + search + "%' or amount like '%" + search + "%')");
+        }
+
+        //SEARCH PRODUCT ALL ATTRIBUTES (NOT FOR SALE)
+        public SqlDataAdapter SearchProductAllAttributesNotForSale(string search)
+        {
+            return ExecuteGetSqlAdapter("select * from product where isForSale = 0 and (productNr like '%" + search + "%' or productName like '%" + search +
+                "%' or productInPrice like '%" + search + "%' or productOutPrice like '%" + search + "%' or amount like '%" + search + "%')");
         }
       
         /// <summary>
@@ -176,16 +188,7 @@ namespace AffairsSystem
             return ExecuteGetSqlAdapter("select * from product where productNr like '%" + productNr + "%' or productName like '%" + productName +
                 "%' or productInPrice like '%" + productInPrice + "%' or productOutPrice like '%" + productOutPrice + "%' or amount like '%" + amount + "%'");
         }
-        /// <summary>
-        /// Updates the available amount of a product in the Product table
-        /// </summary>
-        /// <param name="amount">the change in amount of said product thats available</param>
-        /// <param name="productNr"> the identifying number of the product </param>
-        
-        public void UpdateProductAmount(int amount, string productNr)
-        {
-            ExecuteSetSqlQuery("update product set amount = amount + '" + amount + "' where productNr = " + productNr);
-        }
+       
         /// <summary>
         /// Updates the information of a product in the Product table
         /// </summary>
@@ -194,10 +197,10 @@ namespace AffairsSystem
         /// <param name="productOutPrice">the price that is listed in the store</param>
         /// <param name="amount">the amount of said product thats available</param>
         
-        public void UpdateProduct (int productNr, string productName, double productInPrice, double productOutPrice, int amount)
+        public void UpdateProduct (int productNr, string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
         {
             ExecuteSetSqlQuery("update product set productName = '" + productName + "', productInPrice = " + productInPrice + 
-                ", ProductOutPrice = " + productOutPrice + ", amount = " + amount + " where productNr = " + productNr);
+                ", ProductOutPrice = " + productOutPrice + ", amount = " + amount + ", isForSale = " + isForSale + " where productNr = " + productNr);
         }            
 
         /// <summary>
@@ -234,9 +237,9 @@ namespace AffairsSystem
         /// <param name="productOutPrice">the price that is listed in the store</param>
         /// <param name="amount">the amount of said product thats available</param>
  
-        public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount)
+        public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
         {
-            ExecuteSetSqlQuery("insert into product values('" + productName + "'," + productInPrice + "," + productOutPrice + "," + amount + ")");
+            ExecuteSetSqlQuery("insert into product values('" + productName + "'," + productInPrice + "," + productOutPrice + "," + amount + ", " + isForSale + ")");
         }
 
         
@@ -248,7 +251,7 @@ namespace AffairsSystem
  
         public void SetSale(string spNr, double totalPrice)
         {
-            ExecuteSetSqlQuery("insert into product values getdate(), '" + spNr + "'," + totalPrice + ")");
+            ExecuteSetSqlQuery("insert into sales values (getdate(), '" + spNr + "'," + totalPrice + ")");
         }
 
 
@@ -277,6 +280,11 @@ namespace AffairsSystem
                 "on a.spNr = b.spNr group by a.spNr, firstname, lastname order by count(*) desc");
         }
 
+        public SqlDataReader getLatestSale()
+        {
+            return ExecuteGetSqlReader("select top 1 salesNr from Sales order by salesDate desc");
+        }
+
         /// <summary>
         /// Selects the salesperson with the highest amount of sales
         /// </summary>
@@ -284,7 +292,7 @@ namespace AffairsSystem
  
         public SqlDataAdapter GetTopOneSalesPerson()
         {
-            return ExecuteGetSqlAdapter("select top 1 firstname, lastname, salesNr, max(totalprice) as [Total Price]from salesperson a join sales b" +
+            return ExecuteGetSqlAdapter("select top 1 firstname, lastname, salesNr, max(totalprice) as [Total Price] from salesperson a join sales b " +
                 "on a.spNr = b.spNr group by firstname, lastname, totalprice, salesNr order by totalprice desc");
         }
 
@@ -296,7 +304,17 @@ namespace AffairsSystem
         public SqlDataAdapter GetTopProductSale()
         {
             return ExecuteGetSqlAdapter("select a.productNr, productName, sum(a.amount) as [Total Sales], (sum(a.amount * productOutPrice) - sum(a.amount * productInPrice)) as [Difference]" +
-                "from salesline a join product p on a.productNr = p.productNr group by a.productNr, productName");
+                "from salesline a join product p on a.productNr = p.productNr group by a.productNr, productName order by sum(a.amount) desc");
+        }
+        //GET PRODuCT AMOUNT
+        public SqlDataReader getProductAmount(int productNr)
+        {
+            return ExecuteGetSqlReader("select amount from product where productNr = " + productNr);
+        }
+        //UPDATE PRODUCT AMOUNT
+        public void UpdateProductAmount(int amount, int productNr, string minusOrPlus)
+        {
+            ExecuteSetSqlQuery("update product set amount = (amount  " + minusOrPlus + amount +") where productNr = " + productNr);
         }
 
     }

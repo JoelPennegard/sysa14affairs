@@ -36,9 +36,9 @@ namespace AffairsSystem
 
 
         // CREATE NEW PRODUCT (ADMIN)
-        public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount)
+        public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
         {
-            dal.SetProduct(productName, productInPrice, productOutPrice, amount);
+            dal.SetProduct(productName, productInPrice, productOutPrice, amount, isForSale);
         }
 
         //CREATE NEW SALES PERSON (ADMIN)
@@ -63,9 +63,15 @@ namespace AffairsSystem
         }
 
         // SEARCH PRODUCT ALL ATTRIBUTES
-        public SqlDataAdapter SearchProductAllAttributes(string search)
+        public SqlDataAdapter SearchProductAllAttributesForSale(string search)
         {
-            da = dal.SearchProductAllAttributes(search);
+            da = dal.SearchProductAllAttributesForSale(search);
+            return da;
+        }
+        //SEARCH PRODUCT ALL ATTRIBUTES (NOT FOR SALE)
+        public SqlDataAdapter SearchProductAllAttributesNotForSale(string search)
+        {
+            da = dal.SearchProductAllAttributesNotForSale(search);
             return da;
         }
 
@@ -77,15 +83,21 @@ namespace AffairsSystem
         }
       
         // GET ALL PRODUCTS (NR, NAME, OUTPRICE)
-        public SqlDataAdapter GetAllProducts()
+        public SqlDataAdapter GetAllProductsToSaleList()
         {
-            da = dal.GetAllProducts();
+            da = dal.GetAllProductsToSaleList();
+            return da;
+        }
+        // GET ALL PRODUCTS NOT FOR SALE
+        public SqlDataAdapter GetAllProductsNotForSale()
+        {
+            da = dal.GetAllProductsNotForSale();
             return da;
         }
         // GET ALL PRODUCTS (NR, NAME, OUTPRICE, INPRICE)
-        public SqlDataAdapter GetAllProductsWithInPrice()
+        public SqlDataAdapter GetAllProductsForSale()
         {
-            da = dal.GetAllProductsWithInPrice();
+            da = dal.GetAllProductsForSale();
             return da;
         }
         //GET SALES (SALESPERSON)
@@ -94,20 +106,50 @@ namespace AffairsSystem
             da = dal.GetSalesPersonSales(spNr);
             return da;
         }
+        // GET LATEST SALE
+        public SqlDataReader GetLatestSale()
+        {
+            dr = dal.getLatestSale();
+            return dr;
+        }
         //UPDATE SALES PERSON (ADMIN))
         public void UpdateSalesPerson(string spNr, string firstName, string lastName, string sPhone)
         {
             dal.UpdateSalesPerson(spNr, firstName, lastName, sPhone);
         }
         //UPDATE PRODUCT (ADMIN))
-        public void UpdateProduct(int productNr, string productName, double productInPrice, double productOutPrice, int amount)
+        public void UpdateProduct(int productNr, string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
         {
-            dal.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount);
+            dal.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount, isForSale);
         }
         // UPDATE PRODUCT AMOUNT (ADMIN)
-        public void UpdateProductAmount(int amount, string productNr)
+        public void UpdateProductAmount(int amount, int productNr, string minusOrPlus)
         {
-            dal.UpdateProductAmount(amount, productNr);
+            dal.UpdateProductAmount(amount, productNr, minusOrPlus);
+        }
+        //GET PRODuCT AMOUNT
+        public SqlDataReader getProductAmount(int productNr)
+        {
+            dr = dal.getProductAmount(productNr);
+            return dr;
+        }
+        //GET HIGHEST SALES
+        public SqlDataAdapter GetHighestSales()
+        {
+            da = dal.GetHighestSales();
+            return da;
+        }
+        //GET TOP SALESPERSON
+        public SqlDataAdapter GetTopOneSalesPerson()
+        {
+            da = dal.GetTopOneSalesPerson();
+            return da;
+        }
+        //GET TOP PRODUCT THAT IS SOLD THE MOST
+        public SqlDataAdapter GetTopProductSale()
+        {
+            da = dal.GetTopProductSale();
+            return da;
         }
 
         
