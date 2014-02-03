@@ -134,6 +134,33 @@ namespace AffairsSystem
             return ExecuteGetSqlAdapter("select * from product where isForSale = 0");
         }
 
+        //GET ALL WORKING SALES PERSONS
+        public SqlDataAdapter GetAllWorkingSalesPersons()
+        {
+            return ExecuteGetSqlAdapter("select spNr, firstName, lastName, sPhone from salesperson where isActive = 1");
+        }
+        //GET ALL NOT WORKING SALES PERSONS
+        public SqlDataAdapter GetAllNotWorkingSalesPersons()
+        {
+            return ExecuteGetSqlAdapter("select spNr, firstName, lastName, sPhone from salesperson where isActive = 0");
+        }
+
+        //SEARCH ON WORKING SALES PERSONS (ADMIN)
+        public SqlDataAdapter SearchWorkingSalesPerson(string search) {
+           
+            return ExecuteGetSqlAdapter("select spNr, firstName, lastName, sPhone from salesperson where isActive = 1 and (spNr like '%" +
+                    search + "%' or firstName like '%" + search +
+                    "%' or lastName like '%" + search + "%' or sPhone like '%" + search + "%')");
+        }
+        
+        //SEARCH ON NOT WORKING SALES PERSONS (ADMIN)
+        public SqlDataAdapter SearchNotWorkingSalesPerson(string search)
+        {
+            return ExecuteGetSqlAdapter("select spNr, firstName, lastName, sPhone from salesperson where isActive = 0 and (spNr like '%" +
+                    search + "%' or firstName like '%" + search +
+                    "%' or lastName like '%" + search + "%' or sPhone like '%" + search + "%')");
+        }
+
         /// <summary>
         /// Gets a list containing all Sales made by a specified salesPerson
         /// </summary>

@@ -94,6 +94,34 @@ namespace AffairsSystem
             da = dal.GetAllProductsNotForSale();
             return da;
         }
+
+        //GET ALL WORKING SALES PERSONS
+        public SqlDataAdapter GetAllWorkingSalesPersons()
+        {
+            da = dal.GetAllWorkingSalesPersons();
+            return da;
+        }
+        
+        //GET ALL NOT WORKING SALES PERSONS
+        public SqlDataAdapter GetAllNotWorkingSalesPersons()
+        {
+            da = dal.GetAllNotWorkingSalesPersons();
+            return da;
+        }
+
+        //SEARCH WORKING SALES PERSONS
+        public SqlDataAdapter SearchWorkingSalesPersons(string search)
+        {
+            da = dal.SearchWorkingSalesPerson(search);
+            return da;
+        }
+
+        public SqlDataAdapter SearchNotWorkingSalesPersons(string search)
+        {
+            da = dal.SearchNotWorkingSalesPerson(search);
+            return da;
+        }
+
         // GET ALL PRODUCTS (NR, NAME, OUTPRICE, INPRICE)
         public SqlDataAdapter GetAllProductsForSale()
         {
