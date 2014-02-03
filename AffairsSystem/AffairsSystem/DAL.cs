@@ -126,12 +126,12 @@ namespace AffairsSystem
  
         public SqlDataAdapter GetAllProductsForSale()
         {
-            return ExecuteGetSqlAdapter("select productNr, productNr, productInPrice, productOutPrice, amount from product where isForSale = 1");
+            return ExecuteGetSqlAdapter("select * from product where isForSale = 1");
         }
 
         public SqlDataAdapter GetAllProductsNotForSale()
         {
-            return ExecuteGetSqlAdapter("select productNr, productNr, productInPrice, productOutPrice, amount from product where isForSale = 0");
+            return ExecuteGetSqlAdapter("select * from product where isForSale = 0");
         }
 
         //GET ALL WORKING SALES PERSONS
