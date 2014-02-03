@@ -126,12 +126,12 @@ namespace AffairsSystem
  
         public SqlDataAdapter GetAllProductsForSale()
         {
-            return ExecuteGetSqlAdapter("select * from product where isForSale = 1");
+            return ExecuteGetSqlAdapter("select productNr, productNr, productInPrice, productOutPrice, amount from product where isForSale = 1");
         }
 
         public SqlDataAdapter GetAllProductsNotForSale()
         {
-            return ExecuteGetSqlAdapter("select * from product where isForSale = 0");
+            return ExecuteGetSqlAdapter("select productNr, productNr, productInPrice, productOutPrice, amount from product where isForSale = 0");
         }
 
         //GET ALL WORKING SALES PERSONS
@@ -303,8 +303,8 @@ namespace AffairsSystem
 
         public SqlDataAdapter GetHighestSales()
         {
-            return ExecuteGetSqlAdapter("select a.spNr, firstname, lastname, count(*) as [Amount of sales] from salesperson a join sales b " +
-                "on a.spNr = b.spNr group by a.spNr, firstname, lastname order by count(*) desc");
+            return ExecuteGetSqlAdapter("select a.spNr, firstname, lastname, count(*) as [Amount of sales], sum(totalPrice) as [Sold for Total] " + 
+                "from salesperson a join sales b  on a.spNr = b.spNr  group by a.spNr, firstname, lastname order by count(*) desc");
         }
 
         public SqlDataReader getLatestSale()
