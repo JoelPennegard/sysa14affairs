@@ -461,5 +461,38 @@ namespace AffairsSystem
             textBoxPaAmount.Text = dataGridViewDeletedPa.SelectedRows[0].Cells[4].Value.ToString();
             checkBoxForSale.Checked = (bool)dataGridViewDeletedPa.SelectedRows[0].Cells[5].Value;
         }
+
+        private void buttonSEK_Click(object sender, EventArgs e)
+        {
+            textBoxCurrencyUnit.Text = "SEK";
+        }
+
+        private void buttonEURO_Click(object sender, EventArgs e)
+        {
+            textBoxCurrencyUnit.Text = "€";
+        }
+
+        private void buttonUSD_Click(object sender, EventArgs e)
+        {
+            textBoxCurrencyUnit.Text = "$";
+        }
+
+        private void buttonDKK_Click(object sender, EventArgs e)
+        {
+            textBoxCurrencyUnit.Text = "DKK";
+        }
+
+        private void buttonGBP_Click(object sender, EventArgs e)
+        {
+            textBoxCurrencyUnit.Text = "£";
+        }
+
+        private void buttonNOK_Click(object sender, EventArgs e)
+        {
+            textBoxCurrencyUnit.Text = "NOK";
+        }
+
+
+
     }
 }
