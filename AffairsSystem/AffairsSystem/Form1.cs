@@ -160,9 +160,10 @@ namespace AffairsSystem
 
                             double SinglePrice = amountInt * productOutPrice;
                             totalPrice = totalPrice + SinglePrice;
-                            controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
+                            
                             FillProductTableAdmin();
                         }
+                        controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
                         textBoxNumPad.Text = totalPrice.ToString();
                     }
                     else
