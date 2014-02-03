@@ -161,9 +161,17 @@ namespace AffairsSystem
         }
         public static string CalculateNumpad(string input, string payedAmount)
         {
+            
             string output = payedAmount;
-            output = output + input;
-            return output;
+            if (output.Contains)
+            {
+                return output;
+            }
+            else
+            {
+                output = output + input;
+                return output;
+            }
         }
     }
         
