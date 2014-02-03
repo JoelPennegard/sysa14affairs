@@ -36,6 +36,8 @@ namespace AffairsSystem
                 tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as : " + name + " (Admin)"; 
                 FillProductTableAdmin();
                 FillProductTableNotForSaleAdmin();
+                FillNotWorkingSalesPersonTable();
+                FillWorkingSalesPersonTable();
             }
             else
             {
@@ -148,19 +150,12 @@ namespace AffairsSystem
         private void buttonSearchProduct_Click(object sender, EventArgs e)
         {
             string search = textBoxSearchProduct.Text;
-            labelErrorSaleSearch.Text = "";
-            if (Utility.checkIfSearchContainsForbiddenChars(search))
-            {
-                labelErrorSaleSearch.Text = "[ ' ] is now allowed in the search";
-            }
-            else
-            {
                 SqlDataAdapter da = controller.SearchProductTill(search);
                 DataTable data = new DataTable();
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
                 textBoxSearchProduct.Text = "";
-            }   
+                
             
           
         }
@@ -268,20 +263,12 @@ namespace AffairsSystem
 
         private void buttonSearchPa_Click(object sender, EventArgs e)
         {
-            labelErrorProductSearch.Text = "";
             string search = textBoxSearchPa.Text;
-            if (Utility.checkIfSearchContainsForbiddenChars(search))
-            {
-                labelErrorProductSearch.Text = " [ ' ] is not allowed in the searchfield";
-            }
-            else
-            {
-                SqlDataAdapter da = controller.SearchProductAllAttributesForSale(search);
-                DataTable data = new DataTable();
-                da.Fill(data);
-                dataGridViewPa.DataSource = data;
-                textBoxSearchPa.Text = "";
-            }
+            SqlDataAdapter da = controller.SearchProductAllAttributesForSale(search);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewPa.DataSource = data;
+            textBoxSearchPa.Text = "";
 
         }
 
@@ -344,6 +331,24 @@ namespace AffairsSystem
             dataGridViewProductList.DataSource = data;
 
         }
+        //FILL WORKING SALES PERSON TABLE
+        private void FillWorkingSalesPersonTable()
+        {
+            SqlDataAdapter da = controller.GetAllWorkingSalesPersons();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewSP.DataSource = data;
+        }
+
+        //FILL NOT WORKING SALES PERSON TABLE
+        private void FillNotWorkingSalesPersonTable()
+        {
+            SqlDataAdapter da = controller.GetAllNotWorkingSalesPersons();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewSP.DataSource = data;
+        }
+
 
         //FILL PRODUCTS FOR SALE TABLE ADMIN
         private void FillProductTableAdmin()
@@ -553,9 +558,29 @@ namespace AffairsSystem
            
         }
 
+        private void buttonGetAllWorkingSalesPersons_Click(object sender, EventArgs e)
+        {
+            controller.GetAllWorkingSalesPersons();
+        }
+
         private void buttonSearchSP_Click(object sender, EventArgs e)
         {
+            string search = textBoxSearchSP.Text;
+            SqlDataAdapter da = controller.SearchWorkingSalesPersons(search);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewSP.DataSource = data;
+            textBoxSearchSP.Text = "";        
+        }
 
+        private void buttonSearchDeletedSP_Click(object sender, EventArgs e)
+        {
+            string search = textBoxSearchDeletedSP.Text;
+            SqlDataAdapter da = controller.SearchNotWorkingSalesPersons(search);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewDeletedSP.DataSource = data;
+            textBoxSearchDeletedSP.Text = "";
         }
 
 
