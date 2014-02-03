@@ -38,6 +38,7 @@ namespace AffairsSystem
                 FillProductTableNotForSaleAdmin();
                 FillNotWorkingSalesPersonTable();
                 FillWorkingSalesPersonTable();
+
             }
             else
             {
@@ -347,7 +348,7 @@ namespace AffairsSystem
             SqlDataAdapter da = controller.GetAllNotWorkingSalesPersons();
             DataTable data = new DataTable();
             da.Fill(data);
-            dataGridViewSP.DataSource = data;
+            dataGridViewDeletedSP.DataSource = data;
         }
 
 
