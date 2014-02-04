@@ -442,37 +442,38 @@ namespace AffairsSystem
         private void buttonSEK_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "SEK";
+            double rate = Utility.GetCurrencyExchangeRate("SEK");
         }
 
         private void buttonEURO_Click(object sender, EventArgs e)
         {
-            textBoxCurrencyUnit.Text = "€"; string jsonString;
-            using (WebClient client = new WebClient()) 
-            { jsonString = client.DownloadString("http://rate-exchange.appspot.com/currency?from=EUR&to=SEK&q=1"); } 
-            var serializer = new JavaScriptSerializer(); 
-            Dictionary<string, string> values = serializer.Deserialize<Dictionary<string, string>>(jsonString); 
-            double rate = Double.Parse(values["rate"]);
-            MessageBox.Show(rate.ToString());
+            textBoxCurrencyUnit.Text = "€";
+            double rate = Utility.GetCurrencyExchangeRate("EUR");
+           
         }
 
         private void buttonUSD_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "$";
+            double rate = Utility.GetCurrencyExchangeRate("USD");
         }
 
         private void buttonDKK_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "DKK";
+            double rate = Utility.GetCurrencyExchangeRate("DKK");
         }
 
         private void buttonGBP_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "£";
+            double rate = Utility.GetCurrencyExchangeRate("GBP");
         }
 
         private void buttonNOK_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "NOK";
+            double rate = Utility.GetCurrencyExchangeRate("NOK");
         }
         
         private void buttonNP1_Click(object sender, EventArgs e)
