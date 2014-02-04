@@ -115,6 +115,7 @@ namespace AffairsSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
+            textBoxCurrencyUnit.Text = "SEK";
             int productNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
             string productName = dataGridViewProductList.SelectedRows[0].Cells[1].Value.ToString();
             double productOutPrice = double.Parse(dataGridViewProductList.SelectedRows[0].Cells[2].Value.ToString());
@@ -241,7 +242,7 @@ namespace AffairsSystem
             }
             else
             {
-                totalPrice = double.Parse(textBoxNumPad.Text);
+                
                 controller.SetSale(spNr, totalPrice);
                 int salesNr = Utility.CheckLatestSale(controller.GetLatestSale());
 
@@ -451,38 +452,38 @@ namespace AffairsSystem
         private void buttonSEK_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "SEK";
-            double rate = Utility.GetCurrencyExchangeRate("SEK");
+            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("SEK", totalPrice).ToString();
         }
 
         private void buttonEURO_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "€";
-            double rate = Utility.GetCurrencyExchangeRate("EUR");
-           
+            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("EUR", totalPrice).ToString();
+            
         }
 
         private void buttonUSD_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "$";
-            double rate = Utility.GetCurrencyExchangeRate("USD");
+            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("USD", totalPrice).ToString();
         }
 
         private void buttonDKK_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "DKK";
-            double rate = Utility.GetCurrencyExchangeRate("DKK");
+            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("DKK", totalPrice).ToString();
         }
 
         private void buttonGBP_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "£";
-            double rate = Utility.GetCurrencyExchangeRate("GBP");
+            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("GBP", totalPrice).ToString();
         }
 
         private void buttonNOK_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "NOK";
-            double rate = Utility.GetCurrencyExchangeRate("NOK");
+            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("NOK", totalPrice).ToString();
         }
         
         private void buttonNP1_Click(object sender, EventArgs e)
