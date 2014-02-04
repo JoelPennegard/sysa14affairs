@@ -133,6 +133,11 @@ namespace AffairsSystem
         {
             return ExecuteGetSqlAdapter("select * from product where isForSale = 0");
         }
+        //GET IsACTIVE
+        public SqlDataReader GetIsActive(string spNr)
+        {
+            return ExecuteGetSqlReader("select isActive from salesperson where spNr = '" + spNr + "'");
+        }
 
         //GET ALL WORKING SALES PERSONS
         public SqlDataAdapter GetAllWorkingSalesPersons()
@@ -238,10 +243,10 @@ namespace AffairsSystem
         /// <param name="lastName">the salespersons family name</param>
         /// <param name="sPhone">the salespersons phonenumber</param>
 
-        public void UpdateSalesPerson(string spNr, string firstName, string lastName, string sPhone)
+        public void UpdateSalesPerson(string spNr, string firstName, string lastName, string sPhone, int isAdmin, int isActive)
         {
-            ExecuteSetSqlQuery("update salesperson set firstName = '" + firstName +", lastName = '" + lastName + 
-                ", sPhone = '" + sPhone + "' where spNr = '" + spNr + "'");
+            ExecuteSetSqlQuery("update salesperson set firstName = '" + firstName + "', lastName = '" + lastName + 
+                "', sPhone = '" + sPhone + "', isAdmin = " + isAdmin + ", isActive = " + isActive + " where spNr = '" + spNr + "'");
         }
 
         /// <summary>
@@ -252,8 +257,8 @@ namespace AffairsSystem
         /// <param name="lastName">the salespersons family name</param>
         /// <param name="sPhone">the salespersons phonenumber</param>
 
-        public void SetSalesPerson(string spNr, string firstName, string lastName, string sPhone){
-            ExecuteSetSqlQuery("insert into salesperson values('" + spNr + "','" + firstName + "','" + lastName + "','" + sPhone +"')");
+        public void SetSalesPerson(string spNr, string firstName, string lastName, string sPhone, int isAdmin, int isActive){
+            ExecuteSetSqlQuery("insert into salesperson values('" + spNr + "','" + firstName + "','" + lastName + "','" + sPhone +"', " + isAdmin + ", " + isActive + ")");
         }
 
         /// <summary>

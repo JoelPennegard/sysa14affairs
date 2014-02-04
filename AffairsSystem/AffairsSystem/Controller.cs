@@ -43,9 +43,9 @@ namespace AffairsSystem
 
         //CREATE NEW SALES PERSON (ADMIN)
 
-        public void SetSalesPerson(string spNr, string firstName, string lastName, string sPhone)
+        public void SetSalesPerson(string spNr, string firstName, string lastName, string sPhone, int isAdmin, int isActive)
         {
-            dal.SetSalesPerson(spNr, firstName, lastName, sPhone);
+            dal.SetSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
         }
 
         // CREATE NEW SALE
@@ -87,6 +87,12 @@ namespace AffairsSystem
         {
             da = dal.GetAllProductsToSaleList();
             return da;
+        }
+        //GET IsACTIVE
+        public SqlDataReader GetIsActive(string spNr)
+        {
+            dr = dal.GetIsActive(spNr);
+            return dr;
         }
         // GET ALL PRODUCTS NOT FOR SALE
         public SqlDataAdapter GetAllProductsNotForSale()
@@ -141,9 +147,9 @@ namespace AffairsSystem
             return dr;
         }
         //UPDATE SALES PERSON (ADMIN))
-        public void UpdateSalesPerson(string spNr, string firstName, string lastName, string sPhone)
+        public void UpdateSalesPerson(string spNr, string firstName, string lastName, string sPhone, int isAdmin, int isActive)
         {
-            dal.UpdateSalesPerson(spNr, firstName, lastName, sPhone);
+            dal.UpdateSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
         }
         //UPDATE PRODUCT (ADMIN))
         public void UpdateProduct(int productNr, string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
