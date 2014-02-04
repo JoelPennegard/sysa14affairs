@@ -179,9 +179,9 @@ namespace AffairsSystem
 
                             double SinglePrice = amountInt * productOutPrice;
                             totalPrice = totalPrice + SinglePrice;
-                            
-                            FillProductTableAdmin();
                             controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
+                            FillProductTableAdmin();
+                            
                         }
                         
                         textBoxNumPad.Text = totalPrice.ToString();
