@@ -154,6 +154,7 @@ namespace AffairsSystem
                             int tmpProductNr = int.Parse(dataGridViewSaleList.Rows[i].Cells[0].Value.ToString());
                             if (productNr==tmpProductNr) 
                             {
+                                
                                 int currentAmountInSalesLine = int.Parse(dataGridViewSaleList.Rows[i].Cells[3].Value.ToString());
                                 double SinglePrice = amountInt * productOutPrice;
                                 
@@ -167,6 +168,7 @@ namespace AffairsSystem
                                 dataGridViewSaleList.Rows[i].Cells[3].Value = amountString;
 
                                 controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
+                                FillProductTableAdmin();
                                 exists = true;
                                 
 
