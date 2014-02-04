@@ -151,12 +151,6 @@ namespace AffairsSystem
         {
             dal.UpdateSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
         }
-        //GET SALESLINES FROM A SPECIFIC SALE
-        public SqlDataAdapter getSalesLinesFromSale(int salesNr)
-        {
-            da = dal.getSalesLinesFromSale(salesNr);
-            return da;
-        }
         //UPDATE PRODUCT (ADMIN))
         public void UpdateProduct(int productNr, string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
         {
