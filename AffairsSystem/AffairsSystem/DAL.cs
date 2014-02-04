@@ -90,7 +90,6 @@ namespace AffairsSystem
             da = new SqlDataAdapter(cmd); 
                       
             return da;
-            
                        
         }
 
