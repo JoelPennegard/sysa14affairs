@@ -60,6 +60,18 @@ namespace AffairsSystem
             }
 
         }
+        public static bool CheckIfSearchIsEmpty(string searchString)
+        {
+            
+            if (searchString.Length < 1)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
 
         
     }

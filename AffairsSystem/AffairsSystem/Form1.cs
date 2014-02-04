@@ -131,7 +131,7 @@ namespace AffairsSystem
                 }
                 else
                 {
-                    if (amountString.Length < 1)
+                    if (Utility.CheckIfSearchIsEmpty(amountString))
                     {
 
                         amountInt = 1;
@@ -153,14 +153,19 @@ namespace AffairsSystem
                             int tmpProductNr = int.Parse(dataGridViewSaleList.Rows[i].Cells[0].Value.ToString());
                             if (productNr==tmpProductNr) 
                             {
-                                int tmpAmount = int.Parse(dataGridViewSaleList.Rows[i].Cells[3].Value.ToString());
+                                int currentAmountInSalesLine = int.Parse(dataGridViewSaleList.Rows[i].Cells[3].Value.ToString());
                                 double SinglePrice = amountInt * productOutPrice;
                                 
-                                amountInt += tmpAmount;
+                                
+                                
+                                int newAmountInSalesLine = amountInt + currentAmountInSalesLine;
+                                
                                 totalPrice += SinglePrice;
                                 
-                                amountString = amountInt.ToString();
+                                amountString = newAmountInSalesLine.ToString();
                                 dataGridViewSaleList.Rows[i].Cells[3].Value = amountString;
+
+                                controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
                                 exists = true;
                                 
 
@@ -176,8 +181,9 @@ namespace AffairsSystem
                             totalPrice = totalPrice + SinglePrice;
                             
                             FillProductTableAdmin();
+                            controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
                         }
-                        controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
+                        
                         textBoxNumPad.Text = totalPrice.ToString();
                     }
                     else
