@@ -5,6 +5,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Windows.Forms;
+using System.Web;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
+using System.Net;
 
 namespace AffairsSystem
 {
