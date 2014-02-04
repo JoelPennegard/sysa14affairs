@@ -316,6 +316,11 @@ namespace AffairsSystem
         {
             return ExecuteGetSqlReader("select top 1 salesNr from Sales order by salesDate desc");
         }
+        //GET SALESLINES FROM A SPECIFIC SALE
+        public SqlDataAdapter getSalesLinesFromSale(int salesNr)
+        {
+            return ExecuteGetSqlAdapter("select productNr, productName, price, amount from salesline a join sales b on a.salesNr = b." + salesNr);
+        }
 
         /// <summary>
         /// Selects the salesperson with the highest amount of sales
