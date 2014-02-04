@@ -417,15 +417,7 @@ namespace AffairsSystem
             Environment.Exit(0);
         }
               
-        private void buttonSearchDeletedPa_Click(object sender, EventArgs e)
-        {
-            string search = textBoxSearchDeletedPa.Text;
-            SqlDataAdapter da = controller.SearchProductAllAttributesNotForSale(search);
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewDeletedPa.DataSource = data;
-            textBoxSearchDeletedPa.Text = "";
-        }
+
 
         private void textBoxSearchPa_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -435,13 +427,7 @@ namespace AffairsSystem
             }
         }
 
-        private void textBoxSearchDeletedPa_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                buttonSearchDeletedPa.PerformClick();
-            }
-        }
+
 
         private void buttonGetAllPa_Click(object sender, EventArgs e)
         {
@@ -449,11 +435,6 @@ namespace AffairsSystem
             textBoxSearchPa.Text = "";
         }
 
-        private void buttonGetAllDeletedPa_Click(object sender, EventArgs e)
-        {
-            FillProductTableNotForSaleAdmin();
-            textBoxSearchDeletedPa.Text = "";
-        }
 
         private void dataGridViewPa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -474,9 +455,20 @@ namespace AffairsSystem
 
         private void buttonEURO_Click(object sender, EventArgs e)
         {
+            textBoxCurrencyUnit.Text = "€";
 
-            
-            
+            string jsonString;
+            using (WebClient client = new WebClient())
+            {
+                jsonString = client.DownloadString("http://rate-exchange.appspot.com/currency?from=EUR&to=SEK&q=1");
+            }
+
+            var serializer = new JavaScriptSerializer();
+            Dictionary<string, string> values = serializer.Deserialize<Dictionary<string, string>>(jsonString);
+
+            double rate = Double.Parse(values["rate"]);
+
+            MessageBox.Show(rate.ToString());
 
             
         }
@@ -604,16 +596,6 @@ namespace AffairsSystem
             ClearAllEmployeeAdmin();   
         }
 
-        private void buttonSearchDeletedSP_Click(object sender, EventArgs e)
-        {
-            string search = textBoxSearchDeletedSP.Text;
-            SqlDataAdapter da = controller.SearchNotWorkingSalesPersons(search);
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewDeletedSP.DataSource = data;
-            textBoxSearchDeletedSP.Text = "";
-            ClearAllEmployeeAdmin();
-        }
 
         private void dataGridViewDeletedPa_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -662,7 +644,6 @@ namespace AffairsSystem
             textBoxEaLName.Text = "";
             textBoxEaPhoneNr.Text = "";
             textBoxSearchSP.Text = "";
-            textBoxSearchDeletedSP.Text = "";
             checkBoxEmployee.Checked = false;
             checkBoxEmployeeAdmin.Checked = false;
         }
@@ -708,14 +689,6 @@ namespace AffairsSystem
             {
                 buttonSearchSP.PerformClick();
                 
-            }
-        }
-
-        private void textBoxSearchDeletedSP_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if (e.KeyChar == (char)13)
-            {
-                buttonSearchDeletedPa.PerformClick();
             }
         }
 
