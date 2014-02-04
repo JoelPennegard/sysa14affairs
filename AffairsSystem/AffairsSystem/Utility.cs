@@ -14,15 +14,16 @@ namespace AffairsSystem
         // FIRST LETTER TO UPPER CASE
         public static string FirstCharToUpper(string input)
         {
-           /*' if (string.IsNullOrEmpty(input))
+            if (string.IsNullOrEmpty(input))
             {
                 MessageBox.Show("Please fill out all fields.", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return string.Empty;
             }
             else
-            {*/
+            {
                 return char.ToUpper(input[0]) + input.Substring(1);
-           // }
+
+            }
         }
         //CHECK INT
         public static int CheckInt(int input)
