@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Web;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
+using System.Net;
 
 namespace AffairsSystem
 {
@@ -442,7 +446,13 @@ namespace AffairsSystem
 
         private void buttonEURO_Click(object sender, EventArgs e)
         {
-            textBoxCurrencyUnit.Text = "€";
+            textBoxCurrencyUnit.Text = "€"; string jsonString;
+            using (WebClient client = new WebClient()) 
+            { jsonString = client.DownloadString("http://rate-exchange.appspot.com/currency?from=EUR&to=SEK&q=1"); } 
+            var serializer = new JavaScriptSerializer(); 
+            Dictionary<string, string> values = serializer.Deserialize<Dictionary<string, string>>(jsonString); 
+            double rate = Double.Parse(values["rate"]);
+            MessageBox.Show(rate.ToString());
         }
 
         private void buttonUSD_Click(object sender, EventArgs e)
