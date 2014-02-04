@@ -125,6 +125,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.buttonViewSale = new System.Windows.Forms.Button();
+            this.buttonBack = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -156,6 +158,8 @@
             // 
             // tabPageSale
             // 
+            this.tabPageSale.Controls.Add(this.buttonBack);
+            this.tabPageSale.Controls.Add(this.buttonViewSale);
             this.tabPageSale.Controls.Add(this.labelErrorSaleSearch);
             this.tabPageSale.Controls.Add(this.textBoxNumPad2);
             this.tabPageSale.Controls.Add(this.textBoxCurrencyUnit);
@@ -1260,6 +1264,26 @@
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
             // 
+            // buttonViewSale
+            // 
+            this.buttonViewSale.Location = new System.Drawing.Point(121, 446);
+            this.buttonViewSale.Name = "buttonViewSale";
+            this.buttonViewSale.Size = new System.Drawing.Size(95, 41);
+            this.buttonViewSale.TabIndex = 47;
+            this.buttonViewSale.Text = "View Sale";
+            this.buttonViewSale.UseVisualStyleBackColor = true;
+            this.buttonViewSale.Click += new System.EventHandler(this.buttonViewSale_Click);
+            // 
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(141, 490);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(75, 23);
+            this.buttonBack.TabIndex = 48;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1400,6 +1424,8 @@
         private System.Windows.Forms.CheckBox checkBoxEmployee;
         private System.Windows.Forms.CheckBox checkBoxEmployeeAdmin;
         private System.Windows.Forms.Label labelErrorSalesPersonSearch;
+        private System.Windows.Forms.Button buttonBack;
+        private System.Windows.Forms.Button buttonViewSale;
 
 
     }

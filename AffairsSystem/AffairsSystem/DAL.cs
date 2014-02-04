@@ -164,6 +164,13 @@ namespace AffairsSystem
                     search + "%' or firstName like '%" + search +
                     "%' or lastName like '%" + search + "%' or sPhone like '%" + search + "%')");
         }
+        //GET SALESLINES FROM A SPECIFIC SALE
+        public SqlDataAdapter getSalesLinesFromSale(int salesNr)
+        {
+            return ExecuteGetSqlAdapter("select p.productNr, productName, productOutPrice, i.amount from product p join salesline i " +
+                "on p.productNr = i.productNr where salesNr =" + salesNr);
+        }
+
 
         /// <summary>
         /// Gets a list containing all Sales made by a specified salesPerson
