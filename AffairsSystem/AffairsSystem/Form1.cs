@@ -474,18 +474,7 @@ namespace AffairsSystem
 
         private void buttonEURO_Click(object sender, EventArgs e)
         {
-            textBoxCurrencyUnit.Text = "€";
 
-            string jsonString;
-            using (WebClient client = new WebClient())
-            {
-                jsonString = client.DownloadString("http://rate-exchange.appspot.com/currency?from=EUR&to=SEK&q=1");
-            }
-
-            var serializer = new JavaScriptSerializer();
-            Dictionary<string, string> values = serializer.Deserialize<Dictionary<string, string>>(jsonString);
-
-            double rate = Double.Parse(values["rate"]);
             
             
 

@@ -69,11 +69,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.dataGridViewProductList = new System.Windows.Forms.DataGridView();
             this.tabPageEmployee = new System.Windows.Forms.TabPage();
+            this.labelErrorSalesPersonSearch = new System.Windows.Forms.Label();
+            this.checkBoxEmployeeAdmin = new System.Windows.Forms.CheckBox();
+            this.checkBoxEmployee = new System.Windows.Forms.CheckBox();
             this.buttonGetAllWorkingSalesPersons = new System.Windows.Forms.Button();
             this.buttonEaClearAll = new System.Windows.Forms.Button();
             this.labelSearchDeletedSP = new System.Windows.Forms.Label();
-            this.buttonSearchDeletedSP = new System.Windows.Forms.Button();
-            this.textBoxSearchDeletedSP = new System.Windows.Forms.TextBox();
             this.dataGridViewDeletedSP = new System.Windows.Forms.DataGridView();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.labelEaPhoneNr = new System.Windows.Forms.Label();
@@ -92,7 +93,6 @@
             this.dataGridViewSP = new System.Windows.Forms.DataGridView();
             this.tabPageProduct = new System.Windows.Forms.TabPage();
             this.labelErrorProductSearch = new System.Windows.Forms.Label();
-            this.buttonGetAllDeletedPa = new System.Windows.Forms.Button();
             this.buttonGetAllPa = new System.Windows.Forms.Button();
             this.checkBoxForSale = new System.Windows.Forms.CheckBox();
             this.buttonPaClearAll = new System.Windows.Forms.Button();
@@ -100,8 +100,6 @@
             this.labelPaAmount = new System.Windows.Forms.Label();
             this.textBoxPaAmount = new System.Windows.Forms.TextBox();
             this.labelSearchDeletedPa = new System.Windows.Forms.Label();
-            this.buttonSearchDeletedPa = new System.Windows.Forms.Button();
-            this.textBoxSearchDeletedPa = new System.Windows.Forms.TextBox();
             this.labelPaOutPrice = new System.Windows.Forms.Label();
             this.labelPaInPrice = new System.Windows.Forms.Label();
             this.labelPaName = new System.Windows.Forms.Label();
@@ -127,9 +125,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.checkBoxEmployee = new System.Windows.Forms.CheckBox();
-            this.checkBoxEmployeeAdmin = new System.Windows.Forms.CheckBox();
-            this.buttonGetAllNotWorkingSalesPersons = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -619,14 +614,12 @@
             // 
             // tabPageEmployee
             // 
-            this.tabPageEmployee.Controls.Add(this.buttonGetAllNotWorkingSalesPersons);
+            this.tabPageEmployee.Controls.Add(this.labelErrorSalesPersonSearch);
             this.tabPageEmployee.Controls.Add(this.checkBoxEmployeeAdmin);
             this.tabPageEmployee.Controls.Add(this.checkBoxEmployee);
             this.tabPageEmployee.Controls.Add(this.buttonGetAllWorkingSalesPersons);
             this.tabPageEmployee.Controls.Add(this.buttonEaClearAll);
             this.tabPageEmployee.Controls.Add(this.labelSearchDeletedSP);
-            this.tabPageEmployee.Controls.Add(this.buttonSearchDeletedSP);
-            this.tabPageEmployee.Controls.Add(this.textBoxSearchDeletedSP);
             this.tabPageEmployee.Controls.Add(this.dataGridViewDeletedSP);
             this.tabPageEmployee.Controls.Add(this.splitter1);
             this.tabPageEmployee.Controls.Add(this.labelEaPhoneNr);
@@ -651,6 +644,36 @@
             this.tabPageEmployee.TabIndex = 1;
             this.tabPageEmployee.Text = "Employee administration";
             this.tabPageEmployee.UseVisualStyleBackColor = true;
+            // 
+            // labelErrorSalesPersonSearch
+            // 
+            this.labelErrorSalesPersonSearch.AutoSize = true;
+            this.labelErrorSalesPersonSearch.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorSalesPersonSearch.Location = new System.Drawing.Point(174, 38);
+            this.labelErrorSalesPersonSearch.Name = "labelErrorSalesPersonSearch";
+            this.labelErrorSalesPersonSearch.Size = new System.Drawing.Size(97, 13);
+            this.labelErrorSalesPersonSearch.TabIndex = 95;
+            this.labelErrorSalesPersonSearch.Text = "Felmedelanden här";
+            // 
+            // checkBoxEmployeeAdmin
+            // 
+            this.checkBoxEmployeeAdmin.AutoSize = true;
+            this.checkBoxEmployeeAdmin.Location = new System.Drawing.Point(486, 296);
+            this.checkBoxEmployeeAdmin.Name = "checkBoxEmployeeAdmin";
+            this.checkBoxEmployeeAdmin.Size = new System.Drawing.Size(61, 17);
+            this.checkBoxEmployeeAdmin.TabIndex = 93;
+            this.checkBoxEmployeeAdmin.Text = "ADMIN";
+            this.checkBoxEmployeeAdmin.UseVisualStyleBackColor = true;
+            // 
+            // checkBoxEmployee
+            // 
+            this.checkBoxEmployee.AutoSize = true;
+            this.checkBoxEmployee.Location = new System.Drawing.Point(486, 319);
+            this.checkBoxEmployee.Name = "checkBoxEmployee";
+            this.checkBoxEmployee.Size = new System.Drawing.Size(67, 17);
+            this.checkBoxEmployee.TabIndex = 92;
+            this.checkBoxEmployee.Text = "Is Active";
+            this.checkBoxEmployee.UseVisualStyleBackColor = true;
             // 
             // buttonGetAllWorkingSalesPersons
             // 
@@ -677,33 +700,12 @@
             // labelSearchDeletedSP
             // 
             this.labelSearchDeletedSP.AutoSize = true;
-            this.labelSearchDeletedSP.Location = new System.Drawing.Point(825, 38);
+            this.labelSearchDeletedSP.Location = new System.Drawing.Point(664, 87);
             this.labelSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSearchDeletedSP.Name = "labelSearchDeletedSP";
-            this.labelSearchDeletedSP.Size = new System.Drawing.Size(215, 13);
+            this.labelSearchDeletedSP.Size = new System.Drawing.Size(84, 13);
             this.labelSearchDeletedSP.TabIndex = 89;
-            this.labelSearchDeletedSP.Text = "Search on DELETED sales person attribute:";
-            // 
-            // buttonSearchDeletedSP
-            // 
-            this.buttonSearchDeletedSP.Location = new System.Drawing.Point(976, 57);
-            this.buttonSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSearchDeletedSP.Name = "buttonSearchDeletedSP";
-            this.buttonSearchDeletedSP.Size = new System.Drawing.Size(64, 44);
-            this.buttonSearchDeletedSP.TabIndex = 88;
-            this.buttonSearchDeletedSP.Text = "Search";
-            this.buttonSearchDeletedSP.UseVisualStyleBackColor = true;
-            this.buttonSearchDeletedSP.Click += new System.EventHandler(this.buttonSearchDeletedSP_Click);
-            // 
-            // textBoxSearchDeletedSP
-            // 
-            this.textBoxSearchDeletedSP.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearchDeletedSP.Location = new System.Drawing.Point(667, 57);
-            this.textBoxSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSearchDeletedSP.Name = "textBoxSearchDeletedSP";
-            this.textBoxSearchDeletedSP.Size = new System.Drawing.Size(305, 44);
-            this.textBoxSearchDeletedSP.TabIndex = 87;
-            this.textBoxSearchDeletedSP.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchDeletedSP_KeyPress);
+            this.labelSearchDeletedSP.Text = "Past employees:";
             // 
             // dataGridViewDeletedSP
             // 
@@ -879,7 +881,6 @@
             // tabPageProduct
             // 
             this.tabPageProduct.Controls.Add(this.labelErrorProductSearch);
-            this.tabPageProduct.Controls.Add(this.buttonGetAllDeletedPa);
             this.tabPageProduct.Controls.Add(this.buttonGetAllPa);
             this.tabPageProduct.Controls.Add(this.checkBoxForSale);
             this.tabPageProduct.Controls.Add(this.buttonPaClearAll);
@@ -887,8 +888,6 @@
             this.tabPageProduct.Controls.Add(this.labelPaAmount);
             this.tabPageProduct.Controls.Add(this.textBoxPaAmount);
             this.tabPageProduct.Controls.Add(this.labelSearchDeletedPa);
-            this.tabPageProduct.Controls.Add(this.buttonSearchDeletedPa);
-            this.tabPageProduct.Controls.Add(this.textBoxSearchDeletedPa);
             this.tabPageProduct.Controls.Add(this.labelPaOutPrice);
             this.tabPageProduct.Controls.Add(this.labelPaInPrice);
             this.tabPageProduct.Controls.Add(this.labelPaName);
@@ -921,17 +920,6 @@
             this.labelErrorProductSearch.Size = new System.Drawing.Size(88, 13);
             this.labelErrorProductSearch.TabIndex = 116;
             this.labelErrorProductSearch.Text = "felmedelande här";
-            // 
-            // buttonGetAllDeletedPa
-            // 
-            this.buttonGetAllDeletedPa.Location = new System.Drawing.Point(1063, 56);
-            this.buttonGetAllDeletedPa.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonGetAllDeletedPa.Name = "buttonGetAllDeletedPa";
-            this.buttonGetAllDeletedPa.Size = new System.Drawing.Size(64, 42);
-            this.buttonGetAllDeletedPa.TabIndex = 115;
-            this.buttonGetAllDeletedPa.Text = "Get All";
-            this.buttonGetAllDeletedPa.UseVisualStyleBackColor = true;
-            this.buttonGetAllDeletedPa.Click += new System.EventHandler(this.buttonGetAllDeletedPa_Click);
             // 
             // buttonGetAllPa
             // 
@@ -1002,33 +990,12 @@
             // labelSearchDeletedPa
             // 
             this.labelSearchDeletedPa.AutoSize = true;
-            this.labelSearchDeletedPa.Location = new System.Drawing.Point(679, 37);
+            this.labelSearchDeletedPa.Location = new System.Drawing.Point(666, 85);
             this.labelSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.labelSearchDeletedPa.Name = "labelSearchDeletedPa";
-            this.labelSearchDeletedPa.Size = new System.Drawing.Size(192, 13);
+            this.labelSearchDeletedPa.Size = new System.Drawing.Size(147, 13);
             this.labelSearchDeletedPa.TabIndex = 108;
-            this.labelSearchDeletedPa.Text = "Search on DELETED product attribute:";
-            // 
-            // buttonSearchDeletedPa
-            // 
-            this.buttonSearchDeletedPa.Location = new System.Drawing.Point(995, 56);
-            this.buttonSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSearchDeletedPa.Name = "buttonSearchDeletedPa";
-            this.buttonSearchDeletedPa.Size = new System.Drawing.Size(64, 42);
-            this.buttonSearchDeletedPa.TabIndex = 107;
-            this.buttonSearchDeletedPa.Text = "Search";
-            this.buttonSearchDeletedPa.UseVisualStyleBackColor = true;
-            this.buttonSearchDeletedPa.Click += new System.EventHandler(this.buttonSearchDeletedPa_Click);
-            // 
-            // textBoxSearchDeletedPa
-            // 
-            this.textBoxSearchDeletedPa.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSearchDeletedPa.Location = new System.Drawing.Point(669, 56);
-            this.textBoxSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxSearchDeletedPa.Name = "textBoxSearchDeletedPa";
-            this.textBoxSearchDeletedPa.Size = new System.Drawing.Size(322, 44);
-            this.textBoxSearchDeletedPa.TabIndex = 106;
-            this.textBoxSearchDeletedPa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchDeletedPa_KeyPress);
+            this.labelSearchDeletedPa.Text = "Products not currently for sale";
             // 
             // labelPaOutPrice
             // 
@@ -1293,37 +1260,6 @@
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
             // 
-            // checkBoxEmployee
-            // 
-            this.checkBoxEmployee.AutoSize = true;
-            this.checkBoxEmployee.Location = new System.Drawing.Point(486, 319);
-            this.checkBoxEmployee.Name = "checkBoxEmployee";
-            this.checkBoxEmployee.Size = new System.Drawing.Size(67, 17);
-            this.checkBoxEmployee.TabIndex = 92;
-            this.checkBoxEmployee.Text = "Is Active";
-            this.checkBoxEmployee.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxEmployeeAdmin
-            // 
-            this.checkBoxEmployeeAdmin.AutoSize = true;
-            this.checkBoxEmployeeAdmin.Location = new System.Drawing.Point(486, 296);
-            this.checkBoxEmployeeAdmin.Name = "checkBoxEmployeeAdmin";
-            this.checkBoxEmployeeAdmin.Size = new System.Drawing.Size(61, 17);
-            this.checkBoxEmployeeAdmin.TabIndex = 93;
-            this.checkBoxEmployeeAdmin.Text = "ADMIN";
-            this.checkBoxEmployeeAdmin.UseVisualStyleBackColor = true;
-            // 
-            // buttonGetAllNotWorkingSalesPersons
-            // 
-            this.buttonGetAllNotWorkingSalesPersons.Location = new System.Drawing.Point(1044, 57);
-            this.buttonGetAllNotWorkingSalesPersons.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonGetAllNotWorkingSalesPersons.Name = "buttonGetAllNotWorkingSalesPersons";
-            this.buttonGetAllNotWorkingSalesPersons.Size = new System.Drawing.Size(64, 44);
-            this.buttonGetAllNotWorkingSalesPersons.TabIndex = 94;
-            this.buttonGetAllNotWorkingSalesPersons.Text = "Get All";
-            this.buttonGetAllNotWorkingSalesPersons.UseVisualStyleBackColor = true;
-            this.buttonGetAllNotWorkingSalesPersons.Click += new System.EventHandler(this.buttonGetAllNotWorkingSalesPersons_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1411,8 +1347,7 @@
         private System.Windows.Forms.TextBox textBoxEaFName;
         private System.Windows.Forms.TextBox textBoxEaSpNr;
         private System.Windows.Forms.Label labelSearchDeletedSP;
-        private System.Windows.Forms.Button buttonSearchDeletedSP;
-        private System.Windows.Forms.TextBox textBoxSearchDeletedSP;
+        
         private System.Windows.Forms.DataGridView dataGridViewDeletedSP;
         private System.Windows.Forms.Splitter splitter1;
         private System.Windows.Forms.Label labelEaPhoneNr;
@@ -1422,8 +1357,8 @@
         private System.Windows.Forms.Label labelPaAmount;
         private System.Windows.Forms.TextBox textBoxPaAmount;
         private System.Windows.Forms.Label labelSearchDeletedPa;
-        private System.Windows.Forms.Button buttonSearchDeletedPa;
-        private System.Windows.Forms.TextBox textBoxSearchDeletedPa;
+        
+      
         private System.Windows.Forms.Label labelPaOutPrice;
         private System.Windows.Forms.Label labelPaInPrice;
         private System.Windows.Forms.Label labelPaName;
@@ -1456,7 +1391,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.CheckBox checkBoxForSale;
-        private System.Windows.Forms.Button buttonGetAllDeletedPa;
         private System.Windows.Forms.Button buttonGetAllPa;
         private System.Windows.Forms.TextBox textBoxCurrencyUnit;
         private System.Windows.Forms.TextBox textBoxNumPad2;
@@ -1465,7 +1399,7 @@
         private System.Windows.Forms.Button buttonGetAllWorkingSalesPersons;
         private System.Windows.Forms.CheckBox checkBoxEmployee;
         private System.Windows.Forms.CheckBox checkBoxEmployeeAdmin;
-        private System.Windows.Forms.Button buttonGetAllNotWorkingSalesPersons;
+        private System.Windows.Forms.Label labelErrorSalesPersonSearch;
 
 
     }
