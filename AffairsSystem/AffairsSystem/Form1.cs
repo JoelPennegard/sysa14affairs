@@ -60,6 +60,9 @@ namespace AffairsSystem
             System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
             // 
             textBoxNumPad.Text = totalPrice.ToString();
+            buttonBack.Visible = false;
+            buttonViewSale.Visible = false;
+            
 
             
         }
@@ -86,6 +89,10 @@ namespace AffairsSystem
             DataTable data1 = new DataTable();
             da1.Fill(data1);
             dataGridViewDeletedPa.DataSource = data1;
+
+            buttonBack.Visible = false;
+            buttonViewSale.Visible = false;
+            button1.Enabled = true;
  
         }
 
@@ -253,7 +260,8 @@ namespace AffairsSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            button1.Enabled = false;
+            buttonViewSale.Visible = true;
             SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
             DataTable data = new DataTable();
             da.Fill(data);
@@ -396,6 +404,7 @@ namespace AffairsSystem
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             Environment.Exit(0);
+            
         }
 
         
@@ -687,6 +696,9 @@ namespace AffairsSystem
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
                 textBoxSearchProduct.Text = "";
+                buttonBack.Visible = false;
+            buttonViewSale.Visible = false;
+            button1.Enabled = true;
             }
         }
 
@@ -742,6 +754,28 @@ namespace AffairsSystem
         private void buttonSearchDeletedSP_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void buttonViewSale_Click(object sender, EventArgs e)
+        {
+            int salesNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
+
+            SqlDataAdapter da = controller.getSalesLinesFromSale(salesNr);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewProductList.DataSource = data;
+            buttonBack.Visible = true;
+            
+
+        }
+
+        private void buttonBack_Click(object sender, EventArgs e)
+        {
+            buttonBack.Visible = false;
+            SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewProductList.DataSource = data;
         }
 
         

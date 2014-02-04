@@ -122,6 +122,14 @@ namespace AffairsSystem
             return da;
         }
 
+        //GET SALESLINES FROM A SPECIFIC SALE
+        public SqlDataAdapter getSalesLinesFromSale(int salesNr)
+        {
+            da = dal.getSalesLinesFromSale(salesNr);
+            return da;
+        }
+
+
         public SqlDataAdapter SearchNotWorkingSalesPersons(string search)
         {
             da = dal.SearchNotWorkingSalesPerson(search);
