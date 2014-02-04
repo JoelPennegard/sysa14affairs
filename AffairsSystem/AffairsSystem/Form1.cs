@@ -107,6 +107,7 @@ namespace AffairsSystem
 
         private void exitToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            ClearAllSaleView();
             this.Close();
             Application.Exit();
         }
@@ -179,9 +180,9 @@ namespace AffairsSystem
 
                             double SinglePrice = amountInt * productOutPrice;
                             totalPrice = totalPrice + SinglePrice;
-                            
-                            FillProductTableAdmin();
                             controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
+                            FillProductTableAdmin();
+                            
                         }
                         
                         textBoxNumPad.Text = totalPrice.ToString();
@@ -303,20 +304,8 @@ namespace AffairsSystem
 
         private void buttonClearAll_Click(object sender, EventArgs e)
         {
-            foreach (DataGridViewRow row in dataGridViewSaleList.Rows)
-            {
-                int productNr = int.Parse(row.Cells[0].Value.ToString());
-                int amount = int.Parse(row.Cells[3].Value.ToString());
-                string minusOrPlus = "+";
-                controller.UpdateProductAmount(amount, productNr, minusOrPlus);
-            }
-            FillProductTableAdmin();
-            totalPrice = 0;
-            textBoxNumPad.Text = totalPrice.ToString();
-            dataGridViewSaleList.Rows.Clear();
-            richTextBoxAmount.Text = "";
-            payedAmount = "";
-            textBoxNumPad2.Text = "";
+            ClearAllSaleView();
+
         }
 
         private void textBoxSearchProduct_KeyPress(object sender, KeyPressEventArgs e)
@@ -410,6 +399,7 @@ namespace AffairsSystem
         //Detta gör så att programmet STÄNGS när man trycker på X
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
+            ClearAllSaleView();
             Environment.Exit(0);
             
         }
@@ -783,6 +773,23 @@ namespace AffairsSystem
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewProductList.DataSource = data;
+        }
+        private void ClearAllSaleView()
+        {
+            foreach (DataGridViewRow row in dataGridViewSaleList.Rows)
+            {
+                int productNr = int.Parse(row.Cells[0].Value.ToString());
+                int amount = int.Parse(row.Cells[3].Value.ToString());
+                string minusOrPlus = "+";
+                controller.UpdateProductAmount(amount, productNr, minusOrPlus);
+            }
+            FillProductTableAdmin();
+            totalPrice = 0;
+            textBoxNumPad.Text = totalPrice.ToString();
+            dataGridViewSaleList.Rows.Clear();
+            richTextBoxAmount.Text = "";
+            payedAmount = "";
+            textBoxNumPad2.Text = "";
         }
 
         
