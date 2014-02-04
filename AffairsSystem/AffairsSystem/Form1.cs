@@ -167,6 +167,7 @@ namespace AffairsSystem
                                 dataGridViewSaleList.Rows[i].Cells[3].Value = amountString;
 
                                 controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
+                                FillProductTableAdmin();
                                 exists = true;
                                 
 
@@ -641,14 +642,27 @@ namespace AffairsSystem
             string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
             string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
             string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
+            string totalInformation = spNr + firstName + lastName + sPhone;
+            
+            if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
+            {
+                MessageBox.Show("Man får inte använda [ ' ]... ska skriva detta någon annanstans");
+            }
+            else if (Utility.CheckIfSearchIsEmpty(spNr) || Utility.CheckIfSearchIsEmpty(firstName) ||
+                Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone))
+            {
+                MessageBox.Show("Vänligen fyll i alla fält");
+            }
+            else
+            {
 
-            controller.UpdateSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
-            MessageBox.Show("Person: " + spNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                controller.UpdateSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
+                MessageBox.Show("Person: " + spNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            FillNotWorkingSalesPersonTable();
-            FillWorkingSalesPersonTable();
-            ClearAllEmployeeAdmin();
-           
+                FillNotWorkingSalesPersonTable();
+                FillWorkingSalesPersonTable();
+                ClearAllEmployeeAdmin();
+            }
         }
 
         private void buttonEaNew_Click(object sender, EventArgs e)
@@ -659,13 +673,27 @@ namespace AffairsSystem
             string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
             string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
             string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
+            
+            string totalInformation = spNr + firstName + lastName + sPhone;
+            if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
+            {
+                MessageBox.Show("Man får inte använda [ ' ]... ska skriva detta någon annanstans");
+            }
+            else if (Utility.CheckIfSearchIsEmpty(spNr) || Utility.CheckIfSearchIsEmpty(firstName) || 
+                Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone)) 
+            {
+                MessageBox.Show("Vänligen fyll i alla fält");
+            }
+            else
+            {
 
-            controller.SetSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
-            MessageBox.Show("Person: " + spNr + " was added.", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                controller.SetSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
+                MessageBox.Show("Person: " + spNr + " was added.", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            FillNotWorkingSalesPersonTable();
-            FillWorkingSalesPersonTable();
-            ClearAllEmployeeAdmin();
+                FillNotWorkingSalesPersonTable();
+                FillWorkingSalesPersonTable();
+                ClearAllEmployeeAdmin();
+            }
         }
 
         private void textBoxSearchSP_KeyPress(object sender, KeyPressEventArgs e)

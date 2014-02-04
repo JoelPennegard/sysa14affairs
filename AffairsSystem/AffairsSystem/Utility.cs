@@ -16,7 +16,7 @@ namespace AffairsSystem
         {
             if (string.IsNullOrEmpty(input))
             {
-                MessageBox.Show("Please fill out all fields.", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
                 return string.Empty;
             }
             else
@@ -30,7 +30,7 @@ namespace AffairsSystem
         {
             if (input.ToString().Length < 1)
             {
-                MessageBox.Show("Please fill out all fields.", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                
                 return input;
             }
             else
@@ -43,7 +43,6 @@ namespace AffairsSystem
         {
             if (input.ToString().Length<1)
             {
-                MessageBox.Show("Please fill out all fields.", "Empty field", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return input;
             }
             else if (input < 1)
