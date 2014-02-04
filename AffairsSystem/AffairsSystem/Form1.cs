@@ -8,6 +8,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
+using System.Web;
+using System.Collections.Generic;
+using System.Web.Script.Serialization;
+using System.Net;
+
+
 
 namespace AffairsSystem
 {
@@ -45,7 +51,6 @@ namespace AffairsSystem
                 tabControl.Controls.Remove(tabPageEmployee);
                 tabControl.Controls.Remove(tabPageProduct);
                 tabControl.Controls.Remove(tabPageStatistics);
-                exitToolStripMenuItem.Enabled = false;
                 lblLoggedInAs.Text = "Logged in as: " + name; 
             }
             this.spNr = spNr;
@@ -65,6 +70,14 @@ namespace AffairsSystem
 
         }
 
+        
+
+        
+
+        
+
+        
+
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -73,16 +86,7 @@ namespace AffairsSystem
 
         private void buttonGetAllProducts_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter da = controller.GetAllProductsToSaleList();
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewProductList.DataSource = data;
-
-            SqlDataAdapter da1 = controller.GetAllProductsNotForSale();
-            DataTable data1 = new DataTable();
-            da1.Fill(data1);
-            dataGridViewDeletedPa.DataSource = data1;
- 
+            FillProductTable();
         }
 
         
@@ -162,10 +166,9 @@ namespace AffairsSystem
 
                             double SinglePrice = amountInt * productOutPrice;
                             totalPrice = totalPrice + SinglePrice;
-                            
+                            controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
                             FillProductTableAdmin();
                         }
-                        controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
                         textBoxNumPad.Text = totalPrice.ToString();
                     }
                     else
@@ -178,7 +181,18 @@ namespace AffairsSystem
         }
         
 
-        
+        private void buttonSearchProduct_Click(object sender, EventArgs e)
+        {
+            string search = textBoxSearchProduct.Text;
+                SqlDataAdapter da = controller.SearchProductTill(search);
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewProductList.DataSource = data;
+                textBoxSearchProduct.Text = "";
+                
+            
+          
+        }
 
 
         private void buttonPaUpdate_Click(object sender, EventArgs e)
@@ -280,7 +294,16 @@ namespace AffairsSystem
             ClearAllInPa();
         }
 
-        
+        private void buttonSearchPa_Click(object sender, EventArgs e)
+        {
+            string search = textBoxSearchPa.Text;
+            SqlDataAdapter da = controller.SearchProductAllAttributesForSale(search);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewPa.DataSource = data;
+            textBoxSearchPa.Text = "";
+
+        }
 
         private void buttonClearAll_Click(object sender, EventArgs e)
         {
@@ -393,10 +416,8 @@ namespace AffairsSystem
         {
             Environment.Exit(0);
         }
+              
 
-        
-
-        
 
         private void textBoxSearchPa_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -406,22 +427,14 @@ namespace AffairsSystem
             }
         }
 
-        
+
 
         private void buttonGetAllPa_Click(object sender, EventArgs e)
         {
-            SqlDataAdapter da = controller.GetAllProductsForSale();
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewPa.DataSource = data;
-
-            SqlDataAdapter da1 = controller.GetAllProductsNotForSale();
-            DataTable data1 = new DataTable();
-            da1.Fill(data1);
-            dataGridViewDeletedPa.DataSource = data1;
+            FillProductTableAdmin();
+            textBoxSearchPa.Text = "";
         }
 
-        
 
         private void dataGridViewPa_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -443,7 +456,23 @@ namespace AffairsSystem
         private void buttonEURO_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "€";
+
+            string jsonString;
+            using (WebClient client = new WebClient())
+            {
+                jsonString = client.DownloadString("http://rate-exchange.appspot.com/currency?from=EUR&to=SEK&q=1");
+            }
+
+            var serializer = new JavaScriptSerializer();
+            Dictionary<string, string> values = serializer.Deserialize<Dictionary<string, string>>(jsonString);
+
+            double rate = Double.Parse(values["rate"]);
+
+            MessageBox.Show(rate.ToString());
+
+            
         }
+
 
         private void buttonUSD_Click(object sender, EventArgs e)
         {
@@ -555,14 +584,18 @@ namespace AffairsSystem
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewSP.DataSource = data;
-
-            SqlDataAdapter da1 = controller.GetAllNotWorkingSalesPersons();
-            DataTable data1 = new DataTable();
-            da1.Fill(data1);
-            dataGridViewDeletedSP.DataSource = data1;
         }
 
-             
+        private void buttonSearchSP_Click(object sender, EventArgs e)
+        {
+            string search = textBoxSearchSP.Text;
+            SqlDataAdapter da = controller.SearchWorkingSalesPersons(search);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewSP.DataSource = data;
+            ClearAllEmployeeAdmin();   
+        }
+
 
         private void dataGridViewDeletedPa_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
@@ -611,7 +644,6 @@ namespace AffairsSystem
             textBoxEaLName.Text = "";
             textBoxEaPhoneNr.Text = "";
             textBoxSearchSP.Text = "";
-            
             checkBoxEmployee.Checked = false;
             checkBoxEmployeeAdmin.Checked = false;
         }
@@ -660,91 +692,13 @@ namespace AffairsSystem
             }
         }
 
-        
-        private void buttonSearchProduct_Click(object sender, EventArgs e)
+        private void buttonGetAllNotWorkingSalesPersons_Click(object sender, EventArgs e)
         {
-            labelErrorSaleSearch.Text = "";
-            string search = textBoxSearchProduct.Text;
-            if (Utility.checkIfSearchContainsForbiddenChars(search))
-            {
-                labelErrorSaleSearch.Text = " [ ' ] is not allowed in the search";
-            }
-            else
-            {
-                SqlDataAdapter da = controller.SearchProductTill(search);
-                DataTable data = new DataTable();
-                da.Fill(data);
-                dataGridViewProductList.DataSource = data;
-                textBoxSearchProduct.Text = "";
-            }
+            SqlDataAdapter da = controller.GetAllNotWorkingSalesPersons();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewDeletedSP.DataSource = data;
         }
-
-        private void buttonSearchPa_Click(object sender, EventArgs e)
-        {
-            labelErrorProductSearch.Text = "";
-            string search = textBoxSearchPa.Text;
-            if (Utility.checkIfSearchContainsForbiddenChars(search))
-            {
-                labelErrorProductSearch.Text = " [ ' ] is not allowed in the search";
-            }
-            else
-            {
-                SqlDataAdapter da1 = controller.SearchProductAllAttributesForSale(search);
-                DataTable data1 = new DataTable();
-                da1.Fill(data1);
-                dataGridViewPa.DataSource = data1;
-                textBoxSearchPa.Text = "";
-
-                SqlDataAdapter da2 = controller.SearchProductAllAttributesNotForSale(search);
-                DataTable data2 = new DataTable();
-                da2.Fill(data2);
-                dataGridViewDeletedPa.DataSource = data2;
-
-            }
-        }
-        private void buttonSearchSP_Click(object sender, EventArgs e)
-        {
-            labelErrorSalesPersonSearch.Text = "";
-            string search = textBoxSearchSP.Text;
-            if (Utility.checkIfSearchContainsForbiddenChars(search))
-            {
-                labelErrorSalesPersonSearch.Text = " [ ' ] is not allowed in the search";
-            }
-            else
-            {
-                SqlDataAdapter da1 = controller.SearchWorkingSalesPersons(search);
-                DataTable data1 = new DataTable();
-                da1.Fill(data1);
-                dataGridViewSP.DataSource = data1;
-                ClearAllEmployeeAdmin();
-
-                // Klistrar in andra searchknappmetoden
-
-                SqlDataAdapter da2 = controller.SearchNotWorkingSalesPersons(search);
-                DataTable data2 = new DataTable();
-                da2.Fill(data2);
-                dataGridViewDeletedSP.DataSource = data2;
-                ClearAllEmployeeAdmin();
-            }
-        }
-
-        private void buttonSearchDeletedSP_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        
-
-        
-
-        
-
-        
-
-        
-
-        
-
 
 
     }
