@@ -254,6 +254,7 @@ namespace AffairsSystem
                 FillProductTable();
                 FillProductTableAdmin();
                 FillProductTableNotForSaleAdmin();
+                lblErrorProductAdminFields.Text = "";
             }
         }
 
@@ -386,6 +387,7 @@ namespace AffairsSystem
                 FillProductTableNotForSaleAdmin();
                 FillProductTable();
                 ClearAllInPa();
+                lblErrorProductAdminFields.Text = "";
             }
         }
 
@@ -687,6 +689,7 @@ namespace AffairsSystem
                 FillNotWorkingSalesPersonTable();
                 FillWorkingSalesPersonTable();
                 ClearAllEmployeeAdmin();
+                lblErrorSalesPersonFields.Text = "";
             }
         }
 
@@ -700,27 +703,36 @@ namespace AffairsSystem
             string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
             string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
             string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
-            
-            string totalInformation = spNr + firstName + lastName + sPhone;
-            if (Utility.CheckIfContainsForbiddenChars(totalInformation))
+
+
+            if (Utility.CheckSalesPerson(controller.SearchSalesPerson(spNr)) != spNr)
             {
-                lblErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
-                                
-            }
-            else if (Utility.CheckIfSearchIsEmpty(spNr) || Utility.CheckIfSearchIsEmpty(firstName) || 
-                Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone)) 
-            {
-                lblErrorSalesPersonFields.Text = "Please provide information \n"+"in all the fields";
+                string totalInformation = spNr + firstName + lastName + sPhone;
+                if (Utility.CheckIfContainsForbiddenChars(totalInformation))
+                {
+                    lblErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
+
+                }
+                else if (Utility.CheckIfSearchIsEmpty(spNr) || Utility.CheckIfSearchIsEmpty(firstName) ||
+                    Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone))
+                {
+                    lblErrorSalesPersonFields.Text = "Please provide information \n" + "in all the fields";
+                }
+                else
+                {
+
+                    controller.SetSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
+                    MessageBox.Show("Person: " + spNr + " was added.", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                    FillNotWorkingSalesPersonTable();
+                    FillWorkingSalesPersonTable();
+                    ClearAllEmployeeAdmin();
+                    lblErrorSalesPersonFields.Text = "";
+                }
             }
             else
             {
-
-                controller.SetSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
-                MessageBox.Show("Person: " + spNr + " was added.", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                FillNotWorkingSalesPersonTable();
-                FillWorkingSalesPersonTable();
-                ClearAllEmployeeAdmin();
+                lblErrorSalesPersonFields.Text = "Social security number already\nexists in database";
             }
         }
 
