@@ -842,7 +842,7 @@ namespace AffairsSystem
             textBoxNumPad.Text = totalPrice.ToString();
             dataGridViewSaleList.Rows.Clear();
             richTextBoxAmount.Text = "";
-            payedAmount = "";
+            
             
         }
         private void ClearAllErrorMessages()
