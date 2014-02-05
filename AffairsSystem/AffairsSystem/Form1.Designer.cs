@@ -113,6 +113,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.labelErrorProductAdminFields = new System.Windows.Forms.Label();
+            this.labelErrorSalesPersonFields = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -458,6 +460,7 @@
             // 
             // tabPageEmployee
             // 
+            this.tabPageEmployee.Controls.Add(this.labelErrorSalesPersonFields);
             this.tabPageEmployee.Controls.Add(this.labelErrorSalesPersonSearch);
             this.tabPageEmployee.Controls.Add(this.checkBoxEmployeeAdmin);
             this.tabPageEmployee.Controls.Add(this.checkBoxEmployee);
@@ -724,6 +727,7 @@
             // 
             // tabPageProduct
             // 
+            this.tabPageProduct.Controls.Add(this.labelErrorProductAdminFields);
             this.tabPageProduct.Controls.Add(this.labelErrorProductSearch);
             this.tabPageProduct.Controls.Add(this.btnGetAllProductAdmin);
             this.tabPageProduct.Controls.Add(this.checkBoxForSale);
@@ -1104,6 +1108,26 @@
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
             // 
+            // labelErrorProductAdminFields
+            // 
+            this.labelErrorProductAdminFields.AutoSize = true;
+            this.labelErrorProductAdminFields.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorProductAdminFields.Location = new System.Drawing.Point(487, 77);
+            this.labelErrorProductAdminFields.Name = "labelErrorProductAdminFields";
+            this.labelErrorProductAdminFields.Size = new System.Drawing.Size(88, 13);
+            this.labelErrorProductAdminFields.TabIndex = 117;
+            this.labelErrorProductAdminFields.Text = "felmedelande här";
+            // 
+            // labelErrorSalesPersonFields
+            // 
+            this.labelErrorSalesPersonFields.AutoSize = true;
+            this.labelErrorSalesPersonFields.ForeColor = System.Drawing.Color.Red;
+            this.labelErrorSalesPersonFields.Location = new System.Drawing.Point(448, 87);
+            this.labelErrorSalesPersonFields.Name = "labelErrorSalesPersonFields";
+            this.labelErrorSalesPersonFields.Size = new System.Drawing.Size(88, 13);
+            this.labelErrorSalesPersonFields.TabIndex = 96;
+            this.labelErrorSalesPersonFields.Text = "felmedelande här";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1233,6 +1257,8 @@
         private System.Windows.Forms.CheckBox checkBoxEmployeeAdmin;
         private System.Windows.Forms.Label labelErrorSalesPersonSearch;
         private System.Windows.Forms.Button btnViewSale;
+        private System.Windows.Forms.Label labelErrorProductAdminFields;
+        private System.Windows.Forms.Label labelErrorSalesPersonFields;
 
 
     }

@@ -28,6 +28,7 @@ namespace AffairsSystem
             InitializeComponent();
             this.controller = controller;
             this.spNr = spNr;
+            this.ClearAllErrorMessages();
             FillProductTable();
             
 
@@ -80,6 +81,8 @@ namespace AffairsSystem
 
         private void btnGetAllProducts_Click(object sender, EventArgs e)
         {
+            this.ClearAllErrorMessages();
+
             btnMyHistory.Text = "My History";
             SqlDataAdapter da = controller.GetAllProductsToSaleList();
             DataTable data = new DataTable();
@@ -117,6 +120,7 @@ namespace AffairsSystem
 
         private void btnAddProductToSale_Click(object sender, EventArgs e)
         {
+            this.ClearAllErrorMessages();
 
             string currency = textBoxCurrencyUnit.Text = "SEK";
             int productNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
@@ -205,25 +209,59 @@ namespace AffairsSystem
 
         private void btnPaUpdate_Click(object sender, EventArgs e)
         {
+
+            this.ClearAllErrorMessages();
+
             int isForSale = Utility.ConvertBoolToInt(checkBoxForSale.Checked);
-            int productNr = int.Parse(textBoxPaPrNr.Text);
+            string productNrString = textBoxPaPrNr.Text;
+            string amountString = textBoxPaAmount.Text;
+            string inPriceString = textBoxPaInPrice.Text;
+            string outPriceString = textBoxPaOutPrice.Text;
             string productName = Utility.FirstCharToUpper(textBoxPaName.Text);
-            double productInPrice = Utility.CheckDouble(double.Parse(textBoxPaInPrice.Text));
-            double productOutPrice = Utility.CheckDouble(double.Parse(textBoxPaOutPrice.Text));
-            int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
+            
+            string totalInformation = amountString + inPriceString + outPriceString + productName;
 
-            controller.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount, isForSale);
-            MessageBox.Show("Product nr: " + productNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            if (Utility.CheckIfSearchIsEmpty(productNrString))
+            {
+                labelErrorProductAdminFields.Text = "Select a product from \n"+"any of the tables";
+            }
+            else if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
+            {
+                labelErrorProductAdminFields.Text = "[ ' ] is not a allowed sign";
+            }
+            else if (Utility.CheckIfSearchIsEmpty(amountString) || Utility.CheckIfSearchIsEmpty(inPriceString) ||
+                Utility.CheckIfSearchIsEmpty(outPriceString) || Utility.CheckIfSearchIsEmpty(productName))
+            {
+                labelErrorProductAdminFields.Text = "Please provide information \n"+"in all the fields";
+            }
+            else if (!Utility.CheckOnlyNumbers(textBoxPaAmount.Text) || !Utility.CheckOnlyNumbers(textBoxPaInPrice.Text) || !Utility.CheckOnlyNumbers(textBoxPaOutPrice.Text))
+            {
+                labelErrorProductAdminFields.Text = "Please provide the amount \n"+"and prices with numbers only";
+            }
+            else
+            {
 
-            ClearAllInPa();
-            FillProductTable();
-            FillProductTableAdmin();
-            FillProductTableNotForSaleAdmin();
+                int productNr = int.Parse(textBoxPaPrNr.Text);
+                double productInPrice = Utility.CheckDouble(double.Parse(textBoxPaInPrice.Text));
+                double productOutPrice = Utility.CheckDouble(double.Parse(textBoxPaOutPrice.Text));
+                int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
+
+                controller.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount, isForSale);
+                MessageBox.Show("Product nr: " + productNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                ClearAllInPa();
+                FillProductTable();
+                FillProductTableAdmin();
+                FillProductTableNotForSaleAdmin();
+            }
         }
 
         private void btnRemoveProductFromSale_Click(object sender, EventArgs e)
         {
-            int amount = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[3].Value.ToString());
+            this.ClearAllErrorMessages();
+            if (dataGridViewSaleList.RowCount > 0)
+            {
+                int amount = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[3].Value.ToString());
             int productNr = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[0].Value.ToString());
             double productOutPrice = double.Parse(dataGridViewSaleList.SelectedRows[0].Cells[2].Value.ToString());
             double SinglePrice = amount * productOutPrice;
@@ -241,6 +279,7 @@ namespace AffairsSystem
                     totalPrice = 0;
                     textBoxNumPad.Text = totalPrice.ToString();
                 }
+            }
             }
         }
 
@@ -271,6 +310,8 @@ namespace AffairsSystem
 
         private void btnMyHistory_Click(object sender, EventArgs e)
         {
+            this.ClearAllErrorMessages();
+
             if (btnMyHistory.Text.Equals("My History"))
             {
                 btwAddProductToSale.Enabled = false;
@@ -304,23 +345,49 @@ namespace AffairsSystem
 
         private void btnPaNew_Click(object sender, EventArgs e)
         {
+            this.ClearAllErrorMessages();
+
             int isForSale = Utility.ConvertBoolToInt(checkBoxForSale.Checked);
-            int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
-            double productInPrice = Utility.CheckDouble(double.Parse(textBoxPaInPrice.Text));
+            string amountString = textBoxPaAmount.Text;
+            string inPriceString = textBoxPaInPrice.Text;
+            string outPriceString = textBoxPaOutPrice.Text;
             string productName = Utility.FirstCharToUpper(textBoxPaName.Text);
-            double productOutPrice = Utility.CheckDouble(double.Parse(textBoxPaOutPrice.Text));
+            
+            string totalInformation = amountString + inPriceString + outPriceString + productName;
 
-            controller.SetProduct(productName, productInPrice, productOutPrice, amount, isForSale);
+            if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
+            {
+                labelErrorProductAdminFields.Text = "[ ' ] is not a allowed sign";
+                
+            }
+            else if (Utility.CheckIfSearchIsEmpty(amountString) || Utility.CheckIfSearchIsEmpty(inPriceString) ||
+                Utility.CheckIfSearchIsEmpty(outPriceString) || Utility.CheckIfSearchIsEmpty(productName))
+            {
+                labelErrorProductAdminFields.Text = "Please provide information \n"+"in all the editable fields";
+            }
+            else if (!Utility.CheckOnlyNumbers(textBoxPaAmount.Text) || !Utility.CheckOnlyNumbers(textBoxPaInPrice.Text) || !Utility.CheckOnlyNumbers(textBoxPaOutPrice.Text))
+            {
+                labelErrorProductAdminFields.Text = "Please provide the amount \n"+"and prices with numbers only";
+            }
+            else
+            {
+                int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
+                double productInPrice = Utility.CheckDouble(double.Parse(textBoxPaInPrice.Text));
+                double productOutPrice = Utility.CheckDouble(double.Parse(textBoxPaOutPrice.Text));
 
-            FillProductTableAdmin();
-            FillProductTableNotForSaleAdmin();
-            FillProductTable();
-            ClearAllInPa();
+                controller.SetProduct(productName, productInPrice, productOutPrice, amount, isForSale);
+
+                FillProductTableAdmin();
+                FillProductTableNotForSaleAdmin();
+                FillProductTable();
+                ClearAllInPa();
+            }
         }
 
         private void btnPaClearAll_Click(object sender, EventArgs e)
         {
-            ClearAllInPa();
+            this.ClearAllErrorMessages();
+            this.ClearAllInPa();
         }
 
         
@@ -443,6 +510,8 @@ namespace AffairsSystem
 
         private void btnGetAllPa_Click(object sender, EventArgs e)
         {
+            this.ClearAllErrorMessages();
+
             SqlDataAdapter da = controller.GetAllProductsForSale();
             DataTable data = new DataTable();
             da.Fill(data);
@@ -509,6 +578,8 @@ namespace AffairsSystem
 
         private void btnGetAllWorkingSalesPersons_Click(object sender, EventArgs e)
         {
+            this.ClearAllErrorMessages();
+
             SqlDataAdapter da = controller.GetAllWorkingSalesPersons();
             DataTable data = new DataTable();
             da.Fill(data);
@@ -558,6 +629,7 @@ namespace AffairsSystem
 
         private void btnEaClearAll_Click(object sender, EventArgs e)
         {
+            this.ClearAllErrorMessages();
             ClearAllEmployeeAdmin();
         }
 
@@ -576,6 +648,8 @@ namespace AffairsSystem
 
         private void btnEaUpdate_Click(object sender, EventArgs e)
         {
+            this.ClearAllErrorMessages();
+
             int isAdmin = Utility.ConvertBoolToInt(checkBoxEmployeeAdmin.Checked);
             int isActive = Utility.ConvertBoolToInt(checkBoxEmployee.Checked);
             string spNr = Utility.FirstCharToUpper(textBoxEaSpNr.Text);
@@ -583,15 +657,20 @@ namespace AffairsSystem
             string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
             string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
             string totalInformation = spNr + firstName + lastName + sPhone;
-            
-            if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
+
+            if (Utility.CheckIfSearchIsEmpty(spNr))
             {
-                MessageBox.Show("Man får inte använda [ ' ]... ska skriva detta någon annanstans");
+                labelErrorSalesPersonFields.Text = "Select a employee from \n"+"any of the tables";
             }
-            else if (Utility.CheckIfSearchIsEmpty(spNr) || Utility.CheckIfSearchIsEmpty(firstName) ||
+            else if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
+            {
+                labelErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
+
+            }
+            else if (Utility.CheckIfSearchIsEmpty(firstName) ||
                 Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone))
             {
-                MessageBox.Show("Vänligen fyll i alla fält");
+                labelErrorSalesPersonFields.Text = "Please provide information \n"+"in all the fields";
             }
             else
             {
@@ -607,6 +686,8 @@ namespace AffairsSystem
 
         private void btnEaNew_Click(object sender, EventArgs e)
         {
+            this.ClearAllErrorMessages();
+
             int isAdmin = Utility.ConvertBoolToInt(checkBoxEmployeeAdmin.Checked);
             int isActive = Utility.ConvertBoolToInt(checkBoxEmployee.Checked);
             string spNr = Utility.FirstCharToUpper(textBoxEaSpNr.Text);
@@ -617,12 +698,13 @@ namespace AffairsSystem
             string totalInformation = spNr + firstName + lastName + sPhone;
             if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
             {
-                MessageBox.Show("Man får inte använda [ ' ]... ska skriva detta någon annanstans");
+                labelErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
+                                
             }
             else if (Utility.CheckIfSearchIsEmpty(spNr) || Utility.CheckIfSearchIsEmpty(firstName) || 
                 Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone)) 
             {
-                MessageBox.Show("Vänligen fyll i alla fält");
+                labelErrorSalesPersonFields.Text = "Please provide information \n"+"in all the fields";
             }
             else
             {
@@ -648,8 +730,10 @@ namespace AffairsSystem
         
         private void btnSearchProduct_Click(object sender, EventArgs e)
         {
+            this.ClearAllErrorMessages();
+
             btnMyHistory.Text = "My History";
-            labelErrorSaleSearch.Text = "";
+            
             string search = textBoxSearchProduct.Text;
             if (Utility.checkIfSearchContainsForbiddenChars(search))
             {
@@ -671,7 +755,8 @@ namespace AffairsSystem
 
         private void btnSearchPa_Click(object sender, EventArgs e)
         {
-            labelErrorProductSearch.Text = "";
+            this.ClearAllErrorMessages();
+
             string search = textBoxSearchPa.Text;
             if (Utility.checkIfSearchContainsForbiddenChars(search))
             {
@@ -694,7 +779,8 @@ namespace AffairsSystem
         }
         private void buttonSearchSP_Click(object sender, EventArgs e)
         {
-            labelErrorSalesPersonSearch.Text = "";
+            this.ClearAllErrorMessages();
+
             string search = textBoxSearchSP.Text;
             if (Utility.checkIfSearchContainsForbiddenChars(search))
             {
@@ -721,6 +807,8 @@ namespace AffairsSystem
 
         private void btnViewSale_Click(object sender, EventArgs e)
         {
+            this.ClearAllErrorMessages();
+
             if (btnViewSale.Text.Equals("View Sale"))
             {
                 int salesNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
@@ -759,6 +847,14 @@ namespace AffairsSystem
             richTextBoxAmount.Text = "";
             payedAmount = "";
             
+        }
+        private void ClearAllErrorMessages()
+        {
+            labelErrorSalesPersonFields.Text = "";
+            labelErrorProductAdminFields.Text = "";
+            labelErrorProductSearch.Text = "";
+            labelErrorSaleSearch.Text = "";
+            labelErrorSalesPersonSearch.Text = "";
         }
 
         
