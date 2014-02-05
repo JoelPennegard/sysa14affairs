@@ -37,7 +37,7 @@
             this.btnClearAllSaleView = new System.Windows.Forms.Button();
             this.btnMyHistory = new System.Windows.Forms.Button();
             this.lblSearchProduct = new System.Windows.Forms.Label();
-            this.btnSearchProduct = new System.Windows.Forms.Button();
+            this.btnSearchProductSalesTab = new System.Windows.Forms.Button();
             this.textBoxSearchProduct = new System.Windows.Forms.TextBox();
             this.textBoxNumPad = new System.Windows.Forms.TextBox();
             this.btnRegisterSale = new System.Windows.Forms.Button();
@@ -154,7 +154,7 @@
             this.tabPageSale.Controls.Add(this.btnClearAllSaleView);
             this.tabPageSale.Controls.Add(this.btnMyHistory);
             this.tabPageSale.Controls.Add(this.lblSearchProduct);
-            this.tabPageSale.Controls.Add(this.btnSearchProduct);
+            this.tabPageSale.Controls.Add(this.btnSearchProductSalesTab);
             this.tabPageSale.Controls.Add(this.textBoxSearchProduct);
             this.tabPageSale.Controls.Add(this.textBoxNumPad);
             this.tabPageSale.Controls.Add(this.btnRegisterSale);
@@ -251,16 +251,16 @@
             this.lblSearchProduct.TabIndex = 41;
             this.lblSearchProduct.Text = "Search on product attribute:";
             // 
-            // btnSearchProduct
+            // btnSearchProductSalesTab
             // 
-            this.btnSearchProduct.Location = new System.Drawing.Point(259, 77);
-            this.btnSearchProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSearchProduct.Name = "btnSearchProduct";
-            this.btnSearchProduct.Size = new System.Drawing.Size(64, 42);
-            this.btnSearchProduct.TabIndex = 40;
-            this.btnSearchProduct.Text = "Search";
-            this.btnSearchProduct.UseVisualStyleBackColor = true;
-            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click);
+            this.btnSearchProductSalesTab.Location = new System.Drawing.Point(259, 77);
+            this.btnSearchProductSalesTab.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchProductSalesTab.Name = "btnSearchProductSalesTab";
+            this.btnSearchProductSalesTab.Size = new System.Drawing.Size(64, 42);
+            this.btnSearchProductSalesTab.TabIndex = 40;
+            this.btnSearchProductSalesTab.Text = "Search";
+            this.btnSearchProductSalesTab.UseVisualStyleBackColor = true;
+            this.btnSearchProductSalesTab.Click += new System.EventHandler(this.btnSearchProductSaleMenu_Click);
             // 
             // textBoxSearchProduct
             // 
@@ -1191,7 +1191,7 @@
         private System.Windows.Forms.Button btnDKK;
         private System.Windows.Forms.Button btnSEK;
         private System.Windows.Forms.DataGridView dataGridViewSaleList;
-        private System.Windows.Forms.Button btnSearchProduct;
+        private System.Windows.Forms.Button btnSearchProductSalesTab;
         private System.Windows.Forms.TextBox textBoxSearchProduct;
         private System.Windows.Forms.Label lblSearchProduct;
         private System.Windows.Forms.Label lblSearchSP;
