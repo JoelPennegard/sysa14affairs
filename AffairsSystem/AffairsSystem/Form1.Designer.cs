@@ -30,38 +30,38 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageSale = new System.Windows.Forms.TabPage();
-            this.buttonViewSale = new System.Windows.Forms.Button();
+            this.btnViewSale = new System.Windows.Forms.Button();
             this.labelErrorSaleSearch = new System.Windows.Forms.Label();
             this.textBoxCurrencyUnit = new System.Windows.Forms.TextBox();
-            this.buttonClearAll = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnClearAll = new System.Windows.Forms.Button();
+            this.btnClearAllSaleView = new System.Windows.Forms.Button();
+            this.btnMyHistory = new System.Windows.Forms.Button();
             this.labelSearchProduct = new System.Windows.Forms.Label();
-            this.buttonSearchProduct = new System.Windows.Forms.Button();
+            this.btnSearchProduct = new System.Windows.Forms.Button();
             this.textBoxSearchProduct = new System.Windows.Forms.TextBox();
             this.textBoxNumPad = new System.Windows.Forms.TextBox();
-            this.buttonENTER = new System.Windows.Forms.Button();
-            this.buttonNOK = new System.Windows.Forms.Button();
-            this.buttonUSD = new System.Windows.Forms.Button();
-            this.buttonGBP = new System.Windows.Forms.Button();
-            this.buttonEURO = new System.Windows.Forms.Button();
-            this.buttonDKK = new System.Windows.Forms.Button();
-            this.buttonSEK = new System.Windows.Forms.Button();
+            this.btnENTER = new System.Windows.Forms.Button();
+            this.btnNOK = new System.Windows.Forms.Button();
+            this.btnUSD = new System.Windows.Forms.Button();
+            this.btnGBP = new System.Windows.Forms.Button();
+            this.btnEURO = new System.Windows.Forms.Button();
+            this.btnDKK = new System.Windows.Forms.Button();
+            this.btnSEK = new System.Windows.Forms.Button();
             this.dataGridViewSaleList = new System.Windows.Forms.DataGridView();
             this.ProductNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Price = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Amount = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.richTextBoxAmount = new System.Windows.Forms.RichTextBox();
-            this.button = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnRemoveProductFromSale = new System.Windows.Forms.Button();
+            this.btwAddProductToSale = new System.Windows.Forms.Button();
             this.dataGridViewProductList = new System.Windows.Forms.DataGridView();
             this.tabPageEmployee = new System.Windows.Forms.TabPage();
             this.labelErrorSalesPersonSearch = new System.Windows.Forms.Label();
             this.checkBoxEmployeeAdmin = new System.Windows.Forms.CheckBox();
             this.checkBoxEmployee = new System.Windows.Forms.CheckBox();
-            this.buttonGetAllWorkingSalesPersons = new System.Windows.Forms.Button();
-            this.buttonEaClearAll = new System.Windows.Forms.Button();
+            this.btnGetAllWorkingSalesPersons = new System.Windows.Forms.Button();
+            this.btnClearAllSalesPersonFields = new System.Windows.Forms.Button();
             this.labelSearchDeletedSP = new System.Windows.Forms.Label();
             this.dataGridViewDeletedSP = new System.Windows.Forms.DataGridView();
             this.splitter1 = new System.Windows.Forms.Splitter();
@@ -73,17 +73,17 @@
             this.textBoxEaPhoneNr = new System.Windows.Forms.TextBox();
             this.textBoxEaFName = new System.Windows.Forms.TextBox();
             this.textBoxEaSpNr = new System.Windows.Forms.TextBox();
-            this.buttonEaUpdate = new System.Windows.Forms.Button();
-            this.buttonEaNew = new System.Windows.Forms.Button();
+            this.btnUpdateSalesPerson = new System.Windows.Forms.Button();
+            this.btnAddNewSalesPerson = new System.Windows.Forms.Button();
             this.labelSearchSP = new System.Windows.Forms.Label();
-            this.buttonSearchSP = new System.Windows.Forms.Button();
+            this.btnSearchSalesPerson = new System.Windows.Forms.Button();
             this.textBoxSearchSP = new System.Windows.Forms.TextBox();
             this.dataGridViewSP = new System.Windows.Forms.DataGridView();
             this.tabPageProduct = new System.Windows.Forms.TabPage();
             this.labelErrorProductSearch = new System.Windows.Forms.Label();
-            this.buttonGetAllPa = new System.Windows.Forms.Button();
+            this.btnGetAllProductAdmin = new System.Windows.Forms.Button();
             this.checkBoxForSale = new System.Windows.Forms.CheckBox();
-            this.buttonPaClearAll = new System.Windows.Forms.Button();
+            this.btnClearAllProductFields = new System.Windows.Forms.Button();
             this.dataGridViewDeletedPa = new System.Windows.Forms.DataGridView();
             this.labelPaAmount = new System.Windows.Forms.Label();
             this.textBoxPaAmount = new System.Windows.Forms.TextBox();
@@ -96,17 +96,17 @@
             this.textBoxPaOutPrice = new System.Windows.Forms.TextBox();
             this.textBoxPaName = new System.Windows.Forms.TextBox();
             this.textBoxPaPrNr = new System.Windows.Forms.TextBox();
-            this.buttonPaUpdate = new System.Windows.Forms.Button();
-            this.buttonPaNew = new System.Windows.Forms.Button();
+            this.btnUpdateProduct = new System.Windows.Forms.Button();
+            this.btnAddNewProduct = new System.Windows.Forms.Button();
             this.labelSearchPa = new System.Windows.Forms.Label();
-            this.buttonSearchPa = new System.Windows.Forms.Button();
+            this.btnSearchProductAdmin = new System.Windows.Forms.Button();
             this.textBoxSearchPa = new System.Windows.Forms.TextBox();
             this.dataGridViewPa = new System.Windows.Forms.DataGridView();
             this.tabPageStatistics = new System.Windows.Forms.TabPage();
             this.dataGridViewStatistics = new System.Windows.Forms.DataGridView();
-            this.buttonTopProduct = new System.Windows.Forms.Button();
-            this.buttonTopCombos = new System.Windows.Forms.Button();
-            this.buttonTopSellers = new System.Windows.Forms.Button();
+            this.btnTopProduct = new System.Windows.Forms.Button();
+            this.btnTopCombos = new System.Windows.Forms.Button();
+            this.btnTopSellers = new System.Windows.Forms.Button();
             this.lblLoggedInAs = new System.Windows.Forms.Label();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -144,27 +144,27 @@
             // 
             // tabPageSale
             // 
-            this.tabPageSale.Controls.Add(this.buttonViewSale);
+            this.tabPageSale.Controls.Add(this.btnViewSale);
             this.tabPageSale.Controls.Add(this.labelErrorSaleSearch);
             this.tabPageSale.Controls.Add(this.textBoxCurrencyUnit);
-            this.tabPageSale.Controls.Add(this.buttonClearAll);
-            this.tabPageSale.Controls.Add(this.button3);
-            this.tabPageSale.Controls.Add(this.button2);
+            this.tabPageSale.Controls.Add(this.btnClearAll);
+            this.tabPageSale.Controls.Add(this.btnClearAllSaleView);
+            this.tabPageSale.Controls.Add(this.btnMyHistory);
             this.tabPageSale.Controls.Add(this.labelSearchProduct);
-            this.tabPageSale.Controls.Add(this.buttonSearchProduct);
+            this.tabPageSale.Controls.Add(this.btnSearchProduct);
             this.tabPageSale.Controls.Add(this.textBoxSearchProduct);
             this.tabPageSale.Controls.Add(this.textBoxNumPad);
-            this.tabPageSale.Controls.Add(this.buttonENTER);
-            this.tabPageSale.Controls.Add(this.buttonNOK);
-            this.tabPageSale.Controls.Add(this.buttonUSD);
-            this.tabPageSale.Controls.Add(this.buttonGBP);
-            this.tabPageSale.Controls.Add(this.buttonEURO);
-            this.tabPageSale.Controls.Add(this.buttonDKK);
-            this.tabPageSale.Controls.Add(this.buttonSEK);
+            this.tabPageSale.Controls.Add(this.btnENTER);
+            this.tabPageSale.Controls.Add(this.btnNOK);
+            this.tabPageSale.Controls.Add(this.btnUSD);
+            this.tabPageSale.Controls.Add(this.btnGBP);
+            this.tabPageSale.Controls.Add(this.btnEURO);
+            this.tabPageSale.Controls.Add(this.btnDKK);
+            this.tabPageSale.Controls.Add(this.btnSEK);
             this.tabPageSale.Controls.Add(this.dataGridViewSaleList);
             this.tabPageSale.Controls.Add(this.richTextBoxAmount);
-            this.tabPageSale.Controls.Add(this.button);
-            this.tabPageSale.Controls.Add(this.button1);
+            this.tabPageSale.Controls.Add(this.btnRemoveProductFromSale);
+            this.tabPageSale.Controls.Add(this.btwAddProductToSale);
             this.tabPageSale.Controls.Add(this.dataGridViewProductList);
             this.tabPageSale.Location = new System.Drawing.Point(4, 22);
             this.tabPageSale.Margin = new System.Windows.Forms.Padding(2);
@@ -175,15 +175,15 @@
             this.tabPageSale.Text = "Sale menu";
             this.tabPageSale.UseVisualStyleBackColor = true;
             // 
-            // buttonViewSale
+            // btnViewSale
             // 
-            this.buttonViewSale.Location = new System.Drawing.Point(121, 446);
-            this.buttonViewSale.Name = "buttonViewSale";
-            this.buttonViewSale.Size = new System.Drawing.Size(95, 41);
-            this.buttonViewSale.TabIndex = 47;
-            this.buttonViewSale.Text = "View Sale";
-            this.buttonViewSale.UseVisualStyleBackColor = true;
-            this.buttonViewSale.Click += new System.EventHandler(this.buttonViewSale_Click);
+            this.btnViewSale.Location = new System.Drawing.Point(121, 446);
+            this.btnViewSale.Name = "btnViewSale";
+            this.btnViewSale.Size = new System.Drawing.Size(95, 41);
+            this.btnViewSale.TabIndex = 47;
+            this.btnViewSale.Text = "View Sale";
+            this.btnViewSale.UseVisualStyleBackColor = true;
+            this.btnViewSale.Click += new System.EventHandler(this.btnViewSale_Click);
             // 
             // labelErrorSaleSearch
             // 
@@ -205,38 +205,38 @@
             this.textBoxCurrencyUnit.Size = new System.Drawing.Size(68, 44);
             this.textBoxCurrencyUnit.TabIndex = 38;
             // 
-            // buttonClearAll
+            // btnClearAll
             // 
-            this.buttonClearAll.Location = new System.Drawing.Point(900, 399);
-            this.buttonClearAll.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonClearAll.Name = "buttonClearAll";
-            this.buttonClearAll.Size = new System.Drawing.Size(207, 42);
-            this.buttonClearAll.TabIndex = 44;
-            this.buttonClearAll.Text = "Clear all fields";
-            this.buttonClearAll.UseVisualStyleBackColor = true;
-            this.buttonClearAll.Click += new System.EventHandler(this.buttonClearAll_Click);
+            this.btnClearAll.Location = new System.Drawing.Point(900, 399);
+            this.btnClearAll.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearAll.Name = "btnClearAll";
+            this.btnClearAll.Size = new System.Drawing.Size(207, 42);
+            this.btnClearAll.TabIndex = 44;
+            this.btnClearAll.Text = "Clear all fields";
+            this.btnClearAll.UseVisualStyleBackColor = true;
+            this.btnClearAll.Click += new System.EventHandler(this.btnClearAllSaleView_Click);
             // 
-            // button3
+            // btnClearAllSaleView
             // 
-            this.button3.Location = new System.Drawing.Point(328, 77);
-            this.button3.Margin = new System.Windows.Forms.Padding(2);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(69, 42);
-            this.button3.TabIndex = 43;
-            this.button3.Text = "Get all";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.buttonGetAllProducts_Click);
+            this.btnClearAllSaleView.Location = new System.Drawing.Point(328, 77);
+            this.btnClearAllSaleView.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearAllSaleView.Name = "btnClearAllSaleView";
+            this.btnClearAllSaleView.Size = new System.Drawing.Size(69, 42);
+            this.btnClearAllSaleView.TabIndex = 43;
+            this.btnClearAllSaleView.Text = "Get all";
+            this.btnClearAllSaleView.UseVisualStyleBackColor = true;
+            this.btnClearAllSaleView.Click += new System.EventHandler(this.btnGetAllProducts_Click);
             // 
-            // button2
+            // btnMyHistory
             // 
-            this.button2.Location = new System.Drawing.Point(12, 445);
-            this.button2.Margin = new System.Windows.Forms.Padding(2);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 42);
-            this.button2.TabIndex = 42;
-            this.button2.Text = "My History";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.btnMyHistory.Location = new System.Drawing.Point(12, 445);
+            this.btnMyHistory.Margin = new System.Windows.Forms.Padding(2);
+            this.btnMyHistory.Name = "btnMyHistory";
+            this.btnMyHistory.Size = new System.Drawing.Size(104, 42);
+            this.btnMyHistory.TabIndex = 42;
+            this.btnMyHistory.Text = "My History";
+            this.btnMyHistory.UseVisualStyleBackColor = true;
+            this.btnMyHistory.Click += new System.EventHandler(this.btnMyHistory_Click);
             // 
             // labelSearchProduct
             // 
@@ -248,16 +248,16 @@
             this.labelSearchProduct.TabIndex = 41;
             this.labelSearchProduct.Text = "Search on product attribute:";
             // 
-            // buttonSearchProduct
+            // btnSearchProduct
             // 
-            this.buttonSearchProduct.Location = new System.Drawing.Point(259, 77);
-            this.buttonSearchProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSearchProduct.Name = "buttonSearchProduct";
-            this.buttonSearchProduct.Size = new System.Drawing.Size(64, 42);
-            this.buttonSearchProduct.TabIndex = 40;
-            this.buttonSearchProduct.Text = "Search";
-            this.buttonSearchProduct.UseVisualStyleBackColor = true;
-            this.buttonSearchProduct.Click += new System.EventHandler(this.buttonSearchProduct_Click);
+            this.btnSearchProduct.Location = new System.Drawing.Point(259, 77);
+            this.btnSearchProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchProduct.Name = "btnSearchProduct";
+            this.btnSearchProduct.Size = new System.Drawing.Size(64, 42);
+            this.btnSearchProduct.TabIndex = 40;
+            this.btnSearchProduct.Text = "Search";
+            this.btnSearchProduct.UseVisualStyleBackColor = true;
+            this.btnSearchProduct.Click += new System.EventHandler(this.btnSearchProduct_Click);
             // 
             // textBoxSearchProduct
             // 
@@ -279,82 +279,82 @@
             this.textBoxNumPad.TabIndex = 38;
             this.textBoxNumPad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // buttonENTER
+            // btnENTER
             // 
-            this.buttonENTER.Location = new System.Drawing.Point(901, 214);
-            this.buttonENTER.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonENTER.Name = "buttonENTER";
-            this.buttonENTER.Size = new System.Drawing.Size(206, 181);
-            this.buttonENTER.TabIndex = 36;
-            this.buttonENTER.Text = "ENTER";
-            this.buttonENTER.UseVisualStyleBackColor = true;
-            this.buttonENTER.Click += new System.EventHandler(this.buttonENTER_Click);
+            this.btnENTER.Location = new System.Drawing.Point(901, 214);
+            this.btnENTER.Margin = new System.Windows.Forms.Padding(2);
+            this.btnENTER.Name = "btnENTER";
+            this.btnENTER.Size = new System.Drawing.Size(206, 181);
+            this.btnENTER.TabIndex = 36;
+            this.btnENTER.Text = "ENTER";
+            this.btnENTER.UseVisualStyleBackColor = true;
+            this.btnENTER.Click += new System.EventHandler(this.btnENTER_Click);
             // 
-            // buttonNOK
+            // btnNOK
             // 
-            this.buttonNOK.Location = new System.Drawing.Point(1039, 119);
-            this.buttonNOK.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNOK.Name = "buttonNOK";
-            this.buttonNOK.Size = new System.Drawing.Size(68, 42);
-            this.buttonNOK.TabIndex = 13;
-            this.buttonNOK.Text = "NOK";
-            this.buttonNOK.UseVisualStyleBackColor = true;
-            this.buttonNOK.Click += new System.EventHandler(this.buttonNOK_Click);
+            this.btnNOK.Location = new System.Drawing.Point(1039, 119);
+            this.btnNOK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNOK.Name = "btnNOK";
+            this.btnNOK.Size = new System.Drawing.Size(68, 42);
+            this.btnNOK.TabIndex = 13;
+            this.btnNOK.Text = "NOK";
+            this.btnNOK.UseVisualStyleBackColor = true;
+            this.btnNOK.Click += new System.EventHandler(this.btnNOK_Click);
             // 
-            // buttonUSD
+            // btnUSD
             // 
-            this.buttonUSD.Location = new System.Drawing.Point(1039, 72);
-            this.buttonUSD.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonUSD.Name = "buttonUSD";
-            this.buttonUSD.Size = new System.Drawing.Size(68, 42);
-            this.buttonUSD.TabIndex = 12;
-            this.buttonUSD.Text = "USD";
-            this.buttonUSD.UseVisualStyleBackColor = true;
-            this.buttonUSD.Click += new System.EventHandler(this.buttonUSD_Click);
+            this.btnUSD.Location = new System.Drawing.Point(1039, 72);
+            this.btnUSD.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUSD.Name = "btnUSD";
+            this.btnUSD.Size = new System.Drawing.Size(68, 42);
+            this.btnUSD.TabIndex = 12;
+            this.btnUSD.Text = "USD";
+            this.btnUSD.UseVisualStyleBackColor = true;
+            this.btnUSD.Click += new System.EventHandler(this.btnUSD_Click);
             // 
-            // buttonGBP
+            // btnGBP
             // 
-            this.buttonGBP.Location = new System.Drawing.Point(969, 119);
-            this.buttonGBP.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonGBP.Name = "buttonGBP";
-            this.buttonGBP.Size = new System.Drawing.Size(65, 42);
-            this.buttonGBP.TabIndex = 11;
-            this.buttonGBP.Text = "GBP";
-            this.buttonGBP.UseVisualStyleBackColor = true;
-            this.buttonGBP.Click += new System.EventHandler(this.buttonGBP_Click);
+            this.btnGBP.Location = new System.Drawing.Point(969, 119);
+            this.btnGBP.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGBP.Name = "btnGBP";
+            this.btnGBP.Size = new System.Drawing.Size(65, 42);
+            this.btnGBP.TabIndex = 11;
+            this.btnGBP.Text = "GBP";
+            this.btnGBP.UseVisualStyleBackColor = true;
+            this.btnGBP.Click += new System.EventHandler(this.btnGBP_Click);
             // 
-            // buttonEURO
+            // btnEURO
             // 
-            this.buttonEURO.Location = new System.Drawing.Point(970, 72);
-            this.buttonEURO.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonEURO.Name = "buttonEURO";
-            this.buttonEURO.Size = new System.Drawing.Size(65, 42);
-            this.buttonEURO.TabIndex = 10;
-            this.buttonEURO.Text = "EURO";
-            this.buttonEURO.UseVisualStyleBackColor = true;
-            this.buttonEURO.Click += new System.EventHandler(this.buttonEURO_Click);
+            this.btnEURO.Location = new System.Drawing.Point(970, 72);
+            this.btnEURO.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEURO.Name = "btnEURO";
+            this.btnEURO.Size = new System.Drawing.Size(65, 42);
+            this.btnEURO.TabIndex = 10;
+            this.btnEURO.Text = "EURO";
+            this.btnEURO.UseVisualStyleBackColor = true;
+            this.btnEURO.Click += new System.EventHandler(this.btnEURO_Click);
             // 
-            // buttonDKK
+            // btnDKK
             // 
-            this.buttonDKK.Location = new System.Drawing.Point(901, 119);
-            this.buttonDKK.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonDKK.Name = "buttonDKK";
-            this.buttonDKK.Size = new System.Drawing.Size(64, 42);
-            this.buttonDKK.TabIndex = 9;
-            this.buttonDKK.Text = "DKK";
-            this.buttonDKK.UseVisualStyleBackColor = true;
-            this.buttonDKK.Click += new System.EventHandler(this.buttonDKK_Click);
+            this.btnDKK.Location = new System.Drawing.Point(901, 119);
+            this.btnDKK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDKK.Name = "btnDKK";
+            this.btnDKK.Size = new System.Drawing.Size(64, 42);
+            this.btnDKK.TabIndex = 9;
+            this.btnDKK.Text = "DKK";
+            this.btnDKK.UseVisualStyleBackColor = true;
+            this.btnDKK.Click += new System.EventHandler(this.btnDKK_Click);
             // 
-            // buttonSEK
+            // btnSEK
             // 
-            this.buttonSEK.Location = new System.Drawing.Point(900, 72);
-            this.buttonSEK.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSEK.Name = "buttonSEK";
-            this.buttonSEK.Size = new System.Drawing.Size(64, 42);
-            this.buttonSEK.TabIndex = 8;
-            this.buttonSEK.Text = "SEK";
-            this.buttonSEK.UseVisualStyleBackColor = true;
-            this.buttonSEK.Click += new System.EventHandler(this.buttonSEK_Click);
+            this.btnSEK.Location = new System.Drawing.Point(900, 72);
+            this.btnSEK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSEK.Name = "btnSEK";
+            this.btnSEK.Size = new System.Drawing.Size(64, 42);
+            this.btnSEK.TabIndex = 8;
+            this.btnSEK.Text = "SEK";
+            this.btnSEK.UseVisualStyleBackColor = true;
+            this.btnSEK.Click += new System.EventHandler(this.btnSEK_Click);
             // 
             // dataGridViewSaleList
             // 
@@ -418,27 +418,27 @@
             this.richTextBoxAmount.TabIndex = 6;
             this.richTextBoxAmount.Text = "";
             // 
-            // button
+            // btnRemoveProductFromSale
             // 
-            this.button.Location = new System.Drawing.Point(422, 297);
-            this.button.Margin = new System.Windows.Forms.Padding(2);
-            this.button.Name = "button";
-            this.button.Size = new System.Drawing.Size(64, 33);
-            this.button.TabIndex = 5;
-            this.button.Text = "<<<";
-            this.button.UseVisualStyleBackColor = true;
-            this.button.Click += new System.EventHandler(this.button_Click);
+            this.btnRemoveProductFromSale.Location = new System.Drawing.Point(422, 297);
+            this.btnRemoveProductFromSale.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRemoveProductFromSale.Name = "btnRemoveProductFromSale";
+            this.btnRemoveProductFromSale.Size = new System.Drawing.Size(64, 33);
+            this.btnRemoveProductFromSale.TabIndex = 5;
+            this.btnRemoveProductFromSale.Text = "<<<";
+            this.btnRemoveProductFromSale.UseVisualStyleBackColor = true;
+            this.btnRemoveProductFromSale.Click += new System.EventHandler(this.btnRemoveProductFromSale_Click);
             // 
-            // button1
+            // btwAddProductToSale
             // 
-            this.button1.Location = new System.Drawing.Point(422, 204);
-            this.button1.Margin = new System.Windows.Forms.Padding(2);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(64, 33);
-            this.button1.TabIndex = 4;
-            this.button1.Text = ">>>";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btwAddProductToSale.Location = new System.Drawing.Point(422, 204);
+            this.btwAddProductToSale.Margin = new System.Windows.Forms.Padding(2);
+            this.btwAddProductToSale.Name = "btwAddProductToSale";
+            this.btwAddProductToSale.Size = new System.Drawing.Size(64, 33);
+            this.btwAddProductToSale.TabIndex = 4;
+            this.btwAddProductToSale.Text = ">>>";
+            this.btwAddProductToSale.UseVisualStyleBackColor = true;
+            this.btwAddProductToSale.Click += new System.EventHandler(this.btnAddProductToSale_Click);
             // 
             // dataGridViewProductList
             // 
@@ -461,8 +461,8 @@
             this.tabPageEmployee.Controls.Add(this.labelErrorSalesPersonSearch);
             this.tabPageEmployee.Controls.Add(this.checkBoxEmployeeAdmin);
             this.tabPageEmployee.Controls.Add(this.checkBoxEmployee);
-            this.tabPageEmployee.Controls.Add(this.buttonGetAllWorkingSalesPersons);
-            this.tabPageEmployee.Controls.Add(this.buttonEaClearAll);
+            this.tabPageEmployee.Controls.Add(this.btnGetAllWorkingSalesPersons);
+            this.tabPageEmployee.Controls.Add(this.btnClearAllSalesPersonFields);
             this.tabPageEmployee.Controls.Add(this.labelSearchDeletedSP);
             this.tabPageEmployee.Controls.Add(this.dataGridViewDeletedSP);
             this.tabPageEmployee.Controls.Add(this.splitter1);
@@ -474,10 +474,10 @@
             this.tabPageEmployee.Controls.Add(this.textBoxEaPhoneNr);
             this.tabPageEmployee.Controls.Add(this.textBoxEaFName);
             this.tabPageEmployee.Controls.Add(this.textBoxEaSpNr);
-            this.tabPageEmployee.Controls.Add(this.buttonEaUpdate);
-            this.tabPageEmployee.Controls.Add(this.buttonEaNew);
+            this.tabPageEmployee.Controls.Add(this.btnUpdateSalesPerson);
+            this.tabPageEmployee.Controls.Add(this.btnAddNewSalesPerson);
             this.tabPageEmployee.Controls.Add(this.labelSearchSP);
-            this.tabPageEmployee.Controls.Add(this.buttonSearchSP);
+            this.tabPageEmployee.Controls.Add(this.btnSearchSalesPerson);
             this.tabPageEmployee.Controls.Add(this.textBoxSearchSP);
             this.tabPageEmployee.Controls.Add(this.dataGridViewSP);
             this.tabPageEmployee.Location = new System.Drawing.Point(4, 22);
@@ -519,27 +519,27 @@
             this.checkBoxEmployee.Text = "Is Active";
             this.checkBoxEmployee.UseVisualStyleBackColor = true;
             // 
-            // buttonGetAllWorkingSalesPersons
+            // btnGetAllWorkingSalesPersons
             // 
-            this.buttonGetAllWorkingSalesPersons.Location = new System.Drawing.Point(366, 56);
-            this.buttonGetAllWorkingSalesPersons.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonGetAllWorkingSalesPersons.Name = "buttonGetAllWorkingSalesPersons";
-            this.buttonGetAllWorkingSalesPersons.Size = new System.Drawing.Size(64, 44);
-            this.buttonGetAllWorkingSalesPersons.TabIndex = 91;
-            this.buttonGetAllWorkingSalesPersons.Text = "Get All";
-            this.buttonGetAllWorkingSalesPersons.UseVisualStyleBackColor = true;
-            this.buttonGetAllWorkingSalesPersons.Click += new System.EventHandler(this.buttonGetAllWorkingSalesPersons_Click);
+            this.btnGetAllWorkingSalesPersons.Location = new System.Drawing.Point(366, 56);
+            this.btnGetAllWorkingSalesPersons.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGetAllWorkingSalesPersons.Name = "btnGetAllWorkingSalesPersons";
+            this.btnGetAllWorkingSalesPersons.Size = new System.Drawing.Size(64, 44);
+            this.btnGetAllWorkingSalesPersons.TabIndex = 91;
+            this.btnGetAllWorkingSalesPersons.Text = "Get All";
+            this.btnGetAllWorkingSalesPersons.UseVisualStyleBackColor = true;
+            this.btnGetAllWorkingSalesPersons.Click += new System.EventHandler(this.btnGetAllWorkingSalesPersons_Click);
             // 
-            // buttonEaClearAll
+            // btnClearAllSalesPersonFields
             // 
-            this.buttonEaClearAll.Location = new System.Drawing.Point(498, 430);
-            this.buttonEaClearAll.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonEaClearAll.Name = "buttonEaClearAll";
-            this.buttonEaClearAll.Size = new System.Drawing.Size(104, 42);
-            this.buttonEaClearAll.TabIndex = 90;
-            this.buttonEaClearAll.Text = "Clear all fields";
-            this.buttonEaClearAll.UseVisualStyleBackColor = true;
-            this.buttonEaClearAll.Click += new System.EventHandler(this.buttonEaClearAll_Click);
+            this.btnClearAllSalesPersonFields.Location = new System.Drawing.Point(498, 430);
+            this.btnClearAllSalesPersonFields.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearAllSalesPersonFields.Name = "btnClearAllSalesPersonFields";
+            this.btnClearAllSalesPersonFields.Size = new System.Drawing.Size(104, 42);
+            this.btnClearAllSalesPersonFields.TabIndex = 90;
+            this.btnClearAllSalesPersonFields.Text = "Clear all fields";
+            this.btnClearAllSalesPersonFields.UseVisualStyleBackColor = true;
+            this.btnClearAllSalesPersonFields.Click += new System.EventHandler(this.btnEaClearAll_Click);
             // 
             // labelSearchDeletedSP
             // 
@@ -652,27 +652,27 @@
             this.textBoxEaSpNr.Size = new System.Drawing.Size(123, 21);
             this.textBoxEaSpNr.TabIndex = 54;
             // 
-            // buttonEaUpdate
+            // btnUpdateSalesPerson
             // 
-            this.buttonEaUpdate.Location = new System.Drawing.Point(510, 388);
-            this.buttonEaUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonEaUpdate.Name = "buttonEaUpdate";
-            this.buttonEaUpdate.Size = new System.Drawing.Size(76, 24);
-            this.buttonEaUpdate.TabIndex = 52;
-            this.buttonEaUpdate.Text = "Update";
-            this.buttonEaUpdate.UseVisualStyleBackColor = true;
-            this.buttonEaUpdate.Click += new System.EventHandler(this.buttonEaUpdate_Click);
+            this.btnUpdateSalesPerson.Location = new System.Drawing.Point(510, 388);
+            this.btnUpdateSalesPerson.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateSalesPerson.Name = "btnUpdateSalesPerson";
+            this.btnUpdateSalesPerson.Size = new System.Drawing.Size(76, 24);
+            this.btnUpdateSalesPerson.TabIndex = 52;
+            this.btnUpdateSalesPerson.Text = "Update";
+            this.btnUpdateSalesPerson.UseVisualStyleBackColor = true;
+            this.btnUpdateSalesPerson.Click += new System.EventHandler(this.btnEaUpdate_Click);
             // 
-            // buttonEaNew
+            // btnAddNewSalesPerson
             // 
-            this.buttonEaNew.Location = new System.Drawing.Point(510, 360);
-            this.buttonEaNew.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonEaNew.Name = "buttonEaNew";
-            this.buttonEaNew.Size = new System.Drawing.Size(76, 24);
-            this.buttonEaNew.TabIndex = 51;
-            this.buttonEaNew.Text = "New";
-            this.buttonEaNew.UseVisualStyleBackColor = true;
-            this.buttonEaNew.Click += new System.EventHandler(this.buttonEaNew_Click);
+            this.btnAddNewSalesPerson.Location = new System.Drawing.Point(510, 360);
+            this.btnAddNewSalesPerson.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddNewSalesPerson.Name = "btnAddNewSalesPerson";
+            this.btnAddNewSalesPerson.Size = new System.Drawing.Size(76, 24);
+            this.btnAddNewSalesPerson.TabIndex = 51;
+            this.btnAddNewSalesPerson.Text = "New";
+            this.btnAddNewSalesPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewSalesPerson.Click += new System.EventHandler(this.btnEaNew_Click);
             // 
             // labelSearchSP
             // 
@@ -684,16 +684,16 @@
             this.labelSearchSP.TabIndex = 50;
             this.labelSearchSP.Text = "Search on sales person attribute:";
             // 
-            // buttonSearchSP
+            // btnSearchSalesPerson
             // 
-            this.buttonSearchSP.Location = new System.Drawing.Point(298, 56);
-            this.buttonSearchSP.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSearchSP.Name = "buttonSearchSP";
-            this.buttonSearchSP.Size = new System.Drawing.Size(64, 44);
-            this.buttonSearchSP.TabIndex = 49;
-            this.buttonSearchSP.Text = "Search";
-            this.buttonSearchSP.UseVisualStyleBackColor = true;
-            this.buttonSearchSP.Click += new System.EventHandler(this.buttonSearchSP_Click);
+            this.btnSearchSalesPerson.Location = new System.Drawing.Point(298, 56);
+            this.btnSearchSalesPerson.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchSalesPerson.Name = "btnSearchSalesPerson";
+            this.btnSearchSalesPerson.Size = new System.Drawing.Size(64, 44);
+            this.btnSearchSalesPerson.TabIndex = 49;
+            this.btnSearchSalesPerson.Text = "Search";
+            this.btnSearchSalesPerson.UseVisualStyleBackColor = true;
+            this.btnSearchSalesPerson.Click += new System.EventHandler(this.buttonSearchSP_Click);
             // 
             // textBoxSearchSP
             // 
@@ -725,9 +725,9 @@
             // tabPageProduct
             // 
             this.tabPageProduct.Controls.Add(this.labelErrorProductSearch);
-            this.tabPageProduct.Controls.Add(this.buttonGetAllPa);
+            this.tabPageProduct.Controls.Add(this.btnGetAllProductAdmin);
             this.tabPageProduct.Controls.Add(this.checkBoxForSale);
-            this.tabPageProduct.Controls.Add(this.buttonPaClearAll);
+            this.tabPageProduct.Controls.Add(this.btnClearAllProductFields);
             this.tabPageProduct.Controls.Add(this.dataGridViewDeletedPa);
             this.tabPageProduct.Controls.Add(this.labelPaAmount);
             this.tabPageProduct.Controls.Add(this.textBoxPaAmount);
@@ -740,10 +740,10 @@
             this.tabPageProduct.Controls.Add(this.textBoxPaOutPrice);
             this.tabPageProduct.Controls.Add(this.textBoxPaName);
             this.tabPageProduct.Controls.Add(this.textBoxPaPrNr);
-            this.tabPageProduct.Controls.Add(this.buttonPaUpdate);
-            this.tabPageProduct.Controls.Add(this.buttonPaNew);
+            this.tabPageProduct.Controls.Add(this.btnUpdateProduct);
+            this.tabPageProduct.Controls.Add(this.btnAddNewProduct);
             this.tabPageProduct.Controls.Add(this.labelSearchPa);
-            this.tabPageProduct.Controls.Add(this.buttonSearchPa);
+            this.tabPageProduct.Controls.Add(this.btnSearchProductAdmin);
             this.tabPageProduct.Controls.Add(this.textBoxSearchPa);
             this.tabPageProduct.Controls.Add(this.dataGridViewPa);
             this.tabPageProduct.Location = new System.Drawing.Point(4, 22);
@@ -765,16 +765,16 @@
             this.labelErrorProductSearch.TabIndex = 116;
             this.labelErrorProductSearch.Text = "felmedelande här";
             // 
-            // buttonGetAllPa
+            // btnGetAllProductAdmin
             // 
-            this.buttonGetAllPa.Location = new System.Drawing.Point(401, 56);
-            this.buttonGetAllPa.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonGetAllPa.Name = "buttonGetAllPa";
-            this.buttonGetAllPa.Size = new System.Drawing.Size(64, 42);
-            this.buttonGetAllPa.TabIndex = 114;
-            this.buttonGetAllPa.Text = "Get All";
-            this.buttonGetAllPa.UseVisualStyleBackColor = true;
-            this.buttonGetAllPa.Click += new System.EventHandler(this.buttonGetAllPa_Click);
+            this.btnGetAllProductAdmin.Location = new System.Drawing.Point(401, 56);
+            this.btnGetAllProductAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGetAllProductAdmin.Name = "btnGetAllProductAdmin";
+            this.btnGetAllProductAdmin.Size = new System.Drawing.Size(64, 42);
+            this.btnGetAllProductAdmin.TabIndex = 114;
+            this.btnGetAllProductAdmin.Text = "Get All";
+            this.btnGetAllProductAdmin.UseVisualStyleBackColor = true;
+            this.btnGetAllProductAdmin.Click += new System.EventHandler(this.btnGetAllPa_Click);
             // 
             // checkBoxForSale
             // 
@@ -786,16 +786,16 @@
             this.checkBoxForSale.Text = "Is For Sale";
             this.checkBoxForSale.UseVisualStyleBackColor = true;
             // 
-            // buttonPaClearAll
+            // btnClearAllProductFields
             // 
-            this.buttonPaClearAll.Location = new System.Drawing.Point(524, 401);
-            this.buttonPaClearAll.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonPaClearAll.Name = "buttonPaClearAll";
-            this.buttonPaClearAll.Size = new System.Drawing.Size(76, 42);
-            this.buttonPaClearAll.TabIndex = 112;
-            this.buttonPaClearAll.Text = "Clear all fields";
-            this.buttonPaClearAll.UseVisualStyleBackColor = true;
-            this.buttonPaClearAll.Click += new System.EventHandler(this.buttonPaClearAll_Click);
+            this.btnClearAllProductFields.Location = new System.Drawing.Point(524, 401);
+            this.btnClearAllProductFields.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearAllProductFields.Name = "btnClearAllProductFields";
+            this.btnClearAllProductFields.Size = new System.Drawing.Size(76, 42);
+            this.btnClearAllProductFields.TabIndex = 112;
+            this.btnClearAllProductFields.Text = "Clear all fields";
+            this.btnClearAllProductFields.UseVisualStyleBackColor = true;
+            this.btnClearAllProductFields.Click += new System.EventHandler(this.btnPaClearAll_Click);
             // 
             // dataGridViewDeletedPa
             // 
@@ -918,27 +918,27 @@
             this.textBoxPaPrNr.Size = new System.Drawing.Size(151, 21);
             this.textBoxPaPrNr.TabIndex = 97;
             // 
-            // buttonPaUpdate
+            // btnUpdateProduct
             // 
-            this.buttonPaUpdate.Location = new System.Drawing.Point(524, 373);
-            this.buttonPaUpdate.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonPaUpdate.Name = "buttonPaUpdate";
-            this.buttonPaUpdate.Size = new System.Drawing.Size(76, 24);
-            this.buttonPaUpdate.TabIndex = 95;
-            this.buttonPaUpdate.Text = "Update";
-            this.buttonPaUpdate.UseVisualStyleBackColor = true;
-            this.buttonPaUpdate.Click += new System.EventHandler(this.buttonPaUpdate_Click);
+            this.btnUpdateProduct.Location = new System.Drawing.Point(524, 373);
+            this.btnUpdateProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateProduct.Name = "btnUpdateProduct";
+            this.btnUpdateProduct.Size = new System.Drawing.Size(76, 24);
+            this.btnUpdateProduct.TabIndex = 95;
+            this.btnUpdateProduct.Text = "Update";
+            this.btnUpdateProduct.UseVisualStyleBackColor = true;
+            this.btnUpdateProduct.Click += new System.EventHandler(this.btnPaUpdate_Click);
             // 
-            // buttonPaNew
+            // btnAddNewProduct
             // 
-            this.buttonPaNew.Location = new System.Drawing.Point(524, 345);
-            this.buttonPaNew.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonPaNew.Name = "buttonPaNew";
-            this.buttonPaNew.Size = new System.Drawing.Size(76, 24);
-            this.buttonPaNew.TabIndex = 94;
-            this.buttonPaNew.Text = "New";
-            this.buttonPaNew.UseVisualStyleBackColor = true;
-            this.buttonPaNew.Click += new System.EventHandler(this.buttonPaNew_Click);
+            this.btnAddNewProduct.Location = new System.Drawing.Point(524, 345);
+            this.btnAddNewProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddNewProduct.Name = "btnAddNewProduct";
+            this.btnAddNewProduct.Size = new System.Drawing.Size(76, 24);
+            this.btnAddNewProduct.TabIndex = 94;
+            this.btnAddNewProduct.Text = "New";
+            this.btnAddNewProduct.UseVisualStyleBackColor = true;
+            this.btnAddNewProduct.Click += new System.EventHandler(this.btnPaNew_Click);
             // 
             // labelSearchPa
             // 
@@ -950,16 +950,16 @@
             this.labelSearchPa.TabIndex = 93;
             this.labelSearchPa.Text = "Search product attribute:";
             // 
-            // buttonSearchPa
+            // btnSearchProductAdmin
             // 
-            this.buttonSearchPa.Location = new System.Drawing.Point(333, 56);
-            this.buttonSearchPa.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonSearchPa.Name = "buttonSearchPa";
-            this.buttonSearchPa.Size = new System.Drawing.Size(64, 42);
-            this.buttonSearchPa.TabIndex = 92;
-            this.buttonSearchPa.Text = "Search";
-            this.buttonSearchPa.UseVisualStyleBackColor = true;
-            this.buttonSearchPa.Click += new System.EventHandler(this.buttonSearchPa_Click);
+            this.btnSearchProductAdmin.Location = new System.Drawing.Point(333, 56);
+            this.btnSearchProductAdmin.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSearchProductAdmin.Name = "btnSearchProductAdmin";
+            this.btnSearchProductAdmin.Size = new System.Drawing.Size(64, 42);
+            this.btnSearchProductAdmin.TabIndex = 92;
+            this.btnSearchProductAdmin.Text = "Search";
+            this.btnSearchProductAdmin.UseVisualStyleBackColor = true;
+            this.btnSearchProductAdmin.Click += new System.EventHandler(this.btnSearchPa_Click);
             // 
             // textBoxSearchPa
             // 
@@ -992,9 +992,9 @@
             // 
             this.tabPageStatistics.BackColor = System.Drawing.Color.LightGray;
             this.tabPageStatistics.Controls.Add(this.dataGridViewStatistics);
-            this.tabPageStatistics.Controls.Add(this.buttonTopProduct);
-            this.tabPageStatistics.Controls.Add(this.buttonTopCombos);
-            this.tabPageStatistics.Controls.Add(this.buttonTopSellers);
+            this.tabPageStatistics.Controls.Add(this.btnTopProduct);
+            this.tabPageStatistics.Controls.Add(this.btnTopCombos);
+            this.tabPageStatistics.Controls.Add(this.btnTopSellers);
             this.tabPageStatistics.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.tabPageStatistics.Location = new System.Drawing.Point(4, 22);
             this.tabPageStatistics.Margin = new System.Windows.Forms.Padding(2);
@@ -1019,38 +1019,38 @@
             this.dataGridViewStatistics.Size = new System.Drawing.Size(467, 317);
             this.dataGridViewStatistics.TabIndex = 116;
             // 
-            // buttonTopProduct
+            // btnTopProduct
             // 
-            this.buttonTopProduct.Location = new System.Drawing.Point(108, 43);
-            this.buttonTopProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonTopProduct.Name = "buttonTopProduct";
-            this.buttonTopProduct.Size = new System.Drawing.Size(80, 36);
-            this.buttonTopProduct.TabIndex = 115;
-            this.buttonTopProduct.Text = "Top Products";
-            this.buttonTopProduct.UseVisualStyleBackColor = true;
-            this.buttonTopProduct.Click += new System.EventHandler(this.buttonTopProduct_Click);
+            this.btnTopProduct.Location = new System.Drawing.Point(108, 43);
+            this.btnTopProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTopProduct.Name = "btnTopProduct";
+            this.btnTopProduct.Size = new System.Drawing.Size(80, 36);
+            this.btnTopProduct.TabIndex = 115;
+            this.btnTopProduct.Text = "Top Products";
+            this.btnTopProduct.UseVisualStyleBackColor = true;
+            this.btnTopProduct.Click += new System.EventHandler(this.btnTopProduct_Click);
             // 
-            // buttonTopCombos
+            // btnTopCombos
             // 
-            this.buttonTopCombos.Location = new System.Drawing.Point(210, 43);
-            this.buttonTopCombos.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonTopCombos.Name = "buttonTopCombos";
-            this.buttonTopCombos.Size = new System.Drawing.Size(80, 36);
-            this.buttonTopCombos.TabIndex = 114;
-            this.buttonTopCombos.Text = "Highest Sale";
-            this.buttonTopCombos.UseVisualStyleBackColor = true;
-            this.buttonTopCombos.Click += new System.EventHandler(this.buttonTopCombos_Click);
+            this.btnTopCombos.Location = new System.Drawing.Point(210, 43);
+            this.btnTopCombos.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTopCombos.Name = "btnTopCombos";
+            this.btnTopCombos.Size = new System.Drawing.Size(80, 36);
+            this.btnTopCombos.TabIndex = 114;
+            this.btnTopCombos.Text = "Highest Sale";
+            this.btnTopCombos.UseVisualStyleBackColor = true;
+            this.btnTopCombos.Click += new System.EventHandler(this.btnTopCombos_Click);
             // 
-            // buttonTopSellers
+            // btnTopSellers
             // 
-            this.buttonTopSellers.Location = new System.Drawing.Point(7, 43);
-            this.buttonTopSellers.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonTopSellers.Name = "buttonTopSellers";
-            this.buttonTopSellers.Size = new System.Drawing.Size(82, 36);
-            this.buttonTopSellers.TabIndex = 113;
-            this.buttonTopSellers.Text = "Top Sellers";
-            this.buttonTopSellers.UseVisualStyleBackColor = true;
-            this.buttonTopSellers.Click += new System.EventHandler(this.buttonTopSellers_Click);
+            this.btnTopSellers.Location = new System.Drawing.Point(7, 43);
+            this.btnTopSellers.Margin = new System.Windows.Forms.Padding(2);
+            this.btnTopSellers.Name = "btnTopSellers";
+            this.btnTopSellers.Size = new System.Drawing.Size(82, 36);
+            this.btnTopSellers.TabIndex = 113;
+            this.btnTopSellers.Text = "Top Sellers";
+            this.btnTopSellers.UseVisualStyleBackColor = true;
+            this.btnTopSellers.Click += new System.EventHandler(this.btnTopSellers_Click);
             // 
             // lblLoggedInAs
             // 
@@ -1155,26 +1155,26 @@
         private System.Windows.Forms.TabPage tabPageStatistics;
         private System.Windows.Forms.DataGridView dataGridViewProductList;
         private System.Windows.Forms.RichTextBox richTextBoxAmount;
-        private System.Windows.Forms.Button button;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnRemoveProductFromSale;
+        private System.Windows.Forms.Button btwAddProductToSale;
         private System.Windows.Forms.TextBox textBoxNumPad;
-        private System.Windows.Forms.Button buttonENTER;
-        private System.Windows.Forms.Button buttonNOK;
-        private System.Windows.Forms.Button buttonUSD;
-        private System.Windows.Forms.Button buttonGBP;
-        private System.Windows.Forms.Button buttonEURO;
-        private System.Windows.Forms.Button buttonDKK;
-        private System.Windows.Forms.Button buttonSEK;
+        private System.Windows.Forms.Button btnENTER;
+        private System.Windows.Forms.Button btnNOK;
+        private System.Windows.Forms.Button btnUSD;
+        private System.Windows.Forms.Button btnGBP;
+        private System.Windows.Forms.Button btnEURO;
+        private System.Windows.Forms.Button btnDKK;
+        private System.Windows.Forms.Button btnSEK;
         private System.Windows.Forms.DataGridView dataGridViewSaleList;
-        private System.Windows.Forms.Button buttonSearchProduct;
+        private System.Windows.Forms.Button btnSearchProduct;
         private System.Windows.Forms.TextBox textBoxSearchProduct;
         private System.Windows.Forms.Label labelSearchProduct;
         private System.Windows.Forms.Label labelSearchSP;
-        private System.Windows.Forms.Button buttonSearchSP;
+        private System.Windows.Forms.Button btnSearchSalesPerson;
         private System.Windows.Forms.TextBox textBoxSearchSP;
         private System.Windows.Forms.DataGridView dataGridViewSP;
-        private System.Windows.Forms.Button buttonEaUpdate;
-        private System.Windows.Forms.Button buttonEaNew;
+        private System.Windows.Forms.Button btnUpdateSalesPerson;
+        private System.Windows.Forms.Button btnAddNewSalesPerson;
         private System.Windows.Forms.TextBox textBoxEaLName;
         private System.Windows.Forms.TextBox textBoxEaPhoneNr;
         private System.Windows.Forms.TextBox textBoxEaFName;
@@ -1200,22 +1200,22 @@
         private System.Windows.Forms.TextBox textBoxPaOutPrice;
         private System.Windows.Forms.TextBox textBoxPaName;
         private System.Windows.Forms.TextBox textBoxPaPrNr;
-        private System.Windows.Forms.Button buttonPaUpdate;
-        private System.Windows.Forms.Button buttonPaNew;
+        private System.Windows.Forms.Button btnUpdateProduct;
+        private System.Windows.Forms.Button btnAddNewProduct;
         private System.Windows.Forms.Label labelSearchPa;
-        private System.Windows.Forms.Button buttonSearchPa;
+        private System.Windows.Forms.Button btnSearchProductAdmin;
         private System.Windows.Forms.TextBox textBoxSearchPa;
         private System.Windows.Forms.DataGridView dataGridViewPa;
         private System.Windows.Forms.DataGridView dataGridViewDeletedPa;
         private System.Windows.Forms.DataGridView dataGridViewStatistics;
-        private System.Windows.Forms.Button buttonTopProduct;
-        private System.Windows.Forms.Button buttonTopCombos;
-        private System.Windows.Forms.Button buttonTopSellers;
-        private System.Windows.Forms.Button buttonClearAll;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button buttonEaClearAll;
-        private System.Windows.Forms.Button buttonPaClearAll;
+        private System.Windows.Forms.Button btnTopProduct;
+        private System.Windows.Forms.Button btnTopCombos;
+        private System.Windows.Forms.Button btnTopSellers;
+        private System.Windows.Forms.Button btnClearAll;
+        private System.Windows.Forms.Button btnClearAllSaleView;
+        private System.Windows.Forms.Button btnMyHistory;
+        private System.Windows.Forms.Button btnClearAllSalesPersonFields;
+        private System.Windows.Forms.Button btnClearAllProductFields;
         private System.Windows.Forms.Label lblLoggedInAs;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
@@ -1224,15 +1224,15 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Price;
         private System.Windows.Forms.DataGridViewTextBoxColumn Amount;
         private System.Windows.Forms.CheckBox checkBoxForSale;
-        private System.Windows.Forms.Button buttonGetAllPa;
+        private System.Windows.Forms.Button btnGetAllProductAdmin;
         private System.Windows.Forms.TextBox textBoxCurrencyUnit;
         private System.Windows.Forms.Label labelErrorSaleSearch;
         private System.Windows.Forms.Label labelErrorProductSearch;
-        private System.Windows.Forms.Button buttonGetAllWorkingSalesPersons;
+        private System.Windows.Forms.Button btnGetAllWorkingSalesPersons;
         private System.Windows.Forms.CheckBox checkBoxEmployee;
         private System.Windows.Forms.CheckBox checkBoxEmployeeAdmin;
         private System.Windows.Forms.Label labelErrorSalesPersonSearch;
-        private System.Windows.Forms.Button buttonViewSale;
+        private System.Windows.Forms.Button btnViewSale;
 
 
     }

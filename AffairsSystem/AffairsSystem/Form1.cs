@@ -61,7 +61,7 @@ namespace AffairsSystem
             System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
             // 
             textBoxNumPad.Text = totalPrice.ToString();
-            buttonViewSale.Visible = false;
+            btnViewSale.Visible = false;
             
 
             
@@ -78,9 +78,9 @@ namespace AffairsSystem
         }
 
 
-        private void buttonGetAllProducts_Click(object sender, EventArgs e)
+        private void btnGetAllProducts_Click(object sender, EventArgs e)
         {
-            button2.Text = "My History";
+            btnMyHistory.Text = "My History";
             SqlDataAdapter da = controller.GetAllProductsToSaleList();
             DataTable data = new DataTable();
             da.Fill(data);
@@ -91,9 +91,9 @@ namespace AffairsSystem
             da1.Fill(data1);
             dataGridViewDeletedPa.DataSource = data1;
 
-            buttonViewSale.Visible = false;
-            button1.Enabled = true;
-            button.Enabled = true;
+            btnViewSale.Visible = false;
+            btwAddProductToSale.Enabled = true;
+            btnRemoveProductFromSale.Enabled = true;
  
         }
 
@@ -115,7 +115,7 @@ namespace AffairsSystem
 
         
 
-        private void button1_Click(object sender, EventArgs e)
+        private void btnAddProductToSale_Click(object sender, EventArgs e)
         {
 
             string currency = textBoxCurrencyUnit.Text = "SEK";
@@ -203,7 +203,7 @@ namespace AffairsSystem
         
 
 
-        private void buttonPaUpdate_Click(object sender, EventArgs e)
+        private void btnPaUpdate_Click(object sender, EventArgs e)
         {
             int isForSale = Utility.ConvertBoolToInt(checkBoxForSale.Checked);
             int productNr = int.Parse(textBoxPaPrNr.Text);
@@ -221,7 +221,7 @@ namespace AffairsSystem
             FillProductTableNotForSaleAdmin();
         }
 
-        private void button_Click(object sender, EventArgs e)
+        private void btnRemoveProductFromSale_Click(object sender, EventArgs e)
         {
             int amount = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[3].Value.ToString());
             int productNr = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[0].Value.ToString());
@@ -244,7 +244,7 @@ namespace AffairsSystem
             }
         }
 
-        private void buttonENTER_Click(object sender, EventArgs e)
+        private void btnENTER_Click(object sender, EventArgs e)
         {
             if (dataGridViewSaleList.Rows.Count < 1)
             {
@@ -269,40 +269,40 @@ namespace AffairsSystem
             }
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void btnMyHistory_Click(object sender, EventArgs e)
         {
-            if (button2.Text.Equals("My History"))
+            if (btnMyHistory.Text.Equals("My History"))
             {
-                button1.Enabled = false;
-                button.Enabled = false;
+                btwAddProductToSale.Enabled = false;
+                btnRemoveProductFromSale.Enabled = false;
                 SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
                 DataTable data = new DataTable();
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
-                button2.Text = "Back To Products";
+                btnMyHistory.Text = "Back To Products";
                 if (dataGridViewProductList.Rows.Count == 0)
                 {
-                    buttonViewSale.Visible = false;
+                    btnViewSale.Visible = false;
                 }
                 else
                 {
-                    buttonViewSale.Visible = true;
+                    btnViewSale.Visible = true;
                 }
             }
             else
             {
                 FillProductTable();
-                buttonViewSale.Visible = false;
-                button.Enabled = true;
-                button1.Enabled = true;
-                button2.Text = "My History";
+                btnViewSale.Visible = false;
+                btnRemoveProductFromSale.Enabled = true;
+                btwAddProductToSale.Enabled = true;
+                btnMyHistory.Text = "My History";
             }
         }
 
 
         
 
-        private void buttonPaNew_Click(object sender, EventArgs e)
+        private void btnPaNew_Click(object sender, EventArgs e)
         {
             int isForSale = Utility.ConvertBoolToInt(checkBoxForSale.Checked);
             int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
@@ -318,14 +318,14 @@ namespace AffairsSystem
             ClearAllInPa();
         }
 
-        private void buttonPaClearAll_Click(object sender, EventArgs e)
+        private void btnPaClearAll_Click(object sender, EventArgs e)
         {
             ClearAllInPa();
         }
 
         
 
-        private void buttonClearAll_Click(object sender, EventArgs e)
+        private void btnClearAllSaleView_Click(object sender, EventArgs e)
         {
             ClearAllSaleView();
 
@@ -335,11 +335,11 @@ namespace AffairsSystem
         {
             if (e.KeyChar == (char)13)
             {
-                buttonSearchProduct.PerformClick();
+                btnSearchProduct.PerformClick();
             }
         }
 
-        private void buttonTopSellers_Click(object sender, EventArgs e)
+        private void btnTopSellers_Click(object sender, EventArgs e)
         {
             SqlDataAdapter da = controller.GetHighestSales();
             DataTable data = new DataTable();
@@ -348,7 +348,7 @@ namespace AffairsSystem
 
         }
 
-        private void buttonTopProduct_Click(object sender, EventArgs e)
+        private void btnTopProduct_Click(object sender, EventArgs e)
         {
             SqlDataAdapter da = controller.GetTopProductSale();
             DataTable data = new DataTable();
@@ -356,7 +356,7 @@ namespace AffairsSystem
             dataGridViewStatistics.DataSource = data;
         }
 
-        private void buttonTopCombos_Click(object sender, EventArgs e)
+        private void btnTopCombos_Click(object sender, EventArgs e)
         {
             SqlDataAdapter da = controller.GetTopOneSalesPerson();
             DataTable data = new DataTable();
@@ -435,13 +435,13 @@ namespace AffairsSystem
         {
             if (e.KeyChar == (char)13)
             {
-                buttonSearchPa.PerformClick();
+                btnSearchProductAdmin.PerformClick();
             }
         }
 
         
 
-        private void buttonGetAllPa_Click(object sender, EventArgs e)
+        private void btnGetAllPa_Click(object sender, EventArgs e)
         {
             SqlDataAdapter da = controller.GetAllProductsForSale();
             DataTable data = new DataTable();
@@ -468,38 +468,38 @@ namespace AffairsSystem
 
        
 
-        private void buttonSEK_Click(object sender, EventArgs e)
+        private void btnSEK_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "SEK";
             textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("SEK", totalPrice).ToString();
         }
 
-        private void buttonEURO_Click(object sender, EventArgs e)
+        private void btnEURO_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "€";
             textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("EUR", totalPrice).ToString();
             
         }
 
-        private void buttonUSD_Click(object sender, EventArgs e)
+        private void btnUSD_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "$";
             textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("USD", totalPrice).ToString();
         }
 
-        private void buttonDKK_Click(object sender, EventArgs e)
+        private void btnDKK_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "DKK";
             textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("DKK", totalPrice).ToString();
         }
 
-        private void buttonGBP_Click(object sender, EventArgs e)
+        private void btnGBP_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "£";
             textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("GBP", totalPrice).ToString();
         }
 
-        private void buttonNOK_Click(object sender, EventArgs e)
+        private void btnNOK_Click(object sender, EventArgs e)
         {
             textBoxCurrencyUnit.Text = "NOK";
             textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("NOK", totalPrice).ToString();
@@ -507,7 +507,7 @@ namespace AffairsSystem
         
         
 
-        private void buttonGetAllWorkingSalesPersons_Click(object sender, EventArgs e)
+        private void btnGetAllWorkingSalesPersons_Click(object sender, EventArgs e)
         {
             SqlDataAdapter da = controller.GetAllWorkingSalesPersons();
             DataTable data = new DataTable();
@@ -556,7 +556,7 @@ namespace AffairsSystem
             checkBoxEmployeeAdmin.Checked = Utility.CheckAdmin(controller.SearchSalesPerson(spNr));
         }
 
-        private void buttonEaClearAll_Click(object sender, EventArgs e)
+        private void btnEaClearAll_Click(object sender, EventArgs e)
         {
             ClearAllEmployeeAdmin();
         }
@@ -574,7 +574,7 @@ namespace AffairsSystem
             checkBoxEmployeeAdmin.Checked = false;
         }
 
-        private void buttonEaUpdate_Click(object sender, EventArgs e)
+        private void btnEaUpdate_Click(object sender, EventArgs e)
         {
             int isAdmin = Utility.ConvertBoolToInt(checkBoxEmployeeAdmin.Checked);
             int isActive = Utility.ConvertBoolToInt(checkBoxEmployee.Checked);
@@ -605,7 +605,7 @@ namespace AffairsSystem
             }
         }
 
-        private void buttonEaNew_Click(object sender, EventArgs e)
+        private void btnEaNew_Click(object sender, EventArgs e)
         {
             int isAdmin = Utility.ConvertBoolToInt(checkBoxEmployeeAdmin.Checked);
             int isActive = Utility.ConvertBoolToInt(checkBoxEmployee.Checked);
@@ -640,15 +640,15 @@ namespace AffairsSystem
         {
             if (e.KeyChar == (char)13)
             {
-                buttonSearchSP.PerformClick();
+                btnSearchSalesPerson.PerformClick();
                 
             }
         }
 
         
-        private void buttonSearchProduct_Click(object sender, EventArgs e)
+        private void btnSearchProduct_Click(object sender, EventArgs e)
         {
-            button2.Text = "My History";
+            btnMyHistory.Text = "My History";
             labelErrorSaleSearch.Text = "";
             string search = textBoxSearchProduct.Text;
             if (Utility.checkIfSearchContainsForbiddenChars(search))
@@ -663,13 +663,13 @@ namespace AffairsSystem
                 dataGridViewProductList.DataSource = data;
                 textBoxSearchProduct.Text = "";
                 
-            buttonViewSale.Visible = false;
-            button1.Enabled = true;
-            button.Enabled = true;
+            btnViewSale.Visible = false;
+            btwAddProductToSale.Enabled = true;
+            btnRemoveProductFromSale.Enabled = true;
             }
         }
 
-        private void buttonSearchPa_Click(object sender, EventArgs e)
+        private void btnSearchPa_Click(object sender, EventArgs e)
         {
             labelErrorProductSearch.Text = "";
             string search = textBoxSearchPa.Text;
@@ -718,14 +718,10 @@ namespace AffairsSystem
             }
         }
 
-        private void buttonSearchDeletedSP_Click(object sender, EventArgs e)
-        {
 
-        }
-
-        private void buttonViewSale_Click(object sender, EventArgs e)
+        private void btnViewSale_Click(object sender, EventArgs e)
         {
-            if (buttonViewSale.Text.Equals("View Sale"))
+            if (btnViewSale.Text.Equals("View Sale"))
             {
                 int salesNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
 
@@ -733,7 +729,7 @@ namespace AffairsSystem
                 DataTable data = new DataTable();
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
-                buttonViewSale.Text = "Back";
+                btnViewSale.Text = "Back";
             }
             else
             {
@@ -741,7 +737,7 @@ namespace AffairsSystem
                 DataTable data = new DataTable();
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
-                buttonViewSale.Text = "View Sale";
+                btnViewSale.Text = "View Sale";
             }
 
         }
