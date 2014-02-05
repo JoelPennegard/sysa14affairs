@@ -43,6 +43,10 @@ namespace AffairsSystem
                 Form1.Show();
                 this.Hide();
             }
+            else
+            {
+                textBoxspNr.Text = "";
+            }
 
         }
 
