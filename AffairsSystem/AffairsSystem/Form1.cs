@@ -798,11 +798,16 @@ namespace AffairsSystem
 
         private void buttonBack_Click(object sender, EventArgs e)
         {
-            buttonBack.Visible = false;
-            SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewProductList.DataSource = data;
+           
+                SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewProductList.DataSource = data;
+                buttonBack.Visible = false;
+
+            
+            
+            
         }
         private void ClearAllSaleView()
         {

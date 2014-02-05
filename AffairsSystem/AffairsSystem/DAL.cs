@@ -115,7 +115,7 @@ namespace AffairsSystem
         /// <returns>a sqlDataAdapter containing a table of products</returns>
         public SqlDataAdapter GetAllProductsToSaleList()
         {
-            return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product where isForSale = 1");
+            return ExecuteGetSqlAdapter("select productNr as [Product Nr], productName as [Product Name], productOutPrice [Price] from product where isForSale = 1");
         }
 
         /// <summary>
@@ -125,12 +125,14 @@ namespace AffairsSystem
  
         public SqlDataAdapter GetAllProductsForSale()
         {
-            return ExecuteGetSqlAdapter("select * from product where isForSale = 1");
+            return ExecuteGetSqlAdapter("select productNr as [Product Nr], productName as [Product Name], ProductInPrice as [In Price], " +
+                "productOutPrice as [Out Price], amount as Amount, isForSale as [Is For Sale] from product where isForSale = 1");
         }
 
         public SqlDataAdapter GetAllProductsNotForSale()
         {
-            return ExecuteGetSqlAdapter("select * from product where isForSale = 0");
+            return ExecuteGetSqlAdapter("select productNr as [Product Nr], productName as [Product Name], ProductInPrice as [In Price], " +
+                "productOutPrice as [Out Price], amount as Amount, isForSale as [Is For Sale] from product where isForSale = 0");
         }
         //GET IsACTIVE
         public SqlDataReader GetIsActive(string spNr)
@@ -141,33 +143,36 @@ namespace AffairsSystem
         //GET ALL WORKING SALES PERSONS
         public SqlDataAdapter GetAllWorkingSalesPersons()
         {
-            return ExecuteGetSqlAdapter("select spNr, firstName, lastName, sPhone from salesperson where isActive = 1");
+            return ExecuteGetSqlAdapter("select spNr as [Security Nr], firstName as [First Name], lastName as [Last Name], sPhone as [Phone Nr] " +
+                "from salesperson where isActive = 1");
         }
         //GET ALL NOT WORKING SALES PERSONS
         public SqlDataAdapter GetAllNotWorkingSalesPersons()
         {
-            return ExecuteGetSqlAdapter("select spNr, firstName, lastName, sPhone from salesperson where isActive = 0");
+            return ExecuteGetSqlAdapter("select spNr as [Security Nr], firstName as [First Name], lastName as [Last Name], sPhone as [Phone Nr] " + 
+                "from salesperson where isActive = 0");
         }
 
         //SEARCH ON WORKING SALES PERSONS (ADMIN)
         public SqlDataAdapter SearchWorkingSalesPerson(string search) {
-           
-            return ExecuteGetSqlAdapter("select spNr, firstName, lastName, sPhone from salesperson where isActive = 1 and (spNr like '%" +
-                    search + "%' or firstName like '%" + search +
+
+            return ExecuteGetSqlAdapter("select spNr as [Security Nr], firstName as [First Name], lastName as [Last Name], sPhone as [Phone Nr] " +
+                "from salesperson where isActive = 1 and (spNr like '%" + search + "%' or firstName like '%" + search +
                     "%' or lastName like '%" + search + "%' or sPhone like '%" + search + "%')");
         }
         
         //SEARCH ON NOT WORKING SALES PERSONS (ADMIN)
         public SqlDataAdapter SearchNotWorkingSalesPerson(string search)
         {
-            return ExecuteGetSqlAdapter("select spNr, firstName, lastName, sPhone from salesperson where isActive = 0 and (spNr like '%" +
-                    search + "%' or firstName like '%" + search +
+            return ExecuteGetSqlAdapter("select spNr as [Security Nr], firstName as [First Name], lastName as [Last Name], sPhone as [Phone Nr] " +
+                "from salesperson where isActive = 0 and (spNr like '%" + search + "%' or firstName like '%" + search +
                     "%' or lastName like '%" + search + "%' or sPhone like '%" + search + "%')");
         }
         //GET SALESLINES FROM A SPECIFIC SALE
         public SqlDataAdapter getSalesLinesFromSale(int salesNr)
         {
-            return ExecuteGetSqlAdapter("select p.productNr, productName, productOutPrice, i.amount from product p join salesline i " +
+            return ExecuteGetSqlAdapter("select p.productNr as [Product Nr], productName as [Product Name], productOutPrice as [Price], " +
+                "i.amount as [Amount] from product p join salesline i " +
                 "on p.productNr = i.productNr where salesNr =" + salesNr);
         }
 
@@ -180,7 +185,7 @@ namespace AffairsSystem
         
         public SqlDataAdapter GetSalesPersonSales(string spNr)
         {
-            return ExecuteGetSqlAdapter("select salesNr, salesDate, totalPrice from sales where spNr = '" + spNr + "' order by salesDate desc");
+            return ExecuteGetSqlAdapter("select salesNr as [Sales Nr], salesDate as [Date], totalPrice as [Total Price] from sales where spNr = '" + spNr + "' order by salesDate desc");
         }
 
         /// <summary>
@@ -197,9 +202,9 @@ namespace AffairsSystem
         // SEARCH PRODUCT IN TILL (NOT PRODUCTINPRICE)
         public SqlDataAdapter SearchProductTill(string search)
         {
-            return ExecuteGetSqlAdapter("select productNr, productName, productOutPrice from product where isForSale = 1 and (productNr like '%" + 
-                search + "%' or productName like '%" + search + 
-                "%' or productOutPrice like '%" + search + "%')");
+            return ExecuteGetSqlAdapter("select productNr as [Product Nr], productName as [Product Name], productOutPrice as [Price] " +
+                "from product where isForSale = 1 and (productNr like '%" + 
+                search + "%' or productName like '%" + search + "%' or productOutPrice like '%" + search + "%')");
         }
       
         // SEARCH PRODUCT ALL ATTRIBUTES (ON SALE)
@@ -314,8 +319,8 @@ namespace AffairsSystem
 
         public SqlDataAdapter GetHighestSales()
         {
-            return ExecuteGetSqlAdapter("select a.spNr, firstname, lastname, count(*) as [Amount of sales], sum(totalPrice) as [Sold for Total] " + 
-                "from salesperson a join sales b  on a.spNr = b.spNr  group by a.spNr, firstname, lastname order by count(*) desc");
+            return ExecuteGetSqlAdapter("select a.spNr as [Security Nr], firstname as [First Name], lastname as [Last Name], count(*) as [Amount Of Sales], " +
+                "sum(totalPrice) as [Sold For Total] from salesperson a join sales b  on a.spNr = b.spNr  group by a.spNr, firstname, lastname order by count(*) desc");
         }
 
         public SqlDataReader getLatestSale()
@@ -330,7 +335,8 @@ namespace AffairsSystem
  
         public SqlDataAdapter GetTopOneSalesPerson()
         {
-            return ExecuteGetSqlAdapter("select top 1 firstname, lastname, salesNr, max(totalprice) as [Total Price] from salesperson a join sales b " +
+            return ExecuteGetSqlAdapter("select top 1 firstname as [First Name], lastname as [Last Name], salesNr as [Sales Nr], " + 
+                "max(totalprice) as [Total Price] from salesperson a join sales b " +
                 "on a.spNr = b.spNr group by firstname, lastname, totalprice, salesNr order by totalprice desc");
         }
 
@@ -341,7 +347,8 @@ namespace AffairsSystem
 
         public SqlDataAdapter GetTopProductSale()
         {
-            return ExecuteGetSqlAdapter("select a.productNr, productName, sum(a.amount) as [Total Sales], (sum(a.amount * productOutPrice) - sum(a.amount * productInPrice)) as [Difference]" +
+            return ExecuteGetSqlAdapter("select a.productNr as [Product Nr], productName as [Product Name], sum(a.amount) as [Total Sales], " +
+                "(sum(a.amount * productOutPrice) - sum(a.amount * productInPrice)) as [Difference]" +
                 "from salesline a join product p on a.productNr = p.productNr group by a.productNr, productName order by sum(a.amount) desc");
         }
         //GET PRODuCT AMOUNT
