@@ -698,6 +698,8 @@ namespace AffairsSystem
 
                 controller.SetProduct(productName, productInPrice, productOutPrice, amount, isForSale);
 
+                MessageBox.Show("Product with nr: " + ProductNr + " was created.", "New Product", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                
                 FillProductTableAdmin();
                 FillProductTableNotForSaleAdmin();
                 FillProductTable();

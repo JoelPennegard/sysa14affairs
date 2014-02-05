@@ -225,7 +225,7 @@
             this.btnClearAllSaleView.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearAllSaleView.Name = "btnClearAllSaleView";
             this.btnClearAllSaleView.Size = new System.Drawing.Size(69, 42);
-            this.btnClearAllSaleView.TabIndex = 43;
+            this.btnClearAllSaleView.TabIndex = 4;
             this.btnClearAllSaleView.Text = "Get all";
             this.btnClearAllSaleView.UseVisualStyleBackColor = true;
             this.btnClearAllSaleView.Click += new System.EventHandler(this.btnGetAllProducts_Click);
@@ -257,7 +257,7 @@
             this.btnSearchProductSalesTab.Margin = new System.Windows.Forms.Padding(2);
             this.btnSearchProductSalesTab.Name = "btnSearchProductSalesTab";
             this.btnSearchProductSalesTab.Size = new System.Drawing.Size(64, 42);
-            this.btnSearchProductSalesTab.TabIndex = 40;
+            this.btnSearchProductSalesTab.TabIndex = 2;
             this.btnSearchProductSalesTab.Text = "Search";
             this.btnSearchProductSalesTab.UseVisualStyleBackColor = true;
             this.btnSearchProductSalesTab.Click += new System.EventHandler(this.btnSearchProductSaleMenu_Click);
@@ -269,7 +269,7 @@
             this.textBoxSearchProduct.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxSearchProduct.Name = "textBoxSearchProduct";
             this.textBoxSearchProduct.Size = new System.Drawing.Size(243, 44);
-            this.textBoxSearchProduct.TabIndex = 39;
+            this.textBoxSearchProduct.TabIndex = 1;
             this.textBoxSearchProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchProduct_KeyPress);
             // 
             // textBoxNumPad
@@ -418,7 +418,7 @@
             this.richTextBoxAmount.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxAmount.Name = "richTextBoxAmount";
             this.richTextBoxAmount.Size = new System.Drawing.Size(65, 34);
-            this.richTextBoxAmount.TabIndex = 6;
+            this.richTextBoxAmount.TabIndex = 3;
             this.richTextBoxAmount.Text = "";
             // 
             // btnRemoveProductFromSale
@@ -519,7 +519,7 @@
             this.checkBoxEmployeeAdmin.Location = new System.Drawing.Point(486, 296);
             this.checkBoxEmployeeAdmin.Name = "checkBoxEmployeeAdmin";
             this.checkBoxEmployeeAdmin.Size = new System.Drawing.Size(61, 17);
-            this.checkBoxEmployeeAdmin.TabIndex = 93;
+            this.checkBoxEmployeeAdmin.TabIndex = 55;
             this.checkBoxEmployeeAdmin.Text = "ADMIN";
             this.checkBoxEmployeeAdmin.UseVisualStyleBackColor = true;
             // 
@@ -529,7 +529,7 @@
             this.checkBoxEmployee.Location = new System.Drawing.Point(486, 319);
             this.checkBoxEmployee.Name = "checkBoxEmployee";
             this.checkBoxEmployee.Size = new System.Drawing.Size(67, 17);
-            this.checkBoxEmployee.TabIndex = 92;
+            this.checkBoxEmployee.TabIndex = 56;
             this.checkBoxEmployee.Text = "Is Active";
             this.checkBoxEmployee.UseVisualStyleBackColor = true;
             // 
@@ -539,7 +539,7 @@
             this.btnGetAllWorkingSalesPersons.Margin = new System.Windows.Forms.Padding(2);
             this.btnGetAllWorkingSalesPersons.Name = "btnGetAllWorkingSalesPersons";
             this.btnGetAllWorkingSalesPersons.Size = new System.Drawing.Size(64, 44);
-            this.btnGetAllWorkingSalesPersons.TabIndex = 91;
+            this.btnGetAllWorkingSalesPersons.TabIndex = 50;
             this.btnGetAllWorkingSalesPersons.Text = "Get All";
             this.btnGetAllWorkingSalesPersons.UseVisualStyleBackColor = true;
             this.btnGetAllWorkingSalesPersons.Click += new System.EventHandler(this.btnGetAllWorkingSalesPersons_Click);
@@ -550,7 +550,7 @@
             this.btnClearAllSalesPersonFields.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearAllSalesPersonFields.Name = "btnClearAllSalesPersonFields";
             this.btnClearAllSalesPersonFields.Size = new System.Drawing.Size(104, 42);
-            this.btnClearAllSalesPersonFields.TabIndex = 90;
+            this.btnClearAllSalesPersonFields.TabIndex = 59;
             this.btnClearAllSalesPersonFields.Text = "Clear all fields";
             this.btnClearAllSalesPersonFields.UseVisualStyleBackColor = true;
             this.btnClearAllSalesPersonFields.Click += new System.EventHandler(this.btnEaClearAll_Click);
@@ -579,7 +579,7 @@
             this.dataGridViewDeletedSP.RowTemplate.Height = 24;
             this.dataGridViewDeletedSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDeletedSP.Size = new System.Drawing.Size(438, 317);
-            this.dataGridViewDeletedSP.TabIndex = 86;
+            this.dataGridViewDeletedSP.TabIndex = 401;
             this.dataGridViewDeletedSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedSP_CellClick);
             // 
             // splitter1
@@ -634,37 +634,33 @@
             // 
             this.textBoxEaLName.Location = new System.Drawing.Point(488, 222);
             this.textBoxEaLName.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaLName.Multiline = true;
             this.textBoxEaLName.Name = "textBoxEaLName";
-            this.textBoxEaLName.Size = new System.Drawing.Size(123, 21);
-            this.textBoxEaLName.TabIndex = 57;
+            this.textBoxEaLName.Size = new System.Drawing.Size(123, 20);
+            this.textBoxEaLName.TabIndex = 53;
             // 
             // textBoxEaPhoneNr
             // 
             this.textBoxEaPhoneNr.Location = new System.Drawing.Point(488, 260);
             this.textBoxEaPhoneNr.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaPhoneNr.Multiline = true;
             this.textBoxEaPhoneNr.Name = "textBoxEaPhoneNr";
-            this.textBoxEaPhoneNr.Size = new System.Drawing.Size(123, 21);
-            this.textBoxEaPhoneNr.TabIndex = 56;
+            this.textBoxEaPhoneNr.Size = new System.Drawing.Size(123, 20);
+            this.textBoxEaPhoneNr.TabIndex = 54;
             // 
             // textBoxEaFName
             // 
             this.textBoxEaFName.Location = new System.Drawing.Point(488, 184);
             this.textBoxEaFName.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaFName.Multiline = true;
             this.textBoxEaFName.Name = "textBoxEaFName";
-            this.textBoxEaFName.Size = new System.Drawing.Size(123, 21);
-            this.textBoxEaFName.TabIndex = 55;
+            this.textBoxEaFName.Size = new System.Drawing.Size(123, 20);
+            this.textBoxEaFName.TabIndex = 52;
             // 
             // textBoxEaSpNr
             // 
             this.textBoxEaSpNr.Location = new System.Drawing.Point(488, 146);
             this.textBoxEaSpNr.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaSpNr.Multiline = true;
             this.textBoxEaSpNr.Name = "textBoxEaSpNr";
-            this.textBoxEaSpNr.Size = new System.Drawing.Size(123, 21);
-            this.textBoxEaSpNr.TabIndex = 54;
+            this.textBoxEaSpNr.Size = new System.Drawing.Size(123, 20);
+            this.textBoxEaSpNr.TabIndex = 51;
             // 
             // btnUpdateSalesPerson
             // 
@@ -672,7 +668,7 @@
             this.btnUpdateSalesPerson.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateSalesPerson.Name = "btnUpdateSalesPerson";
             this.btnUpdateSalesPerson.Size = new System.Drawing.Size(76, 24);
-            this.btnUpdateSalesPerson.TabIndex = 52;
+            this.btnUpdateSalesPerson.TabIndex = 58;
             this.btnUpdateSalesPerson.Text = "Update";
             this.btnUpdateSalesPerson.UseVisualStyleBackColor = true;
             this.btnUpdateSalesPerson.Click += new System.EventHandler(this.btnEaUpdate_Click);
@@ -683,7 +679,7 @@
             this.btnAddNewSalesPerson.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddNewSalesPerson.Name = "btnAddNewSalesPerson";
             this.btnAddNewSalesPerson.Size = new System.Drawing.Size(76, 24);
-            this.btnAddNewSalesPerson.TabIndex = 51;
+            this.btnAddNewSalesPerson.TabIndex = 57;
             this.btnAddNewSalesPerson.Text = "New";
             this.btnAddNewSalesPerson.UseVisualStyleBackColor = true;
             this.btnAddNewSalesPerson.Click += new System.EventHandler(this.btnEaNew_Click);
@@ -733,7 +729,7 @@
             this.dataGridViewSP.RowTemplate.Height = 24;
             this.dataGridViewSP.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewSP.Size = new System.Drawing.Size(424, 317);
-            this.dataGridViewSP.TabIndex = 42;
+            this.dataGridViewSP.TabIndex = 400;
             this.dataGridViewSP.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewSP_CellClick);
             // 
             // tabPageProduct
@@ -796,7 +792,7 @@
             this.btnGetAllProductAdmin.Margin = new System.Windows.Forms.Padding(2);
             this.btnGetAllProductAdmin.Name = "btnGetAllProductAdmin";
             this.btnGetAllProductAdmin.Size = new System.Drawing.Size(64, 42);
-            this.btnGetAllProductAdmin.TabIndex = 114;
+            this.btnGetAllProductAdmin.TabIndex = 93;
             this.btnGetAllProductAdmin.Text = "Get All";
             this.btnGetAllProductAdmin.UseVisualStyleBackColor = true;
             this.btnGetAllProductAdmin.Click += new System.EventHandler(this.btnGetAllPa_Click);
@@ -807,7 +803,7 @@
             this.checkBoxForSale.Location = new System.Drawing.Point(487, 310);
             this.checkBoxForSale.Name = "checkBoxForSale";
             this.checkBoxForSale.Size = new System.Drawing.Size(76, 17);
-            this.checkBoxForSale.TabIndex = 113;
+            this.checkBoxForSale.TabIndex = 99;
             this.checkBoxForSale.Text = "Is For Sale";
             this.checkBoxForSale.UseVisualStyleBackColor = true;
             // 
@@ -817,7 +813,7 @@
             this.btnClearAllProductFields.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearAllProductFields.Name = "btnClearAllProductFields";
             this.btnClearAllProductFields.Size = new System.Drawing.Size(76, 42);
-            this.btnClearAllProductFields.TabIndex = 112;
+            this.btnClearAllProductFields.TabIndex = 102;
             this.btnClearAllProductFields.Text = "Clear all fields";
             this.btnClearAllProductFields.UseVisualStyleBackColor = true;
             this.btnClearAllProductFields.Click += new System.EventHandler(this.btnPaClearAll_Click);
@@ -834,7 +830,7 @@
             this.dataGridViewDeletedPa.RowTemplate.Height = 24;
             this.dataGridViewDeletedPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewDeletedPa.Size = new System.Drawing.Size(458, 317);
-            this.dataGridViewDeletedPa.TabIndex = 111;
+            this.dataGridViewDeletedPa.TabIndex = 403;
             this.dataGridViewDeletedPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedPa_CellClick_1);
             // 
             // lblPaAmount
@@ -851,10 +847,9 @@
             // 
             this.textBoxPaAmount.Location = new System.Drawing.Point(489, 284);
             this.textBoxPaAmount.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPaAmount.Multiline = true;
             this.textBoxPaAmount.Name = "textBoxPaAmount";
-            this.textBoxPaAmount.Size = new System.Drawing.Size(151, 21);
-            this.textBoxPaAmount.TabIndex = 109;
+            this.textBoxPaAmount.Size = new System.Drawing.Size(151, 20);
+            this.textBoxPaAmount.TabIndex = 98;
             // 
             // lblSearchDeletedPa
             // 
@@ -910,38 +905,34 @@
             // 
             this.textBoxPaInPrice.Location = new System.Drawing.Point(489, 208);
             this.textBoxPaInPrice.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPaInPrice.Multiline = true;
             this.textBoxPaInPrice.Name = "textBoxPaInPrice";
-            this.textBoxPaInPrice.Size = new System.Drawing.Size(151, 21);
-            this.textBoxPaInPrice.TabIndex = 100;
+            this.textBoxPaInPrice.Size = new System.Drawing.Size(151, 20);
+            this.textBoxPaInPrice.TabIndex = 96;
             // 
             // textBoxPaOutPrice
             // 
             this.textBoxPaOutPrice.Location = new System.Drawing.Point(489, 246);
             this.textBoxPaOutPrice.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPaOutPrice.Multiline = true;
             this.textBoxPaOutPrice.Name = "textBoxPaOutPrice";
-            this.textBoxPaOutPrice.Size = new System.Drawing.Size(151, 21);
-            this.textBoxPaOutPrice.TabIndex = 99;
+            this.textBoxPaOutPrice.Size = new System.Drawing.Size(151, 20);
+            this.textBoxPaOutPrice.TabIndex = 97;
             // 
             // textBoxPaName
             // 
             this.textBoxPaName.Location = new System.Drawing.Point(489, 170);
             this.textBoxPaName.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPaName.Multiline = true;
             this.textBoxPaName.Name = "textBoxPaName";
-            this.textBoxPaName.Size = new System.Drawing.Size(151, 21);
-            this.textBoxPaName.TabIndex = 98;
+            this.textBoxPaName.Size = new System.Drawing.Size(151, 20);
+            this.textBoxPaName.TabIndex = 95;
             // 
             // textBoxPaPrNr
             // 
             this.textBoxPaPrNr.Enabled = false;
             this.textBoxPaPrNr.Location = new System.Drawing.Point(489, 132);
             this.textBoxPaPrNr.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPaPrNr.Multiline = true;
             this.textBoxPaPrNr.Name = "textBoxPaPrNr";
-            this.textBoxPaPrNr.Size = new System.Drawing.Size(151, 21);
-            this.textBoxPaPrNr.TabIndex = 97;
+            this.textBoxPaPrNr.Size = new System.Drawing.Size(151, 20);
+            this.textBoxPaPrNr.TabIndex = 94;
             // 
             // btnUpdateProduct
             // 
@@ -949,7 +940,7 @@
             this.btnUpdateProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnUpdateProduct.Name = "btnUpdateProduct";
             this.btnUpdateProduct.Size = new System.Drawing.Size(76, 24);
-            this.btnUpdateProduct.TabIndex = 95;
+            this.btnUpdateProduct.TabIndex = 101;
             this.btnUpdateProduct.Text = "Update";
             this.btnUpdateProduct.UseVisualStyleBackColor = true;
             this.btnUpdateProduct.Click += new System.EventHandler(this.btnPaUpdate_Click);
@@ -960,7 +951,7 @@
             this.btnAddNewProduct.Margin = new System.Windows.Forms.Padding(2);
             this.btnAddNewProduct.Name = "btnAddNewProduct";
             this.btnAddNewProduct.Size = new System.Drawing.Size(76, 24);
-            this.btnAddNewProduct.TabIndex = 94;
+            this.btnAddNewProduct.TabIndex = 100;
             this.btnAddNewProduct.Text = "New";
             this.btnAddNewProduct.UseVisualStyleBackColor = true;
             this.btnAddNewProduct.Click += new System.EventHandler(this.btnPaNew_Click);
@@ -1010,7 +1001,7 @@
             this.dataGridViewPa.RowTemplate.Height = 24;
             this.dataGridViewPa.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridViewPa.Size = new System.Drawing.Size(458, 317);
-            this.dataGridViewPa.TabIndex = 90;
+            this.dataGridViewPa.TabIndex = 402;
             this.dataGridViewPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPa_CellClick);
             // 
             // tabPageStatistics
