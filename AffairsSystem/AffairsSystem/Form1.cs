@@ -22,7 +22,13 @@ namespace AffairsSystem
         private Controller controller;
         private string payedAmount = "";
 
-        
+
+        private string SpNR
+        {
+            get { return spNr; }
+            set { this.spNr = value; }
+
+        }
         public Form1(string spNr, string name, Controller controller, Boolean Admin)
         {
             InitializeComponent();
@@ -67,12 +73,7 @@ namespace AffairsSystem
 
             
         }
-        private string SpNR{
-            get { return spNr; }
-            set { this.spNr = value;}
-
-        }
-
+        
         private void Form1_Load(object sender, EventArgs e)
         {
 
@@ -223,20 +224,20 @@ namespace AffairsSystem
 
             if (Utility.CheckIfSearchIsEmpty(productNrString))
             {
-                labelErrorProductAdminFields.Text = "Select a product from \n"+"any of the tables";
+                lblErrorProductAdminFields.Text = "Select a product from \n"+"any of the tables";
             }
             else if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
             {
-                labelErrorProductAdminFields.Text = "[ ' ] is not a allowed sign";
+                lblErrorProductAdminFields.Text = "[ ' ] is not a allowed sign";
             }
             else if (Utility.CheckIfSearchIsEmpty(amountString) || Utility.CheckIfSearchIsEmpty(inPriceString) ||
                 Utility.CheckIfSearchIsEmpty(outPriceString) || Utility.CheckIfSearchIsEmpty(productName))
             {
-                labelErrorProductAdminFields.Text = "Please provide information \n"+"in all the fields";
+                lblErrorProductAdminFields.Text = "Please provide information \n"+"in all the fields";
             }
             else if (!Utility.CheckOnlyNumbers(textBoxPaAmount.Text) || !Utility.CheckOnlyNumbers(textBoxPaInPrice.Text) || !Utility.CheckOnlyNumbers(textBoxPaOutPrice.Text))
             {
-                labelErrorProductAdminFields.Text = "Please provide the amount \n"+"and prices with numbers only";
+                lblErrorProductAdminFields.Text = "Please provide the amount \n"+"and prices with numbers only";
             }
             else
             {
@@ -283,7 +284,7 @@ namespace AffairsSystem
             }
         }
 
-        private void btnENTER_Click(object sender, EventArgs e)
+        private void btnRegisterSale_Click(object sender, EventArgs e)
         {
             if (dataGridViewSaleList.Rows.Count < 1)
             {
@@ -357,17 +358,17 @@ namespace AffairsSystem
 
             if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
             {
-                labelErrorProductAdminFields.Text = "[ ' ] is not a allowed sign";
+                lblErrorProductAdminFields.Text = "[ ' ] is not a allowed sign";
                 
             }
             else if (Utility.CheckIfSearchIsEmpty(amountString) || Utility.CheckIfSearchIsEmpty(inPriceString) ||
                 Utility.CheckIfSearchIsEmpty(outPriceString) || Utility.CheckIfSearchIsEmpty(productName))
             {
-                labelErrorProductAdminFields.Text = "Please provide information \n"+"in all the editable fields";
+                lblErrorProductAdminFields.Text = "Please provide information \n"+"in all the editable fields";
             }
             else if (!Utility.CheckOnlyNumbers(textBoxPaAmount.Text) || !Utility.CheckOnlyNumbers(textBoxPaInPrice.Text) || !Utility.CheckOnlyNumbers(textBoxPaOutPrice.Text))
             {
-                labelErrorProductAdminFields.Text = "Please provide the amount \n"+"and prices with numbers only";
+                lblErrorProductAdminFields.Text = "Please provide the amount \n"+"and prices with numbers only";
             }
             else
             {
@@ -437,6 +438,7 @@ namespace AffairsSystem
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewProductList.DataSource = data;
+
 
         }
         //FILL WORKING SALES PERSON TABLE
@@ -660,17 +662,17 @@ namespace AffairsSystem
 
             if (Utility.CheckIfSearchIsEmpty(spNr))
             {
-                labelErrorSalesPersonFields.Text = "Select a employee from \n"+"any of the tables";
+                lblErrorSalesPersonFields.Text = "Select a employee from \n"+"any of the tables";
             }
             else if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
             {
-                labelErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
+                lblErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
 
             }
             else if (Utility.CheckIfSearchIsEmpty(firstName) ||
                 Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone))
             {
-                labelErrorSalesPersonFields.Text = "Please provide information \n"+"in all the fields";
+                lblErrorSalesPersonFields.Text = "Please provide information \n"+"in all the fields";
             }
             else
             {
@@ -698,13 +700,13 @@ namespace AffairsSystem
             string totalInformation = spNr + firstName + lastName + sPhone;
             if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
             {
-                labelErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
+                lblErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
                                 
             }
             else if (Utility.CheckIfSearchIsEmpty(spNr) || Utility.CheckIfSearchIsEmpty(firstName) || 
                 Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone)) 
             {
-                labelErrorSalesPersonFields.Text = "Please provide information \n"+"in all the fields";
+                lblErrorSalesPersonFields.Text = "Please provide information \n"+"in all the fields";
             }
             else
             {
@@ -737,7 +739,7 @@ namespace AffairsSystem
             string search = textBoxSearchProduct.Text;
             if (Utility.checkIfSearchContainsForbiddenChars(search))
             {
-                labelErrorSaleSearch.Text = " [ ' ] is not allowed in the search";
+                lblErrorSaleSearch.Text = " [ ' ] is not allowed in the search";
             }
             else
             {
@@ -760,7 +762,7 @@ namespace AffairsSystem
             string search = textBoxSearchPa.Text;
             if (Utility.checkIfSearchContainsForbiddenChars(search))
             {
-                labelErrorProductSearch.Text = " [ ' ] is not allowed in the search";
+                lblErrorProductSearch.Text = " [ ' ] is not allowed in the search";
             }
             else
             {
@@ -784,7 +786,7 @@ namespace AffairsSystem
             string search = textBoxSearchSP.Text;
             if (Utility.checkIfSearchContainsForbiddenChars(search))
             {
-                labelErrorSalesPersonSearch.Text = " [ ' ] is not allowed in the search";
+                lblErrorSalesPersonSearch.Text = " [ ' ] is not allowed in the search";
             }
             else
             {
@@ -850,11 +852,11 @@ namespace AffairsSystem
         }
         private void ClearAllErrorMessages()
         {
-            labelErrorSalesPersonFields.Text = "";
-            labelErrorProductAdminFields.Text = "";
-            labelErrorProductSearch.Text = "";
-            labelErrorSaleSearch.Text = "";
-            labelErrorSalesPersonSearch.Text = "";
+            lblErrorSalesPersonFields.Text = "";
+            lblErrorProductAdminFields.Text = "";
+            lblErrorProductSearch.Text = "";
+            lblErrorSaleSearch.Text = "";
+            lblErrorSalesPersonSearch.Text = "";
         }
 
         

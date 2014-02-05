@@ -31,16 +31,16 @@
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageSale = new System.Windows.Forms.TabPage();
             this.btnViewSale = new System.Windows.Forms.Button();
-            this.labelErrorSaleSearch = new System.Windows.Forms.Label();
+            this.lblErrorSaleSearch = new System.Windows.Forms.Label();
             this.textBoxCurrencyUnit = new System.Windows.Forms.TextBox();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.btnClearAllSaleView = new System.Windows.Forms.Button();
             this.btnMyHistory = new System.Windows.Forms.Button();
-            this.labelSearchProduct = new System.Windows.Forms.Label();
+            this.lblSearchProduct = new System.Windows.Forms.Label();
             this.btnSearchProduct = new System.Windows.Forms.Button();
             this.textBoxSearchProduct = new System.Windows.Forms.TextBox();
             this.textBoxNumPad = new System.Windows.Forms.TextBox();
-            this.btnENTER = new System.Windows.Forms.Button();
+            this.btnRegisterSale = new System.Windows.Forms.Button();
             this.btnNOK = new System.Windows.Forms.Button();
             this.btnUSD = new System.Windows.Forms.Button();
             this.btnGBP = new System.Windows.Forms.Button();
@@ -57,12 +57,13 @@
             this.btwAddProductToSale = new System.Windows.Forms.Button();
             this.dataGridViewProductList = new System.Windows.Forms.DataGridView();
             this.tabPageEmployee = new System.Windows.Forms.TabPage();
-            this.labelErrorSalesPersonSearch = new System.Windows.Forms.Label();
+            this.lblErrorSalesPersonFields = new System.Windows.Forms.Label();
+            this.lblErrorSalesPersonSearch = new System.Windows.Forms.Label();
             this.checkBoxEmployeeAdmin = new System.Windows.Forms.CheckBox();
             this.checkBoxEmployee = new System.Windows.Forms.CheckBox();
             this.btnGetAllWorkingSalesPersons = new System.Windows.Forms.Button();
             this.btnClearAllSalesPersonFields = new System.Windows.Forms.Button();
-            this.labelSearchDeletedSP = new System.Windows.Forms.Label();
+            this.lblSearchDeletedSP = new System.Windows.Forms.Label();
             this.dataGridViewDeletedSP = new System.Windows.Forms.DataGridView();
             this.splitter1 = new System.Windows.Forms.Splitter();
             this.labelEaPhoneNr = new System.Windows.Forms.Label();
@@ -75,30 +76,31 @@
             this.textBoxEaSpNr = new System.Windows.Forms.TextBox();
             this.btnUpdateSalesPerson = new System.Windows.Forms.Button();
             this.btnAddNewSalesPerson = new System.Windows.Forms.Button();
-            this.labelSearchSP = new System.Windows.Forms.Label();
+            this.lblSearchSP = new System.Windows.Forms.Label();
             this.btnSearchSalesPerson = new System.Windows.Forms.Button();
             this.textBoxSearchSP = new System.Windows.Forms.TextBox();
             this.dataGridViewSP = new System.Windows.Forms.DataGridView();
             this.tabPageProduct = new System.Windows.Forms.TabPage();
-            this.labelErrorProductSearch = new System.Windows.Forms.Label();
+            this.lblErrorProductAdminFields = new System.Windows.Forms.Label();
+            this.lblErrorProductSearch = new System.Windows.Forms.Label();
             this.btnGetAllProductAdmin = new System.Windows.Forms.Button();
             this.checkBoxForSale = new System.Windows.Forms.CheckBox();
             this.btnClearAllProductFields = new System.Windows.Forms.Button();
             this.dataGridViewDeletedPa = new System.Windows.Forms.DataGridView();
-            this.labelPaAmount = new System.Windows.Forms.Label();
+            this.lblPaAmount = new System.Windows.Forms.Label();
             this.textBoxPaAmount = new System.Windows.Forms.TextBox();
-            this.labelSearchDeletedPa = new System.Windows.Forms.Label();
-            this.labelPaOutPrice = new System.Windows.Forms.Label();
-            this.labelPaInPrice = new System.Windows.Forms.Label();
-            this.labelPaName = new System.Windows.Forms.Label();
-            this.labelPaPrNr = new System.Windows.Forms.Label();
+            this.lblSearchDeletedPa = new System.Windows.Forms.Label();
+            this.lblPaOutPrice = new System.Windows.Forms.Label();
+            this.lblPaInPrice = new System.Windows.Forms.Label();
+            this.lblPaName = new System.Windows.Forms.Label();
+            this.lblPaPrNr = new System.Windows.Forms.Label();
             this.textBoxPaInPrice = new System.Windows.Forms.TextBox();
             this.textBoxPaOutPrice = new System.Windows.Forms.TextBox();
             this.textBoxPaName = new System.Windows.Forms.TextBox();
             this.textBoxPaPrNr = new System.Windows.Forms.TextBox();
             this.btnUpdateProduct = new System.Windows.Forms.Button();
             this.btnAddNewProduct = new System.Windows.Forms.Button();
-            this.labelSearchPa = new System.Windows.Forms.Label();
+            this.lblSearchPa = new System.Windows.Forms.Label();
             this.btnSearchProductAdmin = new System.Windows.Forms.Button();
             this.textBoxSearchPa = new System.Windows.Forms.TextBox();
             this.dataGridViewPa = new System.Windows.Forms.DataGridView();
@@ -113,8 +115,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.labelErrorProductAdminFields = new System.Windows.Forms.Label();
-            this.labelErrorSalesPersonFields = new System.Windows.Forms.Label();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -147,16 +147,16 @@
             // tabPageSale
             // 
             this.tabPageSale.Controls.Add(this.btnViewSale);
-            this.tabPageSale.Controls.Add(this.labelErrorSaleSearch);
+            this.tabPageSale.Controls.Add(this.lblErrorSaleSearch);
             this.tabPageSale.Controls.Add(this.textBoxCurrencyUnit);
             this.tabPageSale.Controls.Add(this.btnClearAll);
             this.tabPageSale.Controls.Add(this.btnClearAllSaleView);
             this.tabPageSale.Controls.Add(this.btnMyHistory);
-            this.tabPageSale.Controls.Add(this.labelSearchProduct);
+            this.tabPageSale.Controls.Add(this.lblSearchProduct);
             this.tabPageSale.Controls.Add(this.btnSearchProduct);
             this.tabPageSale.Controls.Add(this.textBoxSearchProduct);
             this.tabPageSale.Controls.Add(this.textBoxNumPad);
-            this.tabPageSale.Controls.Add(this.btnENTER);
+            this.tabPageSale.Controls.Add(this.btnRegisterSale);
             this.tabPageSale.Controls.Add(this.btnNOK);
             this.tabPageSale.Controls.Add(this.btnUSD);
             this.tabPageSale.Controls.Add(this.btnGBP);
@@ -187,20 +187,20 @@
             this.btnViewSale.UseVisualStyleBackColor = true;
             this.btnViewSale.Click += new System.EventHandler(this.btnViewSale_Click);
             // 
-            // labelErrorSaleSearch
+            // lblErrorSaleSearch
             // 
-            this.labelErrorSaleSearch.AutoSize = true;
-            this.labelErrorSaleSearch.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorSaleSearch.Location = new System.Drawing.Point(158, 58);
-            this.labelErrorSaleSearch.Name = "labelErrorSaleSearch";
-            this.labelErrorSaleSearch.Size = new System.Drawing.Size(97, 13);
-            this.labelErrorSaleSearch.TabIndex = 46;
-            this.labelErrorSaleSearch.Text = "Felmedelanden här";
+            this.lblErrorSaleSearch.AutoSize = true;
+            this.lblErrorSaleSearch.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorSaleSearch.Location = new System.Drawing.Point(158, 58);
+            this.lblErrorSaleSearch.Name = "lblErrorSaleSearch";
+            this.lblErrorSaleSearch.Size = new System.Drawing.Size(97, 13);
+            this.lblErrorSaleSearch.TabIndex = 46;
+            this.lblErrorSaleSearch.Text = "Felmedelanden här";
             // 
             // textBoxCurrencyUnit
             // 
             this.textBoxCurrencyUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.textBoxCurrencyUnit.Location = new System.Drawing.Point(1040, 166);
+            this.textBoxCurrencyUnit.Location = new System.Drawing.Point(1041, 213);
             this.textBoxCurrencyUnit.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCurrencyUnit.Multiline = true;
             this.textBoxCurrencyUnit.Name = "textBoxCurrencyUnit";
@@ -212,7 +212,7 @@
             this.btnClearAll.Location = new System.Drawing.Point(900, 399);
             this.btnClearAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(207, 42);
+            this.btnClearAll.Size = new System.Drawing.Size(106, 42);
             this.btnClearAll.TabIndex = 44;
             this.btnClearAll.Text = "Clear all fields";
             this.btnClearAll.UseVisualStyleBackColor = true;
@@ -240,15 +240,15 @@
             this.btnMyHistory.UseVisualStyleBackColor = true;
             this.btnMyHistory.Click += new System.EventHandler(this.btnMyHistory_Click);
             // 
-            // labelSearchProduct
+            // lblSearchProduct
             // 
-            this.labelSearchProduct.AutoSize = true;
-            this.labelSearchProduct.Location = new System.Drawing.Point(13, 58);
-            this.labelSearchProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelSearchProduct.Name = "labelSearchProduct";
-            this.labelSearchProduct.Size = new System.Drawing.Size(139, 13);
-            this.labelSearchProduct.TabIndex = 41;
-            this.labelSearchProduct.Text = "Search on product attribute:";
+            this.lblSearchProduct.AutoSize = true;
+            this.lblSearchProduct.Location = new System.Drawing.Point(13, 58);
+            this.lblSearchProduct.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearchProduct.Name = "lblSearchProduct";
+            this.lblSearchProduct.Size = new System.Drawing.Size(139, 13);
+            this.lblSearchProduct.TabIndex = 41;
+            this.lblSearchProduct.Text = "Search on product attribute:";
             // 
             // btnSearchProduct
             // 
@@ -274,27 +274,27 @@
             // textBoxNumPad
             // 
             this.textBoxNumPad.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumPad.Location = new System.Drawing.Point(901, 166);
+            this.textBoxNumPad.Location = new System.Drawing.Point(902, 213);
             this.textBoxNumPad.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNumPad.Name = "textBoxNumPad";
             this.textBoxNumPad.Size = new System.Drawing.Size(135, 44);
             this.textBoxNumPad.TabIndex = 38;
             this.textBoxNumPad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // btnENTER
+            // btnRegisterSale
             // 
-            this.btnENTER.Location = new System.Drawing.Point(901, 214);
-            this.btnENTER.Margin = new System.Windows.Forms.Padding(2);
-            this.btnENTER.Name = "btnENTER";
-            this.btnENTER.Size = new System.Drawing.Size(206, 181);
-            this.btnENTER.TabIndex = 36;
-            this.btnENTER.Text = "ENTER";
-            this.btnENTER.UseVisualStyleBackColor = true;
-            this.btnENTER.Click += new System.EventHandler(this.btnENTER_Click);
+            this.btnRegisterSale.Location = new System.Drawing.Point(900, 332);
+            this.btnRegisterSale.Margin = new System.Windows.Forms.Padding(2);
+            this.btnRegisterSale.Name = "btnRegisterSale";
+            this.btnRegisterSale.Size = new System.Drawing.Size(105, 63);
+            this.btnRegisterSale.TabIndex = 36;
+            this.btnRegisterSale.Text = "Register Sale";
+            this.btnRegisterSale.UseVisualStyleBackColor = true;
+            this.btnRegisterSale.Click += new System.EventHandler(this.btnRegisterSale_Click);
             // 
             // btnNOK
             // 
-            this.btnNOK.Location = new System.Drawing.Point(1039, 119);
+            this.btnNOK.Location = new System.Drawing.Point(1040, 166);
             this.btnNOK.Margin = new System.Windows.Forms.Padding(2);
             this.btnNOK.Name = "btnNOK";
             this.btnNOK.Size = new System.Drawing.Size(68, 42);
@@ -305,7 +305,7 @@
             // 
             // btnUSD
             // 
-            this.btnUSD.Location = new System.Drawing.Point(1039, 72);
+            this.btnUSD.Location = new System.Drawing.Point(1040, 119);
             this.btnUSD.Margin = new System.Windows.Forms.Padding(2);
             this.btnUSD.Name = "btnUSD";
             this.btnUSD.Size = new System.Drawing.Size(68, 42);
@@ -316,7 +316,7 @@
             // 
             // btnGBP
             // 
-            this.btnGBP.Location = new System.Drawing.Point(969, 119);
+            this.btnGBP.Location = new System.Drawing.Point(970, 166);
             this.btnGBP.Margin = new System.Windows.Forms.Padding(2);
             this.btnGBP.Name = "btnGBP";
             this.btnGBP.Size = new System.Drawing.Size(65, 42);
@@ -327,7 +327,7 @@
             // 
             // btnEURO
             // 
-            this.btnEURO.Location = new System.Drawing.Point(970, 72);
+            this.btnEURO.Location = new System.Drawing.Point(971, 119);
             this.btnEURO.Margin = new System.Windows.Forms.Padding(2);
             this.btnEURO.Name = "btnEURO";
             this.btnEURO.Size = new System.Drawing.Size(65, 42);
@@ -338,7 +338,7 @@
             // 
             // btnDKK
             // 
-            this.btnDKK.Location = new System.Drawing.Point(901, 119);
+            this.btnDKK.Location = new System.Drawing.Point(902, 166);
             this.btnDKK.Margin = new System.Windows.Forms.Padding(2);
             this.btnDKK.Name = "btnDKK";
             this.btnDKK.Size = new System.Drawing.Size(64, 42);
@@ -349,7 +349,7 @@
             // 
             // btnSEK
             // 
-            this.btnSEK.Location = new System.Drawing.Point(900, 72);
+            this.btnSEK.Location = new System.Drawing.Point(901, 119);
             this.btnSEK.Margin = new System.Windows.Forms.Padding(2);
             this.btnSEK.Name = "btnSEK";
             this.btnSEK.Size = new System.Drawing.Size(64, 42);
@@ -368,7 +368,7 @@
             this.ProductName,
             this.Price,
             this.Amount});
-            this.dataGridViewSaleList.Location = new System.Drawing.Point(512, 124);
+            this.dataGridViewSaleList.Location = new System.Drawing.Point(512, 119);
             this.dataGridViewSaleList.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewSaleList.MultiSelect = false;
             this.dataGridViewSaleList.Name = "dataGridViewSaleList";
@@ -376,7 +376,7 @@
             this.dataGridViewSaleList.RowHeadersVisible = false;
             this.dataGridViewSaleList.RowTemplate.Height = 24;
             this.dataGridViewSaleList.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridViewSaleList.Size = new System.Drawing.Size(384, 317);
+            this.dataGridViewSaleList.Size = new System.Drawing.Size(384, 322);
             this.dataGridViewSaleList.TabIndex = 7;
             // 
             // ProductNr
@@ -460,13 +460,13 @@
             // 
             // tabPageEmployee
             // 
-            this.tabPageEmployee.Controls.Add(this.labelErrorSalesPersonFields);
-            this.tabPageEmployee.Controls.Add(this.labelErrorSalesPersonSearch);
+            this.tabPageEmployee.Controls.Add(this.lblErrorSalesPersonFields);
+            this.tabPageEmployee.Controls.Add(this.lblErrorSalesPersonSearch);
             this.tabPageEmployee.Controls.Add(this.checkBoxEmployeeAdmin);
             this.tabPageEmployee.Controls.Add(this.checkBoxEmployee);
             this.tabPageEmployee.Controls.Add(this.btnGetAllWorkingSalesPersons);
             this.tabPageEmployee.Controls.Add(this.btnClearAllSalesPersonFields);
-            this.tabPageEmployee.Controls.Add(this.labelSearchDeletedSP);
+            this.tabPageEmployee.Controls.Add(this.lblSearchDeletedSP);
             this.tabPageEmployee.Controls.Add(this.dataGridViewDeletedSP);
             this.tabPageEmployee.Controls.Add(this.splitter1);
             this.tabPageEmployee.Controls.Add(this.labelEaPhoneNr);
@@ -479,7 +479,7 @@
             this.tabPageEmployee.Controls.Add(this.textBoxEaSpNr);
             this.tabPageEmployee.Controls.Add(this.btnUpdateSalesPerson);
             this.tabPageEmployee.Controls.Add(this.btnAddNewSalesPerson);
-            this.tabPageEmployee.Controls.Add(this.labelSearchSP);
+            this.tabPageEmployee.Controls.Add(this.lblSearchSP);
             this.tabPageEmployee.Controls.Add(this.btnSearchSalesPerson);
             this.tabPageEmployee.Controls.Add(this.textBoxSearchSP);
             this.tabPageEmployee.Controls.Add(this.dataGridViewSP);
@@ -492,15 +492,25 @@
             this.tabPageEmployee.Text = "Employee administration";
             this.tabPageEmployee.UseVisualStyleBackColor = true;
             // 
-            // labelErrorSalesPersonSearch
+            // lblErrorSalesPersonFields
             // 
-            this.labelErrorSalesPersonSearch.AutoSize = true;
-            this.labelErrorSalesPersonSearch.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorSalesPersonSearch.Location = new System.Drawing.Point(174, 38);
-            this.labelErrorSalesPersonSearch.Name = "labelErrorSalesPersonSearch";
-            this.labelErrorSalesPersonSearch.Size = new System.Drawing.Size(97, 13);
-            this.labelErrorSalesPersonSearch.TabIndex = 95;
-            this.labelErrorSalesPersonSearch.Text = "Felmedelanden här";
+            this.lblErrorSalesPersonFields.AutoSize = true;
+            this.lblErrorSalesPersonFields.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorSalesPersonFields.Location = new System.Drawing.Point(448, 87);
+            this.lblErrorSalesPersonFields.Name = "lblErrorSalesPersonFields";
+            this.lblErrorSalesPersonFields.Size = new System.Drawing.Size(88, 13);
+            this.lblErrorSalesPersonFields.TabIndex = 96;
+            this.lblErrorSalesPersonFields.Text = "felmedelande här";
+            // 
+            // lblErrorSalesPersonSearch
+            // 
+            this.lblErrorSalesPersonSearch.AutoSize = true;
+            this.lblErrorSalesPersonSearch.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorSalesPersonSearch.Location = new System.Drawing.Point(174, 38);
+            this.lblErrorSalesPersonSearch.Name = "lblErrorSalesPersonSearch";
+            this.lblErrorSalesPersonSearch.Size = new System.Drawing.Size(97, 13);
+            this.lblErrorSalesPersonSearch.TabIndex = 95;
+            this.lblErrorSalesPersonSearch.Text = "Felmedelanden här";
             // 
             // checkBoxEmployeeAdmin
             // 
@@ -544,15 +554,15 @@
             this.btnClearAllSalesPersonFields.UseVisualStyleBackColor = true;
             this.btnClearAllSalesPersonFields.Click += new System.EventHandler(this.btnEaClearAll_Click);
             // 
-            // labelSearchDeletedSP
+            // lblSearchDeletedSP
             // 
-            this.labelSearchDeletedSP.AutoSize = true;
-            this.labelSearchDeletedSP.Location = new System.Drawing.Point(664, 87);
-            this.labelSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelSearchDeletedSP.Name = "labelSearchDeletedSP";
-            this.labelSearchDeletedSP.Size = new System.Drawing.Size(84, 13);
-            this.labelSearchDeletedSP.TabIndex = 89;
-            this.labelSearchDeletedSP.Text = "Past employees:";
+            this.lblSearchDeletedSP.AutoSize = true;
+            this.lblSearchDeletedSP.Location = new System.Drawing.Point(664, 87);
+            this.lblSearchDeletedSP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearchDeletedSP.Name = "lblSearchDeletedSP";
+            this.lblSearchDeletedSP.Size = new System.Drawing.Size(84, 13);
+            this.lblSearchDeletedSP.TabIndex = 89;
+            this.lblSearchDeletedSP.Text = "Past employees:";
             // 
             // dataGridViewDeletedSP
             // 
@@ -677,15 +687,15 @@
             this.btnAddNewSalesPerson.UseVisualStyleBackColor = true;
             this.btnAddNewSalesPerson.Click += new System.EventHandler(this.btnEaNew_Click);
             // 
-            // labelSearchSP
+            // lblSearchSP
             // 
-            this.labelSearchSP.AutoSize = true;
-            this.labelSearchSP.Location = new System.Drawing.Point(7, 38);
-            this.labelSearchSP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelSearchSP.Name = "labelSearchSP";
-            this.labelSearchSP.Size = new System.Drawing.Size(162, 13);
-            this.labelSearchSP.TabIndex = 50;
-            this.labelSearchSP.Text = "Search on sales person attribute:";
+            this.lblSearchSP.AutoSize = true;
+            this.lblSearchSP.Location = new System.Drawing.Point(7, 38);
+            this.lblSearchSP.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearchSP.Name = "lblSearchSP";
+            this.lblSearchSP.Size = new System.Drawing.Size(162, 13);
+            this.lblSearchSP.TabIndex = 50;
+            this.lblSearchSP.Text = "Search on sales person attribute:";
             // 
             // btnSearchSalesPerson
             // 
@@ -727,26 +737,26 @@
             // 
             // tabPageProduct
             // 
-            this.tabPageProduct.Controls.Add(this.labelErrorProductAdminFields);
-            this.tabPageProduct.Controls.Add(this.labelErrorProductSearch);
+            this.tabPageProduct.Controls.Add(this.lblErrorProductAdminFields);
+            this.tabPageProduct.Controls.Add(this.lblErrorProductSearch);
             this.tabPageProduct.Controls.Add(this.btnGetAllProductAdmin);
             this.tabPageProduct.Controls.Add(this.checkBoxForSale);
             this.tabPageProduct.Controls.Add(this.btnClearAllProductFields);
             this.tabPageProduct.Controls.Add(this.dataGridViewDeletedPa);
-            this.tabPageProduct.Controls.Add(this.labelPaAmount);
+            this.tabPageProduct.Controls.Add(this.lblPaAmount);
             this.tabPageProduct.Controls.Add(this.textBoxPaAmount);
-            this.tabPageProduct.Controls.Add(this.labelSearchDeletedPa);
-            this.tabPageProduct.Controls.Add(this.labelPaOutPrice);
-            this.tabPageProduct.Controls.Add(this.labelPaInPrice);
-            this.tabPageProduct.Controls.Add(this.labelPaName);
-            this.tabPageProduct.Controls.Add(this.labelPaPrNr);
+            this.tabPageProduct.Controls.Add(this.lblSearchDeletedPa);
+            this.tabPageProduct.Controls.Add(this.lblPaOutPrice);
+            this.tabPageProduct.Controls.Add(this.lblPaInPrice);
+            this.tabPageProduct.Controls.Add(this.lblPaName);
+            this.tabPageProduct.Controls.Add(this.lblPaPrNr);
             this.tabPageProduct.Controls.Add(this.textBoxPaInPrice);
             this.tabPageProduct.Controls.Add(this.textBoxPaOutPrice);
             this.tabPageProduct.Controls.Add(this.textBoxPaName);
             this.tabPageProduct.Controls.Add(this.textBoxPaPrNr);
             this.tabPageProduct.Controls.Add(this.btnUpdateProduct);
             this.tabPageProduct.Controls.Add(this.btnAddNewProduct);
-            this.tabPageProduct.Controls.Add(this.labelSearchPa);
+            this.tabPageProduct.Controls.Add(this.lblSearchPa);
             this.tabPageProduct.Controls.Add(this.btnSearchProductAdmin);
             this.tabPageProduct.Controls.Add(this.textBoxSearchPa);
             this.tabPageProduct.Controls.Add(this.dataGridViewPa);
@@ -759,15 +769,25 @@
             this.tabPageProduct.Text = "Product administration";
             this.tabPageProduct.UseVisualStyleBackColor = true;
             // 
-            // labelErrorProductSearch
+            // lblErrorProductAdminFields
             // 
-            this.labelErrorProductSearch.AutoSize = true;
-            this.labelErrorProductSearch.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorProductSearch.Location = new System.Drawing.Point(138, 37);
-            this.labelErrorProductSearch.Name = "labelErrorProductSearch";
-            this.labelErrorProductSearch.Size = new System.Drawing.Size(88, 13);
-            this.labelErrorProductSearch.TabIndex = 116;
-            this.labelErrorProductSearch.Text = "felmedelande här";
+            this.lblErrorProductAdminFields.AutoSize = true;
+            this.lblErrorProductAdminFields.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorProductAdminFields.Location = new System.Drawing.Point(487, 77);
+            this.lblErrorProductAdminFields.Name = "lblErrorProductAdminFields";
+            this.lblErrorProductAdminFields.Size = new System.Drawing.Size(88, 13);
+            this.lblErrorProductAdminFields.TabIndex = 117;
+            this.lblErrorProductAdminFields.Text = "felmedelande här";
+            // 
+            // lblErrorProductSearch
+            // 
+            this.lblErrorProductSearch.AutoSize = true;
+            this.lblErrorProductSearch.ForeColor = System.Drawing.Color.Red;
+            this.lblErrorProductSearch.Location = new System.Drawing.Point(138, 37);
+            this.lblErrorProductSearch.Name = "lblErrorProductSearch";
+            this.lblErrorProductSearch.Size = new System.Drawing.Size(88, 13);
+            this.lblErrorProductSearch.TabIndex = 116;
+            this.lblErrorProductSearch.Text = "felmedelande här";
             // 
             // btnGetAllProductAdmin
             // 
@@ -816,15 +836,15 @@
             this.dataGridViewDeletedPa.TabIndex = 111;
             this.dataGridViewDeletedPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedPa_CellClick_1);
             // 
-            // labelPaAmount
+            // lblPaAmount
             // 
-            this.labelPaAmount.AutoSize = true;
-            this.labelPaAmount.Location = new System.Drawing.Point(486, 269);
-            this.labelPaAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPaAmount.Name = "labelPaAmount";
-            this.labelPaAmount.Size = new System.Drawing.Size(46, 13);
-            this.labelPaAmount.TabIndex = 110;
-            this.labelPaAmount.Text = "Amount:";
+            this.lblPaAmount.AutoSize = true;
+            this.lblPaAmount.Location = new System.Drawing.Point(486, 269);
+            this.lblPaAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPaAmount.Name = "lblPaAmount";
+            this.lblPaAmount.Size = new System.Drawing.Size(46, 13);
+            this.lblPaAmount.TabIndex = 110;
+            this.lblPaAmount.Text = "Amount:";
             // 
             // textBoxPaAmount
             // 
@@ -835,55 +855,55 @@
             this.textBoxPaAmount.Size = new System.Drawing.Size(151, 21);
             this.textBoxPaAmount.TabIndex = 109;
             // 
-            // labelSearchDeletedPa
+            // lblSearchDeletedPa
             // 
-            this.labelSearchDeletedPa.AutoSize = true;
-            this.labelSearchDeletedPa.Location = new System.Drawing.Point(666, 85);
-            this.labelSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelSearchDeletedPa.Name = "labelSearchDeletedPa";
-            this.labelSearchDeletedPa.Size = new System.Drawing.Size(147, 13);
-            this.labelSearchDeletedPa.TabIndex = 108;
-            this.labelSearchDeletedPa.Text = "Products not currently for sale";
+            this.lblSearchDeletedPa.AutoSize = true;
+            this.lblSearchDeletedPa.Location = new System.Drawing.Point(666, 85);
+            this.lblSearchDeletedPa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearchDeletedPa.Name = "lblSearchDeletedPa";
+            this.lblSearchDeletedPa.Size = new System.Drawing.Size(147, 13);
+            this.lblSearchDeletedPa.TabIndex = 108;
+            this.lblSearchDeletedPa.Text = "Products not currently for sale";
             // 
-            // labelPaOutPrice
+            // lblPaOutPrice
             // 
-            this.labelPaOutPrice.AutoSize = true;
-            this.labelPaOutPrice.Location = new System.Drawing.Point(486, 231);
-            this.labelPaOutPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPaOutPrice.Name = "labelPaOutPrice";
-            this.labelPaOutPrice.Size = new System.Drawing.Size(54, 13);
-            this.labelPaOutPrice.TabIndex = 104;
-            this.labelPaOutPrice.Text = "Out Price:";
+            this.lblPaOutPrice.AutoSize = true;
+            this.lblPaOutPrice.Location = new System.Drawing.Point(486, 231);
+            this.lblPaOutPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPaOutPrice.Name = "lblPaOutPrice";
+            this.lblPaOutPrice.Size = new System.Drawing.Size(54, 13);
+            this.lblPaOutPrice.TabIndex = 104;
+            this.lblPaOutPrice.Text = "Out Price:";
             // 
-            // labelPaInPrice
+            // lblPaInPrice
             // 
-            this.labelPaInPrice.AutoSize = true;
-            this.labelPaInPrice.Location = new System.Drawing.Point(484, 193);
-            this.labelPaInPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPaInPrice.Name = "labelPaInPrice";
-            this.labelPaInPrice.Size = new System.Drawing.Size(45, 13);
-            this.labelPaInPrice.TabIndex = 103;
-            this.labelPaInPrice.Text = "In price:";
+            this.lblPaInPrice.AutoSize = true;
+            this.lblPaInPrice.Location = new System.Drawing.Point(484, 193);
+            this.lblPaInPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPaInPrice.Name = "lblPaInPrice";
+            this.lblPaInPrice.Size = new System.Drawing.Size(45, 13);
+            this.lblPaInPrice.TabIndex = 103;
+            this.lblPaInPrice.Text = "In price:";
             // 
-            // labelPaName
+            // lblPaName
             // 
-            this.labelPaName.AutoSize = true;
-            this.labelPaName.Location = new System.Drawing.Point(484, 155);
-            this.labelPaName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPaName.Name = "labelPaName";
-            this.labelPaName.Size = new System.Drawing.Size(38, 13);
-            this.labelPaName.TabIndex = 102;
-            this.labelPaName.Text = "Name:";
+            this.lblPaName.AutoSize = true;
+            this.lblPaName.Location = new System.Drawing.Point(484, 155);
+            this.lblPaName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPaName.Name = "lblPaName";
+            this.lblPaName.Size = new System.Drawing.Size(38, 13);
+            this.lblPaName.TabIndex = 102;
+            this.lblPaName.Text = "Name:";
             // 
-            // labelPaPrNr
+            // lblPaPrNr
             // 
-            this.labelPaPrNr.AutoSize = true;
-            this.labelPaPrNr.Location = new System.Drawing.Point(485, 117);
-            this.labelPaPrNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelPaPrNr.Name = "labelPaPrNr";
-            this.labelPaPrNr.Size = new System.Drawing.Size(47, 13);
-            this.labelPaPrNr.TabIndex = 101;
-            this.labelPaPrNr.Text = "Number:";
+            this.lblPaPrNr.AutoSize = true;
+            this.lblPaPrNr.Location = new System.Drawing.Point(485, 117);
+            this.lblPaPrNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPaPrNr.Name = "lblPaPrNr";
+            this.lblPaPrNr.Size = new System.Drawing.Size(47, 13);
+            this.lblPaPrNr.TabIndex = 101;
+            this.lblPaPrNr.Text = "Number:";
             // 
             // textBoxPaInPrice
             // 
@@ -944,15 +964,15 @@
             this.btnAddNewProduct.UseVisualStyleBackColor = true;
             this.btnAddNewProduct.Click += new System.EventHandler(this.btnPaNew_Click);
             // 
-            // labelSearchPa
+            // lblSearchPa
             // 
-            this.labelSearchPa.AutoSize = true;
-            this.labelSearchPa.Location = new System.Drawing.Point(8, 37);
-            this.labelSearchPa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelSearchPa.Name = "labelSearchPa";
-            this.labelSearchPa.Size = new System.Drawing.Size(124, 13);
-            this.labelSearchPa.TabIndex = 93;
-            this.labelSearchPa.Text = "Search product attribute:";
+            this.lblSearchPa.AutoSize = true;
+            this.lblSearchPa.Location = new System.Drawing.Point(8, 37);
+            this.lblSearchPa.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblSearchPa.Name = "lblSearchPa";
+            this.lblSearchPa.Size = new System.Drawing.Size(124, 13);
+            this.lblSearchPa.TabIndex = 93;
+            this.lblSearchPa.Text = "Search product attribute:";
             // 
             // btnSearchProductAdmin
             // 
@@ -1061,9 +1081,9 @@
             this.lblLoggedInAs.AutoSize = true;
             this.lblLoggedInAs.Location = new System.Drawing.Point(9, 3);
             this.lblLoggedInAs.Name = "lblLoggedInAs";
-            this.lblLoggedInAs.Size = new System.Drawing.Size(35, 13);
+            this.lblLoggedInAs.Size = new System.Drawing.Size(74, 13);
             this.lblLoggedInAs.TabIndex = 45;
-            this.lblLoggedInAs.Text = "label1";
+            this.lblLoggedInAs.Text = "lblLoggedInAs";
             // 
             // fileToolStripMenuItem
             // 
@@ -1107,26 +1127,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
-            // 
-            // labelErrorProductAdminFields
-            // 
-            this.labelErrorProductAdminFields.AutoSize = true;
-            this.labelErrorProductAdminFields.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorProductAdminFields.Location = new System.Drawing.Point(487, 77);
-            this.labelErrorProductAdminFields.Name = "labelErrorProductAdminFields";
-            this.labelErrorProductAdminFields.Size = new System.Drawing.Size(88, 13);
-            this.labelErrorProductAdminFields.TabIndex = 117;
-            this.labelErrorProductAdminFields.Text = "felmedelande här";
-            // 
-            // labelErrorSalesPersonFields
-            // 
-            this.labelErrorSalesPersonFields.AutoSize = true;
-            this.labelErrorSalesPersonFields.ForeColor = System.Drawing.Color.Red;
-            this.labelErrorSalesPersonFields.Location = new System.Drawing.Point(448, 87);
-            this.labelErrorSalesPersonFields.Name = "labelErrorSalesPersonFields";
-            this.labelErrorSalesPersonFields.Size = new System.Drawing.Size(88, 13);
-            this.labelErrorSalesPersonFields.TabIndex = 96;
-            this.labelErrorSalesPersonFields.Text = "felmedelande här";
             // 
             // Form1
             // 
@@ -1182,7 +1182,7 @@
         private System.Windows.Forms.Button btnRemoveProductFromSale;
         private System.Windows.Forms.Button btwAddProductToSale;
         private System.Windows.Forms.TextBox textBoxNumPad;
-        private System.Windows.Forms.Button btnENTER;
+        private System.Windows.Forms.Button btnRegisterSale;
         private System.Windows.Forms.Button btnNOK;
         private System.Windows.Forms.Button btnUSD;
         private System.Windows.Forms.Button btnGBP;
@@ -1192,8 +1192,8 @@
         private System.Windows.Forms.DataGridView dataGridViewSaleList;
         private System.Windows.Forms.Button btnSearchProduct;
         private System.Windows.Forms.TextBox textBoxSearchProduct;
-        private System.Windows.Forms.Label labelSearchProduct;
-        private System.Windows.Forms.Label labelSearchSP;
+        private System.Windows.Forms.Label lblSearchProduct;
+        private System.Windows.Forms.Label lblSearchSP;
         private System.Windows.Forms.Button btnSearchSalesPerson;
         private System.Windows.Forms.TextBox textBoxSearchSP;
         private System.Windows.Forms.DataGridView dataGridViewSP;
@@ -1203,7 +1203,7 @@
         private System.Windows.Forms.TextBox textBoxEaPhoneNr;
         private System.Windows.Forms.TextBox textBoxEaFName;
         private System.Windows.Forms.TextBox textBoxEaSpNr;
-        private System.Windows.Forms.Label labelSearchDeletedSP;
+        private System.Windows.Forms.Label lblSearchDeletedSP;
         
         private System.Windows.Forms.DataGridView dataGridViewDeletedSP;
         private System.Windows.Forms.Splitter splitter1;
@@ -1211,22 +1211,22 @@
         private System.Windows.Forms.Label labelEaLName;
         private System.Windows.Forms.Label labelEaFName;
         private System.Windows.Forms.Label labelEaSpNr;
-        private System.Windows.Forms.Label labelPaAmount;
+        private System.Windows.Forms.Label lblPaAmount;
         private System.Windows.Forms.TextBox textBoxPaAmount;
-        private System.Windows.Forms.Label labelSearchDeletedPa;
+        private System.Windows.Forms.Label lblSearchDeletedPa;
         
       
-        private System.Windows.Forms.Label labelPaOutPrice;
-        private System.Windows.Forms.Label labelPaInPrice;
-        private System.Windows.Forms.Label labelPaName;
-        private System.Windows.Forms.Label labelPaPrNr;
+        private System.Windows.Forms.Label lblPaOutPrice;
+        private System.Windows.Forms.Label lblPaInPrice;
+        private System.Windows.Forms.Label lblPaName;
+        private System.Windows.Forms.Label lblPaPrNr;
         private System.Windows.Forms.TextBox textBoxPaInPrice;
         private System.Windows.Forms.TextBox textBoxPaOutPrice;
         private System.Windows.Forms.TextBox textBoxPaName;
         private System.Windows.Forms.TextBox textBoxPaPrNr;
         private System.Windows.Forms.Button btnUpdateProduct;
         private System.Windows.Forms.Button btnAddNewProduct;
-        private System.Windows.Forms.Label labelSearchPa;
+        private System.Windows.Forms.Label lblSearchPa;
         private System.Windows.Forms.Button btnSearchProductAdmin;
         private System.Windows.Forms.TextBox textBoxSearchPa;
         private System.Windows.Forms.DataGridView dataGridViewPa;
@@ -1250,15 +1250,15 @@
         private System.Windows.Forms.CheckBox checkBoxForSale;
         private System.Windows.Forms.Button btnGetAllProductAdmin;
         private System.Windows.Forms.TextBox textBoxCurrencyUnit;
-        private System.Windows.Forms.Label labelErrorSaleSearch;
-        private System.Windows.Forms.Label labelErrorProductSearch;
+        private System.Windows.Forms.Label lblErrorSaleSearch;
+        private System.Windows.Forms.Label lblErrorProductSearch;
         private System.Windows.Forms.Button btnGetAllWorkingSalesPersons;
         private System.Windows.Forms.CheckBox checkBoxEmployee;
         private System.Windows.Forms.CheckBox checkBoxEmployeeAdmin;
-        private System.Windows.Forms.Label labelErrorSalesPersonSearch;
+        private System.Windows.Forms.Label lblErrorSalesPersonSearch;
         private System.Windows.Forms.Button btnViewSale;
-        private System.Windows.Forms.Label labelErrorProductAdminFields;
-        private System.Windows.Forms.Label labelErrorSalesPersonFields;
+        private System.Windows.Forms.Label lblErrorProductAdminFields;
+        private System.Windows.Forms.Label lblErrorSalesPersonFields;
 
 
     }
