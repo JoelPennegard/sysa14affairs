@@ -77,6 +77,7 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Log in";
             this.Load += new System.EventHandler(this.LogIn_Load);
+            this.Paint += new System.Windows.Forms.PaintEventHandler(this.LogIn_Paint);
             this.ResumeLayout(false);
             this.PerformLayout();
 

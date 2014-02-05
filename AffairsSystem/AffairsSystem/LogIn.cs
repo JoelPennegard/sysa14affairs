@@ -24,8 +24,7 @@ namespace AffairsSystem
         {
 
         }
-       
-
+        
         // CLICK ON LOG IN
         private void btnLogIn_Click(object sender, EventArgs e)
         {
@@ -53,6 +52,13 @@ namespace AffairsSystem
             {
                 btnLogIn.PerformClick();
             }
+        }
+
+        private void LogIn_Paint(object sender, PaintEventArgs e)
+        {
+            e.Graphics.DrawRectangle(new Pen(Color.Black, 4),
+                            this.DisplayRectangle);                                     
+
         }
         
 
