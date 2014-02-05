@@ -470,13 +470,13 @@ namespace AffairsSystem
 
             int isAdmin = Utility.ConvertBoolToInt(checkBoxEmployeeAdmin.Checked);
             int isActive = Utility.ConvertBoolToInt(checkBoxEmployee.Checked);
-            string spNr = Utility.FirstCharToUpper(textBoxEaSpNr.Text);
+            string spNr = textBoxEaSpNr.Text;
             string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
             string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
             string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
 
 
-            if (Utility.CheckSalesPerson(controller.SearchSalesPerson(spNr)) != spNr)
+            if (Utility.CheckSalesPersonAddNew(controller.SearchSalesPerson(spNr)) != spNr)
             {
                 string totalInformation = spNr + firstName + lastName + sPhone;
                 if (Utility.CheckIfContainsForbiddenChars(totalInformation))
