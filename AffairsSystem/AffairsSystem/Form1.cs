@@ -275,12 +275,19 @@ namespace AffairsSystem
             {
                 button1.Enabled = false;
                 button.Enabled = false;
-                buttonViewSale.Visible = true;
                 SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
                 DataTable data = new DataTable();
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
                 button2.Text = "Back To Products";
+                if (dataGridViewProductList.Rows.Count == 0)
+                {
+                    buttonViewSale.Visible = false;
+                }
+                else
+                {
+                    buttonViewSale.Visible = true;
+                }
             }
             else
             {
