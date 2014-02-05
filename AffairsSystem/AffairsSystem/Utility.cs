@@ -175,6 +175,17 @@ namespace AffairsSystem
 
             return clear;
         }
+        public static bool CompareInAndOutPrice(int inPrice, int outPrice)
+        {
+            if (inPrice > outPrice)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
     }
 
         
