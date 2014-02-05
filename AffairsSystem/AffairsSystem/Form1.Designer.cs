@@ -30,8 +30,9 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageSale = new System.Windows.Forms.TabPage();
+            this.buttonBack = new System.Windows.Forms.Button();
+            this.buttonViewSale = new System.Windows.Forms.Button();
             this.labelErrorSaleSearch = new System.Windows.Forms.Label();
-            this.textBoxNumPad2 = new System.Windows.Forms.TextBox();
             this.textBoxCurrencyUnit = new System.Windows.Forms.TextBox();
             this.buttonClearAll = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
@@ -40,19 +41,7 @@
             this.buttonSearchProduct = new System.Windows.Forms.Button();
             this.textBoxSearchProduct = new System.Windows.Forms.TextBox();
             this.textBoxNumPad = new System.Windows.Forms.TextBox();
-            this.buttonDELETE = new System.Windows.Forms.Button();
             this.buttonENTER = new System.Windows.Forms.Button();
-            this.buttonNPDECIMAL = new System.Windows.Forms.Button();
-            this.buttonNP0 = new System.Windows.Forms.Button();
-            this.buttonNP9 = new System.Windows.Forms.Button();
-            this.buttonNP8 = new System.Windows.Forms.Button();
-            this.buttonNP7 = new System.Windows.Forms.Button();
-            this.buttonNP6 = new System.Windows.Forms.Button();
-            this.buttonNP5 = new System.Windows.Forms.Button();
-            this.buttonNP4 = new System.Windows.Forms.Button();
-            this.buttonNP2 = new System.Windows.Forms.Button();
-            this.buttonNP3 = new System.Windows.Forms.Button();
-            this.buttonNP1 = new System.Windows.Forms.Button();
             this.buttonNOK = new System.Windows.Forms.Button();
             this.buttonUSD = new System.Windows.Forms.Button();
             this.buttonGBP = new System.Windows.Forms.Button();
@@ -125,8 +114,6 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.buttonViewSale = new System.Windows.Forms.Button();
-            this.buttonBack = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -161,7 +148,6 @@
             this.tabPageSale.Controls.Add(this.buttonBack);
             this.tabPageSale.Controls.Add(this.buttonViewSale);
             this.tabPageSale.Controls.Add(this.labelErrorSaleSearch);
-            this.tabPageSale.Controls.Add(this.textBoxNumPad2);
             this.tabPageSale.Controls.Add(this.textBoxCurrencyUnit);
             this.tabPageSale.Controls.Add(this.buttonClearAll);
             this.tabPageSale.Controls.Add(this.button3);
@@ -170,19 +156,7 @@
             this.tabPageSale.Controls.Add(this.buttonSearchProduct);
             this.tabPageSale.Controls.Add(this.textBoxSearchProduct);
             this.tabPageSale.Controls.Add(this.textBoxNumPad);
-            this.tabPageSale.Controls.Add(this.buttonDELETE);
             this.tabPageSale.Controls.Add(this.buttonENTER);
-            this.tabPageSale.Controls.Add(this.buttonNPDECIMAL);
-            this.tabPageSale.Controls.Add(this.buttonNP0);
-            this.tabPageSale.Controls.Add(this.buttonNP9);
-            this.tabPageSale.Controls.Add(this.buttonNP8);
-            this.tabPageSale.Controls.Add(this.buttonNP7);
-            this.tabPageSale.Controls.Add(this.buttonNP6);
-            this.tabPageSale.Controls.Add(this.buttonNP5);
-            this.tabPageSale.Controls.Add(this.buttonNP4);
-            this.tabPageSale.Controls.Add(this.buttonNP2);
-            this.tabPageSale.Controls.Add(this.buttonNP3);
-            this.tabPageSale.Controls.Add(this.buttonNP1);
             this.tabPageSale.Controls.Add(this.buttonNOK);
             this.tabPageSale.Controls.Add(this.buttonUSD);
             this.tabPageSale.Controls.Add(this.buttonGBP);
@@ -203,6 +177,26 @@
             this.tabPageSale.Text = "Sale menu";
             this.tabPageSale.UseVisualStyleBackColor = true;
             // 
+            // buttonBack
+            // 
+            this.buttonBack.Location = new System.Drawing.Point(141, 490);
+            this.buttonBack.Name = "buttonBack";
+            this.buttonBack.Size = new System.Drawing.Size(75, 23);
+            this.buttonBack.TabIndex = 48;
+            this.buttonBack.Text = "Back";
+            this.buttonBack.UseVisualStyleBackColor = true;
+            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
+            // 
+            // buttonViewSale
+            // 
+            this.buttonViewSale.Location = new System.Drawing.Point(121, 446);
+            this.buttonViewSale.Name = "buttonViewSale";
+            this.buttonViewSale.Size = new System.Drawing.Size(95, 41);
+            this.buttonViewSale.TabIndex = 47;
+            this.buttonViewSale.Text = "View Sale";
+            this.buttonViewSale.UseVisualStyleBackColor = true;
+            this.buttonViewSale.Click += new System.EventHandler(this.buttonViewSale_Click);
+            // 
             // labelErrorSaleSearch
             // 
             this.labelErrorSaleSearch.AutoSize = true;
@@ -212,16 +206,6 @@
             this.labelErrorSaleSearch.Size = new System.Drawing.Size(97, 13);
             this.labelErrorSaleSearch.TabIndex = 46;
             this.labelErrorSaleSearch.Text = "Felmedelanden här";
-            // 
-            // textBoxNumPad2
-            // 
-            this.textBoxNumPad2.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumPad2.Location = new System.Drawing.Point(901, 215);
-            this.textBoxNumPad2.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNumPad2.Name = "textBoxNumPad2";
-            this.textBoxNumPad2.Size = new System.Drawing.Size(206, 44);
-            this.textBoxNumPad2.TabIndex = 45;
-            this.textBoxNumPad2.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // textBoxCurrencyUnit
             // 
@@ -235,10 +219,10 @@
             // 
             // buttonClearAll
             // 
-            this.buttonClearAll.Location = new System.Drawing.Point(1003, 445);
+            this.buttonClearAll.Location = new System.Drawing.Point(900, 399);
             this.buttonClearAll.Margin = new System.Windows.Forms.Padding(2);
             this.buttonClearAll.Name = "buttonClearAll";
-            this.buttonClearAll.Size = new System.Drawing.Size(104, 42);
+            this.buttonClearAll.Size = new System.Drawing.Size(207, 42);
             this.buttonClearAll.TabIndex = 44;
             this.buttonClearAll.Text = "Clear all fields";
             this.buttonClearAll.UseVisualStyleBackColor = true;
@@ -307,148 +291,16 @@
             this.textBoxNumPad.TabIndex = 38;
             this.textBoxNumPad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
-            // buttonDELETE
-            // 
-            this.buttonDELETE.Location = new System.Drawing.Point(1027, 263);
-            this.buttonDELETE.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonDELETE.Name = "buttonDELETE";
-            this.buttonDELETE.Size = new System.Drawing.Size(80, 41);
-            this.buttonDELETE.TabIndex = 37;
-            this.buttonDELETE.Text = "<-";
-            this.buttonDELETE.UseVisualStyleBackColor = true;
-            this.buttonDELETE.Click += new System.EventHandler(this.buttonDELETE_Click);
-            // 
             // buttonENTER
             // 
-            this.buttonENTER.Location = new System.Drawing.Point(1027, 309);
+            this.buttonENTER.Location = new System.Drawing.Point(901, 214);
             this.buttonENTER.Margin = new System.Windows.Forms.Padding(2);
             this.buttonENTER.Name = "buttonENTER";
-            this.buttonENTER.Size = new System.Drawing.Size(80, 132);
+            this.buttonENTER.Size = new System.Drawing.Size(206, 181);
             this.buttonENTER.TabIndex = 36;
             this.buttonENTER.Text = "ENTER";
             this.buttonENTER.UseVisualStyleBackColor = true;
             this.buttonENTER.Click += new System.EventHandler(this.buttonENTER_Click);
-            // 
-            // buttonNPDECIMAL
-            // 
-            this.buttonNPDECIMAL.Location = new System.Drawing.Point(985, 400);
-            this.buttonNPDECIMAL.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNPDECIMAL.Name = "buttonNPDECIMAL";
-            this.buttonNPDECIMAL.Size = new System.Drawing.Size(38, 41);
-            this.buttonNPDECIMAL.TabIndex = 35;
-            this.buttonNPDECIMAL.Text = ".";
-            this.buttonNPDECIMAL.UseVisualStyleBackColor = true;
-            this.buttonNPDECIMAL.Click += new System.EventHandler(this.buttonNPDECIMAL_Click);
-            // 
-            // buttonNP0
-            // 
-            this.buttonNP0.Location = new System.Drawing.Point(901, 400);
-            this.buttonNP0.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNP0.Name = "buttonNP0";
-            this.buttonNP0.Size = new System.Drawing.Size(80, 41);
-            this.buttonNP0.TabIndex = 34;
-            this.buttonNP0.Text = "0";
-            this.buttonNP0.UseVisualStyleBackColor = true;
-            this.buttonNP0.Click += new System.EventHandler(this.buttonNP0_Click);
-            // 
-            // buttonNP9
-            // 
-            this.buttonNP9.Location = new System.Drawing.Point(985, 263);
-            this.buttonNP9.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNP9.Name = "buttonNP9";
-            this.buttonNP9.Size = new System.Drawing.Size(38, 41);
-            this.buttonNP9.TabIndex = 33;
-            this.buttonNP9.Text = "9";
-            this.buttonNP9.UseVisualStyleBackColor = true;
-            this.buttonNP9.Click += new System.EventHandler(this.buttonNP9_Click);
-            // 
-            // buttonNP8
-            // 
-            this.buttonNP8.Location = new System.Drawing.Point(943, 263);
-            this.buttonNP8.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNP8.Name = "buttonNP8";
-            this.buttonNP8.Size = new System.Drawing.Size(38, 41);
-            this.buttonNP8.TabIndex = 32;
-            this.buttonNP8.Text = "8";
-            this.buttonNP8.UseVisualStyleBackColor = true;
-            this.buttonNP8.Click += new System.EventHandler(this.buttonNP8_Click);
-            // 
-            // buttonNP7
-            // 
-            this.buttonNP7.Location = new System.Drawing.Point(901, 263);
-            this.buttonNP7.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNP7.Name = "buttonNP7";
-            this.buttonNP7.Size = new System.Drawing.Size(38, 41);
-            this.buttonNP7.TabIndex = 31;
-            this.buttonNP7.Text = "7";
-            this.buttonNP7.UseVisualStyleBackColor = true;
-            this.buttonNP7.Click += new System.EventHandler(this.buttonNP7_Click);
-            // 
-            // buttonNP6
-            // 
-            this.buttonNP6.Location = new System.Drawing.Point(985, 309);
-            this.buttonNP6.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNP6.Name = "buttonNP6";
-            this.buttonNP6.Size = new System.Drawing.Size(38, 41);
-            this.buttonNP6.TabIndex = 30;
-            this.buttonNP6.Text = "6";
-            this.buttonNP6.UseVisualStyleBackColor = true;
-            this.buttonNP6.Click += new System.EventHandler(this.buttonNP6_Click);
-            // 
-            // buttonNP5
-            // 
-            this.buttonNP5.Location = new System.Drawing.Point(943, 309);
-            this.buttonNP5.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNP5.Name = "buttonNP5";
-            this.buttonNP5.Size = new System.Drawing.Size(38, 41);
-            this.buttonNP5.TabIndex = 29;
-            this.buttonNP5.Text = "5";
-            this.buttonNP5.UseVisualStyleBackColor = true;
-            this.buttonNP5.Click += new System.EventHandler(this.buttonNP5_Click);
-            // 
-            // buttonNP4
-            // 
-            this.buttonNP4.Location = new System.Drawing.Point(901, 309);
-            this.buttonNP4.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNP4.Name = "buttonNP4";
-            this.buttonNP4.Size = new System.Drawing.Size(38, 41);
-            this.buttonNP4.TabIndex = 28;
-            this.buttonNP4.Text = "4";
-            this.buttonNP4.UseVisualStyleBackColor = true;
-            this.buttonNP4.Click += new System.EventHandler(this.buttonNP4_Click);
-            // 
-            // buttonNP2
-            // 
-            this.buttonNP2.Location = new System.Drawing.Point(943, 355);
-            this.buttonNP2.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNP2.Name = "buttonNP2";
-            this.buttonNP2.Size = new System.Drawing.Size(38, 41);
-            this.buttonNP2.TabIndex = 27;
-            this.buttonNP2.Text = "2";
-            this.buttonNP2.UseVisualStyleBackColor = true;
-            this.buttonNP2.Click += new System.EventHandler(this.buttonNP2_Click);
-            // 
-            // buttonNP3
-            // 
-            this.buttonNP3.Location = new System.Drawing.Point(985, 355);
-            this.buttonNP3.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNP3.Name = "buttonNP3";
-            this.buttonNP3.Size = new System.Drawing.Size(38, 41);
-            this.buttonNP3.TabIndex = 26;
-            this.buttonNP3.Text = "3";
-            this.buttonNP3.UseVisualStyleBackColor = true;
-            this.buttonNP3.Click += new System.EventHandler(this.buttonNP3_Click);
-            // 
-            // buttonNP1
-            // 
-            this.buttonNP1.Location = new System.Drawing.Point(901, 355);
-            this.buttonNP1.Margin = new System.Windows.Forms.Padding(2);
-            this.buttonNP1.Name = "buttonNP1";
-            this.buttonNP1.Size = new System.Drawing.Size(38, 41);
-            this.buttonNP1.TabIndex = 25;
-            this.buttonNP1.Text = "1";
-            this.buttonNP1.UseVisualStyleBackColor = true;
-            this.buttonNP1.Click += new System.EventHandler(this.buttonNP1_Click);
             // 
             // buttonNOK
             // 
@@ -1264,26 +1116,6 @@
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
             // 
-            // buttonViewSale
-            // 
-            this.buttonViewSale.Location = new System.Drawing.Point(121, 446);
-            this.buttonViewSale.Name = "buttonViewSale";
-            this.buttonViewSale.Size = new System.Drawing.Size(95, 41);
-            this.buttonViewSale.TabIndex = 47;
-            this.buttonViewSale.Text = "View Sale";
-            this.buttonViewSale.UseVisualStyleBackColor = true;
-            this.buttonViewSale.Click += new System.EventHandler(this.buttonViewSale_Click);
-            // 
-            // buttonBack
-            // 
-            this.buttonBack.Location = new System.Drawing.Point(141, 490);
-            this.buttonBack.Name = "buttonBack";
-            this.buttonBack.Size = new System.Drawing.Size(75, 23);
-            this.buttonBack.TabIndex = 48;
-            this.buttonBack.Text = "Back";
-            this.buttonBack.UseVisualStyleBackColor = true;
-            this.buttonBack.Click += new System.EventHandler(this.buttonBack_Click);
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1337,19 +1169,7 @@
         private System.Windows.Forms.Button button;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBoxNumPad;
-        private System.Windows.Forms.Button buttonDELETE;
         private System.Windows.Forms.Button buttonENTER;
-        private System.Windows.Forms.Button buttonNPDECIMAL;
-        private System.Windows.Forms.Button buttonNP0;
-        private System.Windows.Forms.Button buttonNP9;
-        private System.Windows.Forms.Button buttonNP8;
-        private System.Windows.Forms.Button buttonNP7;
-        private System.Windows.Forms.Button buttonNP6;
-        private System.Windows.Forms.Button buttonNP5;
-        private System.Windows.Forms.Button buttonNP4;
-        private System.Windows.Forms.Button buttonNP2;
-        private System.Windows.Forms.Button buttonNP3;
-        private System.Windows.Forms.Button buttonNP1;
         private System.Windows.Forms.Button buttonNOK;
         private System.Windows.Forms.Button buttonUSD;
         private System.Windows.Forms.Button buttonGBP;
@@ -1417,7 +1237,6 @@
         private System.Windows.Forms.CheckBox checkBoxForSale;
         private System.Windows.Forms.Button buttonGetAllPa;
         private System.Windows.Forms.TextBox textBoxCurrencyUnit;
-        private System.Windows.Forms.TextBox textBoxNumPad2;
         private System.Windows.Forms.Label labelErrorSaleSearch;
         private System.Windows.Forms.Label labelErrorProductSearch;
         private System.Windows.Forms.Button buttonGetAllWorkingSalesPersons;

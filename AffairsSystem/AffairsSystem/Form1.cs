@@ -485,89 +485,7 @@ namespace AffairsSystem
             textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("NOK", totalPrice).ToString();
         }
         
-        private void buttonNP1_Click(object sender, EventArgs e)
-        {
-            string input = "1";
-            textBoxNumPad2.Text = payedAmount = Utility.CalculateNumpad(input, payedAmount);
-            
-        }
-
-        private void buttonNP2_Click(object sender, EventArgs e)
-        {
-            string input = "2";
-            textBoxNumPad2.Text = payedAmount = Utility.CalculateNumpad(input, payedAmount);
-            
-        }
-
-        private void buttonNP3_Click(object sender, EventArgs e)
-        {
-
-            string input = "3";
-            textBoxNumPad2.Text = payedAmount = Utility.CalculateNumpad(input, payedAmount);
-            
-        }
-
-        private void buttonNP4_Click(object sender, EventArgs e)
-        {
-            string input = "4";
-            textBoxNumPad2.Text = payedAmount = Utility.CalculateNumpad(input, payedAmount);
-            
-        }
-
-        private void buttonNP5_Click(object sender, EventArgs e)
-        {
-            string input = "5";
-            textBoxNumPad2.Text = payedAmount = Utility.CalculateNumpad(input, payedAmount);
-            
-        }
-
-        private void buttonNP6_Click(object sender, EventArgs e)
-        {
-            string input = "6";
-            textBoxNumPad2.Text = payedAmount = Utility.CalculateNumpad(input, payedAmount);
-            
-        }
-
-        private void buttonNP7_Click(object sender, EventArgs e)
-        {
-            string input = "7";
-            textBoxNumPad2.Text = payedAmount = Utility.CalculateNumpad(input, payedAmount);
-            
-        }
-
-        private void buttonNP8_Click(object sender, EventArgs e)
-        {
-            string input = "8";
-            textBoxNumPad2.Text = payedAmount = Utility.CalculateNumpad(input, payedAmount);
-            
-        }
-
-        private void buttonNP9_Click(object sender, EventArgs e)
-        {
-            string input = "9";
-            textBoxNumPad2.Text = payedAmount = Utility.CalculateNumpad(input, payedAmount);
-            
-        }
-
-        private void buttonNP0_Click(object sender, EventArgs e)
-        {
-            string input = "0";
-            textBoxNumPad2.Text =  payedAmount = Utility.CalculateNumpad(input, payedAmount);
-        }
-
-        private void buttonNPDECIMAL_Click(object sender, EventArgs e)
-        {
-            string input = ".";
-            textBoxNumPad2.Text = payedAmount = Utility.CalculateNumpad(input, payedAmount);
-            
-        }
-
-        private void buttonDELETE_Click(object sender, EventArgs e)
-        {
-            textBoxNumPad2.Text = payedAmount = Utility.TrimLastCharacter(payedAmount);
-            
-           
-        }
+        
 
         private void buttonGetAllWorkingSalesPersons_Click(object sender, EventArgs e)
         {
@@ -824,7 +742,7 @@ namespace AffairsSystem
             dataGridViewSaleList.Rows.Clear();
             richTextBoxAmount.Text = "";
             payedAmount = "";
-            textBoxNumPad2.Text = "";
+            
         }
 
         
