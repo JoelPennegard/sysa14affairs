@@ -50,7 +50,8 @@ namespace AffairsSystem
                 tabControl.Controls.Remove(tabPageProduct);
                 tabControl.Controls.Remove(tabPageStatistics);
                 exitToolStripMenuItem.Enabled = false;
-                lblLoggedInAs.Text = "Logged in as: " + name; 
+                lblLoggedInAs.Text = "Logged in as: " + name;
+                exitToolStripMenuItem.Enabled = false;
             }
             this.spNr = spNr;
 
@@ -116,7 +117,8 @@ namespace AffairsSystem
 
         private void button1_Click(object sender, EventArgs e)
         {
-            textBoxCurrencyUnit.Text = "SEK";
+
+            string currency = textBoxCurrencyUnit.Text = "SEK";
             int productNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
             string productName = dataGridViewProductList.SelectedRows[0].Cells[1].Value.ToString();
             double productOutPrice = double.Parse(dataGridViewProductList.SelectedRows[0].Cells[2].Value.ToString());
@@ -154,7 +156,6 @@ namespace AffairsSystem
                             int tmpProductNr = int.Parse(dataGridViewSaleList.Rows[i].Cells[0].Value.ToString());
                             if (productNr==tmpProductNr) 
                             {
-                                
                                 int currentAmountInSalesLine = int.Parse(dataGridViewSaleList.Rows[i].Cells[3].Value.ToString());
                                 double SinglePrice = amountInt * productOutPrice;
                                 
@@ -186,8 +187,8 @@ namespace AffairsSystem
                             FillProductTableAdmin();
                             
                         }
-                        
-                        textBoxNumPad.Text = totalPrice.ToString();
+
+                        textBoxNumPad.Text = Utility.GetCurrencyExchangeRate(currency, totalPrice).ToString();
                     }
                     else
                     {
@@ -643,14 +644,27 @@ namespace AffairsSystem
             string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
             string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
             string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
+            string totalInformation = spNr + firstName + lastName + sPhone;
+            
+            if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
+            {
+                MessageBox.Show("Man får inte använda [ ' ]... ska skriva detta någon annanstans");
+            }
+            else if (Utility.CheckIfSearchIsEmpty(spNr) || Utility.CheckIfSearchIsEmpty(firstName) ||
+                Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone))
+            {
+                MessageBox.Show("Vänligen fyll i alla fält");
+            }
+            else
+            {
 
-            controller.UpdateSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
-            MessageBox.Show("Person: " + spNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                controller.UpdateSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
+                MessageBox.Show("Person: " + spNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            FillNotWorkingSalesPersonTable();
-            FillWorkingSalesPersonTable();
-            ClearAllEmployeeAdmin();
-           
+                FillNotWorkingSalesPersonTable();
+                FillWorkingSalesPersonTable();
+                ClearAllEmployeeAdmin();
+            }
         }
 
         private void buttonEaNew_Click(object sender, EventArgs e)
@@ -661,13 +675,27 @@ namespace AffairsSystem
             string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
             string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
             string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
+            
+            string totalInformation = spNr + firstName + lastName + sPhone;
+            if (Utility.checkIfSearchContainsForbiddenChars(totalInformation))
+            {
+                MessageBox.Show("Man får inte använda [ ' ]... ska skriva detta någon annanstans");
+            }
+            else if (Utility.CheckIfSearchIsEmpty(spNr) || Utility.CheckIfSearchIsEmpty(firstName) || 
+                Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone)) 
+            {
+                MessageBox.Show("Vänligen fyll i alla fält");
+            }
+            else
+            {
 
-            controller.SetSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
-            MessageBox.Show("Person: " + spNr + " was added.", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                controller.SetSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
+                MessageBox.Show("Person: " + spNr + " was added.", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-            FillNotWorkingSalesPersonTable();
-            FillWorkingSalesPersonTable();
-            ClearAllEmployeeAdmin();
+                FillNotWorkingSalesPersonTable();
+                FillWorkingSalesPersonTable();
+                ClearAllEmployeeAdmin();
+            }
         }
 
         private void textBoxSearchSP_KeyPress(object sender, KeyPressEventArgs e)
