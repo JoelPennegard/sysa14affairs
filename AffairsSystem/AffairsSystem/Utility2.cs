@@ -32,8 +32,23 @@ namespace AffairsSystem
 
             foreach (char c in text)
             {
-                if (c < '0' || c > '9')
+                if (c < '0' || c > '9' )
                     return false;
+            }
+            return true;
+        }
+        public static bool CheckOnlyNumbersAndDecimals(string text)
+        {
+
+            foreach (char c in text)
+            {
+                if (c < '0' || c > '9')
+
+                {
+                    if (!c.Equals('.')){
+                    return false;
+                    }
+                }
             }
             return true;
         }
@@ -47,7 +62,7 @@ namespace AffairsSystem
             return name;
                     
         }
-        public static bool checkIfSearchContainsForbiddenChars(string searchString)
+        public static bool CheckIfContainsForbiddenChars(string searchString)
         {
             string s = "'";
             if (searchString.Contains(s))
