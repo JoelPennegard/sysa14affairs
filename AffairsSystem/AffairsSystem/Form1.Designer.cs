@@ -146,6 +146,7 @@
             // 
             // tabPageSale
             // 
+            this.tabPageSale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.tabPageSale.Controls.Add(this.btnViewSale);
             this.tabPageSale.Controls.Add(this.lblErrorSaleSearch);
             this.tabPageSale.Controls.Add(this.textBoxCurrencyUnit);
