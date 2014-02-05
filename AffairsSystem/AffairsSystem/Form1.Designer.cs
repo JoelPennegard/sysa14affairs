@@ -1112,6 +1112,7 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.tabControl);
             this.Controls.Add(this.menuStrip1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MainMenuStrip = this.menuStrip1;
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
