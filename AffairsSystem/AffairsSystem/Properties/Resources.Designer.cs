@@ -63,29 +63,9 @@ namespace AffairsSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap åiss {
+        internal static System.Drawing.Bitmap loginpicture {
             get {
-                object obj = ResourceManager.GetObject("åiss", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap åiss1 {
-            get {
-                object obj = ResourceManager.GetObject("åiss1", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap picture000 {
-            get {
-                object obj = ResourceManager.GetObject("picture000", resourceCulture);
+                object obj = ResourceManager.GetObject("loginpicture", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

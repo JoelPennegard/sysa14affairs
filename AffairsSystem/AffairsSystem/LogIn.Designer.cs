@@ -31,7 +31,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.textBoxspNr = new System.Windows.Forms.TextBox();
             this.btnLogIn = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // label1
@@ -45,7 +44,8 @@
             // 
             // textBoxspNr
             // 
-            this.textBoxspNr.Location = new System.Drawing.Point(124, 115);
+            this.textBoxspNr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxspNr.Location = new System.Drawing.Point(152, 271);
             this.textBoxspNr.Name = "textBoxspNr";
             this.textBoxspNr.Size = new System.Drawing.Size(100, 20);
             this.textBoxspNr.TabIndex = 1;
@@ -54,7 +54,7 @@
             // 
             // btnLogIn
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(136, 151);
+            this.btnLogIn.Location = new System.Drawing.Point(165, 298);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(75, 23);
             this.btnLogIn.TabIndex = 2;
@@ -62,22 +62,13 @@
             this.btnLogIn.UseVisualStyleBackColor = true;
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(127, 23);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 24);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "AffAIRs";
-            // 
             // LogIn
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(345, 308);
-            this.Controls.Add(this.label2);
+            this.BackgroundImage = global::AffairsSystem.Properties.Resources.loginpicture;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.ClientSize = new System.Drawing.Size(397, 343);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.textBoxspNr);
             this.Controls.Add(this.label1);
@@ -96,6 +87,5 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox textBoxspNr;
         private System.Windows.Forms.Button btnLogIn;
-        private System.Windows.Forms.Label label2;
     }
 }
