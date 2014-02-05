@@ -94,6 +94,7 @@ namespace AffairsSystem
             buttonBack.Visible = false;
             buttonViewSale.Visible = false;
             button1.Enabled = true;
+            button.Enabled = true;
  
         }
 
@@ -272,6 +273,7 @@ namespace AffairsSystem
         private void button2_Click(object sender, EventArgs e)
         {
             button1.Enabled = false;
+            button.Enabled = false;
             buttonViewSale.Visible = true;
             SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
             DataTable data = new DataTable();
@@ -644,6 +646,7 @@ namespace AffairsSystem
                 buttonBack.Visible = false;
             buttonViewSale.Visible = false;
             button1.Enabled = true;
+            button.Enabled = true;
             }
         }
 
