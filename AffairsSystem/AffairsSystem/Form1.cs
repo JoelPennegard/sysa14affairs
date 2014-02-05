@@ -20,7 +20,7 @@ namespace AffairsSystem
         private string spNr = "";
         private double totalPrice = 0;
         private Controller controller;
-        private string payedAmount = "";
+        
 
 
         private string SpNR
@@ -36,11 +36,6 @@ namespace AffairsSystem
             this.spNr = spNr;
             this.ClearAllErrorMessages();
             FillProductTable();
-            
-
-
-           // if (Admin) { tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as Admin: " + spNr; }
-           //else { tabControl.Enabled = false; lblLoggedInAs.Text = "Logged in as: " + spNr; }
 
             if (Admin) 
             {
