@@ -61,7 +61,6 @@ namespace AffairsSystem
             System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
             // 
             textBoxNumPad.Text = totalPrice.ToString();
-            buttonBack.Visible = false;
             buttonViewSale.Visible = false;
             
 
@@ -81,6 +80,7 @@ namespace AffairsSystem
 
         private void buttonGetAllProducts_Click(object sender, EventArgs e)
         {
+            button2.Text = "My History";
             SqlDataAdapter da = controller.GetAllProductsToSaleList();
             DataTable data = new DataTable();
             da.Fill(data);
@@ -91,7 +91,6 @@ namespace AffairsSystem
             da1.Fill(data1);
             dataGridViewDeletedPa.DataSource = data1;
 
-            buttonBack.Visible = false;
             buttonViewSale.Visible = false;
             button1.Enabled = true;
             button.Enabled = true;
@@ -272,13 +271,25 @@ namespace AffairsSystem
 
         private void button2_Click(object sender, EventArgs e)
         {
-            button1.Enabled = false;
-            button.Enabled = false;
-            buttonViewSale.Visible = true;
-            SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewProductList.DataSource = data;
+            if (button2.Text.Equals("My History"))
+            {
+                button1.Enabled = false;
+                button.Enabled = false;
+                buttonViewSale.Visible = true;
+                SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewProductList.DataSource = data;
+                button2.Text = "Back To Products";
+            }
+            else
+            {
+                FillProductTable();
+                buttonViewSale.Visible = false;
+                button.Enabled = true;
+                button1.Enabled = true;
+                button2.Text = "My History";
+            }
         }
 
 
@@ -630,6 +641,7 @@ namespace AffairsSystem
         
         private void buttonSearchProduct_Click(object sender, EventArgs e)
         {
+            button2.Text = "My History";
             labelErrorSaleSearch.Text = "";
             string search = textBoxSearchProduct.Text;
             if (Utility.checkIfSearchContainsForbiddenChars(search))
@@ -643,7 +655,7 @@ namespace AffairsSystem
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
                 textBoxSearchProduct.Text = "";
-                buttonBack.Visible = false;
+                
             buttonViewSale.Visible = false;
             button1.Enabled = true;
             button.Enabled = true;
@@ -706,30 +718,28 @@ namespace AffairsSystem
 
         private void buttonViewSale_Click(object sender, EventArgs e)
         {
-            int salesNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
+            if (buttonViewSale.Text.Equals("View Sale"))
+            {
+                int salesNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
 
-            SqlDataAdapter da = controller.getSalesLinesFromSale(salesNr);
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewProductList.DataSource = data;
-            buttonBack.Visible = true;
-            
-
-        }
-
-        private void buttonBack_Click(object sender, EventArgs e)
-        {
-           
+                SqlDataAdapter da = controller.getSalesLinesFromSale(salesNr);
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewProductList.DataSource = data;
+                buttonViewSale.Text = "Back";
+            }
+            else
+            {
                 SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
                 DataTable data = new DataTable();
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
-                buttonBack.Visible = false;
+                buttonViewSale.Text = "View Sale";
+            }
 
-            
-            
-            
         }
+
+      
         private void ClearAllSaleView()
         {
             foreach (DataGridViewRow row in dataGridViewSaleList.Rows)
