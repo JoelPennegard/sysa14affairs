@@ -167,6 +167,7 @@ namespace AffairsSystem
         }
         public static string CheckSalesPersonAddNew(SqlDataReader dr)
         {
+
             string clear = null;
             while (dr.Read())
             {

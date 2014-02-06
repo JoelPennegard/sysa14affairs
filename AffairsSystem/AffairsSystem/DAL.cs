@@ -87,8 +87,8 @@ namespace AffairsSystem
             con.Close(); 
             cmd = new SqlCommand(sqlQuery, con);
             con.Open();
-            da = new SqlDataAdapter(cmd); 
-                      
+            da = new SqlDataAdapter(cmd);
+            
             return da;
                        
         }
