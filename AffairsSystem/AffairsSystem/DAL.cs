@@ -51,9 +51,9 @@ namespace AffairsSystem
             {
                 connectionString = "Data Source=MALEXANDER;Initial Catalog=affAIRs;Integrated Security=True";
             }
-            else if (computerName.Equals("ROBINSDATORNNAMN"))
+            else if (computerName.Equals("ROBINS"))
             {
-                connectionString = "";
+                connectionString = "Data Source=ROBINS;Initial Catalog=affAIRs3.0;Integrated Security=True";
             }
             else { }
 
