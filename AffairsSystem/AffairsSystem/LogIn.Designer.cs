@@ -35,7 +35,7 @@
             // textBoxspNr
             // 
             this.textBoxspNr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBoxspNr.Location = new System.Drawing.Point(203, 334);
+            this.textBoxspNr.Location = new System.Drawing.Point(134, 272);
             this.textBoxspNr.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.textBoxspNr.Name = "textBoxspNr";
             this.textBoxspNr.Size = new System.Drawing.Size(133, 22);
@@ -45,7 +45,7 @@
             // 
             // btnLogIn
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(220, 367);
+            this.btnLogIn.Location = new System.Drawing.Point(151, 302);
             this.btnLogIn.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(100, 28);
@@ -60,7 +60,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::AffairsSystem.Properties.Resources.loginpicture;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.ClientSize = new System.Drawing.Size(529, 422);
+            this.ClientSize = new System.Drawing.Size(398, 344);
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.textBoxspNr);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
