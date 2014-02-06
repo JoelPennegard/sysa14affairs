@@ -291,6 +291,7 @@ namespace AffairsSystem
                 btnRemoveProductFromSale.Enabled = true;
                 btwAddProductToSale.Enabled = true;
                 btnMyHistory.Text = "My History";
+                btnViewSale.Text = "View Sale";
             }
         }
 
