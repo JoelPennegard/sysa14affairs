@@ -184,6 +184,7 @@ namespace AffairsSystem
 
                                 controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
                                 FillProductTableAdmin();
+                                FillProductTable();
                                 exists = true;
                                 
 
@@ -199,6 +200,7 @@ namespace AffairsSystem
                             totalPrice = totalPrice + SinglePrice;
                             controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
                             FillProductTableAdmin();
+                            FillProductTable();
                             
                         }
 
@@ -230,6 +232,7 @@ namespace AffairsSystem
                     controller.UpdateProductAmount(amount, productNr, minusOrPlus);
                     dataGridViewSaleList.Rows.RemoveAt(this.dataGridViewSaleList.SelectedRows[0].Index);
                     FillProductTableAdmin();
+                    FillProductTable();
                     textBoxNumPad.Text = totalPrice.ToString();
                     if (this.dataGridViewSaleList.Rows.Count == 0)
                     {

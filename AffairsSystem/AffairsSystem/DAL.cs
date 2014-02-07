@@ -119,7 +119,7 @@ namespace AffairsSystem
         /// <returns>a sqlDataAdapter containing a table of products</returns>
         public SqlDataAdapter GetAllProductsToSaleList()
         {
-            return ExecuteGetSqlAdapter("select productNr as [Product Nr], productName as [Product Name], productOutPrice [Price] from product where isForSale = 1");
+            return ExecuteGetSqlAdapter("select productNr as [Product Nr], productName as [Product Name], productOutPrice [Price] from product where isForSale = 1 and amount > 0");
         }
 
         /// <summary>
