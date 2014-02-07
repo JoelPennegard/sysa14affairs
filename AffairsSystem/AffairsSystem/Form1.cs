@@ -54,6 +54,7 @@ namespace AffairsSystem
             {
                 tabControl.Controls.Remove(tabPageEmployee);
                 tabControl.Controls.Remove(tabPageProduct);
+                tabControl.Controls.Remove(tabPageHistory);
                 tabControl.Controls.Remove(tabPageStatistics);
                 exitToolStripMenuItem.Enabled = false;
                 lblLoggedInAs.Text = "Logged in as: " + name;
