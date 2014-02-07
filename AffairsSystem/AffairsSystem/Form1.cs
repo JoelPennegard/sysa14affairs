@@ -645,7 +645,7 @@ namespace AffairsSystem
             {
                 lblErrorProductAdminFields.Text = "Please provide the prices \n" + "with numbers only";
             }
-            else if (Utility.CompareInAndOutPrice(int.Parse(inPriceString), int.Parse(outPriceString)))
+            else if (Utility.CompareInAndOutPrice(double.Parse(inPriceString), double.Parse(outPriceString)))
             {
                 lblErrorProductAdminFields.Text = "In Price can't be higher \n" + "than out price";
             }
@@ -698,7 +698,7 @@ namespace AffairsSystem
             {
                 lblErrorProductAdminFields.Text = "Please provide the prices \n" + "with numbers only";
             }
-            else if (Utility.CompareInAndOutPrice(int.Parse(inPriceString), int.Parse(outPriceString)))
+            else if (Utility.CompareInAndOutPrice(double.Parse(inPriceString), double.Parse(outPriceString)))
             {
                 lblErrorProductAdminFields.Text = "In Price can't be higher \n" + "than out price";
             }

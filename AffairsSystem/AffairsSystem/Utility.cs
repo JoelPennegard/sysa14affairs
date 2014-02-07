@@ -176,7 +176,7 @@ namespace AffairsSystem
 
             return clear;
         }
-        public static bool CompareInAndOutPrice(int inPrice, int outPrice)
+        public static bool CompareInAndOutPrice(double inPrice, double outPrice)
         {
             if (inPrice > outPrice)
             {
