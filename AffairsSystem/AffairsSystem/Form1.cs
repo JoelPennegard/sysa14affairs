@@ -503,6 +503,9 @@ namespace AffairsSystem
                     FillWorkingSalesPersonTable();
                     ClearAllEmployeeAdmin();
                     lblErrorSalesPersonFields.Text = "";
+                    comboBoxEmployees.Items.Clear();
+                    FillEmployeeDopbox();
+                   
                 }
             }
             else
