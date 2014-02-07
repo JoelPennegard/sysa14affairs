@@ -46,7 +46,7 @@ namespace AffairsSystem
                 FillProductTableNotForSaleAdmin();
                 FillNotWorkingSalesPersonTable();
                 FillWorkingSalesPersonTable();
-                FillEmployeeDopbox();
+                FillEmployeeComboBox();
                 FillDataGridViewHistory1AllSalesPersons();
 
             }
@@ -249,7 +249,7 @@ namespace AffairsSystem
             else
             {
 
-                controller.SetSale(spNr, totalPrice);
+                controller.SetSale(spNr, Utility.RoundSEK(totalPrice));
                 int salesNr = Utility.CheckLatestSale(controller.GetLatestSale());
 
                 foreach (DataGridViewRow row in dataGridViewSaleList.Rows)
@@ -262,6 +262,8 @@ namespace AffairsSystem
                 dataGridViewSaleList.Rows.Clear();
                 totalPrice = 0;
                 textBoxNumPad.Text = totalPrice.ToString();
+                FillDataGridViewHistory1AllSalesPersons();
+                comboBoxEmployees.Text = "All employees";
             }
         }
 
@@ -504,7 +506,7 @@ namespace AffairsSystem
                     ClearAllEmployeeAdmin();
                     lblErrorSalesPersonFields.Text = "";
                     comboBoxEmployees.Items.Clear();
-                    FillEmployeeDopbox();
+                    FillEmployeeComboBox();
                    
                 }
             }
@@ -948,7 +950,7 @@ namespace AffairsSystem
             lblErrorSalesPersonSearch.Text = "";
         }
 
-        public void FillEmployeeDopbox()
+        public void FillEmployeeComboBox()
         {
             SqlDataReader dr = controller.GetAllSalesPersonSpnr();
             while (dr.Read())
