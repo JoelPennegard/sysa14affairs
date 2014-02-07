@@ -107,11 +107,14 @@
             this.textBoxSearchPa = new System.Windows.Forms.TextBox();
             this.dataGridViewPa = new System.Windows.Forms.DataGridView();
             this.tabPageHistory = new System.Windows.Forms.TabPage();
-            this.btnHAViewSaleLines = new System.Windows.Forms.Button();
-            this.lblAnd = new System.Windows.Forms.Label();
-            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.btnHAGetSales = new System.Windows.Forms.Button();
+            this.groupBoxSelect = new System.Windows.Forms.GroupBox();
             this.comboBoxEmployees = new System.Windows.Forms.ComboBox();
+            this.groupBoxBetween = new System.Windows.Forms.GroupBox();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
             this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.lblAnd = new System.Windows.Forms.Label();
+            this.btnHAViewSaleLines = new System.Windows.Forms.Button();
             this.dataGridViewHistory2 = new System.Windows.Forms.DataGridView();
             this.dataGridViewHistory1 = new System.Windows.Forms.DataGridView();
             this.tabPageStatistics = new System.Windows.Forms.TabPage();
@@ -126,9 +129,8 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBoxBetween = new System.Windows.Forms.GroupBox();
-            this.groupBoxSelect = new System.Windows.Forms.GroupBox();
-            this.btnHAGetSales = new System.Windows.Forms.Button();
+            this.groupBoxCurrencys = new System.Windows.Forms.GroupBox();
+            this.groupBoxTotalPrice = new System.Windows.Forms.GroupBox();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
@@ -142,14 +144,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedPa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).BeginInit();
             this.tabPageHistory.SuspendLayout();
+            this.groupBoxSelect.SuspendLayout();
+            this.groupBoxBetween.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory1)).BeginInit();
             this.tabPageStatistics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistics)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBoxBetween.SuspendLayout();
-            this.groupBoxSelect.SuspendLayout();
+            this.groupBoxCurrencys.SuspendLayout();
+            this.groupBoxTotalPrice.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -169,23 +173,17 @@
             // tabPageSale
             // 
             this.tabPageSale.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tabPageSale.Controls.Add(this.groupBoxTotalPrice);
+            this.tabPageSale.Controls.Add(this.groupBoxCurrencys);
             this.tabPageSale.Controls.Add(this.btnViewSale);
             this.tabPageSale.Controls.Add(this.lblErrorSaleSearch);
-            this.tabPageSale.Controls.Add(this.textBoxCurrencyUnit);
             this.tabPageSale.Controls.Add(this.btnClearAll);
             this.tabPageSale.Controls.Add(this.btnClearAllSaleView);
             this.tabPageSale.Controls.Add(this.btnMyHistory);
             this.tabPageSale.Controls.Add(this.lblSearchProduct);
             this.tabPageSale.Controls.Add(this.btnSearchProductSalesTab);
             this.tabPageSale.Controls.Add(this.textBoxSearchProduct);
-            this.tabPageSale.Controls.Add(this.textBoxNumPad);
             this.tabPageSale.Controls.Add(this.btnRegisterSale);
-            this.tabPageSale.Controls.Add(this.btnNOK);
-            this.tabPageSale.Controls.Add(this.btnUSD);
-            this.tabPageSale.Controls.Add(this.btnGBP);
-            this.tabPageSale.Controls.Add(this.btnEURO);
-            this.tabPageSale.Controls.Add(this.btnDKK);
-            this.tabPageSale.Controls.Add(this.btnSEK);
             this.tabPageSale.Controls.Add(this.dataGridViewSaleList);
             this.tabPageSale.Controls.Add(this.richTextBoxAmount);
             this.tabPageSale.Controls.Add(this.btnRemoveProductFromSale);
@@ -223,7 +221,7 @@
             // textBoxCurrencyUnit
             // 
             this.textBoxCurrencyUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.textBoxCurrencyUnit.Location = new System.Drawing.Point(1041, 213);
+            this.textBoxCurrencyUnit.Location = new System.Drawing.Point(154, 18);
             this.textBoxCurrencyUnit.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxCurrencyUnit.Multiline = true;
             this.textBoxCurrencyUnit.Name = "textBoxCurrencyUnit";
@@ -232,10 +230,10 @@
             // 
             // btnClearAll
             // 
-            this.btnClearAll.Location = new System.Drawing.Point(900, 399);
+            this.btnClearAll.Location = new System.Drawing.Point(909, 399);
             this.btnClearAll.Margin = new System.Windows.Forms.Padding(2);
             this.btnClearAll.Name = "btnClearAll";
-            this.btnClearAll.Size = new System.Drawing.Size(106, 42);
+            this.btnClearAll.Size = new System.Drawing.Size(141, 42);
             this.btnClearAll.TabIndex = 44;
             this.btnClearAll.Text = "Clear all fields";
             this.btnClearAll.UseVisualStyleBackColor = true;
@@ -297,19 +295,19 @@
             // textBoxNumPad
             // 
             this.textBoxNumPad.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumPad.Location = new System.Drawing.Point(902, 213);
+            this.textBoxNumPad.Location = new System.Drawing.Point(9, 18);
             this.textBoxNumPad.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxNumPad.Name = "textBoxNumPad";
-            this.textBoxNumPad.Size = new System.Drawing.Size(135, 44);
+            this.textBoxNumPad.Size = new System.Drawing.Size(141, 44);
             this.textBoxNumPad.TabIndex = 38;
             this.textBoxNumPad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnRegisterSale
             // 
-            this.btnRegisterSale.Location = new System.Drawing.Point(900, 332);
+            this.btnRegisterSale.Location = new System.Drawing.Point(910, 285);
             this.btnRegisterSale.Margin = new System.Windows.Forms.Padding(2);
             this.btnRegisterSale.Name = "btnRegisterSale";
-            this.btnRegisterSale.Size = new System.Drawing.Size(105, 63);
+            this.btnRegisterSale.Size = new System.Drawing.Size(141, 110);
             this.btnRegisterSale.TabIndex = 36;
             this.btnRegisterSale.Text = "Register Sale";
             this.btnRegisterSale.UseVisualStyleBackColor = true;
@@ -317,10 +315,10 @@
             // 
             // btnNOK
             // 
-            this.btnNOK.Location = new System.Drawing.Point(1040, 166);
+            this.btnNOK.Location = new System.Drawing.Point(127, 65);
             this.btnNOK.Margin = new System.Windows.Forms.Padding(2);
             this.btnNOK.Name = "btnNOK";
-            this.btnNOK.Size = new System.Drawing.Size(68, 42);
+            this.btnNOK.Size = new System.Drawing.Size(53, 42);
             this.btnNOK.TabIndex = 13;
             this.btnNOK.Text = "NOK";
             this.btnNOK.UseVisualStyleBackColor = true;
@@ -328,10 +326,10 @@
             // 
             // btnUSD
             // 
-            this.btnUSD.Location = new System.Drawing.Point(1040, 119);
+            this.btnUSD.Location = new System.Drawing.Point(127, 19);
             this.btnUSD.Margin = new System.Windows.Forms.Padding(2);
             this.btnUSD.Name = "btnUSD";
-            this.btnUSD.Size = new System.Drawing.Size(68, 42);
+            this.btnUSD.Size = new System.Drawing.Size(53, 42);
             this.btnUSD.TabIndex = 12;
             this.btnUSD.Text = "USD";
             this.btnUSD.UseVisualStyleBackColor = true;
@@ -339,10 +337,10 @@
             // 
             // btnGBP
             // 
-            this.btnGBP.Location = new System.Drawing.Point(970, 166);
+            this.btnGBP.Location = new System.Drawing.Point(70, 66);
             this.btnGBP.Margin = new System.Windows.Forms.Padding(2);
             this.btnGBP.Name = "btnGBP";
-            this.btnGBP.Size = new System.Drawing.Size(65, 42);
+            this.btnGBP.Size = new System.Drawing.Size(53, 42);
             this.btnGBP.TabIndex = 11;
             this.btnGBP.Text = "GBP";
             this.btnGBP.UseVisualStyleBackColor = true;
@@ -350,10 +348,10 @@
             // 
             // btnEURO
             // 
-            this.btnEURO.Location = new System.Drawing.Point(971, 119);
+            this.btnEURO.Location = new System.Drawing.Point(70, 19);
             this.btnEURO.Margin = new System.Windows.Forms.Padding(2);
             this.btnEURO.Name = "btnEURO";
-            this.btnEURO.Size = new System.Drawing.Size(65, 42);
+            this.btnEURO.Size = new System.Drawing.Size(53, 42);
             this.btnEURO.TabIndex = 10;
             this.btnEURO.Text = "EURO";
             this.btnEURO.UseVisualStyleBackColor = true;
@@ -361,10 +359,10 @@
             // 
             // btnDKK
             // 
-            this.btnDKK.Location = new System.Drawing.Point(902, 166);
+            this.btnDKK.Location = new System.Drawing.Point(13, 66);
             this.btnDKK.Margin = new System.Windows.Forms.Padding(2);
             this.btnDKK.Name = "btnDKK";
-            this.btnDKK.Size = new System.Drawing.Size(64, 42);
+            this.btnDKK.Size = new System.Drawing.Size(53, 42);
             this.btnDKK.TabIndex = 9;
             this.btnDKK.Text = "DKK";
             this.btnDKK.UseVisualStyleBackColor = true;
@@ -372,10 +370,10 @@
             // 
             // btnSEK
             // 
-            this.btnSEK.Location = new System.Drawing.Point(901, 119);
+            this.btnSEK.Location = new System.Drawing.Point(12, 19);
             this.btnSEK.Margin = new System.Windows.Forms.Padding(2);
             this.btnSEK.Name = "btnSEK";
-            this.btnSEK.Size = new System.Drawing.Size(64, 42);
+            this.btnSEK.Size = new System.Drawing.Size(54, 42);
             this.btnSEK.TabIndex = 8;
             this.btnSEK.Text = "SEK";
             this.btnSEK.UseVisualStyleBackColor = true;
@@ -436,7 +434,7 @@
             // richTextBoxAmount
             // 
             this.richTextBoxAmount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.richTextBoxAmount.Location = new System.Drawing.Point(422, 251);
+            this.richTextBoxAmount.Location = new System.Drawing.Point(422, 250);
             this.richTextBoxAmount.Margin = new System.Windows.Forms.Padding(2);
             this.richTextBoxAmount.Name = "richTextBoxAmount";
             this.richTextBoxAmount.Size = new System.Drawing.Size(65, 34);
@@ -1061,34 +1059,25 @@
             this.tabPageHistory.Text = "History administration";
             this.tabPageHistory.UseVisualStyleBackColor = true;
             // 
-            // btnHAViewSaleLines
+            // btnHAGetSales
             // 
-            this.btnHAViewSaleLines.Location = new System.Drawing.Point(531, 271);
-            this.btnHAViewSaleLines.Name = "btnHAViewSaleLines";
-            this.btnHAViewSaleLines.Size = new System.Drawing.Size(75, 46);
-            this.btnHAViewSaleLines.TabIndex = 8;
-            this.btnHAViewSaleLines.Text = "View Sale Lines";
-            this.btnHAViewSaleLines.UseVisualStyleBackColor = true;
-            this.btnHAViewSaleLines.Click += new System.EventHandler(this.btnHAViewSaleLines_Click);
+            this.btnHAGetSales.Location = new System.Drawing.Point(425, 48);
+            this.btnHAGetSales.Name = "btnHAGetSales";
+            this.btnHAGetSales.Size = new System.Drawing.Size(67, 48);
+            this.btnHAGetSales.TabIndex = 11;
+            this.btnHAGetSales.Text = "Get Sales";
+            this.btnHAGetSales.UseVisualStyleBackColor = true;
+            this.btnHAGetSales.Click += new System.EventHandler(this.btnHAGetSales_Click);
             // 
-            // lblAnd
+            // groupBoxSelect
             // 
-            this.lblAnd.AutoSize = true;
-            this.lblAnd.Location = new System.Drawing.Point(107, 24);
-            this.lblAnd.Name = "lblAnd";
-            this.lblAnd.Size = new System.Drawing.Size(25, 13);
-            this.lblAnd.TabIndex = 6;
-            this.lblAnd.Text = "and";
-            // 
-            // dateTimePickerEnd
-            // 
-            this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePickerEnd.Location = new System.Drawing.Point(138, 22);
-            this.dateTimePickerEnd.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
-            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
-            this.dateTimePickerEnd.Size = new System.Drawing.Size(92, 20);
-            this.dateTimePickerEnd.TabIndex = 4;
-            this.dateTimePickerEnd.Value = new System.DateTime(2014, 2, 8, 0, 0, 0, 0);
+            this.groupBoxSelect.Controls.Add(this.comboBoxEmployees);
+            this.groupBoxSelect.Location = new System.Drawing.Point(23, 41);
+            this.groupBoxSelect.Name = "groupBoxSelect";
+            this.groupBoxSelect.Size = new System.Drawing.Size(148, 55);
+            this.groupBoxSelect.TabIndex = 10;
+            this.groupBoxSelect.TabStop = false;
+            this.groupBoxSelect.Text = "Select employee(s)";
             // 
             // comboBoxEmployees
             // 
@@ -1101,6 +1090,28 @@
             this.comboBoxEmployees.TabIndex = 3;
             this.comboBoxEmployees.Text = "All employees";
             // 
+            // groupBoxBetween
+            // 
+            this.groupBoxBetween.Controls.Add(this.dateTimePickerEnd);
+            this.groupBoxBetween.Controls.Add(this.dateTimePickerStart);
+            this.groupBoxBetween.Controls.Add(this.lblAnd);
+            this.groupBoxBetween.Location = new System.Drawing.Point(177, 41);
+            this.groupBoxBetween.Name = "groupBoxBetween";
+            this.groupBoxBetween.Size = new System.Drawing.Size(242, 55);
+            this.groupBoxBetween.TabIndex = 9;
+            this.groupBoxBetween.TabStop = false;
+            this.groupBoxBetween.Text = "Between";
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(138, 22);
+            this.dateTimePickerEnd.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(92, 20);
+            this.dateTimePickerEnd.TabIndex = 4;
+            this.dateTimePickerEnd.Value = new System.DateTime(2014, 2, 8, 0, 0, 0, 0);
+            // 
             // dateTimePickerStart
             // 
             this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
@@ -1110,6 +1121,25 @@
             this.dateTimePickerStart.Size = new System.Drawing.Size(92, 20);
             this.dateTimePickerStart.TabIndex = 2;
             this.dateTimePickerStart.Value = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
+            // 
+            // lblAnd
+            // 
+            this.lblAnd.AutoSize = true;
+            this.lblAnd.Location = new System.Drawing.Point(107, 24);
+            this.lblAnd.Name = "lblAnd";
+            this.lblAnd.Size = new System.Drawing.Size(25, 13);
+            this.lblAnd.TabIndex = 6;
+            this.lblAnd.Text = "and";
+            // 
+            // btnHAViewSaleLines
+            // 
+            this.btnHAViewSaleLines.Location = new System.Drawing.Point(531, 271);
+            this.btnHAViewSaleLines.Name = "btnHAViewSaleLines";
+            this.btnHAViewSaleLines.Size = new System.Drawing.Size(75, 46);
+            this.btnHAViewSaleLines.TabIndex = 8;
+            this.btnHAViewSaleLines.Text = "View Sale Lines";
+            this.btnHAViewSaleLines.UseVisualStyleBackColor = true;
+            this.btnHAViewSaleLines.Click += new System.EventHandler(this.btnHAViewSaleLines_Click);
             // 
             // dataGridViewHistory2
             // 
@@ -1267,37 +1297,31 @@
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
             // 
-            // groupBoxBetween
+            // groupBoxCurrencys
             // 
-            this.groupBoxBetween.Controls.Add(this.dateTimePickerEnd);
-            this.groupBoxBetween.Controls.Add(this.dateTimePickerStart);
-            this.groupBoxBetween.Controls.Add(this.lblAnd);
-            this.groupBoxBetween.Location = new System.Drawing.Point(177, 41);
-            this.groupBoxBetween.Name = "groupBoxBetween";
-            this.groupBoxBetween.Size = new System.Drawing.Size(242, 55);
-            this.groupBoxBetween.TabIndex = 9;
-            this.groupBoxBetween.TabStop = false;
-            this.groupBoxBetween.Text = "Between";
+            this.groupBoxCurrencys.Controls.Add(this.btnNOK);
+            this.groupBoxCurrencys.Controls.Add(this.btnSEK);
+            this.groupBoxCurrencys.Controls.Add(this.btnDKK);
+            this.groupBoxCurrencys.Controls.Add(this.btnEURO);
+            this.groupBoxCurrencys.Controls.Add(this.btnGBP);
+            this.groupBoxCurrencys.Controls.Add(this.btnUSD);
+            this.groupBoxCurrencys.Location = new System.Drawing.Point(920, 77);
+            this.groupBoxCurrencys.Name = "groupBoxCurrencys";
+            this.groupBoxCurrencys.Size = new System.Drawing.Size(192, 120);
+            this.groupBoxCurrencys.TabIndex = 48;
+            this.groupBoxCurrencys.TabStop = false;
+            this.groupBoxCurrencys.Text = "Currency";
             // 
-            // groupBoxSelect
+            // groupBoxTotalPrice
             // 
-            this.groupBoxSelect.Controls.Add(this.comboBoxEmployees);
-            this.groupBoxSelect.Location = new System.Drawing.Point(23, 41);
-            this.groupBoxSelect.Name = "groupBoxSelect";
-            this.groupBoxSelect.Size = new System.Drawing.Size(148, 55);
-            this.groupBoxSelect.TabIndex = 10;
-            this.groupBoxSelect.TabStop = false;
-            this.groupBoxSelect.Text = "Select employee(s)";
-            // 
-            // btnHAGetSales
-            // 
-            this.btnHAGetSales.Location = new System.Drawing.Point(425, 48);
-            this.btnHAGetSales.Name = "btnHAGetSales";
-            this.btnHAGetSales.Size = new System.Drawing.Size(67, 48);
-            this.btnHAGetSales.TabIndex = 11;
-            this.btnHAGetSales.Text = "Get Sales";
-            this.btnHAGetSales.UseVisualStyleBackColor = true;
-            this.btnHAGetSales.Click += new System.EventHandler(this.btnHAGetSales_Click);
+            this.groupBoxTotalPrice.Controls.Add(this.textBoxNumPad);
+            this.groupBoxTotalPrice.Controls.Add(this.textBoxCurrencyUnit);
+            this.groupBoxTotalPrice.Location = new System.Drawing.Point(901, 203);
+            this.groupBoxTotalPrice.Name = "groupBoxTotalPrice";
+            this.groupBoxTotalPrice.Size = new System.Drawing.Size(228, 77);
+            this.groupBoxTotalPrice.TabIndex = 49;
+            this.groupBoxTotalPrice.TabStop = false;
+            this.groupBoxTotalPrice.Text = "Total Price:";
             // 
             // Form1
             // 
@@ -1332,6 +1356,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedPa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).EndInit();
             this.tabPageHistory.ResumeLayout(false);
+            this.groupBoxSelect.ResumeLayout(false);
+            this.groupBoxBetween.ResumeLayout(false);
+            this.groupBoxBetween.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory1)).EndInit();
             this.tabPageStatistics.ResumeLayout(false);
@@ -1340,9 +1367,9 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBoxBetween.ResumeLayout(false);
-            this.groupBoxBetween.PerformLayout();
-            this.groupBoxSelect.ResumeLayout(false);
+            this.groupBoxCurrencys.ResumeLayout(false);
+            this.groupBoxTotalPrice.ResumeLayout(false);
+            this.groupBoxTotalPrice.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1454,6 +1481,8 @@
         private System.Windows.Forms.GroupBox groupBoxBetween;
         private System.Windows.Forms.Button btnHAGetSales;
         private System.Windows.Forms.GroupBox groupBoxSelect;
+        private System.Windows.Forms.GroupBox groupBoxCurrencys;
+        private System.Windows.Forms.GroupBox groupBoxTotalPrice;
 
 
     }
