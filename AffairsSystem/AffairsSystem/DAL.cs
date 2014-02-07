@@ -239,14 +239,16 @@ namespace AffairsSystem
         // SEARCH PRODUCT ALL ATTRIBUTES (ON SALE)
         public SqlDataAdapter SearchProductAllAttributesForSale(string search)
         {
-            return ExecuteGetSqlAdapter("select * from product where isForSale = 1 and (productNr like '%" + search + "%' or productName like '%" + search +
+            return ExecuteGetSqlAdapter("select productNr as [Product Nr], productName as [Product Name], productInPrice as [In Price], " +
+                "productOutPrice as [Out Price], amount as [Amount], isForSale as [Is For Sale] from product where isForSale = 1 and (productNr like '%" + search + "%' or productName like '%" + search +
                 "%' or productInPrice like '%" + search + "%' or productOutPrice like '%" + search + "%' or amount like '%" + search + "%')");
         }
 
         //SEARCH PRODUCT ALL ATTRIBUTES (NOT FOR SALE)
         public SqlDataAdapter SearchProductAllAttributesNotForSale(string search)
         {
-            return ExecuteGetSqlAdapter("select * from product where isForSale = 0 and (productNr like '%" + search + "%' or productName like '%" + search +
+            return ExecuteGetSqlAdapter("select productNr as [Product Nr], productName as [Product Name], productInPrice as [In Price], " +
+                "productOutPrice as [Out Price], amount as [Amount], isForSale as [Is For Sale] from product where isForSale = 0 and (productNr like '%" + search + "%' or productName like '%" + search +
                 "%' or productInPrice like '%" + search + "%' or productOutPrice like '%" + search + "%' or amount like '%" + search + "%')");
         }
       
