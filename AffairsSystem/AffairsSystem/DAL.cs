@@ -351,7 +351,7 @@ namespace AffairsSystem
         public SqlDataAdapter GetHighestSales()
         {
             return ExecuteGetSqlAdapter("select a.spNr as [Security Nr], firstname as [First Name], lastname as [Last Name], count(*) as [Amount Of Sales], " +
-                "sum(totalPrice) as [Sold For Total] from salesperson a join sales b  on a.spNr = b.spNr  group by a.spNr, firstname, lastname order by count(*) desc");
+                "sum(totalPrice) as [Sold For Total] from salesperson a join sales b  on a.spNr = b.spNr  group by a.spNr, firstname, lastname order by sum(totalPrice) desc");
         }
 
         public SqlDataReader getLatestSale()
