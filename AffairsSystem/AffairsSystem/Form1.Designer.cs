@@ -57,53 +57,63 @@
             this.btwAddProductToSale = new System.Windows.Forms.Button();
             this.dataGridViewProductList = new System.Windows.Forms.DataGridView();
             this.tabPageEmployee = new System.Windows.Forms.TabPage();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.textBoxEaFName = new System.Windows.Forms.TextBox();
+            this.btnAddNewSalesPerson = new System.Windows.Forms.Button();
+            this.btnUpdateSalesPerson = new System.Windows.Forms.Button();
+            this.checkBoxEmployeeAdmin = new System.Windows.Forms.CheckBox();
+            this.textBoxEaSpNr = new System.Windows.Forms.TextBox();
+            this.checkBoxEmployee = new System.Windows.Forms.CheckBox();
+            this.textBoxEaPhoneNr = new System.Windows.Forms.TextBox();
+            this.textBoxEaLName = new System.Windows.Forms.TextBox();
+            this.btnClearAllSalesPersonFields = new System.Windows.Forms.Button();
+            this.labelEaSpNr = new System.Windows.Forms.Label();
+            this.labelEaFName = new System.Windows.Forms.Label();
+            this.labelEaLName = new System.Windows.Forms.Label();
+            this.labelEaPhoneNr = new System.Windows.Forms.Label();
             this.lblErrorSalesPersonFields = new System.Windows.Forms.Label();
             this.lblErrorSalesPersonSearch = new System.Windows.Forms.Label();
-            this.checkBoxEmployeeAdmin = new System.Windows.Forms.CheckBox();
-            this.checkBoxEmployee = new System.Windows.Forms.CheckBox();
             this.btnGetAllWorkingSalesPersons = new System.Windows.Forms.Button();
-            this.btnClearAllSalesPersonFields = new System.Windows.Forms.Button();
             this.lblSearchDeletedSP = new System.Windows.Forms.Label();
             this.dataGridViewDeletedSP = new System.Windows.Forms.DataGridView();
             this.splitter1 = new System.Windows.Forms.Splitter();
-            this.labelEaPhoneNr = new System.Windows.Forms.Label();
-            this.labelEaLName = new System.Windows.Forms.Label();
-            this.labelEaFName = new System.Windows.Forms.Label();
-            this.labelEaSpNr = new System.Windows.Forms.Label();
-            this.textBoxEaLName = new System.Windows.Forms.TextBox();
-            this.textBoxEaPhoneNr = new System.Windows.Forms.TextBox();
-            this.textBoxEaFName = new System.Windows.Forms.TextBox();
-            this.textBoxEaSpNr = new System.Windows.Forms.TextBox();
-            this.btnUpdateSalesPerson = new System.Windows.Forms.Button();
-            this.btnAddNewSalesPerson = new System.Windows.Forms.Button();
             this.lblSearchSP = new System.Windows.Forms.Label();
             this.btnSearchSalesPerson = new System.Windows.Forms.Button();
             this.textBoxSearchSP = new System.Windows.Forms.TextBox();
             this.dataGridViewSP = new System.Windows.Forms.DataGridView();
             this.tabPageProduct = new System.Windows.Forms.TabPage();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.textBoxPaName = new System.Windows.Forms.TextBox();
+            this.textBoxPaPrNr = new System.Windows.Forms.TextBox();
+            this.btnAddNewProduct = new System.Windows.Forms.Button();
+            this.lblPaInPrice = new System.Windows.Forms.Label();
+            this.lblPaOutPrice = new System.Windows.Forms.Label();
+            this.btnUpdateProduct = new System.Windows.Forms.Button();
+            this.textBoxPaAmount = new System.Windows.Forms.TextBox();
+            this.lblPaName = new System.Windows.Forms.Label();
+            this.lblPaAmount = new System.Windows.Forms.Label();
+            this.lblPaPrNr = new System.Windows.Forms.Label();
+            this.checkBoxForSale = new System.Windows.Forms.CheckBox();
+            this.textBoxPaInPrice = new System.Windows.Forms.TextBox();
+            this.btnClearAllProductFields = new System.Windows.Forms.Button();
+            this.textBoxPaOutPrice = new System.Windows.Forms.TextBox();
             this.lblErrorProductAdminFields = new System.Windows.Forms.Label();
             this.lblErrorProductSearch = new System.Windows.Forms.Label();
             this.btnGetAllProductAdmin = new System.Windows.Forms.Button();
-            this.checkBoxForSale = new System.Windows.Forms.CheckBox();
-            this.btnClearAllProductFields = new System.Windows.Forms.Button();
             this.dataGridViewDeletedPa = new System.Windows.Forms.DataGridView();
-            this.lblPaAmount = new System.Windows.Forms.Label();
-            this.textBoxPaAmount = new System.Windows.Forms.TextBox();
             this.lblSearchDeletedPa = new System.Windows.Forms.Label();
-            this.lblPaOutPrice = new System.Windows.Forms.Label();
-            this.lblPaInPrice = new System.Windows.Forms.Label();
-            this.lblPaName = new System.Windows.Forms.Label();
-            this.lblPaPrNr = new System.Windows.Forms.Label();
-            this.textBoxPaInPrice = new System.Windows.Forms.TextBox();
-            this.textBoxPaOutPrice = new System.Windows.Forms.TextBox();
-            this.textBoxPaName = new System.Windows.Forms.TextBox();
-            this.textBoxPaPrNr = new System.Windows.Forms.TextBox();
-            this.btnUpdateProduct = new System.Windows.Forms.Button();
-            this.btnAddNewProduct = new System.Windows.Forms.Button();
             this.lblSearchPa = new System.Windows.Forms.Label();
             this.btnSearchProductAdmin = new System.Windows.Forms.Button();
             this.textBoxSearchPa = new System.Windows.Forms.TextBox();
             this.dataGridViewPa = new System.Windows.Forms.DataGridView();
+            this.tabPageHistory = new System.Windows.Forms.TabPage();
+            this.btnHAViewSaleLines = new System.Windows.Forms.Button();
+            this.lblAnd = new System.Windows.Forms.Label();
+            this.dateTimePickerEnd = new System.Windows.Forms.DateTimePicker();
+            this.comboBoxEmployees = new System.Windows.Forms.ComboBox();
+            this.dateTimePickerStart = new System.Windows.Forms.DateTimePicker();
+            this.dataGridViewHistory2 = new System.Windows.Forms.DataGridView();
+            this.dataGridViewHistory1 = new System.Windows.Forms.DataGridView();
             this.tabPageStatistics = new System.Windows.Forms.TabPage();
             this.dataGridViewStatistics = new System.Windows.Forms.DataGridView();
             this.btnTopProduct = new System.Windows.Forms.Button();
@@ -112,23 +122,34 @@
             this.lblLoggedInAs = new System.Windows.Forms.Label();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.groupBoxBetween = new System.Windows.Forms.GroupBox();
+            this.groupBoxSelect = new System.Windows.Forms.GroupBox();
+            this.btnHAGetSales = new System.Windows.Forms.Button();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductList)).BeginInit();
             this.tabPageEmployee.SuspendLayout();
+            this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedSP)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSP)).BeginInit();
             this.tabPageProduct.SuspendLayout();
+            this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedPa)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).BeginInit();
+            this.tabPageHistory.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory1)).BeginInit();
             this.tabPageStatistics.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistics)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
+            this.groupBoxBetween.SuspendLayout();
+            this.groupBoxSelect.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -136,6 +157,7 @@
             this.tabControl.Controls.Add(this.tabPageSale);
             this.tabControl.Controls.Add(this.tabPageEmployee);
             this.tabControl.Controls.Add(this.tabPageProduct);
+            this.tabControl.Controls.Add(this.tabPageHistory);
             this.tabControl.Controls.Add(this.tabPageStatistics);
             this.tabControl.Location = new System.Drawing.Point(0, 25);
             this.tabControl.Margin = new System.Windows.Forms.Padding(2);
@@ -461,25 +483,13 @@
             // 
             // tabPageEmployee
             // 
+            this.tabPageEmployee.Controls.Add(this.groupBox2);
             this.tabPageEmployee.Controls.Add(this.lblErrorSalesPersonFields);
             this.tabPageEmployee.Controls.Add(this.lblErrorSalesPersonSearch);
-            this.tabPageEmployee.Controls.Add(this.checkBoxEmployeeAdmin);
-            this.tabPageEmployee.Controls.Add(this.checkBoxEmployee);
             this.tabPageEmployee.Controls.Add(this.btnGetAllWorkingSalesPersons);
-            this.tabPageEmployee.Controls.Add(this.btnClearAllSalesPersonFields);
             this.tabPageEmployee.Controls.Add(this.lblSearchDeletedSP);
             this.tabPageEmployee.Controls.Add(this.dataGridViewDeletedSP);
             this.tabPageEmployee.Controls.Add(this.splitter1);
-            this.tabPageEmployee.Controls.Add(this.labelEaPhoneNr);
-            this.tabPageEmployee.Controls.Add(this.labelEaLName);
-            this.tabPageEmployee.Controls.Add(this.labelEaFName);
-            this.tabPageEmployee.Controls.Add(this.labelEaSpNr);
-            this.tabPageEmployee.Controls.Add(this.textBoxEaLName);
-            this.tabPageEmployee.Controls.Add(this.textBoxEaPhoneNr);
-            this.tabPageEmployee.Controls.Add(this.textBoxEaFName);
-            this.tabPageEmployee.Controls.Add(this.textBoxEaSpNr);
-            this.tabPageEmployee.Controls.Add(this.btnUpdateSalesPerson);
-            this.tabPageEmployee.Controls.Add(this.btnAddNewSalesPerson);
             this.tabPageEmployee.Controls.Add(this.lblSearchSP);
             this.tabPageEmployee.Controls.Add(this.btnSearchSalesPerson);
             this.tabPageEmployee.Controls.Add(this.textBoxSearchSP);
@@ -493,11 +503,158 @@
             this.tabPageEmployee.Text = "Employee administration";
             this.tabPageEmployee.UseVisualStyleBackColor = true;
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.textBoxEaFName);
+            this.groupBox2.Controls.Add(this.btnAddNewSalesPerson);
+            this.groupBox2.Controls.Add(this.btnUpdateSalesPerson);
+            this.groupBox2.Controls.Add(this.checkBoxEmployeeAdmin);
+            this.groupBox2.Controls.Add(this.textBoxEaSpNr);
+            this.groupBox2.Controls.Add(this.checkBoxEmployee);
+            this.groupBox2.Controls.Add(this.textBoxEaPhoneNr);
+            this.groupBox2.Controls.Add(this.textBoxEaLName);
+            this.groupBox2.Controls.Add(this.btnClearAllSalesPersonFields);
+            this.groupBox2.Controls.Add(this.labelEaSpNr);
+            this.groupBox2.Controls.Add(this.labelEaFName);
+            this.groupBox2.Controls.Add(this.labelEaLName);
+            this.groupBox2.Controls.Add(this.labelEaPhoneNr);
+            this.groupBox2.Location = new System.Drawing.Point(460, 104);
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.Size = new System.Drawing.Size(179, 380);
+            this.groupBox2.TabIndex = 402;
+            this.groupBox2.TabStop = false;
+            this.groupBox2.Text = "Handle Employee";
+            // 
+            // textBoxEaFName
+            // 
+            this.textBoxEaFName.Location = new System.Drawing.Point(16, 80);
+            this.textBoxEaFName.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEaFName.Name = "textBoxEaFName";
+            this.textBoxEaFName.Size = new System.Drawing.Size(148, 20);
+            this.textBoxEaFName.TabIndex = 52;
+            // 
+            // btnAddNewSalesPerson
+            // 
+            this.btnAddNewSalesPerson.Location = new System.Drawing.Point(48, 256);
+            this.btnAddNewSalesPerson.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddNewSalesPerson.Name = "btnAddNewSalesPerson";
+            this.btnAddNewSalesPerson.Size = new System.Drawing.Size(76, 24);
+            this.btnAddNewSalesPerson.TabIndex = 57;
+            this.btnAddNewSalesPerson.Text = "New";
+            this.btnAddNewSalesPerson.UseVisualStyleBackColor = true;
+            this.btnAddNewSalesPerson.Click += new System.EventHandler(this.btnEaNew_Click);
+            // 
+            // btnUpdateSalesPerson
+            // 
+            this.btnUpdateSalesPerson.Location = new System.Drawing.Point(48, 284);
+            this.btnUpdateSalesPerson.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateSalesPerson.Name = "btnUpdateSalesPerson";
+            this.btnUpdateSalesPerson.Size = new System.Drawing.Size(76, 24);
+            this.btnUpdateSalesPerson.TabIndex = 58;
+            this.btnUpdateSalesPerson.Text = "Update";
+            this.btnUpdateSalesPerson.UseVisualStyleBackColor = true;
+            this.btnUpdateSalesPerson.Click += new System.EventHandler(this.btnEaUpdate_Click);
+            // 
+            // checkBoxEmployeeAdmin
+            // 
+            this.checkBoxEmployeeAdmin.AutoSize = true;
+            this.checkBoxEmployeeAdmin.Location = new System.Drawing.Point(14, 192);
+            this.checkBoxEmployeeAdmin.Name = "checkBoxEmployeeAdmin";
+            this.checkBoxEmployeeAdmin.Size = new System.Drawing.Size(61, 17);
+            this.checkBoxEmployeeAdmin.TabIndex = 55;
+            this.checkBoxEmployeeAdmin.Text = "ADMIN";
+            this.checkBoxEmployeeAdmin.UseVisualStyleBackColor = true;
+            // 
+            // textBoxEaSpNr
+            // 
+            this.textBoxEaSpNr.Location = new System.Drawing.Point(16, 42);
+            this.textBoxEaSpNr.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEaSpNr.Name = "textBoxEaSpNr";
+            this.textBoxEaSpNr.Size = new System.Drawing.Size(148, 20);
+            this.textBoxEaSpNr.TabIndex = 51;
+            // 
+            // checkBoxEmployee
+            // 
+            this.checkBoxEmployee.AutoSize = true;
+            this.checkBoxEmployee.Location = new System.Drawing.Point(14, 215);
+            this.checkBoxEmployee.Name = "checkBoxEmployee";
+            this.checkBoxEmployee.Size = new System.Drawing.Size(67, 17);
+            this.checkBoxEmployee.TabIndex = 56;
+            this.checkBoxEmployee.Text = "Is Active";
+            this.checkBoxEmployee.UseVisualStyleBackColor = true;
+            // 
+            // textBoxEaPhoneNr
+            // 
+            this.textBoxEaPhoneNr.Location = new System.Drawing.Point(16, 156);
+            this.textBoxEaPhoneNr.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEaPhoneNr.Name = "textBoxEaPhoneNr";
+            this.textBoxEaPhoneNr.Size = new System.Drawing.Size(148, 20);
+            this.textBoxEaPhoneNr.TabIndex = 54;
+            // 
+            // textBoxEaLName
+            // 
+            this.textBoxEaLName.Location = new System.Drawing.Point(16, 118);
+            this.textBoxEaLName.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxEaLName.Name = "textBoxEaLName";
+            this.textBoxEaLName.Size = new System.Drawing.Size(148, 20);
+            this.textBoxEaLName.TabIndex = 53;
+            // 
+            // btnClearAllSalesPersonFields
+            // 
+            this.btnClearAllSalesPersonFields.Location = new System.Drawing.Point(37, 312);
+            this.btnClearAllSalesPersonFields.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearAllSalesPersonFields.Name = "btnClearAllSalesPersonFields";
+            this.btnClearAllSalesPersonFields.Size = new System.Drawing.Size(104, 42);
+            this.btnClearAllSalesPersonFields.TabIndex = 59;
+            this.btnClearAllSalesPersonFields.Text = "Clear all fields";
+            this.btnClearAllSalesPersonFields.UseVisualStyleBackColor = true;
+            this.btnClearAllSalesPersonFields.Click += new System.EventHandler(this.btnEaClearAll_Click);
+            // 
+            // labelEaSpNr
+            // 
+            this.labelEaSpNr.AutoSize = true;
+            this.labelEaSpNr.Location = new System.Drawing.Point(12, 27);
+            this.labelEaSpNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEaSpNr.Name = "labelEaSpNr";
+            this.labelEaSpNr.Size = new System.Drawing.Size(89, 13);
+            this.labelEaSpNr.TabIndex = 64;
+            this.labelEaSpNr.Text = "Personal number:";
+            // 
+            // labelEaFName
+            // 
+            this.labelEaFName.AutoSize = true;
+            this.labelEaFName.Location = new System.Drawing.Point(11, 65);
+            this.labelEaFName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEaFName.Name = "labelEaFName";
+            this.labelEaFName.Size = new System.Drawing.Size(58, 13);
+            this.labelEaFName.TabIndex = 65;
+            this.labelEaFName.Text = "First name:";
+            // 
+            // labelEaLName
+            // 
+            this.labelEaLName.AutoSize = true;
+            this.labelEaLName.Location = new System.Drawing.Point(11, 103);
+            this.labelEaLName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEaLName.Name = "labelEaLName";
+            this.labelEaLName.Size = new System.Drawing.Size(59, 13);
+            this.labelEaLName.TabIndex = 66;
+            this.labelEaLName.Text = "Last name:";
+            // 
+            // labelEaPhoneNr
+            // 
+            this.labelEaPhoneNr.AutoSize = true;
+            this.labelEaPhoneNr.Location = new System.Drawing.Point(13, 141);
+            this.labelEaPhoneNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.labelEaPhoneNr.Name = "labelEaPhoneNr";
+            this.labelEaPhoneNr.Size = new System.Drawing.Size(79, 13);
+            this.labelEaPhoneNr.TabIndex = 67;
+            this.labelEaPhoneNr.Text = "Phone number:";
+            // 
             // lblErrorSalesPersonFields
             // 
             this.lblErrorSalesPersonFields.AutoSize = true;
             this.lblErrorSalesPersonFields.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorSalesPersonFields.Location = new System.Drawing.Point(448, 87);
+            this.lblErrorSalesPersonFields.Location = new System.Drawing.Point(457, 57);
             this.lblErrorSalesPersonFields.Name = "lblErrorSalesPersonFields";
             this.lblErrorSalesPersonFields.Size = new System.Drawing.Size(88, 13);
             this.lblErrorSalesPersonFields.TabIndex = 96;
@@ -513,26 +670,6 @@
             this.lblErrorSalesPersonSearch.TabIndex = 95;
             this.lblErrorSalesPersonSearch.Text = "Felmedelanden här";
             // 
-            // checkBoxEmployeeAdmin
-            // 
-            this.checkBoxEmployeeAdmin.AutoSize = true;
-            this.checkBoxEmployeeAdmin.Location = new System.Drawing.Point(486, 296);
-            this.checkBoxEmployeeAdmin.Name = "checkBoxEmployeeAdmin";
-            this.checkBoxEmployeeAdmin.Size = new System.Drawing.Size(61, 17);
-            this.checkBoxEmployeeAdmin.TabIndex = 55;
-            this.checkBoxEmployeeAdmin.Text = "ADMIN";
-            this.checkBoxEmployeeAdmin.UseVisualStyleBackColor = true;
-            // 
-            // checkBoxEmployee
-            // 
-            this.checkBoxEmployee.AutoSize = true;
-            this.checkBoxEmployee.Location = new System.Drawing.Point(486, 319);
-            this.checkBoxEmployee.Name = "checkBoxEmployee";
-            this.checkBoxEmployee.Size = new System.Drawing.Size(67, 17);
-            this.checkBoxEmployee.TabIndex = 56;
-            this.checkBoxEmployee.Text = "Is Active";
-            this.checkBoxEmployee.UseVisualStyleBackColor = true;
-            // 
             // btnGetAllWorkingSalesPersons
             // 
             this.btnGetAllWorkingSalesPersons.Location = new System.Drawing.Point(366, 56);
@@ -543,17 +680,6 @@
             this.btnGetAllWorkingSalesPersons.Text = "Get All";
             this.btnGetAllWorkingSalesPersons.UseVisualStyleBackColor = true;
             this.btnGetAllWorkingSalesPersons.Click += new System.EventHandler(this.btnGetAllWorkingSalesPersons_Click);
-            // 
-            // btnClearAllSalesPersonFields
-            // 
-            this.btnClearAllSalesPersonFields.Location = new System.Drawing.Point(498, 430);
-            this.btnClearAllSalesPersonFields.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClearAllSalesPersonFields.Name = "btnClearAllSalesPersonFields";
-            this.btnClearAllSalesPersonFields.Size = new System.Drawing.Size(104, 42);
-            this.btnClearAllSalesPersonFields.TabIndex = 59;
-            this.btnClearAllSalesPersonFields.Text = "Clear all fields";
-            this.btnClearAllSalesPersonFields.UseVisualStyleBackColor = true;
-            this.btnClearAllSalesPersonFields.Click += new System.EventHandler(this.btnEaClearAll_Click);
             // 
             // lblSearchDeletedSP
             // 
@@ -589,100 +715,6 @@
             this.splitter1.Size = new System.Drawing.Size(3, 513);
             this.splitter1.TabIndex = 85;
             this.splitter1.TabStop = false;
-            // 
-            // labelEaPhoneNr
-            // 
-            this.labelEaPhoneNr.AutoSize = true;
-            this.labelEaPhoneNr.Location = new System.Drawing.Point(485, 245);
-            this.labelEaPhoneNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelEaPhoneNr.Name = "labelEaPhoneNr";
-            this.labelEaPhoneNr.Size = new System.Drawing.Size(79, 13);
-            this.labelEaPhoneNr.TabIndex = 67;
-            this.labelEaPhoneNr.Text = "Phone number:";
-            // 
-            // labelEaLName
-            // 
-            this.labelEaLName.AutoSize = true;
-            this.labelEaLName.Location = new System.Drawing.Point(483, 207);
-            this.labelEaLName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelEaLName.Name = "labelEaLName";
-            this.labelEaLName.Size = new System.Drawing.Size(59, 13);
-            this.labelEaLName.TabIndex = 66;
-            this.labelEaLName.Text = "Last name:";
-            // 
-            // labelEaFName
-            // 
-            this.labelEaFName.AutoSize = true;
-            this.labelEaFName.Location = new System.Drawing.Point(483, 169);
-            this.labelEaFName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelEaFName.Name = "labelEaFName";
-            this.labelEaFName.Size = new System.Drawing.Size(58, 13);
-            this.labelEaFName.TabIndex = 65;
-            this.labelEaFName.Text = "First name:";
-            // 
-            // labelEaSpNr
-            // 
-            this.labelEaSpNr.AutoSize = true;
-            this.labelEaSpNr.Location = new System.Drawing.Point(484, 131);
-            this.labelEaSpNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.labelEaSpNr.Name = "labelEaSpNr";
-            this.labelEaSpNr.Size = new System.Drawing.Size(89, 13);
-            this.labelEaSpNr.TabIndex = 64;
-            this.labelEaSpNr.Text = "Personal number:";
-            // 
-            // textBoxEaLName
-            // 
-            this.textBoxEaLName.Location = new System.Drawing.Point(488, 222);
-            this.textBoxEaLName.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaLName.Name = "textBoxEaLName";
-            this.textBoxEaLName.Size = new System.Drawing.Size(123, 20);
-            this.textBoxEaLName.TabIndex = 53;
-            // 
-            // textBoxEaPhoneNr
-            // 
-            this.textBoxEaPhoneNr.Location = new System.Drawing.Point(488, 260);
-            this.textBoxEaPhoneNr.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaPhoneNr.Name = "textBoxEaPhoneNr";
-            this.textBoxEaPhoneNr.Size = new System.Drawing.Size(123, 20);
-            this.textBoxEaPhoneNr.TabIndex = 54;
-            // 
-            // textBoxEaFName
-            // 
-            this.textBoxEaFName.Location = new System.Drawing.Point(488, 184);
-            this.textBoxEaFName.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaFName.Name = "textBoxEaFName";
-            this.textBoxEaFName.Size = new System.Drawing.Size(123, 20);
-            this.textBoxEaFName.TabIndex = 52;
-            // 
-            // textBoxEaSpNr
-            // 
-            this.textBoxEaSpNr.Location = new System.Drawing.Point(488, 146);
-            this.textBoxEaSpNr.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxEaSpNr.Name = "textBoxEaSpNr";
-            this.textBoxEaSpNr.Size = new System.Drawing.Size(123, 20);
-            this.textBoxEaSpNr.TabIndex = 51;
-            // 
-            // btnUpdateSalesPerson
-            // 
-            this.btnUpdateSalesPerson.Location = new System.Drawing.Point(510, 388);
-            this.btnUpdateSalesPerson.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateSalesPerson.Name = "btnUpdateSalesPerson";
-            this.btnUpdateSalesPerson.Size = new System.Drawing.Size(76, 24);
-            this.btnUpdateSalesPerson.TabIndex = 58;
-            this.btnUpdateSalesPerson.Text = "Update";
-            this.btnUpdateSalesPerson.UseVisualStyleBackColor = true;
-            this.btnUpdateSalesPerson.Click += new System.EventHandler(this.btnEaUpdate_Click);
-            // 
-            // btnAddNewSalesPerson
-            // 
-            this.btnAddNewSalesPerson.Location = new System.Drawing.Point(510, 360);
-            this.btnAddNewSalesPerson.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddNewSalesPerson.Name = "btnAddNewSalesPerson";
-            this.btnAddNewSalesPerson.Size = new System.Drawing.Size(76, 24);
-            this.btnAddNewSalesPerson.TabIndex = 57;
-            this.btnAddNewSalesPerson.Text = "New";
-            this.btnAddNewSalesPerson.UseVisualStyleBackColor = true;
-            this.btnAddNewSalesPerson.Click += new System.EventHandler(this.btnEaNew_Click);
             // 
             // lblSearchSP
             // 
@@ -734,25 +766,12 @@
             // 
             // tabPageProduct
             // 
+            this.tabPageProduct.Controls.Add(this.groupBox1);
             this.tabPageProduct.Controls.Add(this.lblErrorProductAdminFields);
             this.tabPageProduct.Controls.Add(this.lblErrorProductSearch);
             this.tabPageProduct.Controls.Add(this.btnGetAllProductAdmin);
-            this.tabPageProduct.Controls.Add(this.checkBoxForSale);
-            this.tabPageProduct.Controls.Add(this.btnClearAllProductFields);
             this.tabPageProduct.Controls.Add(this.dataGridViewDeletedPa);
-            this.tabPageProduct.Controls.Add(this.lblPaAmount);
-            this.tabPageProduct.Controls.Add(this.textBoxPaAmount);
             this.tabPageProduct.Controls.Add(this.lblSearchDeletedPa);
-            this.tabPageProduct.Controls.Add(this.lblPaOutPrice);
-            this.tabPageProduct.Controls.Add(this.lblPaInPrice);
-            this.tabPageProduct.Controls.Add(this.lblPaName);
-            this.tabPageProduct.Controls.Add(this.lblPaPrNr);
-            this.tabPageProduct.Controls.Add(this.textBoxPaInPrice);
-            this.tabPageProduct.Controls.Add(this.textBoxPaOutPrice);
-            this.tabPageProduct.Controls.Add(this.textBoxPaName);
-            this.tabPageProduct.Controls.Add(this.textBoxPaPrNr);
-            this.tabPageProduct.Controls.Add(this.btnUpdateProduct);
-            this.tabPageProduct.Controls.Add(this.btnAddNewProduct);
             this.tabPageProduct.Controls.Add(this.lblSearchPa);
             this.tabPageProduct.Controls.Add(this.btnSearchProductAdmin);
             this.tabPageProduct.Controls.Add(this.textBoxSearchPa);
@@ -766,11 +785,168 @@
             this.tabPageProduct.Text = "Product administration";
             this.tabPageProduct.UseVisualStyleBackColor = true;
             // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.textBoxPaName);
+            this.groupBox1.Controls.Add(this.textBoxPaPrNr);
+            this.groupBox1.Controls.Add(this.btnAddNewProduct);
+            this.groupBox1.Controls.Add(this.lblPaInPrice);
+            this.groupBox1.Controls.Add(this.lblPaOutPrice);
+            this.groupBox1.Controls.Add(this.btnUpdateProduct);
+            this.groupBox1.Controls.Add(this.textBoxPaAmount);
+            this.groupBox1.Controls.Add(this.lblPaName);
+            this.groupBox1.Controls.Add(this.lblPaAmount);
+            this.groupBox1.Controls.Add(this.lblPaPrNr);
+            this.groupBox1.Controls.Add(this.checkBoxForSale);
+            this.groupBox1.Controls.Add(this.textBoxPaInPrice);
+            this.groupBox1.Controls.Add(this.btnClearAllProductFields);
+            this.groupBox1.Controls.Add(this.textBoxPaOutPrice);
+            this.groupBox1.Location = new System.Drawing.Point(479, 103);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(177, 357);
+            this.groupBox1.TabIndex = 404;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Handle Product";
+            // 
+            // textBoxPaName
+            // 
+            this.textBoxPaName.Location = new System.Drawing.Point(12, 73);
+            this.textBoxPaName.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPaName.Name = "textBoxPaName";
+            this.textBoxPaName.Size = new System.Drawing.Size(151, 20);
+            this.textBoxPaName.TabIndex = 95;
+            // 
+            // textBoxPaPrNr
+            // 
+            this.textBoxPaPrNr.Enabled = false;
+            this.textBoxPaPrNr.Location = new System.Drawing.Point(12, 35);
+            this.textBoxPaPrNr.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPaPrNr.Name = "textBoxPaPrNr";
+            this.textBoxPaPrNr.Size = new System.Drawing.Size(151, 20);
+            this.textBoxPaPrNr.TabIndex = 94;
+            // 
+            // btnAddNewProduct
+            // 
+            this.btnAddNewProduct.Location = new System.Drawing.Point(47, 248);
+            this.btnAddNewProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btnAddNewProduct.Name = "btnAddNewProduct";
+            this.btnAddNewProduct.Size = new System.Drawing.Size(76, 24);
+            this.btnAddNewProduct.TabIndex = 100;
+            this.btnAddNewProduct.Text = "New";
+            this.btnAddNewProduct.UseVisualStyleBackColor = true;
+            this.btnAddNewProduct.Click += new System.EventHandler(this.btnPaNew_Click);
+            // 
+            // lblPaInPrice
+            // 
+            this.lblPaInPrice.AutoSize = true;
+            this.lblPaInPrice.Location = new System.Drawing.Point(7, 96);
+            this.lblPaInPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPaInPrice.Name = "lblPaInPrice";
+            this.lblPaInPrice.Size = new System.Drawing.Size(45, 13);
+            this.lblPaInPrice.TabIndex = 103;
+            this.lblPaInPrice.Text = "In price:";
+            // 
+            // lblPaOutPrice
+            // 
+            this.lblPaOutPrice.AutoSize = true;
+            this.lblPaOutPrice.Location = new System.Drawing.Point(9, 134);
+            this.lblPaOutPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPaOutPrice.Name = "lblPaOutPrice";
+            this.lblPaOutPrice.Size = new System.Drawing.Size(54, 13);
+            this.lblPaOutPrice.TabIndex = 104;
+            this.lblPaOutPrice.Text = "Out Price:";
+            // 
+            // btnUpdateProduct
+            // 
+            this.btnUpdateProduct.Location = new System.Drawing.Point(47, 276);
+            this.btnUpdateProduct.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUpdateProduct.Name = "btnUpdateProduct";
+            this.btnUpdateProduct.Size = new System.Drawing.Size(76, 24);
+            this.btnUpdateProduct.TabIndex = 101;
+            this.btnUpdateProduct.Text = "Update";
+            this.btnUpdateProduct.UseVisualStyleBackColor = true;
+            this.btnUpdateProduct.Click += new System.EventHandler(this.btnPaUpdate_Click);
+            // 
+            // textBoxPaAmount
+            // 
+            this.textBoxPaAmount.Location = new System.Drawing.Point(12, 187);
+            this.textBoxPaAmount.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPaAmount.Name = "textBoxPaAmount";
+            this.textBoxPaAmount.Size = new System.Drawing.Size(151, 20);
+            this.textBoxPaAmount.TabIndex = 98;
+            // 
+            // lblPaName
+            // 
+            this.lblPaName.AutoSize = true;
+            this.lblPaName.Location = new System.Drawing.Point(7, 58);
+            this.lblPaName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPaName.Name = "lblPaName";
+            this.lblPaName.Size = new System.Drawing.Size(38, 13);
+            this.lblPaName.TabIndex = 102;
+            this.lblPaName.Text = "Name:";
+            // 
+            // lblPaAmount
+            // 
+            this.lblPaAmount.AutoSize = true;
+            this.lblPaAmount.Location = new System.Drawing.Point(9, 172);
+            this.lblPaAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPaAmount.Name = "lblPaAmount";
+            this.lblPaAmount.Size = new System.Drawing.Size(46, 13);
+            this.lblPaAmount.TabIndex = 110;
+            this.lblPaAmount.Text = "Amount:";
+            // 
+            // lblPaPrNr
+            // 
+            this.lblPaPrNr.AutoSize = true;
+            this.lblPaPrNr.Location = new System.Drawing.Point(8, 20);
+            this.lblPaPrNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPaPrNr.Name = "lblPaPrNr";
+            this.lblPaPrNr.Size = new System.Drawing.Size(47, 13);
+            this.lblPaPrNr.TabIndex = 101;
+            this.lblPaPrNr.Text = "Number:";
+            // 
+            // checkBoxForSale
+            // 
+            this.checkBoxForSale.AutoSize = true;
+            this.checkBoxForSale.Location = new System.Drawing.Point(10, 213);
+            this.checkBoxForSale.Name = "checkBoxForSale";
+            this.checkBoxForSale.Size = new System.Drawing.Size(76, 17);
+            this.checkBoxForSale.TabIndex = 99;
+            this.checkBoxForSale.Text = "Is For Sale";
+            this.checkBoxForSale.UseVisualStyleBackColor = true;
+            // 
+            // textBoxPaInPrice
+            // 
+            this.textBoxPaInPrice.Location = new System.Drawing.Point(12, 111);
+            this.textBoxPaInPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPaInPrice.Name = "textBoxPaInPrice";
+            this.textBoxPaInPrice.Size = new System.Drawing.Size(151, 20);
+            this.textBoxPaInPrice.TabIndex = 96;
+            // 
+            // btnClearAllProductFields
+            // 
+            this.btnClearAllProductFields.Location = new System.Drawing.Point(47, 304);
+            this.btnClearAllProductFields.Margin = new System.Windows.Forms.Padding(2);
+            this.btnClearAllProductFields.Name = "btnClearAllProductFields";
+            this.btnClearAllProductFields.Size = new System.Drawing.Size(76, 42);
+            this.btnClearAllProductFields.TabIndex = 102;
+            this.btnClearAllProductFields.Text = "Clear all fields";
+            this.btnClearAllProductFields.UseVisualStyleBackColor = true;
+            this.btnClearAllProductFields.Click += new System.EventHandler(this.btnPaClearAll_Click);
+            // 
+            // textBoxPaOutPrice
+            // 
+            this.textBoxPaOutPrice.Location = new System.Drawing.Point(12, 149);
+            this.textBoxPaOutPrice.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxPaOutPrice.Name = "textBoxPaOutPrice";
+            this.textBoxPaOutPrice.Size = new System.Drawing.Size(151, 20);
+            this.textBoxPaOutPrice.TabIndex = 97;
+            // 
             // lblErrorProductAdminFields
             // 
             this.lblErrorProductAdminFields.AutoSize = true;
             this.lblErrorProductAdminFields.ForeColor = System.Drawing.Color.Red;
-            this.lblErrorProductAdminFields.Location = new System.Drawing.Point(487, 77);
+            this.lblErrorProductAdminFields.Location = new System.Drawing.Point(486, 56);
             this.lblErrorProductAdminFields.Name = "lblErrorProductAdminFields";
             this.lblErrorProductAdminFields.Size = new System.Drawing.Size(88, 13);
             this.lblErrorProductAdminFields.TabIndex = 117;
@@ -797,27 +973,6 @@
             this.btnGetAllProductAdmin.UseVisualStyleBackColor = true;
             this.btnGetAllProductAdmin.Click += new System.EventHandler(this.btnGetAllPa_Click);
             // 
-            // checkBoxForSale
-            // 
-            this.checkBoxForSale.AutoSize = true;
-            this.checkBoxForSale.Location = new System.Drawing.Point(487, 310);
-            this.checkBoxForSale.Name = "checkBoxForSale";
-            this.checkBoxForSale.Size = new System.Drawing.Size(76, 17);
-            this.checkBoxForSale.TabIndex = 99;
-            this.checkBoxForSale.Text = "Is For Sale";
-            this.checkBoxForSale.UseVisualStyleBackColor = true;
-            // 
-            // btnClearAllProductFields
-            // 
-            this.btnClearAllProductFields.Location = new System.Drawing.Point(524, 401);
-            this.btnClearAllProductFields.Margin = new System.Windows.Forms.Padding(2);
-            this.btnClearAllProductFields.Name = "btnClearAllProductFields";
-            this.btnClearAllProductFields.Size = new System.Drawing.Size(76, 42);
-            this.btnClearAllProductFields.TabIndex = 102;
-            this.btnClearAllProductFields.Text = "Clear all fields";
-            this.btnClearAllProductFields.UseVisualStyleBackColor = true;
-            this.btnClearAllProductFields.Click += new System.EventHandler(this.btnPaClearAll_Click);
-            // 
             // dataGridViewDeletedPa
             // 
             this.dataGridViewDeletedPa.AllowUserToAddRows = false;
@@ -833,24 +988,6 @@
             this.dataGridViewDeletedPa.TabIndex = 403;
             this.dataGridViewDeletedPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewDeletedPa_CellClick_1);
             // 
-            // lblPaAmount
-            // 
-            this.lblPaAmount.AutoSize = true;
-            this.lblPaAmount.Location = new System.Drawing.Point(486, 269);
-            this.lblPaAmount.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPaAmount.Name = "lblPaAmount";
-            this.lblPaAmount.Size = new System.Drawing.Size(46, 13);
-            this.lblPaAmount.TabIndex = 110;
-            this.lblPaAmount.Text = "Amount:";
-            // 
-            // textBoxPaAmount
-            // 
-            this.textBoxPaAmount.Location = new System.Drawing.Point(489, 284);
-            this.textBoxPaAmount.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPaAmount.Name = "textBoxPaAmount";
-            this.textBoxPaAmount.Size = new System.Drawing.Size(151, 20);
-            this.textBoxPaAmount.TabIndex = 98;
-            // 
             // lblSearchDeletedPa
             // 
             this.lblSearchDeletedPa.AutoSize = true;
@@ -860,101 +997,6 @@
             this.lblSearchDeletedPa.Size = new System.Drawing.Size(147, 13);
             this.lblSearchDeletedPa.TabIndex = 108;
             this.lblSearchDeletedPa.Text = "Products not currently for sale";
-            // 
-            // lblPaOutPrice
-            // 
-            this.lblPaOutPrice.AutoSize = true;
-            this.lblPaOutPrice.Location = new System.Drawing.Point(486, 231);
-            this.lblPaOutPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPaOutPrice.Name = "lblPaOutPrice";
-            this.lblPaOutPrice.Size = new System.Drawing.Size(54, 13);
-            this.lblPaOutPrice.TabIndex = 104;
-            this.lblPaOutPrice.Text = "Out Price:";
-            // 
-            // lblPaInPrice
-            // 
-            this.lblPaInPrice.AutoSize = true;
-            this.lblPaInPrice.Location = new System.Drawing.Point(484, 193);
-            this.lblPaInPrice.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPaInPrice.Name = "lblPaInPrice";
-            this.lblPaInPrice.Size = new System.Drawing.Size(45, 13);
-            this.lblPaInPrice.TabIndex = 103;
-            this.lblPaInPrice.Text = "In price:";
-            // 
-            // lblPaName
-            // 
-            this.lblPaName.AutoSize = true;
-            this.lblPaName.Location = new System.Drawing.Point(484, 155);
-            this.lblPaName.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPaName.Name = "lblPaName";
-            this.lblPaName.Size = new System.Drawing.Size(38, 13);
-            this.lblPaName.TabIndex = 102;
-            this.lblPaName.Text = "Name:";
-            // 
-            // lblPaPrNr
-            // 
-            this.lblPaPrNr.AutoSize = true;
-            this.lblPaPrNr.Location = new System.Drawing.Point(485, 117);
-            this.lblPaPrNr.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPaPrNr.Name = "lblPaPrNr";
-            this.lblPaPrNr.Size = new System.Drawing.Size(47, 13);
-            this.lblPaPrNr.TabIndex = 101;
-            this.lblPaPrNr.Text = "Number:";
-            // 
-            // textBoxPaInPrice
-            // 
-            this.textBoxPaInPrice.Location = new System.Drawing.Point(489, 208);
-            this.textBoxPaInPrice.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPaInPrice.Name = "textBoxPaInPrice";
-            this.textBoxPaInPrice.Size = new System.Drawing.Size(151, 20);
-            this.textBoxPaInPrice.TabIndex = 96;
-            // 
-            // textBoxPaOutPrice
-            // 
-            this.textBoxPaOutPrice.Location = new System.Drawing.Point(489, 246);
-            this.textBoxPaOutPrice.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPaOutPrice.Name = "textBoxPaOutPrice";
-            this.textBoxPaOutPrice.Size = new System.Drawing.Size(151, 20);
-            this.textBoxPaOutPrice.TabIndex = 97;
-            // 
-            // textBoxPaName
-            // 
-            this.textBoxPaName.Location = new System.Drawing.Point(489, 170);
-            this.textBoxPaName.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPaName.Name = "textBoxPaName";
-            this.textBoxPaName.Size = new System.Drawing.Size(151, 20);
-            this.textBoxPaName.TabIndex = 95;
-            // 
-            // textBoxPaPrNr
-            // 
-            this.textBoxPaPrNr.Enabled = false;
-            this.textBoxPaPrNr.Location = new System.Drawing.Point(489, 132);
-            this.textBoxPaPrNr.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxPaPrNr.Name = "textBoxPaPrNr";
-            this.textBoxPaPrNr.Size = new System.Drawing.Size(151, 20);
-            this.textBoxPaPrNr.TabIndex = 94;
-            // 
-            // btnUpdateProduct
-            // 
-            this.btnUpdateProduct.Location = new System.Drawing.Point(524, 373);
-            this.btnUpdateProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUpdateProduct.Name = "btnUpdateProduct";
-            this.btnUpdateProduct.Size = new System.Drawing.Size(76, 24);
-            this.btnUpdateProduct.TabIndex = 101;
-            this.btnUpdateProduct.Text = "Update";
-            this.btnUpdateProduct.UseVisualStyleBackColor = true;
-            this.btnUpdateProduct.Click += new System.EventHandler(this.btnPaUpdate_Click);
-            // 
-            // btnAddNewProduct
-            // 
-            this.btnAddNewProduct.Location = new System.Drawing.Point(524, 345);
-            this.btnAddNewProduct.Margin = new System.Windows.Forms.Padding(2);
-            this.btnAddNewProduct.Name = "btnAddNewProduct";
-            this.btnAddNewProduct.Size = new System.Drawing.Size(76, 24);
-            this.btnAddNewProduct.TabIndex = 100;
-            this.btnAddNewProduct.Text = "New";
-            this.btnAddNewProduct.UseVisualStyleBackColor = true;
-            this.btnAddNewProduct.Click += new System.EventHandler(this.btnPaNew_Click);
             // 
             // lblSearchPa
             // 
@@ -1003,6 +1045,102 @@
             this.dataGridViewPa.Size = new System.Drawing.Size(458, 317);
             this.dataGridViewPa.TabIndex = 402;
             this.dataGridViewPa.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridViewPa_CellClick);
+            // 
+            // tabPageHistory
+            // 
+            this.tabPageHistory.Controls.Add(this.btnHAGetSales);
+            this.tabPageHistory.Controls.Add(this.groupBoxSelect);
+            this.tabPageHistory.Controls.Add(this.groupBoxBetween);
+            this.tabPageHistory.Controls.Add(this.btnHAViewSaleLines);
+            this.tabPageHistory.Controls.Add(this.dataGridViewHistory2);
+            this.tabPageHistory.Controls.Add(this.dataGridViewHistory1);
+            this.tabPageHistory.Location = new System.Drawing.Point(4, 22);
+            this.tabPageHistory.Name = "tabPageHistory";
+            this.tabPageHistory.Size = new System.Drawing.Size(1134, 517);
+            this.tabPageHistory.TabIndex = 4;
+            this.tabPageHistory.Text = "History administration";
+            this.tabPageHistory.UseVisualStyleBackColor = true;
+            // 
+            // btnHAViewSaleLines
+            // 
+            this.btnHAViewSaleLines.Location = new System.Drawing.Point(531, 271);
+            this.btnHAViewSaleLines.Name = "btnHAViewSaleLines";
+            this.btnHAViewSaleLines.Size = new System.Drawing.Size(75, 46);
+            this.btnHAViewSaleLines.TabIndex = 8;
+            this.btnHAViewSaleLines.Text = "View Sale Lines";
+            this.btnHAViewSaleLines.UseVisualStyleBackColor = true;
+            this.btnHAViewSaleLines.Click += new System.EventHandler(this.btnHAViewSaleLines_Click);
+            // 
+            // lblAnd
+            // 
+            this.lblAnd.AutoSize = true;
+            this.lblAnd.Location = new System.Drawing.Point(107, 24);
+            this.lblAnd.Name = "lblAnd";
+            this.lblAnd.Size = new System.Drawing.Size(25, 13);
+            this.lblAnd.TabIndex = 6;
+            this.lblAnd.Text = "and";
+            // 
+            // dateTimePickerEnd
+            // 
+            this.dateTimePickerEnd.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerEnd.Location = new System.Drawing.Point(138, 22);
+            this.dateTimePickerEnd.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerEnd.Name = "dateTimePickerEnd";
+            this.dateTimePickerEnd.Size = new System.Drawing.Size(92, 20);
+            this.dateTimePickerEnd.TabIndex = 4;
+            this.dateTimePickerEnd.Value = new System.DateTime(2014, 2, 8, 0, 0, 0, 0);
+            // 
+            // comboBoxEmployees
+            // 
+            this.comboBoxEmployees.FormattingEnabled = true;
+            this.comboBoxEmployees.Items.AddRange(new object[] {
+            "All employees"});
+            this.comboBoxEmployees.Location = new System.Drawing.Point(6, 22);
+            this.comboBoxEmployees.Name = "comboBoxEmployees";
+            this.comboBoxEmployees.Size = new System.Drawing.Size(136, 21);
+            this.comboBoxEmployees.TabIndex = 3;
+            this.comboBoxEmployees.Text = "All employees";
+            // 
+            // dateTimePickerStart
+            // 
+            this.dateTimePickerStart.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dateTimePickerStart.Location = new System.Drawing.Point(9, 22);
+            this.dateTimePickerStart.MinDate = new System.DateTime(2010, 1, 1, 0, 0, 0, 0);
+            this.dateTimePickerStart.Name = "dateTimePickerStart";
+            this.dateTimePickerStart.Size = new System.Drawing.Size(92, 20);
+            this.dateTimePickerStart.TabIndex = 2;
+            this.dateTimePickerStart.Value = new System.DateTime(2014, 1, 1, 0, 0, 0, 0);
+            // 
+            // dataGridViewHistory2
+            // 
+            this.dataGridViewHistory2.AllowUserToAddRows = false;
+            this.dataGridViewHistory2.AllowUserToDeleteRows = false;
+            this.dataGridViewHistory2.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewHistory2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHistory2.ColumnHeadersVisible = false;
+            this.dataGridViewHistory2.Location = new System.Drawing.Point(643, 102);
+            this.dataGridViewHistory2.MultiSelect = false;
+            this.dataGridViewHistory2.Name = "dataGridViewHistory2";
+            this.dataGridViewHistory2.ReadOnly = true;
+            this.dataGridViewHistory2.RowHeadersVisible = false;
+            this.dataGridViewHistory2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewHistory2.Size = new System.Drawing.Size(469, 389);
+            this.dataGridViewHistory2.TabIndex = 1;
+            // 
+            // dataGridViewHistory1
+            // 
+            this.dataGridViewHistory1.AllowUserToAddRows = false;
+            this.dataGridViewHistory1.AllowUserToDeleteRows = false;
+            this.dataGridViewHistory1.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.dataGridViewHistory1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewHistory1.Location = new System.Drawing.Point(23, 102);
+            this.dataGridViewHistory1.MultiSelect = false;
+            this.dataGridViewHistory1.Name = "dataGridViewHistory1";
+            this.dataGridViewHistory1.ReadOnly = true;
+            this.dataGridViewHistory1.RowHeadersVisible = false;
+            this.dataGridViewHistory1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewHistory1.Size = new System.Drawing.Size(469, 389);
+            this.dataGridViewHistory1.TabIndex = 0;
             // 
             // tabPageStatistics
             // 
@@ -1081,6 +1219,7 @@
             // 
             this.fileToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.logoutToolStripMenuItem,
+            this.toolStripSeparator1,
             this.exitToolStripMenuItem});
             this.fileToolStripMenuItem.Name = "fileToolStripMenuItem";
             this.fileToolStripMenuItem.Size = new System.Drawing.Size(37, 20);
@@ -1090,15 +1229,21 @@
             // 
             this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
             this.logoutToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.L)));
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.logoutToolStripMenuItem.Text = "Logout";
             this.logoutToolStripMenuItem.Click += new System.EventHandler(this.logoutToolStripMenuItem_Click);
+            // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(161, 6);
             // 
             // exitToolStripMenuItem
             // 
             this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
-            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.E)));
-            this.exitToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.exitToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)(((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Shift) 
+            | System.Windows.Forms.Keys.E)));
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.exitToolStripMenuItem.Text = "Exit";
             this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
@@ -1122,6 +1267,38 @@
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
             // 
+            // groupBoxBetween
+            // 
+            this.groupBoxBetween.Controls.Add(this.dateTimePickerEnd);
+            this.groupBoxBetween.Controls.Add(this.dateTimePickerStart);
+            this.groupBoxBetween.Controls.Add(this.lblAnd);
+            this.groupBoxBetween.Location = new System.Drawing.Point(177, 41);
+            this.groupBoxBetween.Name = "groupBoxBetween";
+            this.groupBoxBetween.Size = new System.Drawing.Size(242, 55);
+            this.groupBoxBetween.TabIndex = 9;
+            this.groupBoxBetween.TabStop = false;
+            this.groupBoxBetween.Text = "Between";
+            // 
+            // groupBoxSelect
+            // 
+            this.groupBoxSelect.Controls.Add(this.comboBoxEmployees);
+            this.groupBoxSelect.Location = new System.Drawing.Point(23, 41);
+            this.groupBoxSelect.Name = "groupBoxSelect";
+            this.groupBoxSelect.Size = new System.Drawing.Size(148, 55);
+            this.groupBoxSelect.TabIndex = 10;
+            this.groupBoxSelect.TabStop = false;
+            this.groupBoxSelect.Text = "Select employee(s)";
+            // 
+            // btnHAGetSales
+            // 
+            this.btnHAGetSales.Location = new System.Drawing.Point(425, 48);
+            this.btnHAGetSales.Name = "btnHAGetSales";
+            this.btnHAGetSales.Size = new System.Drawing.Size(67, 48);
+            this.btnHAGetSales.TabIndex = 11;
+            this.btnHAGetSales.Text = "Get Sales";
+            this.btnHAGetSales.UseVisualStyleBackColor = true;
+            this.btnHAGetSales.Click += new System.EventHandler(this.btnHAGetSales_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1144,18 +1321,28 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductList)).EndInit();
             this.tabPageEmployee.ResumeLayout(false);
             this.tabPageEmployee.PerformLayout();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedSP)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSP)).EndInit();
             this.tabPageProduct.ResumeLayout(false);
             this.tabPageProduct.PerformLayout();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewDeletedPa)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewPa)).EndInit();
+            this.tabPageHistory.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewHistory1)).EndInit();
             this.tabPageStatistics.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistics)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            this.groupBoxBetween.ResumeLayout(false);
+            this.groupBoxBetween.PerformLayout();
+            this.groupBoxSelect.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -1253,6 +1440,20 @@
         private System.Windows.Forms.Button btnViewSale;
         private System.Windows.Forms.Label lblErrorProductAdminFields;
         private System.Windows.Forms.Label lblErrorSalesPersonFields;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.TabPage tabPageHistory;
+        private System.Windows.Forms.DateTimePicker dateTimePickerStart;
+        private System.Windows.Forms.DataGridView dataGridViewHistory2;
+        private System.Windows.Forms.DataGridView dataGridViewHistory1;
+        private System.Windows.Forms.DateTimePicker dateTimePickerEnd;
+        private System.Windows.Forms.ComboBox comboBoxEmployees;
+        private System.Windows.Forms.Button btnHAViewSaleLines;
+        private System.Windows.Forms.Label lblAnd;
+        private System.Windows.Forms.GroupBox groupBoxBetween;
+        private System.Windows.Forms.Button btnHAGetSales;
+        private System.Windows.Forms.GroupBox groupBoxSelect;
 
 
     }

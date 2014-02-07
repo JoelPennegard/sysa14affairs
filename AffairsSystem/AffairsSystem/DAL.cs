@@ -173,13 +173,38 @@ namespace AffairsSystem
                     "%' or lastName like '%" + search + "%' or sPhone like '%" + search + "%')");
         }
         //GET SALESLINES FROM A SPECIFIC SALE
-        public SqlDataAdapter getSalesLinesFromSale(int salesNr)
+        public SqlDataAdapter GetSalesLinesFromSale(int salesNr)
         {
             return ExecuteGetSqlAdapter("select p.productNr as [Product Nr], productName as [Product Name], productOutPrice as [Price], " +
                 "i.amount as [Amount] from product p join salesline i " +
                 "on p.productNr = i.productNr where salesNr =" + salesNr);
         }
 
+        //SELECT ALL SALES A SALESPERSON MADE BETWEEN DATES
+        public SqlDataAdapter GetSalesPersonSalesBetweenDates(string spNr, string startDate, string endDate)
+        {
+            return ExecuteGetSqlAdapter("select salesNr as [Sales Nr], salesDate as [Date], totalPrice as [Total Price] from sales where spNr = '" + spNr +
+                "' and (salesDate between '" + startDate + "' and '" + endDate + "')");
+        }
+
+        //GET ALL SALES WITH ALL SALESPERSONS
+        public SqlDataAdapter GetAllSalesFromAllSalesPersons()
+        {
+            return ExecuteGetSqlAdapter("select spNr as [Employee Nr], salesNr as [Sales Nr],salesDate as [Date], totalPrice as [Total Price] from sales");
+        }
+
+        //GET ALL SALES WITH ALL SALESPERSONS BETWEEN DATES
+        public SqlDataAdapter GetAllSalesFromAllSalesPersonsBetweenDates(string startDate, string endDate)
+        {
+            return ExecuteGetSqlAdapter("select spNr as [Employee Nr], salesNr as [Sales Nr],salesDate as [Date], totalPrice as [Total Price] from sales " +
+                "where salesDate between '" + startDate + "' and '" + endDate + "'");
+        }
+
+        //GET ALL SALESPERSONS SPNR'S AND NAMES
+        public SqlDataReader GetAllSalesPersonSpnr()
+        {
+            return ExecuteGetSqlReader("select * from salesPerson");
+        }
 
         /// <summary>
         /// Gets a list containing all Sales made by a specified salesPerson

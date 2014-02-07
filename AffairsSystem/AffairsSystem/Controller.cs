@@ -123,12 +123,11 @@ namespace AffairsSystem
         }
 
         //GET SALESLINES FROM A SPECIFIC SALE
-        public SqlDataAdapter getSalesLinesFromSale(int salesNr)
+        public SqlDataAdapter GetSalesLinesFromSale(int salesNr)
         {
-            da = dal.getSalesLinesFromSale(salesNr);
+            da = dal.GetSalesLinesFromSale(salesNr);
             return da;
         }
-
 
         public SqlDataAdapter SearchNotWorkingSalesPersons(string search)
         {
@@ -191,6 +190,30 @@ namespace AffairsSystem
         public SqlDataAdapter GetTopProductSale()
         {
             da = dal.GetTopProductSale();
+            return da;
+        }
+        //SELECT ALL SALES A SALESPERSON MADE BETWEEN DATES
+        public SqlDataAdapter GetSalesPersonSalesBetweenDates(string spNr, string startDate, string endDate)
+        {
+            da = dal.GetSalesPersonSalesBetweenDates(spNr, startDate, endDate);
+            return da;
+        }
+        //GET ALL SALES WITH ALL SALESPERSONS BETWEEN DATES
+        public SqlDataAdapter GetAllSalesFromAllSalesPersons()
+        {
+            da = dal.GetAllSalesFromAllSalesPersons();
+            return da;
+        }
+        //GET ALL SALESPERSONS SPNR'S
+        public SqlDataReader GetAllSalesPersonSpnr()
+        {
+            dr = dal.GetAllSalesPersonSpnr();
+            return dr; 
+        }
+        //GET ALL SALES WITH ALL SALESPERSONS BETWEEN DATES
+        public SqlDataAdapter GetAllSalesFromAllSalesPersonsBetweenDates(string startDate, string endDate)
+        {
+            da = dal.GetAllSalesFromAllSalesPersonsBetweenDates(startDate, endDate);
             return da;
         }
 

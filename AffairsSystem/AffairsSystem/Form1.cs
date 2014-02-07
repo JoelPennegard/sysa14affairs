@@ -46,6 +46,8 @@ namespace AffairsSystem
                 FillProductTableNotForSaleAdmin();
                 FillNotWorkingSalesPersonTable();
                 FillWorkingSalesPersonTable();
+                FillEmployeeDopbox();
+                FillDataGridViewHistory1AllSalesPersons();
 
             }
             else
@@ -310,7 +312,7 @@ namespace AffairsSystem
             {
                 int salesNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
 
-                SqlDataAdapter da = controller.getSalesLinesFromSale(salesNr);
+                SqlDataAdapter da = controller.GetSalesLinesFromSale(salesNr);
                 DataTable data = new DataTable();
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
@@ -759,8 +761,59 @@ namespace AffairsSystem
         }
 
         #endregion Tab3 ProductAdmin
-                      
-        #region Tab4 Statistics
+
+        #region Tab4 History
+
+
+        private void btnHAGetSales_Click(object sender, EventArgs e)
+        {
+            string spNr = comboBoxEmployees.Text;
+            string startDate = dateTimePickerStart.Text;
+            string endDate = dateTimePickerEnd.Text;
+
+            if (!spNr.Equals("All employees"))
+            {
+                SqlDataAdapter da = controller.GetSalesPersonSalesBetweenDates(spNr, startDate, endDate);
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewHistory1.DataSource = data;
+            }
+            else
+            {
+                SqlDataAdapter da = controller.GetAllSalesFromAllSalesPersonsBetweenDates(startDate, endDate);
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewHistory1.DataSource = data;
+            }
+        }
+
+        private void btnHAViewSaleLines_Click(object sender, EventArgs e)
+        {
+            int salesNr = 0;
+
+            if (comboBoxEmployees.Text.Equals("All employees"))
+            {
+                salesNr = int.Parse(dataGridViewHistory1.SelectedRows[0].Cells[1].Value.ToString());
+            }
+            else
+            {
+                salesNr = int.Parse(dataGridViewHistory1.SelectedRows[0].Cells[0].Value.ToString());
+            }
+
+            SqlDataAdapter da = controller.GetSalesLinesFromSale(salesNr);
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewHistory2.DataSource = data;
+            
+
+
+        }
+
+
+
+        #endregion Tab4 History
+
+        #region Tab5 Statistics
 
         private void btnTopSellers_Click(object sender, EventArgs e)
         {
@@ -787,7 +840,7 @@ namespace AffairsSystem
             dataGridViewStatistics.DataSource = data;
         }
 
-        #endregion Tab4 Statistics
+        #endregion Tab5 Statistics
                 
         #region Helper-Methods (Fill table / clear etc)
         
@@ -891,9 +944,26 @@ namespace AffairsSystem
             lblErrorSalesPersonSearch.Text = "";
         }
 
+        public void FillEmployeeDopbox()
+        {
+            SqlDataReader dr = controller.GetAllSalesPersonSpnr();
+            while (dr.Read())
+            {
+                comboBoxEmployees.Items.Add(dr.GetString(0));
+            }
+        }
+
+        public void FillDataGridViewHistory1AllSalesPersons()
+        {
+            SqlDataAdapter da = controller.GetAllSalesFromAllSalesPersons();
+            DataTable data = new DataTable();
+            da.Fill(data);
+            dataGridViewHistory1.DataSource = data;
+        }
+
         #endregion Helper-Methods (Fill table / clear etc)
 
-                
+      
 
     }
 }
