@@ -47,6 +47,10 @@ namespace AffairsSystem
             {
                 connectionString = "Data Source=LUDVIGSBÄRBARA;Initial Catalog=affAIRs;Integrated Security=True";
             }
+            else if (computerName.Equals("LUDVIGSDATOR"))
+            {
+                connectionString = "Data Source=LUDVIGSDATOR;Initial Catalog=affAIRs;Integrated Security=True";
+            }
             else if (computerName.Equals("MALEXANDER"))
             {
                 connectionString = "Data Source=MALEXANDER;Initial Catalog=affAIRs;Integrated Security=True";
