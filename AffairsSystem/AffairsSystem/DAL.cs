@@ -184,26 +184,26 @@ namespace AffairsSystem
         public SqlDataAdapter GetSalesPersonSalesBetweenDates(string spNr, string startDate, string endDate)
         {
             return ExecuteGetSqlAdapter("select salesNr as [Sales Nr], salesDate as [Date], totalPrice as [Total Price] from sales where spNr = '" + spNr +
-                "' and (salesDate between '" + startDate + "' and '" + endDate + "')");
+                "' and (salesDate between '" + startDate + "' and '" + endDate + "') order by salesDate desc");
         }
 
         //GET ALL SALES WITH ALL SALESPERSONS
         public SqlDataAdapter GetAllSalesFromAllSalesPersons()
         {
-            return ExecuteGetSqlAdapter("select spNr as [Employee Nr], salesNr as [Sales Nr],salesDate as [Date], totalPrice as [Total Price] from sales");
+            return ExecuteGetSqlAdapter("select spNr as [Employee Nr], salesNr as [Sales Nr],salesDate as [Date], totalPrice as [Total Price] from sales order by salesDate desc");
         }
 
         //GET ALL SALES WITH ALL SALESPERSONS BETWEEN DATES
         public SqlDataAdapter GetAllSalesFromAllSalesPersonsBetweenDates(string startDate, string endDate)
         {
             return ExecuteGetSqlAdapter("select spNr as [Employee Nr], salesNr as [Sales Nr],salesDate as [Date], totalPrice as [Total Price] from sales " +
-                "where salesDate between '" + startDate + "' and '" + endDate + "'");
+                "where salesDate between '" + startDate + "' and '" + endDate + "' order by salesDate desc");
         }
 
-        //GET ALL SALESPERSONS SPNR'S AND NAMES
+        //GET ALL SALESPERSONS SPNR'S 
         public SqlDataReader GetAllSalesPersonSpnr()
         {
-            return ExecuteGetSqlReader("select * from salesPerson");
+            return ExecuteGetSqlReader("select spNr from salesPerson");
         }
 
         /// <summary>

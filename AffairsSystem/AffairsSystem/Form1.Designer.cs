@@ -30,23 +30,25 @@
         {
             this.tabControl = new System.Windows.Forms.TabControl();
             this.tabPageSale = new System.Windows.Forms.TabPage();
+            this.groupBoxTotalPrice = new System.Windows.Forms.GroupBox();
+            this.textBoxNumPad = new System.Windows.Forms.TextBox();
+            this.textBoxCurrencyUnit = new System.Windows.Forms.TextBox();
+            this.groupBoxCurrencys = new System.Windows.Forms.GroupBox();
+            this.btnNOK = new System.Windows.Forms.Button();
+            this.btnSEK = new System.Windows.Forms.Button();
+            this.btnDKK = new System.Windows.Forms.Button();
+            this.btnEURO = new System.Windows.Forms.Button();
+            this.btnGBP = new System.Windows.Forms.Button();
+            this.btnUSD = new System.Windows.Forms.Button();
             this.btnViewSale = new System.Windows.Forms.Button();
             this.lblErrorSaleSearch = new System.Windows.Forms.Label();
-            this.textBoxCurrencyUnit = new System.Windows.Forms.TextBox();
             this.btnClearAll = new System.Windows.Forms.Button();
             this.btnClearAllSaleView = new System.Windows.Forms.Button();
             this.btnMyHistory = new System.Windows.Forms.Button();
             this.lblSearchProduct = new System.Windows.Forms.Label();
             this.btnSearchProductSalesTab = new System.Windows.Forms.Button();
             this.textBoxSearchProduct = new System.Windows.Forms.TextBox();
-            this.textBoxNumPad = new System.Windows.Forms.TextBox();
             this.btnRegisterSale = new System.Windows.Forms.Button();
-            this.btnNOK = new System.Windows.Forms.Button();
-            this.btnUSD = new System.Windows.Forms.Button();
-            this.btnGBP = new System.Windows.Forms.Button();
-            this.btnEURO = new System.Windows.Forms.Button();
-            this.btnDKK = new System.Windows.Forms.Button();
-            this.btnSEK = new System.Windows.Forms.Button();
             this.dataGridViewSaleList = new System.Windows.Forms.DataGridView();
             this.ProductNr = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ProductName = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -129,10 +131,10 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.groupBoxCurrencys = new System.Windows.Forms.GroupBox();
-            this.groupBoxTotalPrice = new System.Windows.Forms.GroupBox();
             this.tabControl.SuspendLayout();
             this.tabPageSale.SuspendLayout();
+            this.groupBoxTotalPrice.SuspendLayout();
+            this.groupBoxCurrencys.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductList)).BeginInit();
             this.tabPageEmployee.SuspendLayout();
@@ -152,8 +154,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewStatistics)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.groupBoxCurrencys.SuspendLayout();
-            this.groupBoxTotalPrice.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabControl
@@ -198,6 +198,118 @@
             this.tabPageSale.Text = "Sale menu";
             this.tabPageSale.UseVisualStyleBackColor = true;
             // 
+            // groupBoxTotalPrice
+            // 
+            this.groupBoxTotalPrice.Controls.Add(this.textBoxNumPad);
+            this.groupBoxTotalPrice.Controls.Add(this.textBoxCurrencyUnit);
+            this.groupBoxTotalPrice.Location = new System.Drawing.Point(901, 203);
+            this.groupBoxTotalPrice.Name = "groupBoxTotalPrice";
+            this.groupBoxTotalPrice.Size = new System.Drawing.Size(228, 77);
+            this.groupBoxTotalPrice.TabIndex = 49;
+            this.groupBoxTotalPrice.TabStop = false;
+            this.groupBoxTotalPrice.Text = "Total Price:";
+            // 
+            // textBoxNumPad
+            // 
+            this.textBoxNumPad.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBoxNumPad.Location = new System.Drawing.Point(9, 18);
+            this.textBoxNumPad.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxNumPad.Name = "textBoxNumPad";
+            this.textBoxNumPad.Size = new System.Drawing.Size(141, 44);
+            this.textBoxNumPad.TabIndex = 38;
+            this.textBoxNumPad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // textBoxCurrencyUnit
+            // 
+            this.textBoxCurrencyUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
+            this.textBoxCurrencyUnit.Location = new System.Drawing.Point(154, 18);
+            this.textBoxCurrencyUnit.Margin = new System.Windows.Forms.Padding(2);
+            this.textBoxCurrencyUnit.Multiline = true;
+            this.textBoxCurrencyUnit.Name = "textBoxCurrencyUnit";
+            this.textBoxCurrencyUnit.Size = new System.Drawing.Size(68, 44);
+            this.textBoxCurrencyUnit.TabIndex = 38;
+            // 
+            // groupBoxCurrencys
+            // 
+            this.groupBoxCurrencys.Controls.Add(this.btnNOK);
+            this.groupBoxCurrencys.Controls.Add(this.btnSEK);
+            this.groupBoxCurrencys.Controls.Add(this.btnDKK);
+            this.groupBoxCurrencys.Controls.Add(this.btnEURO);
+            this.groupBoxCurrencys.Controls.Add(this.btnGBP);
+            this.groupBoxCurrencys.Controls.Add(this.btnUSD);
+            this.groupBoxCurrencys.Location = new System.Drawing.Point(920, 77);
+            this.groupBoxCurrencys.Name = "groupBoxCurrencys";
+            this.groupBoxCurrencys.Size = new System.Drawing.Size(192, 120);
+            this.groupBoxCurrencys.TabIndex = 48;
+            this.groupBoxCurrencys.TabStop = false;
+            this.groupBoxCurrencys.Text = "Currency";
+            // 
+            // btnNOK
+            // 
+            this.btnNOK.Location = new System.Drawing.Point(127, 65);
+            this.btnNOK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnNOK.Name = "btnNOK";
+            this.btnNOK.Size = new System.Drawing.Size(53, 42);
+            this.btnNOK.TabIndex = 13;
+            this.btnNOK.Text = "NOK";
+            this.btnNOK.UseVisualStyleBackColor = true;
+            this.btnNOK.Click += new System.EventHandler(this.btnNOK_Click);
+            // 
+            // btnSEK
+            // 
+            this.btnSEK.Location = new System.Drawing.Point(12, 19);
+            this.btnSEK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnSEK.Name = "btnSEK";
+            this.btnSEK.Size = new System.Drawing.Size(54, 42);
+            this.btnSEK.TabIndex = 8;
+            this.btnSEK.Text = "SEK";
+            this.btnSEK.UseVisualStyleBackColor = true;
+            this.btnSEK.Click += new System.EventHandler(this.btnSEK_Click);
+            // 
+            // btnDKK
+            // 
+            this.btnDKK.Location = new System.Drawing.Point(13, 66);
+            this.btnDKK.Margin = new System.Windows.Forms.Padding(2);
+            this.btnDKK.Name = "btnDKK";
+            this.btnDKK.Size = new System.Drawing.Size(53, 42);
+            this.btnDKK.TabIndex = 9;
+            this.btnDKK.Text = "DKK";
+            this.btnDKK.UseVisualStyleBackColor = true;
+            this.btnDKK.Click += new System.EventHandler(this.btnDKK_Click);
+            // 
+            // btnEURO
+            // 
+            this.btnEURO.Location = new System.Drawing.Point(70, 19);
+            this.btnEURO.Margin = new System.Windows.Forms.Padding(2);
+            this.btnEURO.Name = "btnEURO";
+            this.btnEURO.Size = new System.Drawing.Size(53, 42);
+            this.btnEURO.TabIndex = 10;
+            this.btnEURO.Text = "EURO";
+            this.btnEURO.UseVisualStyleBackColor = true;
+            this.btnEURO.Click += new System.EventHandler(this.btnEURO_Click);
+            // 
+            // btnGBP
+            // 
+            this.btnGBP.Location = new System.Drawing.Point(70, 66);
+            this.btnGBP.Margin = new System.Windows.Forms.Padding(2);
+            this.btnGBP.Name = "btnGBP";
+            this.btnGBP.Size = new System.Drawing.Size(53, 42);
+            this.btnGBP.TabIndex = 11;
+            this.btnGBP.Text = "GBP";
+            this.btnGBP.UseVisualStyleBackColor = true;
+            this.btnGBP.Click += new System.EventHandler(this.btnGBP_Click);
+            // 
+            // btnUSD
+            // 
+            this.btnUSD.Location = new System.Drawing.Point(127, 19);
+            this.btnUSD.Margin = new System.Windows.Forms.Padding(2);
+            this.btnUSD.Name = "btnUSD";
+            this.btnUSD.Size = new System.Drawing.Size(53, 42);
+            this.btnUSD.TabIndex = 12;
+            this.btnUSD.Text = "USD";
+            this.btnUSD.UseVisualStyleBackColor = true;
+            this.btnUSD.Click += new System.EventHandler(this.btnUSD_Click);
+            // 
             // btnViewSale
             // 
             this.btnViewSale.Location = new System.Drawing.Point(121, 446);
@@ -217,16 +329,6 @@
             this.lblErrorSaleSearch.Size = new System.Drawing.Size(97, 13);
             this.lblErrorSaleSearch.TabIndex = 46;
             this.lblErrorSaleSearch.Text = "Felmedelanden här";
-            // 
-            // textBoxCurrencyUnit
-            // 
-            this.textBoxCurrencyUnit.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F);
-            this.textBoxCurrencyUnit.Location = new System.Drawing.Point(154, 18);
-            this.textBoxCurrencyUnit.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxCurrencyUnit.Multiline = true;
-            this.textBoxCurrencyUnit.Name = "textBoxCurrencyUnit";
-            this.textBoxCurrencyUnit.Size = new System.Drawing.Size(68, 44);
-            this.textBoxCurrencyUnit.TabIndex = 38;
             // 
             // btnClearAll
             // 
@@ -292,16 +394,6 @@
             this.textBoxSearchProduct.TabIndex = 1;
             this.textBoxSearchProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBoxSearchProduct_KeyPress);
             // 
-            // textBoxNumPad
-            // 
-            this.textBoxNumPad.Font = new System.Drawing.Font("Microsoft Sans Serif", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxNumPad.Location = new System.Drawing.Point(9, 18);
-            this.textBoxNumPad.Margin = new System.Windows.Forms.Padding(2);
-            this.textBoxNumPad.Name = "textBoxNumPad";
-            this.textBoxNumPad.Size = new System.Drawing.Size(141, 44);
-            this.textBoxNumPad.TabIndex = 38;
-            this.textBoxNumPad.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            // 
             // btnRegisterSale
             // 
             this.btnRegisterSale.Location = new System.Drawing.Point(910, 285);
@@ -312,72 +404,6 @@
             this.btnRegisterSale.Text = "Register Sale";
             this.btnRegisterSale.UseVisualStyleBackColor = true;
             this.btnRegisterSale.Click += new System.EventHandler(this.btnRegisterSale_Click);
-            // 
-            // btnNOK
-            // 
-            this.btnNOK.Location = new System.Drawing.Point(127, 65);
-            this.btnNOK.Margin = new System.Windows.Forms.Padding(2);
-            this.btnNOK.Name = "btnNOK";
-            this.btnNOK.Size = new System.Drawing.Size(53, 42);
-            this.btnNOK.TabIndex = 13;
-            this.btnNOK.Text = "NOK";
-            this.btnNOK.UseVisualStyleBackColor = true;
-            this.btnNOK.Click += new System.EventHandler(this.btnNOK_Click);
-            // 
-            // btnUSD
-            // 
-            this.btnUSD.Location = new System.Drawing.Point(127, 19);
-            this.btnUSD.Margin = new System.Windows.Forms.Padding(2);
-            this.btnUSD.Name = "btnUSD";
-            this.btnUSD.Size = new System.Drawing.Size(53, 42);
-            this.btnUSD.TabIndex = 12;
-            this.btnUSD.Text = "USD";
-            this.btnUSD.UseVisualStyleBackColor = true;
-            this.btnUSD.Click += new System.EventHandler(this.btnUSD_Click);
-            // 
-            // btnGBP
-            // 
-            this.btnGBP.Location = new System.Drawing.Point(70, 66);
-            this.btnGBP.Margin = new System.Windows.Forms.Padding(2);
-            this.btnGBP.Name = "btnGBP";
-            this.btnGBP.Size = new System.Drawing.Size(53, 42);
-            this.btnGBP.TabIndex = 11;
-            this.btnGBP.Text = "GBP";
-            this.btnGBP.UseVisualStyleBackColor = true;
-            this.btnGBP.Click += new System.EventHandler(this.btnGBP_Click);
-            // 
-            // btnEURO
-            // 
-            this.btnEURO.Location = new System.Drawing.Point(70, 19);
-            this.btnEURO.Margin = new System.Windows.Forms.Padding(2);
-            this.btnEURO.Name = "btnEURO";
-            this.btnEURO.Size = new System.Drawing.Size(53, 42);
-            this.btnEURO.TabIndex = 10;
-            this.btnEURO.Text = "EURO";
-            this.btnEURO.UseVisualStyleBackColor = true;
-            this.btnEURO.Click += new System.EventHandler(this.btnEURO_Click);
-            // 
-            // btnDKK
-            // 
-            this.btnDKK.Location = new System.Drawing.Point(13, 66);
-            this.btnDKK.Margin = new System.Windows.Forms.Padding(2);
-            this.btnDKK.Name = "btnDKK";
-            this.btnDKK.Size = new System.Drawing.Size(53, 42);
-            this.btnDKK.TabIndex = 9;
-            this.btnDKK.Text = "DKK";
-            this.btnDKK.UseVisualStyleBackColor = true;
-            this.btnDKK.Click += new System.EventHandler(this.btnDKK_Click);
-            // 
-            // btnSEK
-            // 
-            this.btnSEK.Location = new System.Drawing.Point(12, 19);
-            this.btnSEK.Margin = new System.Windows.Forms.Padding(2);
-            this.btnSEK.Name = "btnSEK";
-            this.btnSEK.Size = new System.Drawing.Size(54, 42);
-            this.btnSEK.TabIndex = 8;
-            this.btnSEK.Text = "SEK";
-            this.btnSEK.UseVisualStyleBackColor = true;
-            this.btnSEK.Click += new System.EventHandler(this.btnSEK_Click);
             // 
             // dataGridViewSaleList
             // 
@@ -1110,7 +1136,7 @@
             this.dateTimePickerEnd.Name = "dateTimePickerEnd";
             this.dateTimePickerEnd.Size = new System.Drawing.Size(92, 20);
             this.dateTimePickerEnd.TabIndex = 4;
-            this.dateTimePickerEnd.Value = new System.DateTime(2014, 2, 8, 0, 0, 0, 0);
+            this.dateTimePickerEnd.Value = new System.DateTime(2014, 2, 8, 13, 6, 31, 0);
             // 
             // dateTimePickerStart
             // 
@@ -1297,32 +1323,6 @@
             this.panel1.Size = new System.Drawing.Size(235, 22);
             this.panel1.TabIndex = 2;
             // 
-            // groupBoxCurrencys
-            // 
-            this.groupBoxCurrencys.Controls.Add(this.btnNOK);
-            this.groupBoxCurrencys.Controls.Add(this.btnSEK);
-            this.groupBoxCurrencys.Controls.Add(this.btnDKK);
-            this.groupBoxCurrencys.Controls.Add(this.btnEURO);
-            this.groupBoxCurrencys.Controls.Add(this.btnGBP);
-            this.groupBoxCurrencys.Controls.Add(this.btnUSD);
-            this.groupBoxCurrencys.Location = new System.Drawing.Point(920, 77);
-            this.groupBoxCurrencys.Name = "groupBoxCurrencys";
-            this.groupBoxCurrencys.Size = new System.Drawing.Size(192, 120);
-            this.groupBoxCurrencys.TabIndex = 48;
-            this.groupBoxCurrencys.TabStop = false;
-            this.groupBoxCurrencys.Text = "Currency";
-            // 
-            // groupBoxTotalPrice
-            // 
-            this.groupBoxTotalPrice.Controls.Add(this.textBoxNumPad);
-            this.groupBoxTotalPrice.Controls.Add(this.textBoxCurrencyUnit);
-            this.groupBoxTotalPrice.Location = new System.Drawing.Point(901, 203);
-            this.groupBoxTotalPrice.Name = "groupBoxTotalPrice";
-            this.groupBoxTotalPrice.Size = new System.Drawing.Size(228, 77);
-            this.groupBoxTotalPrice.TabIndex = 49;
-            this.groupBoxTotalPrice.TabStop = false;
-            this.groupBoxTotalPrice.Text = "Total Price:";
-            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1341,6 +1341,9 @@
             this.tabControl.ResumeLayout(false);
             this.tabPageSale.ResumeLayout(false);
             this.tabPageSale.PerformLayout();
+            this.groupBoxTotalPrice.ResumeLayout(false);
+            this.groupBoxTotalPrice.PerformLayout();
+            this.groupBoxCurrencys.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewSaleList)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductList)).EndInit();
             this.tabPageEmployee.ResumeLayout(false);
@@ -1367,9 +1370,6 @@
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            this.groupBoxCurrencys.ResumeLayout(false);
-            this.groupBoxTotalPrice.ResumeLayout(false);
-            this.groupBoxTotalPrice.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
