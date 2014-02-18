@@ -109,23 +109,27 @@ namespace AffairsSystem
 
         private void btnGetAllProducts_Click(object sender, EventArgs e)
         {
-            this.ClearAllErrorMessages();
+            try
+            {
+                this.ClearAllErrorMessages();
 
-            btnMyHistory.Text = "My History";
-            SqlDataAdapter da = controller.GetAllProductsToSaleList();
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewProductList.DataSource = data;
+                btnMyHistory.Text = "My History";
+                SqlDataAdapter da = controller.GetAllProductsToSaleList();
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewProductList.DataSource = data;
 
-            SqlDataAdapter da1 = controller.GetAllProductsNotForSale();
-            DataTable data1 = new DataTable();
-            da1.Fill(data1);
-            dataGridViewDeletedPa.DataSource = data1;
+                SqlDataAdapter da1 = controller.GetAllProductsNotForSale();
+                DataTable data1 = new DataTable();
+                da1.Fill(data1);
+                dataGridViewDeletedPa.DataSource = data1;
 
-            btnViewSale.Visible = false;
-            btwAddProductToSale.Enabled = true;
-            btnRemoveProductFromSale.Enabled = true;
- 
+                btnViewSale.Visible = false;
+                btwAddProductToSale.Enabled = true;
+                btnRemoveProductFromSale.Enabled = true;
+            }
+            catch (Exception e2)
+            { MessageBox.Show("fasöklfsaklöjafsjlköfsaölkjsafökjl"); }
         }
 
         private void btnAddProductToSale_Click(object sender, EventArgs e)
@@ -856,49 +860,71 @@ namespace AffairsSystem
         //FILL PRODUCT TABLE
         private void FillProductTable()
         {
-            SqlDataAdapter da = controller.GetAllProductsToSaleList();
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewProductList.DataSource = data;
-
+            try
+            {
+                SqlDataAdapter da = controller.GetAllProductsToSaleList();
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewProductList.DataSource = data;
+            }
+            catch (Exception e2)
+            { MessageBox.Show(Utility.ExceptionResult(e2)); }
 
         }
         
         //FILL WORKING SALES PERSON TABLE
         private void FillWorkingSalesPersonTable()
         {
-            SqlDataAdapter da = controller.GetAllWorkingSalesPersons();
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewSP.DataSource = data;
+            try
+            {
+                SqlDataAdapter da = controller.GetAllWorkingSalesPersons();
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewSP.DataSource = data;
+            }
+            catch (Exception e2)
+            { MessageBox.Show(Utility.ExceptionResult(e2)); }
+
         }
 
         //FILL NOT WORKING SALES PERSON TABLE
         private void FillNotWorkingSalesPersonTable()
         {
+            try{
             SqlDataAdapter da = controller.GetAllNotWorkingSalesPersons();
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewDeletedSP.DataSource = data;
+            }
+            catch (Exception e2)
+            { MessageBox.Show(Utility.ExceptionResult(e2)); }
         }
 
 
         //FILL PRODUCTS FOR SALE TABLE ADMIN
         private void FillProductTableAdmin()
         {
+            try {
             SqlDataAdapter da = controller.GetAllProductsForSale();
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewPa.DataSource = data;
+            }
+            catch (Exception e2)
+            { MessageBox.Show(Utility.ExceptionResult(e2)); }
         }
         
         //FILL PRODUCTS NOT FOR SALE TABLE ADMIN
         private void FillProductTableNotForSaleAdmin()
         {
+            try {
             SqlDataAdapter da = controller.GetAllProductsNotForSale();
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewDeletedPa.DataSource = data;
+            }
+            catch (Exception e2)
+            { MessageBox.Show(Utility.ExceptionResult(e2)); }
         }
 
         // CLEAR ALL IN PRODUCT ADMIN
@@ -928,6 +954,7 @@ namespace AffairsSystem
         
         private void ClearAllSaleView()
         {
+            try{
             foreach (DataGridViewRow row in dataGridViewSaleList.Rows)
             {
                 int productNr = int.Parse(row.Cells[0].Value.ToString());
@@ -940,6 +967,9 @@ namespace AffairsSystem
             textBoxNumPad.Text = totalPrice.ToString();
             dataGridViewSaleList.Rows.Clear();
             richTextBoxAmount.Text = "";
+            }
+            catch (Exception e2)
+            { MessageBox.Show(Utility.ExceptionResult(e2)); }
 
 
         }
@@ -955,19 +985,27 @@ namespace AffairsSystem
 
         public void FillEmployeeComboBox()
         {
+            try {
             SqlDataReader dr = controller.GetAllSalesPersonSpnr();
             while (dr.Read())
             {
                 comboBoxEmployees.Items.Add(dr.GetString(0));
             }
+            }
+            catch (Exception e2)
+            { MessageBox.Show(Utility.ExceptionResult(e2)); }
         }
 
         public void FillDataGridViewHistory1AllSalesPersons()
         {
+            try {
             SqlDataAdapter da = controller.GetAllSalesFromAllSalesPersons();
             DataTable data = new DataTable();
             da.Fill(data);
             dataGridViewHistory1.DataSource = data;
+            }
+            catch (Exception e2)
+            { MessageBox.Show(Utility.ExceptionResult(e2)); }
         }
 
         #endregion Helper-Methods (Fill table / clear etc)
