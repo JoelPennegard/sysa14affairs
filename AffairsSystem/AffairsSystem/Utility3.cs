@@ -16,8 +16,7 @@ namespace AffairsSystem
 
         public static double GetCurrencyExchangeRate(string currency, double totalPrice)
         {
-            try
-            {
+            
                 string jsonString;
                 using (WebClient client = new WebClient())
                 {
@@ -39,11 +38,8 @@ namespace AffairsSystem
 
                 
 
-            }
-            catch (WebException e)
-            {
-                MessageBox.Show("Exception: " +e);
-            }
+            
+
             return totalPrice;
 
         }
