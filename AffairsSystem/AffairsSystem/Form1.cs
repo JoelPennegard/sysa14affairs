@@ -251,7 +251,6 @@ namespace AffairsSystem
             }
             else
             {
-
                 controller.SetSale(spNr, Utility.RoundSEK(totalPrice));
                 int salesNr = Utility.CheckLatestSale(controller.GetLatestSale());
 
