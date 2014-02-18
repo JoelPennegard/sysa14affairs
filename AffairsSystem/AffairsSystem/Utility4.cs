@@ -16,10 +16,8 @@ namespace AffairsSystem
     {
 
         public static string ExceptionResult(Exception e)
-        {
+        {          
             
-
-
             if (e is SqlException)
             {
               return "SqlException";  
