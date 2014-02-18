@@ -29,7 +29,7 @@ namespace AffairsSystem
             }
             else
             {
-                return null;
+                return "There was a undocumented error, please try again";
             }
 
 
