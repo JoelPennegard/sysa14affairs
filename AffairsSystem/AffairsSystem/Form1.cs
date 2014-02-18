@@ -12,6 +12,7 @@ using System.Web;
 using System.Collections.Generic;
 using System.Web.Script.Serialization;
 using System.Net;
+using System.Exception;
 
 namespace AffairsSystem
 {
@@ -110,22 +111,26 @@ namespace AffairsSystem
         private void btnGetAllProducts_Click(object sender, EventArgs e)
         {
             this.ClearAllErrorMessages();
+            try
+            {
+                btnMyHistory.Text = "My History";
+                SqlDataAdapter da = controller.GetAllProductsToSaleList();
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewProductList.DataSource = data;
 
-            btnMyHistory.Text = "My History";
-            SqlDataAdapter da = controller.GetAllProductsToSaleList();
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewProductList.DataSource = data;
-
-            SqlDataAdapter da1 = controller.GetAllProductsNotForSale();
-            DataTable data1 = new DataTable();
-            da1.Fill(data1);
-            dataGridViewDeletedPa.DataSource = data1;
-
-            btnViewSale.Visible = false;
-            btwAddProductToSale.Enabled = true;
-            btnRemoveProductFromSale.Enabled = true;
- 
+                SqlDataAdapter da1 = controller.GetAllProductsNotForSale();
+                DataTable data1 = new DataTable();
+                da1.Fill(data1);
+                dataGridViewDeletedPa.DataSource = data1;
+            }
+            catch(Exception E)
+            {
+                Utility.Exception(E);
+            }     
+                btnViewSale.Visible = false;
+                btwAddProductToSale.Enabled = true;
+                btnRemoveProductFromSale.Enabled = true;
         }
 
         private void btnAddProductToSale_Click(object sender, EventArgs e)
@@ -348,7 +353,7 @@ namespace AffairsSystem
             }
             else
             {
-                SqlDataAdapter da = controller.SearchProductTill(search);
+                SqlDataAdapter da = controller.SearchProductTill(search); //Här kickar metoden in. Vi söker här.
                 DataTable data = new DataTable();
                 da.Fill(data);
                 dataGridViewProductList.DataSource = data;
