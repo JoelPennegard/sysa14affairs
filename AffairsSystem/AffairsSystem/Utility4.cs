@@ -20,16 +20,16 @@ namespace AffairsSystem
             
             if (e is SqlException)
             {
-              return "SqlException";  
+              return "A SqlException has occured.";  
             }
 
             else if (e is WebException)
             {
-                return "WebException";
+                return "A WebException has occured.";
             }
             else
             {
-                return "There was a undocumented error, please try again";
+                return "There was a undocumented error, please try again.";
             }
 
 
