@@ -16,8 +16,12 @@ namespace AffairsSystem
         Controller controller;
         public LogIn()
         {
+            try {
             controller = new Controller();
             InitializeComponent();
+            }
+            catch (Exception e2)
+            { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
            
         }
         private void LogIn_Load(object sender, EventArgs e)
@@ -28,6 +32,7 @@ namespace AffairsSystem
         // CLICK ON LOG IN
         private void btnLogIn_Click(object sender, EventArgs e)
         {
+            try {
             string spNr = textBoxspNr.Text;
             SqlDataReader da = controller.SearchSalesPerson(spNr);
             string spNr2 = Utility.CheckSalesPersonLogIn(da);
@@ -36,9 +41,11 @@ namespace AffairsSystem
             SqlDataReader da3 = controller.SearchSalesPerson(spNr);
             String name = Utility.GetSalesPersonName(da3);
             
+            
 
             if (spNr.Equals(spNr2))
             {
+                
                 Form1 Form1 = new Form1(spNr, name, controller, admin);
                 Form1.Show();
                 this.Hide();
@@ -47,11 +54,15 @@ namespace AffairsSystem
             {
                 textBoxspNr.Text = "";
             }
+            }
+            catch (Exception e2)
+            { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
 
         }
 
         private void textBoxspNr_KeyPress(object sender, KeyPressEventArgs e)
         {
+
             if (e.KeyChar == (char)13)
             {
                 btnLogIn.PerformClick();

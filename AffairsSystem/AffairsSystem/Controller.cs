@@ -85,8 +85,7 @@ namespace AffairsSystem
         // GET ALL PRODUCTS (NR, NAME, OUTPRICE)
         public SqlDataAdapter GetAllProductsToSaleList()
         {
-            Exception e = new Exception();
-            throw e;
+            
             da = dal.GetAllProductsToSaleList();
             return da;
         }
