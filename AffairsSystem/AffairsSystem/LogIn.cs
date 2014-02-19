@@ -16,44 +16,46 @@ namespace AffairsSystem
         Controller controller;
         public LogIn()
         {
-            try {
-            controller = new Controller();
-            InitializeComponent();
+            try
+            {
+                controller = new Controller();
+                InitializeComponent();
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
-           
+
         }
         private void LogIn_Load(object sender, EventArgs e)
         {
 
         }
-        
+
         // CLICK ON LOG IN
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            try {
-            string spNr = textBoxspNr.Text;
-            SqlDataReader da = controller.SearchSalesPerson(spNr);
-            string spNr2 = Utility.CheckSalesPersonLogIn(da);
-            SqlDataReader da2 = controller.SearchSalesPerson(spNr);
-            Boolean admin = Utility.CheckAdmin(da2);
-            SqlDataReader da3 = controller.SearchSalesPerson(spNr);
-            String name = Utility.GetSalesPersonName(da3);
-            
-            
+            try
+            {
+                string spNr = textBoxspNr.Text;
+                SqlDataReader da = controller.SearchSalesPerson(spNr);
+                string spNr2 = Utility.CheckSalesPersonLogIn(da);
+                SqlDataReader da2 = controller.SearchSalesPerson(spNr);
+                Boolean admin = Utility.CheckAdmin(da2);
+                SqlDataReader da3 = controller.SearchSalesPerson(spNr);
+                String name = Utility.GetSalesPersonName(da3);
 
-            if (spNr.Equals(spNr2))
-            {
-                
-                Form1 Form1 = new Form1(spNr, name, controller, admin);
-                Form1.Show();
-                this.Hide();
-            }
-            else
-            {
-                textBoxspNr.Text = "";
-            }
+
+
+                if (spNr.Equals(spNr2))
+                {
+
+                    Form1 Form1 = new Form1(spNr, name, controller, admin);
+                    Form1.Show();
+                    this.Hide();
+                }
+                else
+                {
+                    textBoxspNr.Text = "";
+                }
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -72,12 +74,12 @@ namespace AffairsSystem
         private void LogIn_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.DrawRectangle(new Pen(Color.Black, 4),
-                            this.DisplayRectangle);                                     
+                            this.DisplayRectangle);
 
         }
-        
 
-            
-        }
+
+
     }
+}
 

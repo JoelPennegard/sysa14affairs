@@ -33,43 +33,44 @@ namespace AffairsSystem
         #region Constructor and 'OnFormClosing'
         public Form1(string spNr, string name, Controller controller, Boolean Admin)
         {
-            try {
-            InitializeComponent();
-            this.controller = controller;
-            this.spNr = spNr;
-            this.ClearAllErrorMessages();
-            FillProductTable();
-
-            if (Admin)
+            try
             {
-                tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as : " + name + " (Admin)";
-                FillProductTableAdmin();
-                FillProductTableNotForSaleAdmin();
-                FillNotWorkingSalesPersonTable();
-                FillWorkingSalesPersonTable();
-                FillEmployeeComboBox();
-                FillDataGridViewHistory1AllSalesPersons();
+                InitializeComponent();
+                this.controller = controller;
+                this.spNr = spNr;
+                this.ClearAllErrorMessages();
+                FillProductTable();
 
-            }
-            else
-            {
-                tabControl.Controls.Remove(tabPageEmployee);
-                tabControl.Controls.Remove(tabPageProduct);
-                tabControl.Controls.Remove(tabPageHistory);
-                tabControl.Controls.Remove(tabPageStatistics);
-                exitToolStripMenuItem.Enabled = false;
-                lblLoggedInAs.Text = "Logged in as: " + name;
-                exitToolStripMenuItem.Enabled = false;
-            }
-            this.spNr = spNr;
+                if (Admin)
+                {
+                    tabControl.Enabled = true; lblLoggedInAs.Text = "Logged in as : " + name + " (Admin)";
+                    FillProductTableAdmin();
+                    FillProductTableNotForSaleAdmin();
+                    FillNotWorkingSalesPersonTable();
+                    FillWorkingSalesPersonTable();
+                    FillEmployeeComboBox();
+                    FillDataGridViewHistory1AllSalesPersons();
 
-            // GÖR SÅ ATT KOMMA BLIR PUNKT ISTÄLLET! (viktigt för att det ska gå att lägga in i sql) /LUDDE
-            System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
-            customCulture.NumberFormat.NumberDecimalSeparator = ".";
-            System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
-            // 
-            textBoxNumPad.Text = totalPrice.ToString();
-            btnViewSale.Visible = false;
+                }
+                else
+                {
+                    tabControl.Controls.Remove(tabPageEmployee);
+                    tabControl.Controls.Remove(tabPageProduct);
+                    tabControl.Controls.Remove(tabPageHistory);
+                    tabControl.Controls.Remove(tabPageStatistics);
+                    exitToolStripMenuItem.Enabled = false;
+                    lblLoggedInAs.Text = "Logged in as: " + name;
+                    exitToolStripMenuItem.Enabled = false;
+                }
+                this.spNr = spNr;
+
+                // GÖR SÅ ATT KOMMA BLIR PUNKT ISTÄLLET! (viktigt för att det ska gå att lägga in i sql) /LUDDE
+                System.Globalization.CultureInfo customCulture = (System.Globalization.CultureInfo)System.Threading.Thread.CurrentThread.CurrentCulture.Clone();
+                customCulture.NumberFormat.NumberDecimalSeparator = ".";
+                System.Threading.Thread.CurrentThread.CurrentCulture = customCulture;
+                // 
+                textBoxNumPad.Text = totalPrice.ToString();
+                btnViewSale.Visible = false;
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -85,9 +86,10 @@ namespace AffairsSystem
 
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
-            try {
-            ClearAllSaleView();
-            Environment.Exit(0);
+            try
+            {
+                ClearAllSaleView();
+                Environment.Exit(0);
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -142,88 +144,89 @@ namespace AffairsSystem
 
         private void btnAddProductToSale_Click(object sender, EventArgs e)
         {
-            try{
-            this.ClearAllErrorMessages(); //Görs alltid för att "neutralisera" alla felmeddelanden på varje knapp....
-
-            string currency = textBoxCurrencyUnit.Text = "SEK";
-            int productNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
-            string productName = dataGridViewProductList.SelectedRows[0].Cells[1].Value.ToString();
-            double productOutPrice = double.Parse(dataGridViewProductList.SelectedRows[0].Cells[2].Value.ToString());
-            string amountString = richTextBoxAmount.Text;
-            richTextBoxAmount.Text = "";
-            int amountInt = 1;
-            string minusOrPlus = "-";
-            bool exists = false;
-
-            if (!Utility.CheckOnlyNumbers(amountString)) //Kollar om amount är siffror. Är den false skrivs detta ut, annars fortsätter man.
+            try
             {
-                MessageBox.Show("Amount must be integer", "Check amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                if (Utility.CheckIfEmpty(amountString))  //Om man inte fyller i ett amount ska det automatiskt bli 1.
+                this.ClearAllErrorMessages(); //Görs alltid för att "neutralisera" alla felmeddelanden på varje knapp....
+
+                string currency = textBoxCurrencyUnit.Text = "SEK";
+                int productNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
+                string productName = dataGridViewProductList.SelectedRows[0].Cells[1].Value.ToString();
+                double productOutPrice = double.Parse(dataGridViewProductList.SelectedRows[0].Cells[2].Value.ToString());
+                string amountString = richTextBoxAmount.Text;
+                richTextBoxAmount.Text = "";
+                int amountInt = 1;
+                string minusOrPlus = "-";
+                bool exists = false;
+
+                if (!Utility.CheckOnlyNumbers(amountString)) //Kollar om amount är siffror. Är den false skrivs detta ut, annars fortsätter man.
                 {
-
-                    amountInt = 1;
-                    amountString = "1";
-                }
-                amountInt = int.Parse(amountString);
-                int productAmount = Utility.GetProductAmount(controller.getProductAmount(productNr));
-                int productAmountLeft = Utility.CheckProductAmount(productAmount, amountInt);
-
-
-                if (productAmountLeft >= 0)
-                {
-
-                    int rowCount = dataGridViewSaleList.RowCount;
-
-
-                    for (int i = 0; i < rowCount; i++)
-                    {
-                        int tmpProductNr = int.Parse(dataGridViewSaleList.Rows[i].Cells[0].Value.ToString());
-                        if (productNr == tmpProductNr)  //Om det finns en vara ska raden uppdateras
-                        {
-                            int currentAmountInSalesLine = int.Parse(dataGridViewSaleList.Rows[i].Cells[3].Value.ToString());
-                            double SinglePrice = amountInt * productOutPrice;
-
-
-
-                            int newAmountInSalesLine = amountInt + currentAmountInSalesLine;
-
-                            totalPrice += SinglePrice;
-
-                            amountString = newAmountInSalesLine.ToString();
-                            dataGridViewSaleList.Rows[i].Cells[3].Value = amountString;
-
-                            controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
-                            FillProductTableAdmin();
-                            FillProductTable();
-                            exists = true;
-
-
-                        }
-
-                    }
-                    if (!exists) //Om ingen rad med detta productNr finns måste vi skapa en ny rad. 
-                    {
-                        string[] row = new string[] { productNr.ToString(), productName, productOutPrice.ToString(), amountInt.ToString() };
-                        dataGridViewSaleList.Rows.Add(row);
-
-                        double SinglePrice = amountInt * productOutPrice;
-                        totalPrice = totalPrice + SinglePrice;
-                        controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
-                        FillProductTableAdmin();
-                        FillProductTable();
-
-                    }
-
-                    textBoxNumPad.Text = Utility.GetCurrencyExchangeRate(currency, totalPrice).ToString();
+                    MessageBox.Show("Amount must be integer", "Check amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
                 else
                 {
-                    FillProductTableAdmin();
+                    if (Utility.CheckIfEmpty(amountString))  //Om man inte fyller i ett amount ska det automatiskt bli 1.
+                    {
+
+                        amountInt = 1;
+                        amountString = "1";
+                    }
+                    amountInt = int.Parse(amountString);
+                    int productAmount = Utility.GetProductAmount(controller.getProductAmount(productNr));
+                    int productAmountLeft = Utility.CheckProductAmount(productAmount, amountInt);
+
+
+                    if (productAmountLeft >= 0)
+                    {
+
+                        int rowCount = dataGridViewSaleList.RowCount;
+
+
+                        for (int i = 0; i < rowCount; i++)
+                        {
+                            int tmpProductNr = int.Parse(dataGridViewSaleList.Rows[i].Cells[0].Value.ToString());
+                            if (productNr == tmpProductNr)  //Om det finns en vara ska raden uppdateras
+                            {
+                                int currentAmountInSalesLine = int.Parse(dataGridViewSaleList.Rows[i].Cells[3].Value.ToString());
+                                double SinglePrice = amountInt * productOutPrice;
+
+
+
+                                int newAmountInSalesLine = amountInt + currentAmountInSalesLine;
+
+                                totalPrice += SinglePrice;
+
+                                amountString = newAmountInSalesLine.ToString();
+                                dataGridViewSaleList.Rows[i].Cells[3].Value = amountString;
+
+                                controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
+                                FillProductTableAdmin();
+                                FillProductTable();
+                                exists = true;
+
+
+                            }
+
+                        }
+                        if (!exists) //Om ingen rad med detta productNr finns måste vi skapa en ny rad. 
+                        {
+                            string[] row = new string[] { productNr.ToString(), productName, productOutPrice.ToString(), amountInt.ToString() };
+                            dataGridViewSaleList.Rows.Add(row);
+
+                            double SinglePrice = amountInt * productOutPrice;
+                            totalPrice = totalPrice + SinglePrice;
+                            controller.UpdateProductAmount(amountInt, productNr, minusOrPlus);
+                            FillProductTableAdmin();
+                            FillProductTable();
+
+                        }
+
+                        textBoxNumPad.Text = Utility.GetCurrencyExchangeRate(currency, totalPrice).ToString();
+                    }
+                    else
+                    {
+                        FillProductTableAdmin();
+                    }
                 }
-            }
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -233,31 +236,32 @@ namespace AffairsSystem
 
         private void btnRemoveProductFromSale_Click(object sender, EventArgs e)
         {
-            try {
-            this.ClearAllErrorMessages();
-            if (dataGridViewSaleList.RowCount > 0)
+            try
             {
-                int amount = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[3].Value.ToString());
-                int productNr = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[0].Value.ToString());
-                double productOutPrice = double.Parse(dataGridViewSaleList.SelectedRows[0].Cells[2].Value.ToString());
-                double SinglePrice = amount * productOutPrice;
-                string minusOrPlus = "+";
-                if (this.dataGridViewSaleList.SelectedRows.Count > 0)
+                this.ClearAllErrorMessages();
+                if (dataGridViewSaleList.RowCount > 0)
                 {
-
-                    totalPrice = totalPrice - SinglePrice;
-                    controller.UpdateProductAmount(amount, productNr, minusOrPlus);
-                    dataGridViewSaleList.Rows.RemoveAt(this.dataGridViewSaleList.SelectedRows[0].Index);
-                    FillProductTableAdmin();
-                    FillProductTable();
-                    textBoxNumPad.Text = totalPrice.ToString();
-                    if (this.dataGridViewSaleList.Rows.Count == 0)
+                    int amount = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[3].Value.ToString());
+                    int productNr = int.Parse(dataGridViewSaleList.SelectedRows[0].Cells[0].Value.ToString());
+                    double productOutPrice = double.Parse(dataGridViewSaleList.SelectedRows[0].Cells[2].Value.ToString());
+                    double SinglePrice = amount * productOutPrice;
+                    string minusOrPlus = "+";
+                    if (this.dataGridViewSaleList.SelectedRows.Count > 0)
                     {
-                        totalPrice = 0;
+
+                        totalPrice = totalPrice - SinglePrice;
+                        controller.UpdateProductAmount(amount, productNr, minusOrPlus);
+                        dataGridViewSaleList.Rows.RemoveAt(this.dataGridViewSaleList.SelectedRows[0].Index);
+                        FillProductTableAdmin();
+                        FillProductTable();
                         textBoxNumPad.Text = totalPrice.ToString();
+                        if (this.dataGridViewSaleList.Rows.Count == 0)
+                        {
+                            totalPrice = 0;
+                            textBoxNumPad.Text = totalPrice.ToString();
+                        }
                     }
                 }
-            }
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -265,29 +269,30 @@ namespace AffairsSystem
 
         private void btnRegisterSale_Click(object sender, EventArgs e)
         {
-            try {
-            if (dataGridViewSaleList.Rows.Count < 1)
+            try
             {
-                MessageBox.Show("A sale must contain at least one item.", "Empty sale", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-            else
-            {
-                controller.SetSale(spNr, Utility.GetCurrencyExchangeRate("SEK", totalPrice));
-                int salesNr = Utility.CheckLatestSale(controller.GetLatestSale());
-
-                foreach (DataGridViewRow row in dataGridViewSaleList.Rows)
+                if (dataGridViewSaleList.Rows.Count < 1)
                 {
-                    int productNr = int.Parse(row.Cells[0].Value.ToString());
-                    int amount = int.Parse(row.Cells[3].Value.ToString());
-                    controller.SetSalesLine(productNr, salesNr, amount);
+                    MessageBox.Show("A sale must contain at least one item.", "Empty sale", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
-                MessageBox.Show("Sale nr: " + salesNr + " was added.", "Sale completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                dataGridViewSaleList.Rows.Clear();
-                totalPrice = 0;
-                textBoxNumPad.Text = totalPrice.ToString();
-                FillDataGridViewHistory1AllSalesPersons();
-                comboBoxEmployees.Text = "All employees";
-            }
+                else
+                {
+                    controller.SetSale(spNr, Utility.GetCurrencyExchangeRate("SEK", totalPrice));
+                    int salesNr = Utility.CheckLatestSale(controller.GetLatestSale());
+
+                    foreach (DataGridViewRow row in dataGridViewSaleList.Rows)
+                    {
+                        int productNr = int.Parse(row.Cells[0].Value.ToString());
+                        int amount = int.Parse(row.Cells[3].Value.ToString());
+                        controller.SetSalesLine(productNr, salesNr, amount);
+                    }
+                    MessageBox.Show("Sale nr: " + salesNr + " was added.", "Sale completed", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    dataGridViewSaleList.Rows.Clear();
+                    totalPrice = 0;
+                    textBoxNumPad.Text = totalPrice.ToString();
+                    FillDataGridViewHistory1AllSalesPersons();
+                    comboBoxEmployees.Text = "All employees";
+                }
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -295,36 +300,37 @@ namespace AffairsSystem
 
         private void btnMyHistory_Click(object sender, EventArgs e)
         {
-            try {
-            this.ClearAllErrorMessages();
-
-            if (btnMyHistory.Text.Equals("My History"))
+            try
             {
-                btwAddProductToSale.Enabled = false;
-                btnRemoveProductFromSale.Enabled = false;
-                SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
-                DataTable data = new DataTable();
-                da.Fill(data);
-                dataGridViewProductList.DataSource = data;
-                btnMyHistory.Text = "Back To Products";
-                if (dataGridViewProductList.Rows.Count == 0)
+                this.ClearAllErrorMessages();
+
+                if (btnMyHistory.Text.Equals("My History"))
                 {
-                    btnViewSale.Visible = false;
+                    btwAddProductToSale.Enabled = false;
+                    btnRemoveProductFromSale.Enabled = false;
+                    SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
+                    DataTable data = new DataTable();
+                    da.Fill(data);
+                    dataGridViewProductList.DataSource = data;
+                    btnMyHistory.Text = "Back To Products";
+                    if (dataGridViewProductList.Rows.Count == 0)
+                    {
+                        btnViewSale.Visible = false;
+                    }
+                    else
+                    {
+                        btnViewSale.Visible = true;
+                    }
                 }
                 else
                 {
-                    btnViewSale.Visible = true;
+                    FillProductTable();
+                    btnViewSale.Visible = false;
+                    btnRemoveProductFromSale.Enabled = true;
+                    btwAddProductToSale.Enabled = true;
+                    btnMyHistory.Text = "My History";
+                    btnViewSale.Text = "View Sale";
                 }
-            }
-            else
-            {
-                FillProductTable();
-                btnViewSale.Visible = false;
-                btnRemoveProductFromSale.Enabled = true;
-                btwAddProductToSale.Enabled = true;
-                btnMyHistory.Text = "My History";
-                btnViewSale.Text = "View Sale";
-            }
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -332,34 +338,35 @@ namespace AffairsSystem
 
         private void btnClearAllSaleView_Click(object sender, EventArgs e)
         {
-            
+
             ClearAllSaleView();
 
         }
 
         private void btnViewSale_Click(object sender, EventArgs e)
         {
-            try {
-            this.ClearAllErrorMessages();
-
-            if (btnViewSale.Text.Equals("View Sale"))
+            try
             {
-                int salesNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
+                this.ClearAllErrorMessages();
 
-                SqlDataAdapter da = controller.GetSalesLinesFromSale(salesNr);
-                DataTable data = new DataTable();
-                da.Fill(data);
-                dataGridViewProductList.DataSource = data;
-                btnViewSale.Text = "Back";
-            }
-            else
-            {
-                SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
-                DataTable data = new DataTable();
-                da.Fill(data);
-                dataGridViewProductList.DataSource = data;
-                btnViewSale.Text = "View Sale";
-            }
+                if (btnViewSale.Text.Equals("View Sale"))
+                {
+                    int salesNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
+
+                    SqlDataAdapter da = controller.GetSalesLinesFromSale(salesNr);
+                    DataTable data = new DataTable();
+                    da.Fill(data);
+                    dataGridViewProductList.DataSource = data;
+                    btnViewSale.Text = "Back";
+                }
+                else
+                {
+                    SqlDataAdapter da = controller.GetSalesPersonSales(spNr);
+                    DataTable data = new DataTable();
+                    da.Fill(data);
+                    dataGridViewProductList.DataSource = data;
+                    btnViewSale.Text = "View Sale";
+                }
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -368,28 +375,29 @@ namespace AffairsSystem
 
         private void btnSearchProductSaleMenu_Click(object sender, EventArgs e)
         {
-            try {
-            this.ClearAllErrorMessages();
-
-            btnMyHistory.Text = "My History";
-
-            string search = textBoxSearchProduct.Text;
-            if (Utility.CheckIfContainsForbiddenChars(search))
+            try
             {
-                lblErrorSaleSearch.Text = " [ ' ] is not allowed in the search";
-            }
-            else
-            {
-                SqlDataAdapter da = controller.SearchProductTill(search);
-                DataTable data = new DataTable();
-                da.Fill(data);
-                dataGridViewProductList.DataSource = data;
-                textBoxSearchProduct.Text = "";
+                this.ClearAllErrorMessages();
 
-                btnViewSale.Visible = false;
-                btwAddProductToSale.Enabled = true;
-                btnRemoveProductFromSale.Enabled = true;
-            }
+                btnMyHistory.Text = "My History";
+
+                string search = textBoxSearchProduct.Text;
+                if (Utility.CheckIfContainsForbiddenChars(search))
+                {
+                    lblErrorSaleSearch.Text = " [ ' ] is not allowed in the search";
+                }
+                else
+                {
+                    SqlDataAdapter da = controller.SearchProductTill(search);
+                    DataTable data = new DataTable();
+                    da.Fill(data);
+                    dataGridViewProductList.DataSource = data;
+                    textBoxSearchProduct.Text = "";
+
+                    btnViewSale.Visible = false;
+                    btwAddProductToSale.Enabled = true;
+                    btnRemoveProductFromSale.Enabled = true;
+                }
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -409,9 +417,10 @@ namespace AffairsSystem
 
         private void btnSEK_Click(object sender, EventArgs e)
         {
-            try {
-            textBoxCurrencyUnit.Text = "SEK";
-            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("SEK", totalPrice).ToString();
+            try
+            {
+                textBoxCurrencyUnit.Text = "SEK";
+                textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("SEK", totalPrice).ToString();
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -419,9 +428,10 @@ namespace AffairsSystem
 
         private void btnEURO_Click(object sender, EventArgs e)
         {
-            try {
-            textBoxCurrencyUnit.Text = "€";
-            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("EUR", totalPrice).ToString();
+            try
+            {
+                textBoxCurrencyUnit.Text = "€";
+                textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("EUR", totalPrice).ToString();
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -430,9 +440,10 @@ namespace AffairsSystem
 
         private void btnUSD_Click(object sender, EventArgs e)
         {
-            try {
-            textBoxCurrencyUnit.Text = "$";
-            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("USD", totalPrice).ToString();
+            try
+            {
+                textBoxCurrencyUnit.Text = "$";
+                textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("USD", totalPrice).ToString();
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -440,9 +451,10 @@ namespace AffairsSystem
 
         private void btnDKK_Click(object sender, EventArgs e)
         {
-            try {
-            textBoxCurrencyUnit.Text = "DKK";
-            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("DKK", totalPrice).ToString();
+            try
+            {
+                textBoxCurrencyUnit.Text = "DKK";
+                textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("DKK", totalPrice).ToString();
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -450,9 +462,10 @@ namespace AffairsSystem
 
         private void btnGBP_Click(object sender, EventArgs e)
         {
-            try {
-            textBoxCurrencyUnit.Text = "£";
-            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("GBP", totalPrice).ToString();
+            try
+            {
+                textBoxCurrencyUnit.Text = "£";
+                textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("GBP", totalPrice).ToString();
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -460,9 +473,10 @@ namespace AffairsSystem
 
         private void btnNOK_Click(object sender, EventArgs e)
         {
-            try {
-            textBoxCurrencyUnit.Text = "NOK";
-            textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("NOK", totalPrice).ToString();
+            try
+            {
+                textBoxCurrencyUnit.Text = "NOK";
+                textBoxNumPad.Text = Utility.GetCurrencyExchangeRate("NOK", totalPrice).ToString();
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -474,18 +488,19 @@ namespace AffairsSystem
 
         private void btnGetAllWorkingSalesPersons_Click(object sender, EventArgs e)
         {
-            try {
-            this.ClearAllErrorMessages();
+            try
+            {
+                this.ClearAllErrorMessages();
 
-            SqlDataAdapter da = controller.GetAllWorkingSalesPersons();
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewSP.DataSource = data;
+                SqlDataAdapter da = controller.GetAllWorkingSalesPersons();
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewSP.DataSource = data;
 
-            SqlDataAdapter da1 = controller.GetAllNotWorkingSalesPersons();
-            DataTable data1 = new DataTable();
-            da1.Fill(data1);
-            dataGridViewDeletedSP.DataSource = data1;
+                SqlDataAdapter da1 = controller.GetAllNotWorkingSalesPersons();
+                DataTable data1 = new DataTable();
+                da1.Fill(data1);
+                dataGridViewDeletedSP.DataSource = data1;
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -499,69 +514,28 @@ namespace AffairsSystem
 
         private void btnEaUpdate_Click(object sender, EventArgs e)
         {
-            try {
-            this.ClearAllErrorMessages();
-
-            int isAdmin = Utility.ConvertBoolToInt(checkBoxEmployeeAdmin.Checked);
-            int isActive = Utility.ConvertBoolToInt(checkBoxEmployee.Checked);
-            string spNr = Utility.FirstCharToUpper(textBoxEaSpNr.Text);
-            string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
-            string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
-            string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
-            string totalInformation = spNr + firstName + lastName + sPhone;
-
-            if (Utility.CheckIfEmpty(spNr))
+            try
             {
-                lblErrorSalesPersonFields.Text = "Select a employee from \n" + "any of the tables";
-            }
-            else if (Utility.CheckIfContainsForbiddenChars(totalInformation))
-            {
-                lblErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
+                this.ClearAllErrorMessages();
 
-            }
-            else if (Utility.CheckIfEmpty(firstName) ||
-                Utility.CheckIfEmpty(lastName) || Utility.CheckIfEmpty(sPhone))
-            {
-                lblErrorSalesPersonFields.Text = "Please provide information \n" + "in all the fields";
-            }
-            else
-            {
-
-                controller.UpdateSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
-                MessageBox.Show("Person: " + spNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
-                FillNotWorkingSalesPersonTable();
-                FillWorkingSalesPersonTable();
-                ClearAllEmployeeAdmin();
-                lblErrorSalesPersonFields.Text = "";
-            }
-            }
-            catch (Exception e2)
-            { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
-        }
-
-        private void btnEaNew_Click(object sender, EventArgs e)
-        {
-            try {
-            this.ClearAllErrorMessages();
-
-            int isAdmin = Utility.ConvertBoolToInt(checkBoxEmployeeAdmin.Checked);
-            int isActive = Utility.ConvertBoolToInt(checkBoxEmployee.Checked);
-            string spNr = textBoxEaSpNr.Text;
-            string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
-            string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
-            string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
-
-
-            if (Utility.CheckSalesPersonAddNew(controller.SearchSalesPerson(spNr)) != spNr)
-            {
+                int isAdmin = Utility.ConvertBoolToInt(checkBoxEmployeeAdmin.Checked);
+                int isActive = Utility.ConvertBoolToInt(checkBoxEmployee.Checked);
+                string spNr = Utility.FirstCharToUpper(textBoxEaSpNr.Text);
+                string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
+                string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
+                string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
                 string totalInformation = spNr + firstName + lastName + sPhone;
-                if (Utility.CheckIfContainsForbiddenChars(totalInformation))
+
+                if (Utility.CheckIfEmpty(spNr))
+                {
+                    lblErrorSalesPersonFields.Text = "Select a employee from \n" + "any of the tables";
+                }
+                else if (Utility.CheckIfContainsForbiddenChars(totalInformation))
                 {
                     lblErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
 
                 }
-                else if (Utility.CheckIfEmpty(spNr) || Utility.CheckIfEmpty(firstName) ||
+                else if (Utility.CheckIfEmpty(firstName) ||
                     Utility.CheckIfEmpty(lastName) || Utility.CheckIfEmpty(sPhone))
                 {
                     lblErrorSalesPersonFields.Text = "Please provide information \n" + "in all the fields";
@@ -569,22 +543,65 @@ namespace AffairsSystem
                 else
                 {
 
-                    controller.SetSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
-                    MessageBox.Show("Person: " + spNr + " was added.", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    controller.UpdateSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
+                    MessageBox.Show("Person: " + spNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
                     FillNotWorkingSalesPersonTable();
                     FillWorkingSalesPersonTable();
                     ClearAllEmployeeAdmin();
                     lblErrorSalesPersonFields.Text = "";
-                    comboBoxEmployees.Items.Clear();
-                    FillEmployeeComboBox();
-
                 }
             }
-            else
+            catch (Exception e2)
+            { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
+        }
+
+        private void btnEaNew_Click(object sender, EventArgs e)
+        {
+            try
             {
-                lblErrorSalesPersonFields.Text = "Social security number already\nexists in database";
-            }
+                this.ClearAllErrorMessages();
+
+                int isAdmin = Utility.ConvertBoolToInt(checkBoxEmployeeAdmin.Checked);
+                int isActive = Utility.ConvertBoolToInt(checkBoxEmployee.Checked);
+                string spNr = textBoxEaSpNr.Text;
+                string firstName = Utility.FirstCharToUpper(textBoxEaFName.Text);
+                string lastName = Utility.FirstCharToUpper(textBoxEaLName.Text);
+                string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
+
+
+                if (Utility.CheckSalesPersonAddNew(controller.SearchSalesPerson(spNr)) != spNr)
+                {
+                    string totalInformation = spNr + firstName + lastName + sPhone;
+                    if (Utility.CheckIfContainsForbiddenChars(totalInformation))
+                    {
+                        lblErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
+
+                    }
+                    else if (Utility.CheckIfEmpty(spNr) || Utility.CheckIfEmpty(firstName) ||
+                        Utility.CheckIfEmpty(lastName) || Utility.CheckIfEmpty(sPhone))
+                    {
+                        lblErrorSalesPersonFields.Text = "Please provide information \n" + "in all the fields";
+                    }
+                    else
+                    {
+
+                        controller.SetSalesPerson(spNr, firstName, lastName, sPhone, isAdmin, isActive);
+                        MessageBox.Show("Person: " + spNr + " was added.", "Added", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                        FillNotWorkingSalesPersonTable();
+                        FillWorkingSalesPersonTable();
+                        ClearAllEmployeeAdmin();
+                        lblErrorSalesPersonFields.Text = "";
+                        comboBoxEmployees.Items.Clear();
+                        FillEmployeeComboBox();
+
+                    }
+                }
+                else
+                {
+                    lblErrorSalesPersonFields.Text = "Social security number already\nexists in database";
+                }
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -592,7 +609,7 @@ namespace AffairsSystem
 
         private void textBoxSearchSP_KeyPress(object sender, KeyPressEventArgs e)
         {
-            
+
             if (e.KeyChar == (char)13)
             {
                 btnSearchSalesPerson.PerformClick();
@@ -602,30 +619,31 @@ namespace AffairsSystem
 
         private void buttonSearchSP_Click(object sender, EventArgs e)
         {
-            try {
-            this.ClearAllErrorMessages();
-
-            string search = textBoxSearchSP.Text;
-            if (Utility.CheckIfContainsForbiddenChars(search))
+            try
             {
-                lblErrorSalesPersonSearch.Text = " [ ' ] is not allowed in the search";
-            }
-            else
-            {
-                SqlDataAdapter da1 = controller.SearchWorkingSalesPersons(search);
-                DataTable data1 = new DataTable();
-                da1.Fill(data1);
-                dataGridViewSP.DataSource = data1;
-                ClearAllEmployeeAdmin();
+                this.ClearAllErrorMessages();
 
-                // Klistrar in andra searchknappmetoden
+                string search = textBoxSearchSP.Text;
+                if (Utility.CheckIfContainsForbiddenChars(search))
+                {
+                    lblErrorSalesPersonSearch.Text = " [ ' ] is not allowed in the search";
+                }
+                else
+                {
+                    SqlDataAdapter da1 = controller.SearchWorkingSalesPersons(search);
+                    DataTable data1 = new DataTable();
+                    da1.Fill(data1);
+                    dataGridViewSP.DataSource = data1;
+                    ClearAllEmployeeAdmin();
 
-                SqlDataAdapter da2 = controller.SearchNotWorkingSalesPersons(search);
-                DataTable data2 = new DataTable();
-                da2.Fill(data2);
-                dataGridViewDeletedSP.DataSource = data2;
-                ClearAllEmployeeAdmin();
-            }
+                    // Klistrar in andra searchknappmetoden
+
+                    SqlDataAdapter da2 = controller.SearchNotWorkingSalesPersons(search);
+                    DataTable data2 = new DataTable();
+                    da2.Fill(data2);
+                    dataGridViewDeletedSP.DataSource = data2;
+                    ClearAllEmployeeAdmin();
+                }
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -633,15 +651,16 @@ namespace AffairsSystem
 
         private void dataGridViewSP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try {
-            textBoxEaSpNr.Enabled = false;
-            string spNr = dataGridViewSP.SelectedRows[0].Cells[0].Value.ToString();
-            textBoxEaSpNr.Text = spNr.ToString();
-            textBoxEaFName.Text = dataGridViewSP.SelectedRows[0].Cells[1].Value.ToString();
-            textBoxEaLName.Text = dataGridViewSP.SelectedRows[0].Cells[2].Value.ToString();
-            textBoxEaPhoneNr.Text = dataGridViewSP.SelectedRows[0].Cells[3].Value.ToString();
-            checkBoxEmployee.Checked = Utility.GetIsActive(controller.GetIsActive(spNr));
-            checkBoxEmployeeAdmin.Checked = Utility.CheckAdmin(controller.SearchSalesPerson(spNr));
+            try
+            {
+                textBoxEaSpNr.Enabled = false;
+                string spNr = dataGridViewSP.SelectedRows[0].Cells[0].Value.ToString();
+                textBoxEaSpNr.Text = spNr.ToString();
+                textBoxEaFName.Text = dataGridViewSP.SelectedRows[0].Cells[1].Value.ToString();
+                textBoxEaLName.Text = dataGridViewSP.SelectedRows[0].Cells[2].Value.ToString();
+                textBoxEaPhoneNr.Text = dataGridViewSP.SelectedRows[0].Cells[3].Value.ToString();
+                checkBoxEmployee.Checked = Utility.GetIsActive(controller.GetIsActive(spNr));
+                checkBoxEmployeeAdmin.Checked = Utility.CheckAdmin(controller.SearchSalesPerson(spNr));
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -649,15 +668,16 @@ namespace AffairsSystem
 
         private void dataGridViewDeletedSP_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            try {
-            textBoxEaSpNr.Enabled = false;
-            string spNr = dataGridViewDeletedSP.SelectedRows[0].Cells[0].Value.ToString();
-            textBoxEaSpNr.Text = spNr.ToString();
-            textBoxEaFName.Text = dataGridViewDeletedSP.SelectedRows[0].Cells[1].Value.ToString();
-            textBoxEaLName.Text = dataGridViewDeletedSP.SelectedRows[0].Cells[2].Value.ToString();
-            textBoxEaPhoneNr.Text = dataGridViewDeletedSP.SelectedRows[0].Cells[3].Value.ToString();
-            checkBoxEmployee.Checked = Utility.GetIsActive(controller.GetIsActive(spNr));
-            checkBoxEmployeeAdmin.Checked = Utility.CheckAdmin(controller.SearchSalesPerson(spNr));
+            try
+            {
+                textBoxEaSpNr.Enabled = false;
+                string spNr = dataGridViewDeletedSP.SelectedRows[0].Cells[0].Value.ToString();
+                textBoxEaSpNr.Text = spNr.ToString();
+                textBoxEaFName.Text = dataGridViewDeletedSP.SelectedRows[0].Cells[1].Value.ToString();
+                textBoxEaLName.Text = dataGridViewDeletedSP.SelectedRows[0].Cells[2].Value.ToString();
+                textBoxEaPhoneNr.Text = dataGridViewDeletedSP.SelectedRows[0].Cells[3].Value.ToString();
+                checkBoxEmployee.Checked = Utility.GetIsActive(controller.GetIsActive(spNr));
+                checkBoxEmployeeAdmin.Checked = Utility.CheckAdmin(controller.SearchSalesPerson(spNr));
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }
@@ -826,18 +846,19 @@ namespace AffairsSystem
 
         private void btnGetAllPa_Click(object sender, EventArgs e)
         {
-            try {
-            this.ClearAllErrorMessages();
+            try
+            {
+                this.ClearAllErrorMessages();
 
-            SqlDataAdapter da = controller.GetAllProductsForSale();
-            DataTable data = new DataTable();
-            da.Fill(data);
-            dataGridViewPa.DataSource = data;
+                SqlDataAdapter da = controller.GetAllProductsForSale();
+                DataTable data = new DataTable();
+                da.Fill(data);
+                dataGridViewPa.DataSource = data;
 
-            SqlDataAdapter da1 = controller.GetAllProductsNotForSale();
-            DataTable data1 = new DataTable();
-            da1.Fill(data1);
-            dataGridViewDeletedPa.DataSource = data1;
+                SqlDataAdapter da1 = controller.GetAllProductsNotForSale();
+                DataTable data1 = new DataTable();
+                da1.Fill(data1);
+                dataGridViewDeletedPa.DataSource = data1;
             }
             catch (Exception e2)
             { MessageBox.Show(Utility.ExceptionResult(e2), "Error"); }

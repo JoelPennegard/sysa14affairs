@@ -1,4 +1,4 @@
-﻿   
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,13 +14,13 @@ namespace AffairsSystem
 {
     class DAL
     {
-        
+
         SqlConnection con;
         SqlCommand cmd;
         SqlDataAdapter da;
         SqlDataReader dr;
 
-        
+
         /// <summary>
         /// A constructor that checks the name of the current computer and changes the connection-string 
         /// accordingly 
@@ -29,19 +29,19 @@ namespace AffairsSystem
         {
             string computerName = SystemInformation.ComputerName;
             string connectionString = "";
-            
 
-            if(computerName.Equals("JOEL-DATOR"))
+
+            if (computerName.Equals("JOEL-DATOR"))
             {
-                connectionString =  "Data Source=JOEL-DATOR;Initial Catalog=affAIRsystem;Integrated Security=True";
+                connectionString = "Data Source=JOEL-DATOR;Initial Catalog=affAIRsystem;Integrated Security=True";
             }
             if (computerName.Equals("JOEL-POEL"))
             {
                 connectionString = "Data Source=JOEL-POEL;Initial Catalog=affAIRsystem;Integrated Security=True";
             }
-            else if(computerName.Equals("MAX-DATOR"))
+            else if (computerName.Equals("MAX-DATOR"))
             {
-                connectionString =  "Data Source=MAX-DATOR;Initial Catalog=affAIRsystem;Integrated Security=True";
+                connectionString = "Data Source=MAX-DATOR;Initial Catalog=affAIRsystem;Integrated Security=True";
             }
             else if (computerName.Equals("LUDVIGSBÄRBARA"))
             {
@@ -61,11 +61,11 @@ namespace AffairsSystem
             }
             else { }
 
-            
+
             con = new SqlConnection(connectionString);
 
         }
-        
+
         /// <summary>
         /// A generic method to use when updating the dataBase information
         /// </summary>
@@ -85,16 +85,16 @@ namespace AffairsSystem
         /// </summary>
         /// <param name="sqlQuery">the sqlQuery to be sent to the dataBase</param>
         /// <returns>a sqlDataAdapter with the results from the query</returns>
- 
+
         public SqlDataAdapter ExecuteGetSqlAdapter(string sqlQuery)
-        { 
-            con.Close(); 
+        {
+            con.Close();
             cmd = new SqlCommand(sqlQuery, con);
             con.Open();
             da = new SqlDataAdapter(cmd);
-            
+
             return da;
-                       
+
         }
 
         /// <summary>
@@ -102,15 +102,15 @@ namespace AffairsSystem
         /// </summary>
         /// <param name="sqlQuery">the sqlQuery to be sent to the dataBase</param>
         /// <returns>a sqlDataReader with the results from the query</returns>
-        
+
         public SqlDataReader ExecuteGetSqlReader(string sqlQuery)
         {
-            con.Close();       
+            con.Close();
             cmd = new SqlCommand(sqlQuery, con);
             con.Open();
             dr = cmd.ExecuteReader();
             return dr;
-                        
+
         }
 
         /// <summary>
@@ -126,7 +126,7 @@ namespace AffairsSystem
         /// Gets a list containing all products and their complete information
         /// </summary>
         /// <returns>a sqlDataAdapter containing a table of products</returns>
- 
+
         public SqlDataAdapter GetAllProductsForSale()
         {
             return ExecuteGetSqlAdapter("select productNr as [Product Nr], productName as [Product Name], ProductInPrice as [In Price], " +
@@ -153,18 +153,19 @@ namespace AffairsSystem
         //GET ALL NOT WORKING SALES PERSONS
         public SqlDataAdapter GetAllNotWorkingSalesPersons()
         {
-            return ExecuteGetSqlAdapter("select spNr as [Security Nr], firstName as [First Name], lastName as [Last Name], sPhone as [Phone Nr] " + 
+            return ExecuteGetSqlAdapter("select spNr as [Security Nr], firstName as [First Name], lastName as [Last Name], sPhone as [Phone Nr] " +
                 "from salesperson where isActive = 0");
         }
 
         //SEARCH ON WORKING SALES PERSONS (ADMIN)
-        public SqlDataAdapter SearchWorkingSalesPerson(string search) {
+        public SqlDataAdapter SearchWorkingSalesPerson(string search)
+        {
 
             return ExecuteGetSqlAdapter("select spNr as [Security Nr], firstName as [First Name], lastName as [Last Name], sPhone as [Phone Nr] " +
                 "from salesperson where isActive = 1 and (spNr like '%" + search + "%' or firstName like '%" + search +
                     "%' or lastName like '%" + search + "%' or sPhone like '%" + search + "%')");
         }
-        
+
         //SEARCH ON NOT WORKING SALES PERSONS (ADMIN)
         public SqlDataAdapter SearchNotWorkingSalesPerson(string search)
         {
@@ -211,7 +212,7 @@ namespace AffairsSystem
         /// </summary>
         /// <param name="spNr">the identifying number of the specified salesPerson</param>
         /// <returns>a sqlDataAdapter containing a table of all Sales made by the specified salesPerson c</returns>
-        
+
         public SqlDataAdapter GetSalesPersonSales(string spNr)
         {
             return ExecuteGetSqlAdapter("select salesNr as [Sales Nr], salesDate as [Date], totalPrice as [Total Price] from sales where spNr = '" + spNr + "' order by salesDate desc");
@@ -222,7 +223,7 @@ namespace AffairsSystem
         /// </summary>
         /// <param name="spNr">the identifying number of the specified salesPerson</param>
         /// <returns>a sqlDataReader containing the salespersons information</returns>
-        
+
         public SqlDataReader SearchSalesPerson(string spNr)
         {
             return ExecuteGetSqlReader("select * from salesperson where spNr = '" + spNr + "'");
@@ -232,10 +233,10 @@ namespace AffairsSystem
         public SqlDataAdapter SearchProductTill(string search)
         {
             return ExecuteGetSqlAdapter("select productNr as [Product Nr], productName as [Product Name], productOutPrice as [Price] " +
-                "from product where isForSale = 1 and (productNr like '%" + 
+                "from product where isForSale = 1 and (productNr like '%" +
                 search + "%' or productName like '%" + search + "%' or productOutPrice like '%" + search + "%')");
         }
-      
+
         // SEARCH PRODUCT ALL ATTRIBUTES (ON SALE)
         public SqlDataAdapter SearchProductAllAttributesForSale(string search)
         {
@@ -251,18 +252,18 @@ namespace AffairsSystem
                 "productOutPrice as [Out Price], amount as [Amount], isForSale as [Is For Sale] from product where isForSale = 0 and (productNr like '%" + search + "%' or productName like '%" + search +
                 "%' or productInPrice like '%" + search + "%' or productOutPrice like '%" + search + "%' or amount like '%" + search + "%')");
         }
-      
+
         /// <summary>
         /// Gets a list with all Products that have information that matches the searchTerm
         /// </summary>
-        
- 
+
+
         public SqlDataAdapter SearchProductAllAttributes(int productNr, string productName, double productInPrice, double productOutPrice, int amount)
         {
             return ExecuteGetSqlAdapter("select * from product where productNr like '%" + productNr + "%' or productName like '%" + productName +
                 "%' or productInPrice like '%" + productInPrice + "%' or productOutPrice like '%" + productOutPrice + "%' or amount like '%" + amount + "%'");
         }
-       
+
         /// <summary>
         /// Updates the information of a product in the Product table
         /// </summary>
@@ -270,12 +271,12 @@ namespace AffairsSystem
         /// <param name="productInPrice">the price that the store pays per product </param>
         /// <param name="productOutPrice">the price that is listed in the store</param>
         /// <param name="amount">the amount of said product thats available</param>
-        
-        public void UpdateProduct (int productNr, string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
+
+        public void UpdateProduct(int productNr, string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
         {
-            ExecuteSetSqlQuery("update product set productName = '" + productName + "', productInPrice = " + productInPrice + 
+            ExecuteSetSqlQuery("update product set productName = '" + productName + "', productInPrice = " + productInPrice +
                 ", ProductOutPrice = " + productOutPrice + ", amount = " + amount + ", isForSale = " + isForSale + " where productNr = " + productNr);
-        }            
+        }
 
         /// <summary>
         /// Updates the information of a salesPerson in the SalesPerson table
@@ -287,7 +288,7 @@ namespace AffairsSystem
 
         public void UpdateSalesPerson(string spNr, string firstName, string lastName, string sPhone, int isAdmin, int isActive)
         {
-            ExecuteSetSqlQuery("update salesperson set firstName = '" + firstName + "', lastName = '" + lastName + 
+            ExecuteSetSqlQuery("update salesperson set firstName = '" + firstName + "', lastName = '" + lastName +
                 "', sPhone = '" + sPhone + "', isAdmin = " + isAdmin + ", isActive = " + isActive + " where spNr = '" + spNr + "'");
         }
 
@@ -299,8 +300,9 @@ namespace AffairsSystem
         /// <param name="lastName">the salespersons family name</param>
         /// <param name="sPhone">the salespersons phonenumber</param>
 
-        public void SetSalesPerson(string spNr, string firstName, string lastName, string sPhone, int isAdmin, int isActive){
-            ExecuteSetSqlQuery("insert into salesperson values('" + spNr + "','" + firstName + "','" + lastName + "','" + sPhone +"', " + isAdmin + ", " + isActive + ")");
+        public void SetSalesPerson(string spNr, string firstName, string lastName, string sPhone, int isAdmin, int isActive)
+        {
+            ExecuteSetSqlQuery("insert into salesperson values('" + spNr + "','" + firstName + "','" + lastName + "','" + sPhone + "', " + isAdmin + ", " + isActive + ")");
         }
 
         /// <summary>
@@ -310,19 +312,19 @@ namespace AffairsSystem
         /// <param name="productInPrice">the price that the store pays per product </param>
         /// <param name="productOutPrice">the price that is listed in the store</param>
         /// <param name="amount">the amount of said product thats available</param>
- 
+
         public void SetProduct(string productName, double productInPrice, double productOutPrice, int amount, int isForSale)
         {
             ExecuteSetSqlQuery("insert into product values('" + productName + "'," + productInPrice + "," + productOutPrice + "," + amount + ", " + isForSale + ")");
         }
 
-        
+
         /// <summary>
         /// Adds a new Sale to the Sales table
         /// </summary>
         /// <param name="spNr">the salesPersons identyfying number </param>
         /// <param name="totalPrice">the total price of the sale in swedish kronor</param>
- 
+
         public void SetSale(string spNr, double totalPrice)
         {
             ExecuteSetSqlQuery("insert into sales values (getdate(), '" + spNr + "'," + totalPrice + ")");
@@ -340,7 +342,7 @@ namespace AffairsSystem
         {
             ExecuteSetSqlQuery("insert into salesline values (" + productNr + "," + salesNumber + "," + amount + ")");
         }
-        
+
 
         /// <summary>
         /// Selects the salesperson with the lowest amount of sales
@@ -363,10 +365,10 @@ namespace AffairsSystem
         /// Selects the salesperson with the highest amount of sales
         /// </summary>
         /// <returns>sqlDataAdapter containing the information of the top 1 salesperson</returns>
- 
+
         public SqlDataAdapter GetTopOneSalesPerson()
         {
-            return ExecuteGetSqlAdapter("select top 1 firstname as [First Name], lastname as [Last Name], salesNr as [Sales Nr], " + 
+            return ExecuteGetSqlAdapter("select top 1 firstname as [First Name], lastname as [Last Name], salesNr as [Sales Nr], " +
                 "max(totalprice) as [Total Price] from salesperson a join sales b " +
                 "on a.spNr = b.spNr group by firstname, lastname, totalprice, salesNr order by totalprice desc");
         }
@@ -390,7 +392,7 @@ namespace AffairsSystem
         //UPDATE PRODUCT AMOUNT
         public void UpdateProductAmount(int amount, int productNr, string minusOrPlus)
         {
-            ExecuteSetSqlQuery("update product set amount = (amount  " + minusOrPlus + amount +") where productNr = " + productNr);
+            ExecuteSetSqlQuery("update product set amount = (amount  " + minusOrPlus + amount + ") where productNr = " + productNr);
         }
 
     }

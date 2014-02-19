@@ -16,7 +16,7 @@ namespace AffairsSystem
         {
             if (string.IsNullOrEmpty(input))
             {
-                
+
                 return string.Empty;
             }
             else
@@ -30,7 +30,7 @@ namespace AffairsSystem
         {
             if (input.ToString().Length < 1)
             {
-                
+
                 return input;
             }
             else
@@ -41,7 +41,7 @@ namespace AffairsSystem
         //CHECK DOUBLE
         public static double CheckDouble(double input)
         {
-            if (input.ToString().Length<1)
+            if (input.ToString().Length < 1)
             {
                 return input;
             }
@@ -153,14 +153,14 @@ namespace AffairsSystem
                 return output;
             }
         }
-        
+
         public static bool GetIsActive(SqlDataReader dr)
         {
             bool result = true;
             while (dr.Read())
             {
                 result = dr.GetBoolean(0);
-               
+
             }
             return result;
         }
@@ -187,10 +187,10 @@ namespace AffairsSystem
             }
         }
 
-     
+
     }
 
-        
 
-    
+
+
 }
