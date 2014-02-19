@@ -763,9 +763,9 @@ namespace AffairsSystem
                 {
 
                     int productNr = int.Parse(textBoxPaPrNr.Text);
-                    double productInPrice = Utility.CheckDouble(double.Parse(textBoxPaInPrice.Text));
-                    double productOutPrice = Utility.CheckDouble(double.Parse(textBoxPaOutPrice.Text));
-                    int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
+                    double productInPrice = double.Parse(textBoxPaInPrice.Text);
+                    double productOutPrice = double.Parse(textBoxPaOutPrice.Text);
+                    int amount = int.Parse(textBoxPaAmount.Text);
 
                     controller.UpdateProduct(productNr, productName, productInPrice, productOutPrice, amount, isForSale);
                     MessageBox.Show("Product nr: " + productNr + " was updated.", "Updated", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -819,9 +819,9 @@ namespace AffairsSystem
                 }
                 else
                 {
-                    int amount = Utility.CheckInt(int.Parse(textBoxPaAmount.Text));
-                    double productInPrice = Utility.CheckDouble(double.Parse(textBoxPaInPrice.Text));
-                    double productOutPrice = Utility.CheckDouble(double.Parse(textBoxPaOutPrice.Text));
+                    int amount = int.Parse(textBoxPaAmount.Text);
+                    double productInPrice = double.Parse(textBoxPaInPrice.Text);
+                    double productOutPrice = double.Parse(textBoxPaOutPrice.Text);
 
                     controller.SetProduct(productName, productInPrice, productOutPrice, amount, isForSale);
 

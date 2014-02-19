@@ -25,36 +25,7 @@ namespace AffairsSystem
 
             }
         }
-        //CHECK INT
-        public static int CheckInt(int input)
-        {
-            if (input.ToString().Length < 1)
-            {
-
-                return input;
-            }
-            else
-            {
-                return input;
-            }
-        }
-        //CHECK DOUBLE
-        public static double CheckDouble(double input)
-        {
-            if (input.ToString().Length < 1)
-            {
-                return input;
-            }
-            else if (input < 1)
-            {
-                MessageBox.Show("Price cannot be so low!.", "Check price", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return input;
-            }
-            else
-            {
-                return input;
-            }
-        }
+       
 
         // CHECK IF SALES PERSON EXIST IN DATBASE
         public static string CheckSalesPersonLogIn(SqlDataReader dr)
