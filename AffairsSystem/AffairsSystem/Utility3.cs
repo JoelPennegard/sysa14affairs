@@ -43,11 +43,7 @@ namespace AffairsSystem
             return totalPrice;
 
         }
-        public static double RoundSEK(double totalPrice){
-
-            totalPrice = Math.Round(totalPrice);
-            return totalPrice;
-    }
+  
 
 }
 }

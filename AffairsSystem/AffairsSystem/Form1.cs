@@ -161,7 +161,7 @@ namespace AffairsSystem
             }
             else
             {
-                if (Utility.CheckIfSearchIsEmpty(amountString))
+                if (Utility.CheckIfEmpty(amountString))
                 {
 
                     amountInt = 1;
@@ -272,8 +272,7 @@ namespace AffairsSystem
             }
             else
             {
-
-                controller.SetSale(spNr, Utility.RoundSEK(totalPrice));
+                controller.SetSale(spNr, Utility.GetCurrencyExchangeRate("SEK", totalPrice));
                 int salesNr = Utility.CheckLatestSale(controller.GetLatestSale());
 
                 foreach (DataGridViewRow row in dataGridViewSaleList.Rows)
@@ -511,7 +510,7 @@ namespace AffairsSystem
             string sPhone = Utility.FirstCharToUpper(textBoxEaPhoneNr.Text);
             string totalInformation = spNr + firstName + lastName + sPhone;
 
-            if (Utility.CheckIfSearchIsEmpty(spNr))
+            if (Utility.CheckIfEmpty(spNr))
             {
                 lblErrorSalesPersonFields.Text = "Select a employee from \n" + "any of the tables";
             }
@@ -520,8 +519,8 @@ namespace AffairsSystem
                 lblErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
 
             }
-            else if (Utility.CheckIfSearchIsEmpty(firstName) ||
-                Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone))
+            else if (Utility.CheckIfEmpty(firstName) ||
+                Utility.CheckIfEmpty(lastName) || Utility.CheckIfEmpty(sPhone))
             {
                 lblErrorSalesPersonFields.Text = "Please provide information \n" + "in all the fields";
             }
@@ -562,8 +561,8 @@ namespace AffairsSystem
                     lblErrorSalesPersonFields.Text = "[ ' ] is not a allowed sign";
 
                 }
-                else if (Utility.CheckIfSearchIsEmpty(spNr) || Utility.CheckIfSearchIsEmpty(firstName) ||
-                    Utility.CheckIfSearchIsEmpty(lastName) || Utility.CheckIfSearchIsEmpty(sPhone))
+                else if (Utility.CheckIfEmpty(spNr) || Utility.CheckIfEmpty(firstName) ||
+                    Utility.CheckIfEmpty(lastName) || Utility.CheckIfEmpty(sPhone))
                 {
                     lblErrorSalesPersonFields.Text = "Please provide information \n" + "in all the fields";
                 }
@@ -714,7 +713,7 @@ namespace AffairsSystem
 
                 string totalInformation = amountString + inPriceString + outPriceString + productName;
 
-                if (Utility.CheckIfSearchIsEmpty(productNrString))
+                if (Utility.CheckIfEmpty(productNrString))
                 {
                     lblErrorProductAdminFields.Text = "Select a product from \n" + "any of the tables";
                 }
@@ -723,8 +722,8 @@ namespace AffairsSystem
                     lblErrorProductAdminFields.Text = "[ ' ] is not a allowed sign";
 
                 }
-                else if (Utility.CheckIfSearchIsEmpty(amountString) || Utility.CheckIfSearchIsEmpty(inPriceString) ||
-                    Utility.CheckIfSearchIsEmpty(outPriceString) || Utility.CheckIfSearchIsEmpty(productName))
+                else if (Utility.CheckIfEmpty(amountString) || Utility.CheckIfEmpty(inPriceString) ||
+                    Utility.CheckIfEmpty(outPriceString) || Utility.CheckIfEmpty(productName))
                 {
                     lblErrorProductAdminFields.Text = "Please provide information \n" + "in all the fields";
                 }
@@ -781,8 +780,8 @@ namespace AffairsSystem
                     lblErrorProductAdminFields.Text = "[ ' ] is not a allowed sign";
 
                 }
-                else if (Utility.CheckIfSearchIsEmpty(amountString) || Utility.CheckIfSearchIsEmpty(inPriceString) ||
-                    Utility.CheckIfSearchIsEmpty(outPriceString) || Utility.CheckIfSearchIsEmpty(productName))
+                else if (Utility.CheckIfEmpty(amountString) || Utility.CheckIfEmpty(inPriceString) ||
+                    Utility.CheckIfEmpty(outPriceString) || Utility.CheckIfEmpty(productName))
                 {
                     lblErrorProductAdminFields.Text = "Please provide information \n" + "in all the editable fields";
                 }
