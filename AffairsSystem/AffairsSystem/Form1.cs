@@ -272,7 +272,7 @@ namespace AffairsSystem
             }
             else
             {
-                controller.SetSale(spNr, Utility.RoundSEK(totalPrice));
+                controller.SetSale(spNr, Utility.GetCurrencyExchangeRate("SEK", totalPrice));
                 int salesNr = Utility.CheckLatestSale(controller.GetLatestSale());
 
                 foreach (DataGridViewRow row in dataGridViewSaleList.Rows)
