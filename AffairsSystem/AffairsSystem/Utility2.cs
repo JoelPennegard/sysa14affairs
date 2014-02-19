@@ -75,7 +75,7 @@ namespace AffairsSystem
             }
 
         }
-        public static bool CheckIfSearchIsEmpty(string searchString)
+        public static bool CheckIfEmpty(string searchString)
         {
             
             if (searchString.Length < 1)
