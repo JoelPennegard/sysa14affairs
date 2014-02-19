@@ -172,7 +172,7 @@ namespace AffairsSystem
                 int productAmountLeft = Utility.CheckProductAmount(productAmount, amountInt);
 
 
-                if (productAmountLeft > 0)
+                if (productAmountLeft >= 0)
                 {
 
                     int rowCount = dataGridViewSaleList.RowCount;

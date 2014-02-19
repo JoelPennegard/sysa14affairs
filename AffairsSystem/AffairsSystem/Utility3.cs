@@ -36,10 +36,6 @@ namespace AffairsSystem
                     totalPrice = Math.Round(totalPrice);
                 }
 
-                
-
-            
-
             return totalPrice;
 
         }

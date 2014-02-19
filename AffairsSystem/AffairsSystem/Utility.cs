@@ -132,7 +132,6 @@ namespace AffairsSystem
             else
             {
                 MessageBox.Show("That was the last one! ORDER MORE!", "Order more", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                amount = 1;
                 return amount;
             }
 
