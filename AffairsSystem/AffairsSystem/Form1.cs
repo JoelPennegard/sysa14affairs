@@ -143,7 +143,7 @@ namespace AffairsSystem
         private void btnAddProductToSale_Click(object sender, EventArgs e)
         {
             try{
-            this.ClearAllErrorMessages();
+            this.ClearAllErrorMessages(); //Görs alltid för att "neutralisera" alla felmeddelanden på varje knapp....
 
             string currency = textBoxCurrencyUnit.Text = "SEK";
             int productNr = int.Parse(dataGridViewProductList.SelectedRows[0].Cells[0].Value.ToString());
@@ -155,13 +155,13 @@ namespace AffairsSystem
             string minusOrPlus = "-";
             bool exists = false;
 
-            if (!Utility.CheckOnlyNumbers(amountString))
+            if (!Utility.CheckOnlyNumbers(amountString)) //Kollar om amount är siffror. Är den false skrivs detta ut, annars fortsätter man.
             {
                 MessageBox.Show("Amount must be integer", "Check amount", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
-                if (Utility.CheckIfEmpty(amountString))
+                if (Utility.CheckIfEmpty(amountString))  //Om man inte fyller i ett amount ska det automatiskt bli 1.
                 {
 
                     amountInt = 1;
@@ -181,7 +181,7 @@ namespace AffairsSystem
                     for (int i = 0; i < rowCount; i++)
                     {
                         int tmpProductNr = int.Parse(dataGridViewSaleList.Rows[i].Cells[0].Value.ToString());
-                        if (productNr == tmpProductNr)
+                        if (productNr == tmpProductNr)  //Om det finns en vara ska raden uppdateras
                         {
                             int currentAmountInSalesLine = int.Parse(dataGridViewSaleList.Rows[i].Cells[3].Value.ToString());
                             double SinglePrice = amountInt * productOutPrice;
@@ -204,7 +204,7 @@ namespace AffairsSystem
                         }
 
                     }
-                    if (!exists)
+                    if (!exists) //Om ingen rad med detta productNr finns måste vi skapa en ny rad. 
                     {
                         string[] row = new string[] { productNr.ToString(), productName, productOutPrice.ToString(), amountInt.ToString() };
                         dataGridViewSaleList.Rows.Add(row);
